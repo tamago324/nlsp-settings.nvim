@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of https://github.com/vscode-langservers/vscode-json-languageserver",
+  "properties": {
+    "json.enable": {
+      "type": "boolean",
+      "default": true,
+      "description": "Enable json server"
+    },
+    "json.trace.server": {
+      "type": "string",
+      "default": "off",
+      "enum": [
+        "off",
+        "messages",
+        "verbose"
+      ]
+    },
+    "json.execArgv": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "string"
+      }
+    },
+    "json.format.enable": {
+      "type": "boolean",
+      "default": true,
+      "description": "Enable format for json server"
+    },
+    "json.maxItemsComputed": {
+      "type": "number",
+      "default": 5000,
+      "description": "The maximum number of outline symbols and folding regions computed (limited for performance reasons)."
+    },
+    "json.schemaDownload.enable": {
+      "type": "boolean",
+      "default": true,
+      "description": "When enabled, JSON schemas can be fetched from http and https locations.",
+      "tags": [
+        "usesOnlineServices"
+      ]
+    },
+    "json.schemas": {
+      "type": "array",
+      "scope": "resource",
+      "description": "Schemas associations for json files",
+      "default": [],
+      "items": {
+        "type": "object",
+        "default": {
+          "fileMatch": [
+            "/my-file"
+          ],
+          "url": "schemaURL"
+        },
+        "properties": {
+          "url": {
+            "type": "string",
+            "default": "/user.schema.json"
+          },
+          "fileMatch": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "default": "MyFile.json"
+            },
+            "minItems": 1,
+            "description": "File pattern to match."
+          },
+          "schema": {
+            "$ref": "http://json-schema.org/draft-04/schema#",
+            "description": "Url of json schema, support file/url protocol."
+          }
+        }
+      }
+    }
+  }
+}

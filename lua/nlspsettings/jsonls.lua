@@ -1,0 +1,96 @@
+local config = require'nlspsettings.config'
+
+
+local M = {}
+
+
+local schemas = {
+  -- als                    = '',
+  -- angularls              = '',
+  -- bashls                 = '',
+  -- ccls                   = '',
+  -- clangd                 = '',
+  -- clojure_lsp            = '',
+  -- cmake                  = '',
+  -- codeqlls               = '',
+  -- configs                = '',
+  -- cssls                  = '',
+  -- dartls                 = '',
+  -- denols                 = '',
+  -- dhall_lsp_server       = '',
+  -- diagnosticls           = '',
+  -- dockerls               = '',
+  -- efm                    = '',
+  -- elixirls               = '',
+  -- elmls                  = '',
+  -- erlangls               = '',
+  -- flow                   = '',
+  -- fortls                 = '',
+  -- fsautocomplete         = '',
+  -- gdscript               = '',
+  -- ghcide                 = '',
+  -- gopls                  = '',
+  -- graphql                = '',
+  -- groovyls               = '',
+  -- haxe_language_server   = '',
+  -- health                 = '',
+  -- hie                    = '',
+  -- hls                    = '',
+  -- html                   = '',
+  -- intelephense           = '',
+  -- jdtls                  = '',
+  -- jedi_language_server   = '',
+  jsonls                    = 'https://raw.githubusercontent.com/tamago324/master/schemas/jsonls.json',
+  -- julials                = '',
+  -- kotlin_language_server = '',
+  -- leanls                 = '',
+  -- metals                 = '',
+  -- nimls                  = '',
+  -- ocamlls                = '',
+  -- ocamllsp               = '',
+  -- omnisharp              = '',
+  -- perlls                 = '',
+  -- purescriptls           = '',
+  pyls                      = 'https://raw.githubusercontent.com/tamago324/master/schemas/pyls.json',
+  -- pyls_ms                = '',
+  -- pyright                = '',
+  -- r_language_server      = '',
+  -- racket_langserver      = '',
+  -- rls                    = '',
+  -- rnix                   = '',
+  -- rome                   = '',
+  rust_analyzer             = 'https://raw.githubusercontent.com/tamago324/master/schemas/rust_analyzer.json',
+  -- scry                   = '',
+  -- solargraph             = '',
+  -- sorbet                 = '',
+  -- sourcekit              = '',
+  -- sqlls                  = '',
+  -- sqls                   = '',
+  sumneko_lua               = 'https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json',
+  -- svelte                 = '',
+  -- terraformls            = '',
+  -- texlab                 = '',
+  -- tsserver               = '',
+  -- vala_ls                = '',
+  -- vimls                     = '',
+  -- vls                    = '',
+  -- vuels                  = '',
+  -- yamlls                 = '',
+  -- zls                    = '',
+}
+
+
+M.get_default_schemas = function()
+  local res = {}
+
+  for _, v in pairs(schemas) do
+    table.insert(res, {
+      fileMatch = { 'nlsp-settings.json' },
+      url = v
+    })
+  end
+
+  return res
+end
+
+return M

@@ -1,0 +1,13 @@
+{
+  "Lua.runtime.version": "LuaJIT",
+  "Lua.diagnostics.enable": true,
+  "Lua.diagnostics.globals": [
+    "vim", "describe", "it", "before_each", "after_each"
+  ],
+  "Lua.diagnostics.disable": [
+    "unused-local", "unused-vararg", "lowercase-global", "undefined-field"
+  ],
+  "Lua.completion.callSnippet": "Both",
+  "Lua.completion.keywordSnippet": "Both"
+}
+
