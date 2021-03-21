@@ -9,9 +9,23 @@ local M = {}
 local _settings = {}
 
 
---- テーブルの key の "." を階層にしたテーブルを返す
+--- Decodes from JSON.
 ---
----@param t table
+---@param data string Data to decode
+---@returns table json_obj Decoded JSON object
+local json_decode = function(data)
+  local ok, result = pcall(vim.fn.json_decode, data)
+  if ok then
+    return result
+  else
+    return nil, result
+  end
+end
+
+--- Convert table key dots to table nests
+---
+---@param t table JSON setting table
+---@return table
 local lsp_json_to_table = function(t)
   vim.validate {
     t = { t, 't' }
@@ -49,8 +63,13 @@ local load_setting_json = function(path)
     return
   end
 
+  local decoded = json_decode(vim.fn.readfile(path))
+  if decoded == nil then
+    return
+  end
+
   local name = string.match(path, '([^/]+)%.json$')
-  _settings[name] = lsp_json_to_table(vim.fn.json_decode(vim.fn.readfile(path)))
+  _settings[name] = lsp_json_to_table(decoded)
 end
 
 local get_settings_files = function(path)

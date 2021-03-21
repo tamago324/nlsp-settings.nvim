@@ -15,7 +15,6 @@ M.open_config = function(langserver_name)
     if vim.fn.confirm(string.format([[Config directory "%s" not exists, create?]], home), "&Yes\n&No", 1) ~= 1 then
       return
     end
-    print(home)
     vim.fn.mkdir(home, 'p')
   end
 
