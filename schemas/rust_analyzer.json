@@ -1,328 +1,518 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "Setting of https://github.com/rust-lang/vscode-rust",
+  "description": "Setting of https://github.com/rust-analyzer/rust-analyzer",
   "properties": {
-    "rust-client.engine": {
-      "type": "string",
-      "enum": [
-        "rls",
-        "rust-analyzer"
-      ],
-      "enumDescriptions": [
-        "Use the Rust Language Server (RLS)",
-        "Use the rust-analyzer language server (NOTE: not fully supported yet)"
-      ],
-      "default": "rls",
-      "description": "The underlying LSP server used to provide IDE support for Rust projects.",
-      "scope": "window"
-    },
-    "rust-client.logToFile": {
-      "type": "boolean",
-      "default": false,
-      "description": "When set to true, RLS stderr is logged to a file at workspace root level. Requires reloading extension after change."
-    },
-    "rust-client.rustupPath": {
-      "type": "string",
-      "default": "rustup",
-      "description": "Path to rustup executable. Ignored if rustup is disabled.",
-      "scope": "machine"
-    },
-    "rust-client.rlsPath": {
+    "rust-analyzer.cargoRunner": {
       "type": [
-        "string",
-        "null"
+        "null",
+        "string"
       ],
       "default": null,
-      "description": "Override RLS path. Only required for RLS developers. If you set this and use rustup, you should also set `rust-client.channel` to ensure your RLS sees the right libraries. If you don't use rustup, make sure to set `rust-client.disableRustup`.",
-      "scope": "machine"
+      "description": "Custom cargo runner extension ID."
     },
-    "rust-client.revealOutputChannelOn": {
-      "type": "string",
-      "enum": [
-        "info",
-        "warn",
-        "error",
-        "never"
-      ],
-      "default": "never",
-      "description": "Specifies message severity on which the output channel will be revealed. Requires reloading extension after change."
-    },
-    "rust-client.updateOnStartup": {
-      "type": "boolean",
-      "default": false,
-      "description": "Update the Rust toolchain and its required components whenever the extension starts up."
-    },
-    "rust-client.autoStartRls": {
-      "type": "boolean",
-      "default": true,
-      "description": "Start RLS automatically when opening a file or project.",
-      "scope": "resource"
-    },
-    "rust-client.disableRustup": {
-      "type": "boolean",
-      "default": false,
-      "description": "Disable usage of rustup and use rustc/rls/rust-analyzer from PATH."
-    },
-    "rust-client.channel": {
+    "rust-analyzer.runnableEnv": {
       "anyOf": [
         {
-          "type": "string"
+          "type": "null"
         },
         {
-          "type": "string",
-          "enum": [
-            "default",
-            "stable",
-            "beta",
-            "nightly"
-          ],
-          "enumDescriptions": [
-            "Uses the same channel as your currently open project",
-            "Explicitly use the `stable` channel",
-            "Explicitly use the `beta` channel",
-            "Explicitly use the `nightly` channel"
-          ]
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "mask": {
+                "type": "string",
+                "description": "Runnable name mask"
+              },
+              "env": {
+                "type": "object",
+                "description": "Variables in form of { \"key\": \"value\"}"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "description": "Variables in form of { \"key\": \"value\"}"
         }
       ],
-      "default": "default",
-      "description": "Rust channel to invoke rustup with. Ignored if rustup is disabled. By default, uses the same channel as your currently open project."
+      "default": null,
+      "markdownDescription": "Environment variables passed to the runnable launched using `Test` or `Debug` lens or `rust-analyzer.run` command."
     },
-    "rust-client.trace.server": {
+    "rust-analyzer.inlayHints.enable": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to show inlay hints."
+    },
+    "rust-analyzer.updates.channel": {
       "type": "string",
+      "enum": [
+        "stable",
+        "nightly"
+      ],
+      "default": "stable",
+      "markdownEnumDescriptions": [
+        "`stable` updates are shipped weekly, they don't contain cutting-edge features from VSCode proposed APIs but have less bugs in general.",
+        "`nightly` updates are shipped daily (extension updates automatically by downloading artifacts directly from GitHub), they contain cutting-edge features and latest bug fixes. These releases help us get your feedback very quickly and speed up rust-analyzer development **drastically**."
+      ],
+      "markdownDescription": "Choose `nightly` updates to get the latest features and bug fixes every day. While `stable` releases occur weekly and don't contain cutting-edge features from VSCode proposed APIs."
+    },
+    "rust-analyzer.updates.askBeforeDownload": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to ask for permission before downloading any files from the Internet."
+    },
+    "rust-analyzer.server.path": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null,
+      "markdownDescription": "Path to rust-analyzer executable (points to bundled binary by default). If this is set, then `#rust-analyzer.updates.channel#` setting is not used"
+    },
+    "rust-analyzer.server.extraEnv": {
+      "type": [
+        "null",
+        "object"
+      ],
+      "default": null,
+      "markdownDescription": "Extra environment variables that will be passed to the rust-analyzer executable. Useful for passing e.g. `RA_LOG` for debugging."
+    },
+    "rust-analyzer.trace.server": {
+      "type": "string",
+      "scope": "window",
       "enum": [
         "off",
         "messages",
         "verbose"
       ],
+      "enumDescriptions": [
+        "No traces",
+        "Error only",
+        "Full log"
+      ],
       "default": "off",
-      "description": "Traces the communication between VS Code and the Rust language server.",
-      "scope": "window"
+      "description": "Trace requests to the rust-analyzer (this is usually overly verbose and not recommended for regular users)."
     },
-    "rust-client.enableMultiProjectSetup": {
-      "type": [
-        "boolean",
-        "null"
-      ],
-      "default": null,
-      "description": "Allow multiple projects in the same folder, along with removing the constraint that the cargo.toml must be located at the root. (Experimental: might not work for certain setups)"
-    },
-    "rust.sysroot": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "default": null,
-      "description": "--sysroot",
-      "scope": "resource"
-    },
-    "rust.target": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "default": null,
-      "description": "--target",
-      "scope": "resource"
-    },
-    "rust.rustflags": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "default": null,
-      "description": "Flags added to RUSTFLAGS.",
-      "scope": "resource"
-    },
-    "rust.clear_env_rust_log": {
+    "rust-analyzer.trace.extension": {
+      "description": "Enable logging of VS Code extensions itself.",
       "type": "boolean",
-      "default": true,
-      "description": "Clear the RUST_LOG environment variable before running rustc or cargo.",
-      "scope": "resource"
+      "default": false
     },
-    "rust.build_lib": {
-      "type": [
-        "boolean",
-        "null"
-      ],
-      "default": null,
-      "description": "Specify to run analysis as if running `cargo check --lib`. Use `null` to auto-detect. (unstable)",
-      "scope": "resource"
-    },
-    "rust.build_bin": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "default": null,
-      "description": "Specify to run analysis as if running `cargo check --bin <name>`. Use `null` to auto-detect. (unstable)",
-      "scope": "resource"
-    },
-    "rust.cfg_test": {
-      "type": "boolean",
-      "default": false,
-      "description": "Build cfg(test) code. (unstable)",
-      "scope": "resource"
-    },
-    "rust.unstable_features": {
-      "type": "boolean",
-      "default": false,
-      "description": "Enable unstable features.",
-      "scope": "resource"
-    },
-    "rust.wait_to_build": {
-      "type": [
-        "number",
-        "null"
-      ],
-      "default": null,
-      "description": "Time in milliseconds between receiving a change notification and starting build.",
-      "scope": "resource"
-    },
-    "rust.show_warnings": {
-      "type": "boolean",
-      "default": true,
-      "description": "Show warnings.",
-      "scope": "resource"
-    },
-    "rust.crate_blacklist": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "default": [
-        "cocoa",
-        "gleam",
-        "glium",
-        "idna",
-        "libc",
-        "openssl",
-        "rustc_serialize",
-        "serde",
-        "serde_json",
-        "typenum",
-        "unicode_normalization",
-        "unicode_segmentation",
-        "winapi"
-      ],
-      "description": "Overrides the default list of packages for which analysis is skipped.\nAvailable since RLS 1.38",
-      "scope": "resource"
-    },
-    "rust.build_on_save": {
-      "type": "boolean",
-      "default": false,
-      "description": "Only index the project when a file is saved and not on change.",
-      "scope": "resource"
-    },
-    "rust.features": {
-      "type": "array",
-      "default": [],
-      "description": "A list of Cargo features to enable.",
-      "scope": "resource"
-    },
-    "rust.all_features": {
-      "type": "boolean",
-      "default": false,
-      "description": "Enable all Cargo features.",
-      "scope": "resource"
-    },
-    "rust.no_default_features": {
-      "type": "boolean",
-      "default": false,
-      "description": "Do not enable default Cargo features.",
-      "scope": "resource"
-    },
-    "rust.racer_completion": {
-      "type": "boolean",
-      "default": true,
-      "description": "Enables code completion using racer.",
-      "scope": "resource"
-    },
-    "rust.clippy_preference": {
+    "rust-analyzer.debug.engine": {
       "type": "string",
       "enum": [
-        "on",
-        "opt-in",
-        "off"
+        "auto",
+        "vadimcn.vscode-lldb",
+        "ms-vscode.cpptools"
       ],
-      "default": "opt-in",
-      "description": "Controls eagerness of clippy diagnostics when available. Valid values are (case-insensitive):\n - \"off\": Disable clippy lints.\n - \"on\": Display the same diagnostics as command-line clippy invoked with no arguments (`clippy::all` unless overridden).\n - \"opt-in\": Only display the lints explicitly enabled in the code. Start by adding `#![warn(clippy::all)]` to the root of each crate you want linted.\nYou need to install clippy via rustup if you haven't already.",
-      "scope": "resource"
+      "default": "auto",
+      "description": "Preferred debug engine.",
+      "markdownEnumDescriptions": [
+        "First try to use [CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb), if it's not installed try to use [MS C++ tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools).",
+        "Use [CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)",
+        "Use [MS C++ tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)"
+      ]
     },
-    "rust.jobs": {
-      "type": [
-        "number",
-        "null"
-      ],
-      "default": null,
-      "description": "Number of Cargo jobs to be run in parallel.",
-      "scope": "resource"
+    "rust-analyzer.debug.sourceFileMap": {
+      "type": "object",
+      "description": "Optional source file mappings passed to the debug engine.",
+      "default": {
+        "/rustc/<id>": "${env:USERPROFILE}/.rustup/toolchains/<toolchain-id>/lib/rustlib/src/rust"
+      }
     },
-    "rust.all_targets": {
+    "rust-analyzer.debug.openDebugPane": {
+      "markdownDescription": "Whether to open up the `Debug Panel` on debugging start.",
       "type": "boolean",
-      "default": true,
-      "description": "Checks the project as if you were running cargo check --all-targets (I.e., check all targets and integration tests too).",
-      "scope": "resource"
+      "default": false
     },
-    "rust.target_dir": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "default": null,
-      "description": "When specified, it places the generated analysis files at the specified target directory. By default it is placed target/rls directory.",
-      "scope": "resource"
-    },
-    "rust.rustfmt_path": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "default": null,
-      "description": "When specified, RLS will use the Rustfmt pointed at the path instead of the bundled one",
-      "scope": "resource"
-    },
-    "rust.build_command": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "default": null,
-      "description": "EXPERIMENTAL (requires `unstable_features`)\nIf set, executes a given program responsible for rebuilding save-analysis to be loaded by the RLS. The program given should output a list of resulting .json files on stdout. \nImplies `rust.build_on_save`: true.",
-      "scope": "resource"
-    },
-    "rust.full_docs": {
-      "type": [
-        "boolean",
-        "null"
-      ],
-      "default": null,
-      "description": "Instructs cargo to enable full documentation extraction during save-analysis while building the crate.",
-      "scope": "resource"
-    },
-    "rust.show_hover_context": {
-      "type": "boolean",
-      "default": true,
-      "description": "Show additional context in hover tooltips when available. This is often the type local variable declaration.",
-      "scope": "resource"
-    },
-    "rust.rust-analyzer": {
+    "rust-analyzer.debug.engineSettings": {
       "type": "object",
       "default": {},
-      "description": "Settings passed down to rust-analyzer server",
-      "scope": "resource"
+      "markdownDescription": "Optional settings passed to the debug engine. Example: `{ \"lldb\": { \"terminal\":\"external\"} }`"
     },
-    "rust.rust-analyzer.releaseTag": {
+    "rust-analyzer.assist.importMergeBehavior": {
+      "markdownDescription": "The strategy to use when inserting new imports or merging imports.",
+      "default": "full",
       "type": "string",
-      "default": "nightly",
-      "description": "Which binary release to download and use"
-    },
-    "rust.rust-analyzer.path": {
-      "type": [
-        "string",
-        "null"
+      "enum": [
+        "none",
+        "full",
+        "last"
       ],
+      "enumDescriptions": [
+        "No merging",
+        "Merge all layers of the import trees",
+        "Only merge the last layer of the import trees"
+      ]
+    },
+    "rust-analyzer.assist.importPrefix": {
+      "markdownDescription": "The path structure for newly inserted paths to use.",
+      "default": "plain",
+      "type": "string",
+      "enum": [
+        "plain",
+        "by_self",
+        "by_crate"
+      ],
+      "enumDescriptions": [
+        "Insert import paths relative to the current module, using up to one `super` prefix if the parent module contains the requested item.",
+        "Prefix all import paths with `self` if they don't begin with `self`, `super`, `crate` or a crate name.",
+        "Force import paths to be absolute by always starting them with `crate` or the crate name they refer to."
+      ]
+    },
+    "rust-analyzer.assist.importGroup": {
+      "markdownDescription": "Group inserted imports by the [following order](https://rust-analyzer.github.io/manual.html#auto-import). Groups are separated by newlines.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.callInfo.full": {
+      "markdownDescription": "Show function name and docs in parameter hints.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.cargo.autoreload": {
+      "markdownDescription": "Automatically refresh project info via `cargo metadata` on\n`Cargo.toml` changes.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.cargo.allFeatures": {
+      "markdownDescription": "Activate all available features (`--all-features`).",
+      "default": false,
+      "type": "boolean"
+    },
+    "rust-analyzer.cargo.features": {
+      "markdownDescription": "List of features to activate.",
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rust-analyzer.cargo.runBuildScripts": {
+      "markdownDescription": "Run build scripts (`build.rs`) for more precise code analysis.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.cargo.noDefaultFeatures": {
+      "markdownDescription": "Do not activate the `default` feature.",
+      "default": false,
+      "type": "boolean"
+    },
+    "rust-analyzer.cargo.target": {
+      "markdownDescription": "Compilation target (target triple).",
       "default": null,
-      "description": "When specified, uses the rust-analyzer binary at a given path"
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "rust-analyzer.cargo.noSysroot": {
+      "markdownDescription": "Internal config for debugging, disables loading of sysroot crates.",
+      "default": false,
+      "type": "boolean"
+    },
+    "rust-analyzer.checkOnSave.enable": {
+      "markdownDescription": "Run specified `cargo check` command for diagnostics on save.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.checkOnSave.allFeatures": {
+      "markdownDescription": "Check with all features (`--all-features`).\nDefaults to `#rust-analyzer.cargo.allFeatures#`.",
+      "default": null,
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "rust-analyzer.checkOnSave.allTargets": {
+      "markdownDescription": "Check all targets and tests (`--all-targets`).",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.checkOnSave.command": {
+      "markdownDescription": "Cargo command to use for `cargo check`.",
+      "default": "check",
+      "type": "string"
+    },
+    "rust-analyzer.checkOnSave.noDefaultFeatures": {
+      "markdownDescription": "Do not activate the `default` feature.",
+      "default": null,
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "rust-analyzer.checkOnSave.target": {
+      "markdownDescription": "Check for a specific target. Defaults to\n`#rust-analyzer.cargo.target#`.",
+      "default": null,
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "rust-analyzer.checkOnSave.extraArgs": {
+      "markdownDescription": "Extra arguments for `cargo check`.",
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rust-analyzer.checkOnSave.features": {
+      "markdownDescription": "List of features to activate. Defaults to\n`#rust-analyzer.cargo.features#`.",
+      "default": null,
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "rust-analyzer.checkOnSave.overrideCommand": {
+      "markdownDescription": "Advanced option, fully override the command rust-analyzer uses for\nchecking. The command should include `--message-format=json` or\nsimilar option.",
+      "default": null,
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "rust-analyzer.completion.addCallArgumentSnippets": {
+      "markdownDescription": "Whether to add argument snippets when completing functions.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.completion.addCallParenthesis": {
+      "markdownDescription": "Whether to add parenthesis when completing functions.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.completion.postfix.enable": {
+      "markdownDescription": "Whether to show postfix snippets like `dbg`, `if`, `not`, etc.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.completion.autoimport.enable": {
+      "markdownDescription": "Toggles the additional completions that automatically add imports when completed.\nNote that your client must specify the `additionalTextEdits` LSP client capability to truly have this feature enabled.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.diagnostics.enable": {
+      "markdownDescription": "Whether to show native rust-analyzer diagnostics.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.diagnostics.enableExperimental": {
+      "markdownDescription": "Whether to show experimental rust-analyzer diagnostics that might\nhave more false positives than usual.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.diagnostics.disabled": {
+      "markdownDescription": "List of rust-analyzer diagnostics to disable.",
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "rust-analyzer.diagnostics.warningsAsHint": {
+      "markdownDescription": "List of warnings that should be displayed with info severity.\n\nThe warnings will be indicated by a blue squiggly underline in code\nand a blue icon in the `Problems Panel`.",
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rust-analyzer.diagnostics.warningsAsInfo": {
+      "markdownDescription": "List of warnings that should be displayed with hint severity.\n\nThe warnings will be indicated by faded text or three dots in code\nand will not show up in the `Problems Panel`.",
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rust-analyzer.files.watcher": {
+      "markdownDescription": "Controls file watching implementation.",
+      "default": "client",
+      "type": "string"
+    },
+    "rust-analyzer.files.excludeDirs": {
+      "markdownDescription": "These directories will be ignored by rust-analyzer.",
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rust-analyzer.hoverActions.debug": {
+      "markdownDescription": "Whether to show `Debug` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.hoverActions.enable": {
+      "markdownDescription": "Whether to show HoverActions in Rust files.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.hoverActions.gotoTypeDef": {
+      "markdownDescription": "Whether to show `Go to Type Definition` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.hoverActions.implementations": {
+      "markdownDescription": "Whether to show `Implementations` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.hoverActions.run": {
+      "markdownDescription": "Whether to show `Run` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.hoverActions.linksInHover": {
+      "markdownDescription": "Use markdown syntax for links in hover.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.inlayHints.chainingHints": {
+      "markdownDescription": "Whether to show inlay type hints for method chains.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.inlayHints.maxLength": {
+      "markdownDescription": "Maximum length for inlay hints. Default is unlimited.",
+      "default": null,
+      "type": [
+        "null",
+        "integer"
+      ],
+      "minimum": 0
+    },
+    "rust-analyzer.inlayHints.parameterHints": {
+      "markdownDescription": "Whether to show function parameter name inlay hints at the call\nsite.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.inlayHints.typeHints": {
+      "markdownDescription": "Whether to show inlay type hints for variables.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.lens.debug": {
+      "markdownDescription": "Whether to show `Debug` lens. Only applies when\n`#rust-analyzer.lens.enable#` is set.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.lens.enable": {
+      "markdownDescription": "Whether to show CodeLens in Rust files.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.lens.implementations": {
+      "markdownDescription": "Whether to show `Implementations` lens. Only applies when\n`#rust-analyzer.lens.enable#` is set.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.lens.run": {
+      "markdownDescription": "Whether to show `Run` lens. Only applies when\n`#rust-analyzer.lens.enable#` is set.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.lens.methodReferences": {
+      "markdownDescription": "Whether to show `Method References` lens. Only applies when\n`#rust-analyzer.lens.enable#` is set.",
+      "default": false,
+      "type": "boolean"
+    },
+    "rust-analyzer.lens.references": {
+      "markdownDescription": "Whether to show `References` lens. Only applies when\n`#rust-analyzer.lens.enable#` is set.",
+      "default": false,
+      "type": "boolean"
+    },
+    "rust-analyzer.linkedProjects": {
+      "markdownDescription": "Disable project auto-discovery in favor of explicitly specified set\nof projects.\n\nElements must be paths pointing to `Cargo.toml`,\n`rust-project.json`, or JSON objects in `rust-project.json` format.",
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": [
+          "string",
+          "object"
+        ]
+      }
+    },
+    "rust-analyzer.lruCapacity": {
+      "markdownDescription": "Number of syntax trees rust-analyzer keeps in memory. Defaults to 128.",
+      "default": null,
+      "type": [
+        "null",
+        "integer"
+      ],
+      "minimum": 0
+    },
+    "rust-analyzer.notifications.cargoTomlNotFound": {
+      "markdownDescription": "Whether to show `can't find Cargo.toml` error message.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.procMacro.enable": {
+      "markdownDescription": "Enable support for procedural macros, implies `#rust-analyzer.cargo.runBuildScripts#`.",
+      "default": true,
+      "type": "boolean"
+    },
+    "rust-analyzer.procMacro.server": {
+      "markdownDescription": "Internal config, path to proc-macro server executable (typically,\nthis is rust-analyzer itself, but we override this in tests).",
+      "default": null,
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "rust-analyzer.runnables.overrideCargo": {
+      "markdownDescription": "Command to be executed instead of 'cargo' for runnables.",
+      "default": null,
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "rust-analyzer.runnables.cargoExtraArgs": {
+      "markdownDescription": "Additional arguments to be passed to cargo for runnables such as\ntests or binaries. For example, it may be `--release`.",
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rust-analyzer.rustcSource": {
+      "markdownDescription": "Path to the Cargo.toml of the rust compiler workspace, for usage in rustc_private\nprojects, or \"discover\" to try to automatically find it.\n\nAny project which uses rust-analyzer with the rustcPrivate\ncrates must set `[package.metadata.rust-analyzer] rustc_private=true` to use it.\n\nThis option is not reloaded automatically; you must restart rust-analyzer for it to take effect.",
+      "default": null,
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "rust-analyzer.rustfmt.extraArgs": {
+      "markdownDescription": "Additional arguments to `rustfmt`.",
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rust-analyzer.rustfmt.overrideCommand": {
+      "markdownDescription": "Advanced option, fully override the command rust-analyzer uses for\nformatting.",
+      "default": null,
+      "type": [
+        "null",
+        "array"
+      ],
+      "items": {
+        "type": "string"
+      }
     }
   }
 }

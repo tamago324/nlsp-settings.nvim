@@ -55,7 +55,7 @@
 - [ ] [rls](#rls)
 - [ ] [rnix](#rnix)
 - [ ] [rome](#rome)
-- [x] [rust_analyzer](https://github.com/rust-lang/vscode-rust/blob/b1ae67b06640ffab6e1ebb72e07364b4477dfbf1/package.json)
+- [x] [rust_analyzer](https://github.com/rust-analyzer/rust-analyzer/blob/0d40ff5e623b3670ce3e0e324ecbab3e5197aaeb/editors/code/package.json)
 - [ ] [scry](#scry)
 - [ ] [solargraph](#solargraph)
 - [ ] [sorbet](#sorbet)

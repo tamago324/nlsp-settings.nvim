@@ -1,3 +1,4 @@
 {
-  "rust.all_features": true
+  "rust-analyzer.cargo.allFeatures": true,
+  "rust-analyzer.checkOnSave.command": "clippy"
 }
