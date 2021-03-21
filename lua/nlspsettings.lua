@@ -1,19 +1,12 @@
 local jsonls = require'nlspsettings.jsonls'
 local config = require'nlspsettings.config'
 
+local uv = vim.loop
+
 
 local M = {}
 
--- _config_home = nil
-local _config_home = vim.fn.stdpath('config')
 local _settings = {}
-
-local _setting_prefix_list = {
-  sumneko_lua = { 'Lua' },
-  jsonls = { 'json' },
-  rust_analyzer = { 'rust', 'rust-client' },
-  pyls = { 'pyls' }
-}
 
 
 --- テーブルの key の "." を階層にしたテーブルを返す
@@ -55,9 +48,36 @@ local load_setting_json = function(path)
   if vim.fn.filereadable(path) == 0 then
     return
   end
-  _settings = lsp_json_to_table(vim.fn.json_decode(vim.fn.readfile(path)))
+
+  local name = string.match(path, '([^/]+)%.json$')
+  _settings[name] = lsp_json_to_table(vim.fn.json_decode(vim.fn.readfile(path)))
 end
 
+local get_settings_files = function(path)
+  local handle = uv.fs_scandir(path)
+  if handle == nil then
+    return {}
+  end
+
+  local res = {}
+
+  while true do
+    local name, _ = uv.fs_scandir_next(handle)
+    if name == nil then
+      break
+    end
+    table.insert(res, path .. '/' .. name)
+  end
+
+  return res
+end
+
+M.load_settings = function(path)
+  local files = get_settings_files(config.get('config_home'))
+  for _, v in ipairs(files) do
+    load_setting_json(v)
+  end
+end
 
 M.setup = function(opts)
   vim.validate {
@@ -66,29 +86,14 @@ M.setup = function(opts)
   opts = opts or {}
 
   vim.validate {
-    _config_home = { opts.config_home, 's', true }
+    config_home = { opts.config_home, 's', true }
   }
 
   config.set_default_values({
     config_home = opts.config_home
   })
 
-  -- 設定を読み込む
-  load_setting_json(config.get('config_home') .. '/nlsp-settings.json')
-end
-
-
-local get_langserver_settings = function(langserver_name)
-  local prefix_list = _setting_prefix_list[langserver_name] or {}
-  if prefix_list == nil then
-    return {}
-  end
-
-  local res = {}
-  for _, prefix in ipairs(prefix_list) do
-    res[prefix] = _settings[prefix]
-  end
-  return res
+  M.load_settings()
 end
 
 local mt = {}
@@ -103,11 +108,12 @@ mt.__index = function(t, k)
     }
 
     settings = settings or {}
-    return vim.tbl_deep_extend('force', get_langserver_settings(k) or {}, settings)
+    return vim.tbl_deep_extend('force', _settings[k] or {}, settings)
   end
 
   return X
 end
 
+M.settings = _settings
 
 return setmetatable(M, mt)

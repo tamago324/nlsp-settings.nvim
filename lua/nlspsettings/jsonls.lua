@@ -8,6 +8,7 @@ local schemas = {
   -- als                    = '',
   -- angularls              = '',
   -- bashls                 = '',
+  -- beancount              = '',
   -- ccls                   = '',
   -- clangd                 = '',
   -- clojure_lsp            = '',
@@ -40,7 +41,7 @@ local schemas = {
   -- intelephense           = '',
   -- jdtls                  = '',
   -- jedi_language_server   = '',
-  jsonls                    = 'https://raw.githubusercontent.com/tamago324/nlsp-settings.nvim/main/schemas/jsonls.json',
+  jsonls                 = 'https://raw.githubusercontent.com/tamago324/nlsp-settings.nvim/main/schemas/jsonls.json',
   -- julials                = '',
   -- kotlin_language_server = '',
   -- leanls                 = '',
@@ -50,8 +51,10 @@ local schemas = {
   -- ocamllsp               = '',
   -- omnisharp              = '',
   -- perlls                 = '',
+  -- phpactor               = '',
+  -- powershell_es          = '',
   -- purescriptls           = '',
-  pyls                      = 'https://raw.githubusercontent.com/tamago324/nlsp-settings.nvim/main/schemas/pyls.json',
+  pyls                   = 'https://raw.githubusercontent.com/tamago324/nlsp-settings.nvim/main/schemas/pyls.json',
   -- pyls_ms                = '',
   -- pyright                = '',
   -- r_language_server      = '',
@@ -59,20 +62,20 @@ local schemas = {
   -- rls                    = '',
   -- rnix                   = '',
   -- rome                   = '',
-  rust_analyzer             = 'https://raw.githubusercontent.com/tamago324/nlsp-settings.nvim/main/schemas/rust_analyzer.json',
+  rust_analyzer          = 'https://raw.githubusercontent.com/tamago324/nlsp-settings.nvim/main/schemas/rust_analyzer.json',
   -- scry                   = '',
   -- solargraph             = '',
   -- sorbet                 = '',
   -- sourcekit              = '',
   -- sqlls                  = '',
   -- sqls                   = '',
-  sumneko_lua               = 'https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json',
+  sumneko_lua            = 'https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json',
   -- svelte                 = '',
   -- terraformls            = '',
   -- texlab                 = '',
   -- tsserver               = '',
   -- vala_ls                = '',
-  -- vimls                     = '',
+  -- vimls                  = '',
   -- vls                    = '',
   -- vuels                  = '',
   -- yamlls                 = '',
@@ -83,14 +86,19 @@ local schemas = {
 M.get_default_schemas = function()
   local res = {}
 
-  for _, v in pairs(schemas) do
+  for k, v in pairs(schemas) do
     table.insert(res, {
-      fileMatch = { 'nlsp-settings.json' },
+      fileMatch = { k .. '.json' },
       url = v
     })
   end
 
   return res
+end
+
+
+M.get_langserver_names = function()
+  return vim.tbl_keys(schemas)
 end
 
 return M

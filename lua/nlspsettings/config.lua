@@ -1,5 +1,5 @@
 local defaults_values = {
-  config_home = vim.fn.stdpath('config')
+  config_home = vim.fn.stdpath('config') .. '/nlsp-settings'
 }
 
 
@@ -15,4 +15,3 @@ config.get = function(key)
 end
 
 return config
-
