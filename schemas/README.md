@@ -2,7 +2,7 @@
 
 - [ ] [als](#als)
 - [ ] [angularls](#angularls)
-- [ ] [bashls](#bashls)
+- [x] [bashls](https://github.com/bash-lsp/bash-language-server/blob/fa5a65e1a00c663758cfb7ac153e830fda5b4743/vscode-client/package.json)
 - [ ] [beancount]()
 - [ ] [ccls](#ccls)
 - [ ] [clangd](#clangd)
