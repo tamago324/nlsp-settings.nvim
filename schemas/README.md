@@ -79,6 +79,10 @@
 
 ## angularls
 
+https://github.com/angular/vscode-ng-language-service
+
+Original file: [package.json](https://github.com/angular/vscode-ng-language-service/blob/72ee5c71c90f454f554fc2d2d54805fb75d3cf7d/package.json)
+
 ## bashls
 
 https://github.com/bash-lsp/bash-language-server
@@ -108,6 +112,11 @@ Original file: [package.json](https://github.com/bash-lsp/bash-language-server/b
 ## gdscript
 ## ghcide
 ## gopls
+
+https://github.com/golang/tools/tree/master/gopls
+
+Original file: [package.json](https://github.com/golang/vscode-go/blob/master/package.json)
+
 ## graphql
 ## groovyls
 ## haxe_language_server
