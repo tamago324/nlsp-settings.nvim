@@ -18,7 +18,8 @@ M.open_config = function(langserver_name)
     vim.fn.mkdir(home, 'p')
   end
 
-  vim.api.nvim_command(string.format([[edit %s/%s.json]], home, langserver_name))
+  local cmd = (vim.api.nvim_buf_get_option(0, 'modified') and 'split') or 'edit'
+  vim.api.nvim_command(string.format([[%s %s/%s.json]], cmd, home, langserver_name))
 end
 
 M.reload_config = function()

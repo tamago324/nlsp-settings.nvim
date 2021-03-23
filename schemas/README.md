@@ -24,7 +24,7 @@
 - [ ] [fsautocomplete](#fsautocomplete)
 - [ ] [gdscript](#gdscript)
 - [ ] [ghcide](#ghcide)
-- [ ] [gopls](#gopls)
+- [x] [gopls](#gopls)
 - [ ] [graphql](#graphql)
 - [ ] [groovyls](#groovyls)
 - [ ] [haxe_language_server](#haxe_language_server)
