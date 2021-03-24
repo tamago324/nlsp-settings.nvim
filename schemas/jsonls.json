@@ -2,20 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of https://github.com/vscode-langservers/vscode-json-languageserver",
   "properties": {
-    "json.enable": {
-      "type": "boolean",
-      "default": true,
-      "description": "Enable json server"
-    },
-    "json.trace.server": {
-      "type": "string",
-      "default": "off",
-      "enum": [
-        "off",
-        "messages",
-        "verbose"
-      ]
-    },
     "json.execArgv": {
       "type": "array",
       "default": [],
