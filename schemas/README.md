@@ -9,7 +9,7 @@
 - [ ] [clojure_lsp](#clojure_lsp)
 - [ ] [cmake](#cmake)
 - [ ] [codeqlls](#codeqlls)
-- [ ] [cssls](#cssls)
+- [x] [cssls](#cssls)
 - [ ] [dartls](#dartls)
 - [ ] [denols](#denols)
 - [ ] [dhall_lsp_server](#dhall_lsp_server)
@@ -97,6 +97,13 @@ Original file: [package.json](https://github.com/bash-lsp/bash-language-server/b
 ## cmake
 ## codeqlls
 ## cssls
+
+https://github.com/vscode-langservers/vscode-css-languageserver-bin
+
+Original file:
+[package.json](https://github.com/neoclide/coc-css/blob/466552dbba8bf5de530da2e65b03b436b2be0dc5/package.json), 
+[microsoft/vscode-css-languageservice](https://github.com/microsoft/vscode-css-languageservice/blob/bfb6a187a3c38a30e5a6e8ce5145c03a06cf233a/src/services/lintRules.ts#L31)
+
 ## dartls
 ## denols
 ## dhall_lsp_server
