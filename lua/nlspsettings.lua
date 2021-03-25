@@ -61,7 +61,7 @@ local load_setting_json = function(path)
     path = { path, 's' },
   }
 
-  local name = string.match(path, '([^/]+)%.json$')
+  local name = path:match('([^/]+)%.json$')
   _settings[name] = {}
 
   if vim.fn.filereadable(path) == 0 then
@@ -70,10 +70,10 @@ local load_setting_json = function(path)
 
   local decoded, err = json_decode(vim.fn.readfile(path))
   if err ~= nil then
-    return err
+    return true
   end
   if decoded == nil then
-    return nil
+    return
   end
 
   _settings[name] = lsp_json_to_table(decoded)
@@ -158,31 +158,40 @@ M.update_settings = function(server_name)
 
   -- server_name のすべてのクライアントの設定を更新する
   local reloaded_list = {}
-  for _, bufnr in ipairs(a.nvim_list_bufs()) do
-    vim.lsp.for_each_buffer_client(bufnr, function(client, client_id, _)
+  for _, client in ipairs(vim.lsp.get_active_clients()) do
+    if client.name == server_name and (not vim.tbl_contains(reloaded_list, client.id)) then
+      -- 前の JSON の設定を消す
+      -- XXX: 消すだけじゃだめかも... デフォルトの値を設定してあげないといけないかもしれない
+      local settings = remove_keys(client.config.settings, _settings[server_name])
 
-      if client.name == server_name and (not vim.tbl_contains(reloaded_list, client_id)) then
-        -- 前の JSON の設定を消す
-        -- XXX: 消すだけじゃだめかも... デフォルトの値を設定してあげないといけないかもしれない
-        local settings = remove_keys(client.config.settings, _settings[server_name])
-
-        -- 読み込む
-        local err = load_setting_json(string.format('%s/%s.json', config.get('config_home'), server_name))
-        if err ~= nil then
-          errors = true
-        end
-
+      -- 読み込む
+      local err = load_setting_json(string.format('%s/%s.json', config.get('config_home'), server_name))
+      if not err then
         settings = merge_table(settings, _settings[server_name])
         client.workspace_did_change_configuration(settings)
+        -- Neovim 標準の workspace/configuration のハンドラで使っているため、更新しておく
+        -- see https://github.com/neovim/neovim/blob/55d6699dfd58edb53d32270a5a9a567a48ce7c08/runtime/lua/vim/lsp/handlers.lua#L160-L184
+        client.config.settings = settings
 
-        table.insert(reloaded_list, client_id)
+        table.insert(reloaded_list, client.id)
+      else
+        errors = true
       end
-    end)
+    end
   end
 
   return errors
 end
 
+M._setup_autocmds = function()
+  local postfix = config.get('config_home'):match('[^/]+$')
+  local pattern = string.format('*/%s/*.json', postfix)
+
+  vim.cmd( [[augroup NlspSettings]])
+  vim.cmd( [[  autocmd!]])
+  vim.cmd(([[  autocmd BufWritePost %s lua require'nlspsettings.command'._BufWritePost(vim.fn.expand('<afile>'))]]):format(pattern))
+  vim.cmd( [[augroup END]])
+end
 
 M.setup = function(opts)
   vim.validate {
@@ -199,6 +208,7 @@ M.setup = function(opts)
   })
 
   M.load_settings()
+  M._setup_autocmds()
 end
 
 local mt = {}

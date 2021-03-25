@@ -9,4 +9,3 @@ endfunction
 
 command! -nargs=1 -complete=custom,s:complete NlspConfig lua require('nlspsettings.command').open_config(<f-args>)
 command! -nargs=1 -complete=custom,s:complete NlspUpdateSettings lua require('nlspsettings.command').update_settings(<f-args>)
-

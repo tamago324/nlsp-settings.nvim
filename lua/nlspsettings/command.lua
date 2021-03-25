@@ -24,11 +24,31 @@ M.open_config = function(server_name)
 end
 
 M.update_settings = function(server_name)
+  local actived = false
+  for _, client in ipairs(vim.lsp.get_active_clients()) do
+    if client.name == server_name then
+      actived = true
+    end
+  end
+
+  vim.cmd [[redraw]]
+  if not actived then
+    -- a.nvim_echo({{string.format(' Nlsp[%s][Info] The server is not running, so it is not updating.', server_name), 'Normal'}}, false, {})
+    return
+  end
+
   local errors = nlspsettings.update_settings(server_name)
   if errors then
-    a.nvim_echo({{string.format(' [%s] Failed to update the settings.', server_name), 'ErrorMsg'}}, false, {})
+    a.nvim_echo({{string.format(' Nlsp[%s][Error] Failed to update the settings.', server_name), 'ErrorMsg'}}, false, {})
   else
-    a.nvim_echo({{string.format(' [%s] Success to update the settings.', server_name), 'WarningMsg'}}, false, {})
+    a.nvim_echo({{string.format(' Nlsp[%s][Info] Success to update the settings.', server_name), 'Normal'}}, false, {})
+  end
+end
+
+M._BufWritePost = function(afile)
+  if config.get('update_settings_on_save') then
+    local server_name = string.match(afile, '([^/]+)%.json$')
+    M.update_settings(server_name)
   end
 end
 
