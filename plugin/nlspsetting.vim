@@ -8,5 +8,5 @@ function! s:complete(arg, line, pos) abort
 endfunction
 
 command! -nargs=1 -complete=custom,s:complete NlspConfig lua require('nlspsettings.command').open_config(<f-args>)
-command! NlspRealoadConfig lua require('nlspsettings.command').reload_config()
+command! -nargs=1 -complete=custom,s:complete NlspUpdateSettings lua require('nlspsettings.command').update_settings(<f-args>)
 

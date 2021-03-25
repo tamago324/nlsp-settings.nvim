@@ -2,6 +2,7 @@ local jsonls = require'nlspsettings.jsonls'
 local config = require'nlspsettings.config'
 
 local uv = vim.loop
+local a = vim.api
 
 
 local M = {}
@@ -57,18 +58,24 @@ end
 
 local load_setting_json = function(path)
   vim.validate {
-    path = { path, 's' }
+    path = { path, 's' },
   }
+
+  local name = string.match(path, '([^/]+)%.json$')
+  _settings[name] = {}
+
   if vim.fn.filereadable(path) == 0 then
     return
   end
 
-  local decoded = json_decode(vim.fn.readfile(path))
+  local decoded, err = json_decode(vim.fn.readfile(path))
+  if err ~= nil then
+    return err
+  end
   if decoded == nil then
-    return
+    return nil
   end
 
-  local name = string.match(path, '([^/]+)%.json$')
   _settings[name] = lsp_json_to_table(decoded)
 end
 
@@ -97,6 +104,85 @@ M.load_settings = function(path)
     load_setting_json(v)
   end
 end
+
+
+--- テーブルをマージする
+---
+---@param old_tbl table
+---@param new_tbl table
+---@return table
+local merge_table
+merge_table = function(old_tbl, new_tbl)
+  local res = vim.deepcopy(old_tbl)
+
+  for k, _ in pairs(new_tbl) do
+    if old_tbl[k] ~= nil and type(old_tbl[k]) == 'table' and type(new_tbl[k]) == 'table' then
+      res[k] = merge_table(res[k], new_tbl[k])
+    else
+      res[k] = new_tbl[k]
+    end
+  end
+
+  return res
+end
+
+--- client.config.settings から 前の JSON の設定を消す
+---
+---@param client_settings table
+---@param old_json_settings table
+---@return table removed_client_settings
+local remove_keys
+remove_keys = function(client_settings, json_settings)
+  local res = vim.deepcopy(client_settings)
+
+  for k, _ in pairs(json_settings) do
+    if res[k] ~= nil and type(res[k]) == 'table' and type(json_settings[k]) == 'table' then
+      res[k] = remove_keys(res[k], json_settings[k])
+    else
+      -- remove
+      res[k] = nil
+    end
+  end
+
+  return res
+end
+
+--- server_name.json を読み、 workspace/didChangeConfiguration でサーバーに通知する
+---@param server_name any
+M.update_settings = function(server_name)
+  vim.validate {
+    server_name = { server_name, 's' },
+  }
+
+  local errors = nil
+
+  -- server_name のすべてのクライアントの設定を更新する
+  local reloaded_list = {}
+  for _, bufnr in ipairs(a.nvim_list_bufs()) do
+    vim.lsp.for_each_buffer_client(bufnr, function(client, client_id, _)
+
+      if client.name == server_name and (not vim.tbl_contains(reloaded_list, client_id)) then
+        -- 前の JSON の設定を消す
+        -- XXX: 消すだけじゃだめかも... デフォルトの値を設定してあげないといけないかもしれない
+        local settings = remove_keys(client.config.settings, _settings[server_name])
+
+        -- 読み込む
+        local err = load_setting_json(string.format('%s/%s.json', config.get('config_home'), server_name))
+        if err ~= nil then
+          errors = true
+        end
+
+        settings = merge_table(settings, _settings[server_name])
+        client.workspace_did_change_configuration(settings)
+
+        table.insert(reloaded_list, client_id)
+      end
+    end)
+  end
+
+  return errors
+end
+
 
 M.setup = function(opts)
   vim.validate {

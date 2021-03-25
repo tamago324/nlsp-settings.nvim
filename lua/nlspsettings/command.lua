@@ -1,12 +1,13 @@
 local config = require'nlspsettings.config'
 local nlspsettings = require'nlspsettings'
 
+local a = vim.api
+
 local M = {}
 
-
-M.open_config = function(langserver_name)
+M.open_config = function(server_name)
   vim.validate {
-    langserver_name = { langserver_name, 's' }
+    server_name = { server_name, 's' }
   }
 
   local home = config.get('config_home')
@@ -19,11 +20,16 @@ M.open_config = function(langserver_name)
   end
 
   local cmd = (vim.api.nvim_buf_get_option(0, 'modified') and 'split') or 'edit'
-  vim.api.nvim_command(string.format([[%s %s/%s.json]], cmd, home, langserver_name))
+  vim.api.nvim_command(string.format([[%s %s/%s.json]], cmd, home, server_name))
 end
 
-M.reload_config = function()
-  nlspsettings.load_settings()
+M.update_settings = function(server_name)
+  local errors = nlspsettings.update_settings(server_name)
+  if errors then
+    a.nvim_echo({{string.format(' [%s] Failed to update the settings.', server_name), 'ErrorMsg'}}, false, {})
+  else
+    a.nvim_echo({{string.format(' [%s] Success to update the settings.', server_name), 'WarningMsg'}}, false, {})
+  end
 end
 
 return M
