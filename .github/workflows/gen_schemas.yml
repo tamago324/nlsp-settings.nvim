@@ -1,0 +1,32 @@
+name: gen_schemas
+
+on: [push]
+
+jobs:
+  gen_schamges:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: date +%F > todays-date
+      - uses: actions/checkout@v2
+      - name: Restore cache for today's nightly.
+        uses: actions/cache@v1.0.0
+        with:
+          path: _neovim
+          key: ${{ runner.os }}-nightly-${{ hashFiles('todays-date') }}
+      - name: Setup from neovim nightly and run docgen
+        run: |
+          curl -OL https://raw.githubusercontent.com/norcalli/bot-ci/master/scripts/github-actions-setup.sh
+          source github-actions-setup.sh nightly-x64
+          git clone --depth 1 https://github.com/neovim/nvim-lspconfig
+          scripts/gen_schemas.sh
+      - name: Commit changes
+        env:
+          COMMIT_MSG: |
+            [gen_schemas] Update schemas
+        run: |
+          git config user.email "actions@github"
+          git config user.name "Github Actions"
+          git add schemas
+          # Only commit and push if we have changes
+          git diff --quiet && git diff --staged --quiet || (git commit -m "${COMMIT_MSG}"; git push origin HEAD:${GITHUB_REF})

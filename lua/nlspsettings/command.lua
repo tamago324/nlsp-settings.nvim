@@ -52,4 +52,9 @@ M._BufWritePost = function(afile)
   end
 end
 
+M.gen_default_schemas = function()
+  require'nlspsettings.gen_schemas'.gen_schemas()
+end
+
+
 return M

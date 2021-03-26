@@ -5,7 +5,7 @@ local defaults_values = {
 
 
 local config = {}
-config.values = {}
+config.values = vim.deepcopy(defaults_values)
 
 config.set_default_values = function(opts)
   config.values = vim.tbl_deep_extend('force', defaults_values, opts or {})
