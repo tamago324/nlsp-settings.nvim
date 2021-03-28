@@ -3,7 +3,7 @@ name: gen_schemas
 on:
   schedule:
     # １時間に１回実行する
-    - cron: '* */1 * * *'
+    - cron: '0 * * * *'
 
 jobs:
   gen_schamges:
