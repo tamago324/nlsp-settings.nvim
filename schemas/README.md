@@ -50,7 +50,7 @@
 - [x] purescriptls
 - [x] pyls
 - [ ] pyls_ms
-- [ ] pyright
+- [x] pyright
 - [x] r_language_server
 - [ ] racket_langserver
 - [ ] rls
