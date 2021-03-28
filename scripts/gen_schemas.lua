@@ -17,6 +17,14 @@ local function require_all_configs()
   end
 end
 
+local write_tmpfile = function(data)
+  local tmpname = os.tmpname()
+  local file = io.open(tmpname, "w")
+  file:write(data)
+  file:close()
+  return tmpname
+end
+
 local gen_schema = function(url, server_name)
   local json = vim.fn.json_decode(vim.fn.system(string.format('curl -Ls %s', url)))
   local properties
@@ -35,7 +43,8 @@ local gen_schema = function(url, server_name)
     properties = properties
   })
 
-  vim.fn.system(string.format([[echo '%s' | jq -S > %s/%s.json]], schema_data, schemas_dir, server_name))
+  local tmpfile = write_tmpfile(schema_data)
+  vim.fn.system(string.format([[cat %s | jq -S > %s/%s.json]], tmpfile, schemas_dir, server_name))
   return vim.v.shellerror
 end
 
