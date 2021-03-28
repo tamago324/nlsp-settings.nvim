@@ -1,2 +1,76 @@
 # Schemas
 
+- [x] als
+- [ ] angularls
+- [x] bashls
+- [ ] beancount
+- [ ] ccls
+- [ ] clangd
+- [ ] clojure_lsp
+- [ ] cmake
+- [x] codeqlls
+- [x] cssls
+- [x] dartls
+- [ ] denols
+- [ ] dhall_lsp_server
+- [ ] diagnosticls
+- [ ] dockerls
+- [ ] dotls
+- [ ] efm
+- [x] elixirls
+- [x] elmls
+- [ ] erlangls
+- [x] flow
+- [x] fortls
+- [ ] fsautocomplete
+- [ ] gdscript
+- [ ] ghcide
+- [x] gopls
+- [ ] graphql
+- [ ] groovyls
+- [ ] haxe_language_server
+- [x] hie
+- [ ] hls
+- [ ] html
+- [ ] intelephense
+- [ ] jdtls
+- [ ] jedi_language_server
+- [x] jsonls
+- [x] julials
+- [x] kotlin_language_server
+- [x] leanls
+- [ ] metals
+- [x] nimls
+- [ ] ocamlls
+- [ ] ocamllsp
+- [ ] omnisharp
+- [x] perlls
+- [ ] phpactor
+- [ ] powershell_es
+- [x] purescriptls
+- [x] pyls
+- [ ] pyls_ms
+- [ ] pyright
+- [x] r_language_server
+- [ ] racket_langserver
+- [ ] rls
+- [ ] rnix
+- [ ] rome
+- [x] rust_analyzer
+- [ ] scry
+- [x] solargraph
+- [ ] sorbet
+- [x] sourcekit
+- [ ] sqlls
+- [ ] sqls
+- [x] sumneko_lua
+- [ ] svelte
+- [x] terraformls
+- [ ] texlab
+- [ ] tsserver
+- [ ] vala_ls
+- [ ] vimls
+- [ ] vls
+- [x] vuels
+- [x] yamlls
+- [ ] zls
