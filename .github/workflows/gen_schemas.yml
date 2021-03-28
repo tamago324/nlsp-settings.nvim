@@ -4,7 +4,6 @@ on:
   schedule:
     # １時間に１回実行する
     - cron: '* */1 * * *'
-  push:
 
 jobs:
   gen_schamges:
