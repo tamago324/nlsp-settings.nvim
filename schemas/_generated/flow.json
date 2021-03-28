@@ -54,7 +54,7 @@
     },
     "flow.pathToFlow": {
       "default": "flow",
-      "description": "Absolute path to flow binary. Special var ${workspaceFolder} or ${flowconfigDir} can be used in path (NOTE: in windows you can use / and can omit .cmd in path)",
+      "description": "Absolute path to flow binary. Special var ${workspaceFolder} or ${flowconfigDir} can be used in path (NOTE: in windows you can use '/' and can omit '.cmd' in path)",
       "scope": "resource",
       "type": "string"
     },
@@ -66,7 +66,7 @@
     },
     "flow.runOnEdit": {
       "default": true,
-      "description": "If true will run flow on every edit, otherwise will run only when changes are saved (Note: useLSP: true only supports syntax errors)",
+      "description": "If true will run flow on every edit, otherwise will run only when changes are saved (Note: 'useLSP: true' only supports syntax errors)",
       "scope": "resource",
       "type": "boolean"
     },

@@ -1,0 +1,204 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of hie",
+  "properties": {
+    "haskell.completionSnippetsOn": {
+      "default": true,
+      "description": "Show snippets with type information when using code completion",
+      "scope": "resource",
+      "title": "Completion Snippets",
+      "type": "boolean"
+    },
+    "haskell.diagnosticsOnChange": {
+      "default": true,
+      "description": "Compute diagnostics continuously as you type. Turn off to only generate diagnostics on file save.",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.formatOnImportOn": {
+      "default": true,
+      "description": "When adding an import, use the formatter on the result",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.formattingProvider": {
+      "default": "ormolu",
+      "description": "The formatter to use when formatting a document or range. Ensure the plugin is enabled.",
+      "enum": [
+        "brittany",
+        "floskell",
+        "fourmolu",
+        "ormolu",
+        "stylish-haskell",
+        "none"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "haskell.hlintOn": {
+      "default": true,
+      "description": "Get suggestions from hlint",
+      "markdownDeprecationMessage": "**Deprecated**: Please use `#haskell.plugin.hlint.globalOn#` instead.",
+      "scope": "resource",
+      "title": "Hlint",
+      "type": "boolean"
+    },
+    "haskell.logFile": {
+      "default": "",
+      "description": "If set, redirects the logs to a file.",
+      "scope": "resource",
+      "type": "string"
+    },
+    "haskell.plugin.class.globalOn": {
+      "default": true,
+      "description": "Enables type class plugin",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.eval.globalOn": {
+      "default": true,
+      "description": "Enables eval plugin",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.ghcide-type-lenses.config.mode": {
+      "default": true,
+      "description": "Control how type lenses are shown",
+      "enum": [
+        "always",
+        "exported",
+        "diagnostics"
+      ],
+      "enumDescriptions": [
+        "Always displays type lenses of global bindings",
+        "Only display type lenses of exported global bindings",
+        "Follows error messages produced by GHC about missing signatures"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "haskell.plugin.ghcide-type-lenses.globalOn": {
+      "default": true,
+      "description": "Enables type lenses plugin",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.haddockComments.globalOn": {
+      "default": true,
+      "description": "Enables haddock comments plugin",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.hlint.codeActionsOn": {
+      "default": true,
+      "description": "Enables hlint code actions (apply hints)",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.hlint.diagnosticsOn": {
+      "default": true,
+      "description": "Enables hlint diagnostics",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.importLens.codeActionsOn": {
+      "default": true,
+      "description": "Enables explicit imports code actions",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.importLens.codeLensOn": {
+      "default": true,
+      "description": "Enables explicit imports code lenses",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.moduleName.globalOn": {
+      "default": true,
+      "description": "Enables module name plugin",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.pragmas.codeActionsOn": {
+      "default": true,
+      "description": "Enables pragmas code actions",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.pragmas.completionOn": {
+      "default": true,
+      "description": "Enables pragmas completions",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.retrie.globalOn": {
+      "default": true,
+      "description": "Enables retrie plugin",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.splice.globalOn": {
+      "default": true,
+      "description": "Enables splice plugin (expand template haskell definitions)",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.tactic.config.features": {
+      "default": true,
+      "markdownDescription": "Features set used by wingman (tactic) plugin",
+      "scope": "resource",
+      "type": "string"
+    },
+    "haskell.plugin.tactic.config.max_use_ctor_actions": {
+      "default": true,
+      "markdownDescription": "Maximum number of `Use constructor <x>` code actions that can appear",
+      "scope": "resource",
+      "title": "Max number of constructors",
+      "type": "integer"
+    },
+    "haskell.plugin.tactic.globalOn": {
+      "default": true,
+      "description": "Enables wingman (tactic) plugin",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.releasesURL": {
+      "default": "",
+      "description": "An optional URL to override where to check for haskell-language-server releases",
+      "scope": "resource",
+      "type": "string"
+    },
+    "haskell.serverExecutablePath": {
+      "default": "",
+      "description": "Manually set a language server executable. Can be something on the $PATH or a path to an executable itself. Works with ~, ${HOME} and ${workspaceFolder}.",
+      "scope": "resource",
+      "type": "string"
+    },
+    "haskell.trace.server": {
+      "default": "off",
+      "description": "Traces the communication between VS Code and the language server.",
+      "enum": [
+        "off",
+        "messages"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "haskell.updateBehavior": {
+      "default": "keep-up-to-date",
+      "enum": [
+        "keep-up-to-date",
+        "prompt",
+        "never-check"
+      ],
+      "enumDescriptions": [
+        "Always download the latest available version when it is published",
+        "Prompt before upgrading to a newer version",
+        "Don't check for newer versions"
+      ],
+      "markdownDescription": "Determine what to do when a new version of the language server is available.",
+      "scope": "machine",
+      "type": "string"
+    }
+  }
+}

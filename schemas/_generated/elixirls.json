@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of elixirls",
+  "properties": {
+    "elixirLS.dialyzerEnabled": {
+      "default": true,
+      "description": "Run ElixirLS's rapid Dialyzer when code is saved",
+      "type": "boolean"
+    },
+    "elixirLS.dialyzerFormat": {
+      "default": "dialyzer",
+      "description": "Formatter to use for Dialyzer warnings",
+      "enum": [
+        "dialyzer",
+        "dialyxir_short",
+        "dialyxir_long"
+      ],
+      "type": "string"
+    },
+    "elixirLS.dialyzerWarnOpts": {
+      "default": [],
+      "description": "Dialyzer options to enable or disable warnings. See Dialyzer's documentation for options. Note that the \"race_conditions\" option is unsupported",
+      "items": {
+        "enum": [
+          "error_handling",
+          "no_behaviours",
+          "no_contracts",
+          "no_fail_call",
+          "no_fun_app",
+          "no_improper_lists",
+          "no_match",
+          "no_missing_calls",
+          "no_opaque",
+          "no_return",
+          "no_undefined_callbacks",
+          "no_unused",
+          "underspecs",
+          "unknown",
+          "unmatched_returns",
+          "overspecs",
+          "specdiffs"
+        ],
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "elixirLS.fetchDeps": {
+      "default": true,
+      "description": "Automatically fetch project dependencies when compiling",
+      "type": "boolean"
+    },
+    "elixirLS.mixEnv": {
+      "default": "test",
+      "description": "Mix environment to use for compilation",
+      "minLength": 1,
+      "type": "string"
+    },
+    "elixirLS.projectDir": {
+      "description": "Subdirectory containing Mix project if not in the project root",
+      "minLength": 1,
+      "type": "string"
+    },
+    "elixirLS.suggestSpecs": {
+      "default": true,
+      "description": "Suggest @spec annotations inline using Dialyzer's inferred success typings (Requires Dialyzer)",
+      "type": "boolean"
+    }
+  }
+}

@@ -10,7 +10,7 @@
     },
     "ada.displayMethodAncestryOnNavigation": {
       "default": "usage_and_abstract_only",
-      "description": "Controls the policy for displaying overriding and overridden subprograms on navigation requests such as Go To Definition or Go To Implementations.",
+      "description": "Controls the policy for displaying overriding and overridden subprograms on navigation requests such as 'Go To Definition' or 'Go To Implementations'.",
       "enum": [
         "never",
         "usage_and_abstract_only",

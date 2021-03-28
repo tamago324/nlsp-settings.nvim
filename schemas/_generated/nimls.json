@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of nimls",
+  "properties": {
+    "nim.buildCommand": {
+      "default": "c",
+      "description": "Nim build command (c, cpp, doc, etc)",
+      "type": "string"
+    },
+    "nim.buildOnSave": {
+      "default": false,
+      "description": "Execute build task from tasks.json file on save.",
+      "type": "boolean"
+    },
+    "nim.enableNimsuggest": {
+      "default": true,
+      "description": "Enable calling nimsuggest process to provide completion suggestions, hover suggestions, etc.\nThis option requires restart to take effect.",
+      "type": "boolean"
+    },
+    "nim.licenseString": {
+      "default": "",
+      "description": "Optional license text that will be inserted on nim file creation.",
+      "type": "string"
+    },
+    "nim.lintOnSave": {
+      "default": true,
+      "description": "Check code by using 'nim check' on save.",
+      "type": "boolean"
+    },
+    "nim.logNimsuggest": {
+      "default": false,
+      "description": "Enable verbose logging of nimsuggest to use profile directory.",
+      "type": "boolean"
+    },
+    "nim.nimprettyIndent": {
+      "default": 0,
+      "description": "Nimpretty: set the number of spaces that is used for indentation\n--indent:0 means autodetection (default behaviour).",
+      "type": "integer"
+    },
+    "nim.nimprettyMaxLineLen": {
+      "default": 80,
+      "description": "Nimpretty: set the desired maximum line length (default: 80).",
+      "type": "integer"
+    },
+    "nim.nimsuggestRestartTimeout": {
+      "default": 60,
+      "description": "Nimsuggest will be restarted after this timeout in minutes, if 0 then restart disabled.\nThis option requires restart to take effect.",
+      "type": "integer"
+    },
+    "nim.project": {
+      "default": [],
+      "description": "Nim project file, if empty use current selected.",
+      "type": "array"
+    },
+    "nim.projectMapping": {
+      "default": {},
+      "description": "For non project mode list of per file project mapping using regex, for example ```{\"(.*).inim\": \"$1.nim\"}```",
+      "type": "object"
+    },
+    "nim.runOutputDirectory": {
+      "default": "",
+      "description": "Output directory for run selected file command. The directory is relative to the workspace root.",
+      "type": "string"
+    },
+    "nim.test-project": {
+      "default": "",
+      "description": "Optional test project.",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of julials",
+  "properties": {
+    "julia.NumThreads": {
+      "default": null,
+      "description": "Number of threads to use for Julia processes.",
+      "scope": "machine-overridable",
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "julia.additionalArgs": {
+      "default": [],
+      "description": "Additional Julia arguments.",
+      "type": "array"
+    },
+    "julia.editor": {
+      "default": null,
+      "markdownDescription": "Command to open files from the REPL (via setting the `JULIA_EDITOR` environment variable). Defaults to `code`/`code-insiders` if unset.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "julia.enableCrashReporter": {
+      "default": null,
+      "description": "Enable crash reports to be sent to the julia VS Code extension developers.",
+      "scope": "window",
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "julia.enableTelemetry": {
+      "default": null,
+      "description": "Enable usage data and errors to be sent to the julia VS Code extension developers.",
+      "scope": "window",
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "julia.environmentPath": {
+      "default": null,
+      "description": "Path to a julia environment. VS Code needs to be reloaded for changes to take effect.",
+      "scope": "window",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "julia.executablePath": {
+      "default": "",
+      "description": "Points to the julia executable.",
+      "scope": "machine",
+      "type": "string"
+    },
+    "julia.execution.codeInREPL": {
+      "default": false,
+      "description": "Print executed code in REPL and append it to the REPL history.",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "julia.execution.inlineResults.colors": {
+      "default": {},
+      "markdownDescription": "Customizes the colors of inline results when they are displayed in the editor. \n* Available keys for this setting are : \n\t* `foreground`: foreground text color\n\t* `foreground-light`: foreground text color in light themes \n\t* `foreground-dark`: foreground text color in dark themes\n\t* `background`: background color\n\t* `background-light`: background color in light themes\n\t* `background-dark`: background color in dark themes\n\t* `accent`: accent color for normal execution results\n\t* `accent-error`: accent color for error execution results \n* Accepted values are: \n\t* valid CSS color strings\n\t* VS Code [Theme Colors](https://code.visualstudio.com/api/references/theme-color), prefixed by `vscode.` (i.e. `vscode.editor.foreground`)",
+      "scope": "window",
+      "type": "object"
+    },
+    "julia.execution.resultType": {
+      "default": "REPL",
+      "description": "Specifies how to show inline execution results",
+      "enum": [
+        "REPL",
+        "inline",
+        "both"
+      ],
+      "enumDescriptions": [
+        "Shows inline execution results in REPL",
+        "Shows inline execution results as inline bubbles",
+        "Shows inline execution results in REPL and inline bubbles"
+      ],
+      "type": "string"
+    },
+    "julia.format.calls": {
+      "default": true,
+      "description": "Format function calls.",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "julia.format.comments": {
+      "default": true,
+      "description": "Format comments.",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "julia.format.curly": {
+      "default": true,
+      "description": "Format braces.",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "julia.format.docs": {
+      "default": true,
+      "description": "Format inline documentation.",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "julia.format.indent": {
+      "default": 4,
+      "description": "Indent size for formatting.",
+      "scope": "window",
+      "type": "integer"
+    },
+    "julia.format.indents": {
+      "default": true,
+      "description": "Format file indents.",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "julia.format.iterOps": {
+      "default": true,
+      "description": "Format loop iterators.",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "julia.format.keywords": {
+      "default": true,
+      "description": "Ensure single spacing following keywords.",
+      "scope": "window",
+      "type": "bool"
+    },
+    "julia.format.kwarg": {
+      "default": "none",
+      "description": "Format whitespace around function keyword arguments.",
+      "enum": [
+        "none",
+        "single",
+        "off"
+      ],
+      "scope": "window",
+      "type": "string"
+    },
+    "julia.format.ops": {
+      "default": true,
+      "description": "Format whitespace around operators.",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "julia.format.tuples": {
+      "default": true,
+      "description": "Format tuples.",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "julia.lint.call": {
+      "default": true,
+      "description": "This compares  call signatures against all known methods for the called function. Calls with too many or too few arguments, or unknown keyword parameters are highlighted.",
+      "type": "boolean"
+    },
+    "julia.lint.constif": {
+      "default": true,
+      "description": "Check for constant conditionals in if statements that result in branches never being reached..",
+      "type": "boolean"
+    },
+    "julia.lint.datadecl": {
+      "default": true,
+      "description": "Check variables used in type declarations are datatypes.",
+      "type": "boolean"
+    },
+    "julia.lint.disabledDirs": {
+      "default": [
+        "docs",
+        "test"
+      ],
+      "markdownDescription": "Specifies sub-directories in [a package directory](https://docs.julialang.org/en/v1/manual/code-loading/#Package-directories-1) where only basic linting is. This drastically lowers the chance for false positives.",
+      "type": "array"
+    },
+    "julia.lint.iter": {
+      "default": true,
+      "description": "Check iterator syntax of loops. Will identify, for example, attempts to iterate over single values.",
+      "type": "boolean"
+    },
+    "julia.lint.lazy": {
+      "default": true,
+      "description": "Check for deterministic lazy boolean operators.",
+      "type": "boolean"
+    },
+    "julia.lint.missingrefs": {
+      "default": "none",
+      "description": "Highlight unknown symbols. The `symbols` option will not mark unknown fields.",
+      "enum": [
+        "none",
+        "symbols",
+        "all"
+      ],
+      "type": "string"
+    },
+    "julia.lint.modname": {
+      "default": true,
+      "description": "Check submodule names do not shadow their parent's name.",
+      "type": "boolean"
+    },
+    "julia.lint.nothingcomp": {
+      "default": true,
+      "description": "Check for use of `==` rather than `===` when comparing against `nothing`. ",
+      "type": "boolean"
+    },
+    "julia.lint.pirates": {
+      "default": true,
+      "description": "Check for type piracy - the overloading of external functions with methods specified for external datatypes. 'External' here refers to imported code.",
+      "type": "boolean"
+    },
+    "julia.lint.run": {
+      "default": true,
+      "description": "Run the linter on active files.",
+      "type": "boolean"
+    },
+    "julia.lint.typeparam": {
+      "default": true,
+      "description": "Check parameters declared in `where` statements or datatype declarations are used.",
+      "type": "boolean"
+    },
+    "julia.lint.useoffuncargs": {
+      "default": true,
+      "description": "Check that all declared arguments are used within the function body.",
+      "type": "boolean"
+    },
+    "julia.liveTestFile": {
+      "default": "test/runtests.jl",
+      "description": "A workspace relative path to a Julia file that contains the tests that should be run for live testing.",
+      "scope": "window",
+      "type": "string"
+    },
+    "julia.packageServer": {
+      "default": "",
+      "description": "Julia package server. Set's the `JULIA_PKG_SERVER` environment variable *before* starting a Julia process. Leave this empty to use the systemwide default. Requires a restart of the Julia process.",
+      "scope": "machine-overridable",
+      "type": "string"
+    },
+    "julia.trace.server": {
+      "default": "off",
+      "description": "Traces the communication between VS Code and the language server.",
+      "enum": [
+        "off",
+        "messages",
+        "verbose"
+      ],
+      "scope": "window",
+      "type": "string"
+    },
+    "julia.useCustomSysimage": {
+      "default": false,
+      "description": "Use an existing custom sysimage when starting the REPL",
+      "scope": "application",
+      "type": "boolean"
+    },
+    "julia.usePlotPane": {
+      "default": true,
+      "description": "Display plots within VS Code. Might require a restart of the Julia process.",
+      "type": "boolean"
+    },
+    "julia.useProgressFrontend": {
+      "default": true,
+      "markdownDescription": "Display [progress bars](https://github.com/JunoLab/ProgressLogging.jl) within VS Code.",
+      "type": "boolean"
+    },
+    "julia.useRevise": {
+      "default": true,
+      "description": "Load Revise.jl on startup of the REPL.",
+      "type": "boolean"
+    }
+  }
+}

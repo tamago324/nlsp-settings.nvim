@@ -1,0 +1,159 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of leanls",
+  "properties": {
+    "lean.executablePath": {
+      "default": "lean",
+      "markdownDescription": "Path to the Lean executable to use. **DO NOT CHANGE** from the default `lean` unless you know what you're doing!",
+      "type": "string"
+    },
+    "lean.extraOptions": {
+      "default": [],
+      "items": {
+        "description": "a single command-line argument",
+        "type": "string"
+      },
+      "markdownDescription": "Extra command-line options for the Lean server.",
+      "type": "array"
+    },
+    "lean.infoViewAllErrorsOnLine": {
+      "default": false,
+      "markdownDescription": "Info view: show all errors on the current line, instead of just the ones on the right of the cursor.",
+      "type": "boolean"
+    },
+    "lean.infoViewAutoOpen": {
+      "default": true,
+      "markdownDescription": "Info view: open info view when Lean extension is activated.",
+      "type": "boolean"
+    },
+    "lean.infoViewAutoOpenShowGoal": {
+      "default": true,
+      "markdownDescription": "Info view: auto open shows goal and messages for the current line (instead of all messages for the whole file)",
+      "type": "boolean"
+    },
+    "lean.infoViewFilterIndex": {
+      "default": -1,
+      "markdownDescription": "Index of the filter applied to the tactic state (in the array infoViewTacticStateFilters). An index of -1 means no filter is applied.",
+      "type": "number"
+    },
+    "lean.infoViewStyle": {
+      "default": "",
+      "markdownDescription": "Add an additional CSS snippet to the info view.",
+      "type": "string"
+    },
+    "lean.infoViewTacticStateFilters": {
+      "default": [
+        {
+          "flags": "",
+          "match": false,
+          "regex": "^_"
+        },
+        {
+          "flags": "",
+          "match": true,
+          "name": "goals only",
+          "regex": "^(⊢|\\d+ goals|case|$)"
+        }
+      ],
+      "items": {
+        "description": "an object with required properties 'regex': string, 'match': boolean, and 'flags': string, and optional property 'name': string",
+        "properties": {
+          "flags": {
+            "description": "additional flags passed to the RegExp constructor, e.g. 'i' for ignore case",
+            "type": "string"
+          },
+          "match": {
+            "description": "whether tactic state lines matching the value of 'regex' should be included (true) or excluded (false)",
+            "type": "boolean"
+          },
+          "name": {
+            "description": "name displayed in the dropdown",
+            "type": "string"
+          },
+          "regex": {
+            "description": "a properly-escaped regex string, e.g. '^_' matches any string beginning with an underscore",
+            "type": "string"
+          }
+        },
+        "required": [
+          "regex",
+          "match",
+          "flags"
+        ],
+        "type": "object"
+      },
+      "markdownDescription": "An array of objects containing regular expression strings that can be used to filter (positively or negatively) the tactic state in the info view. Set to an empty array `[]` to hide the filter select dropdown.\n \n Each object must contain the following keys: 'regex': string, 'match': boolean, 'flags': string.\n 'regex' is a properly-escaped regex string,\n 'match' = true (false) means blocks in the tactic state matching 'regex' will be included (excluded) in the info view, \n 'flags' are additional flags passed to the JavaScript `RegExp` constructor.\n The 'name' key is optional and may contain a string that is displayed in the dropdown instead of the full regex details.",
+      "type": "array"
+    },
+    "lean.input.customTranslations": {
+      "default": {},
+      "items": {
+        "description": "Unicode character to translate to",
+        "type": "string"
+      },
+      "markdownDescription": "Add additional input Unicode translations. Example: `{\"foo\": \"☺\"}` will correct `\\foo` to `☺`.",
+      "type": "object"
+    },
+    "lean.input.eagerReplacementEnabled": {
+      "default": true,
+      "markdownDescription": "Enable eager replacement of abbreviations that uniquely identify a symbol.",
+      "type": "boolean"
+    },
+    "lean.input.enabled": {
+      "default": true,
+      "markdownDescription": "Enable Lean input mode.",
+      "type": "boolean"
+    },
+    "lean.input.languages": {
+      "default": [
+        "lean"
+      ],
+      "items": {
+        "description": "the name of a language, e.g. 'lean', 'markdown'",
+        "type": "string"
+      },
+      "markdownDescription": "Enable Lean Unicode input in other file types.",
+      "type": "array"
+    },
+    "lean.input.leader": {
+      "default": "\\",
+      "markdownDescription": "Leader key to trigger input mode.",
+      "type": "string"
+    },
+    "lean.leanpkgPath": {
+      "default": "leanpkg",
+      "markdownDescription": "Path to the leanpkg executable to use. **DO NOT CHANGE** from the default `leanpkg` unless you know what you're doing!",
+      "type": "string"
+    },
+    "lean.memoryLimit": {
+      "default": 4096,
+      "markdownDescription": "Set a memory limit (in megabytes) for the Lean server.",
+      "type": "number"
+    },
+    "lean.progressMessages": {
+      "default": false,
+      "markdownDescription": "Show error messages where Lean is still checking.",
+      "type": "boolean"
+    },
+    "lean.roiModeDefault": {
+      "default": "visible",
+      "markdownDescription": "Set the default region of interest mode (nothing, visible, lines, linesAndAbove, open, or project) for the Lean extension.",
+      "type": "string"
+    },
+    "lean.timeLimit": {
+      "default": 100000,
+      "markdownDescription": "Set a deterministic timeout (it is approximately the maximum number of memory allocations in thousands) for the Lean server.",
+      "type": "number"
+    },
+    "lean.typeInStatusBar": {
+      "default": true,
+      "markdownDescription": "Show the type of term under the cursor in the status bar.",
+      "type": "boolean"
+    },
+    "lean.typesInCompletionList": {
+      "default": false,
+      "markdownDescription": "Display types of all items in the list of completions. By default, only the type of the highlighted item is shown.",
+      "type": "boolean"
+    }
+  }
+}

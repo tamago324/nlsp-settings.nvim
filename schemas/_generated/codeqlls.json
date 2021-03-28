@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of codeqlls",
+  "properties": {
+    "codeQL.cli.executablePath": {
+      "default": "",
+      "description": "Path to the CodeQL executable that should be used by the CodeQL extension. The executable is named `codeql` on Linux/Mac and `codeql.exe` on Windows. If empty, the extension will look for a CodeQL executable on your shell PATH, or if CodeQL is not on your PATH, download and manage its own CodeQL executable.",
+      "scope": "machine",
+      "type": "string"
+    },
+    "codeQL.queryHistory.format": {
+      "default": "%q on %d - %s, %r result count [%t]",
+      "description": "Default string for how to label query history items. %t is the time of the query, %q is the query name, %d is the database name, %r is the number of results, and %s is a status string.",
+      "type": "string"
+    },
+    "codeQL.resultsDisplay.pageSize": {
+      "default": 200,
+      "description": "Max number of query results to display per page in the results view.",
+      "type": "integer"
+    },
+    "codeQL.runningQueries.autoSave": {
+      "default": false,
+      "description": "Enable automatically saving a modified query file when running a query.",
+      "type": "boolean"
+    },
+    "codeQL.runningQueries.cacheSize": {
+      "default": null,
+      "description": "Maximum size of the disk cache (in MB). Leave blank to allow the evaluator to automatically adjust the size of the disk cache based on the size of the codebase and the complexity of the queries being executed.",
+      "minimum": 1024,
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "codeQL.runningQueries.debug": {
+      "default": false,
+      "description": "Enable debug logging and tuple counting when running CodeQL queries. This information is useful for debugging query performance.",
+      "type": "boolean"
+    },
+    "codeQL.runningQueries.maxQueries": {
+      "default": 20,
+      "description": "Max number of simultaneous queries to run using the 'CodeQL: Run Queries' command.",
+      "type": "integer"
+    },
+    "codeQL.runningQueries.memory": {
+      "default": null,
+      "description": "Memory (in MB) to use for running queries. Leave blank for CodeQL to choose a suitable value based on your system's available memory.",
+      "minimum": 1024,
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "codeQL.runningQueries.numberOfThreads": {
+      "default": 1,
+      "description": "Number of threads for running queries.",
+      "maximum": 1024,
+      "minimum": 0,
+      "type": "integer"
+    },
+    "codeQL.runningQueries.saveCache": {
+      "default": false,
+      "description": "Aggressively save intermediate results to the disk cache. This may speed up subsequent queries if they are similar. Be aware that using this option will greatly increase disk usage and initial evaluation time.",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "codeQL.runningQueries.timeout": {
+      "default": null,
+      "description": "Timeout (in seconds) for running queries. Leave blank or set to zero for no timeout.",
+      "maximum": 2147483647,
+      "minimum": 0,
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "codeQL.runningTests.additionalTestArguments": {
+      "default": [],
+      "markdownDescription": "Additional command line arguments to pass to the CLI when [running tests](https://codeql.github.com/docs/codeql-cli/manual/test-run/). This setting should be an array of strings, each containing an argument to be passed.",
+      "scope": "machine",
+      "type": "array"
+    },
+    "codeQL.runningTests.numberOfThreads": {
+      "default": 1,
+      "description": "Number of threads for running CodeQL tests.",
+      "maximum": 1024,
+      "minimum": 0,
+      "scope": "window",
+      "type": "integer"
+    },
+    "codeQL.telemetry.enableTelemetry": {
+      "default": false,
+      "markdownDescription": "Specifies whether to send CodeQL usage telemetry. This setting AND the global `#telemetry.enableTelemetry#` setting must be checked for telemetry to be sent to GitHub. For more information, see the [telemetry documentation](https://codeql.github.com/docs/codeql-for-visual-studio-code/about-telemetry-in-codeql-for-visual-studio-code)",
+      "scope": "application",
+      "type": "boolean"
+    },
+    "codeQL.telemetry.logTelemetry": {
+      "default": false,
+      "description": "Specifies whether or not to write telemetry events to the extension log.",
+      "scope": "application",
+      "type": "boolean"
+    }
+  }
+}

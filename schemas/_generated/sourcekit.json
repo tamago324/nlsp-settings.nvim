@@ -4,7 +4,7 @@
   "properties": {
     "sourcekit-lsp.serverArguments": {
       "default": [],
-      "description": "Arguments to pass to sourcekit-lsp. Argument keys and values should be provided as separate entries in the array e.g. [--log-level, debug]",
+      "description": "Arguments to pass to sourcekit-lsp. Argument keys and values should be provided as separate entries in the array e.g. ['--log-level', 'debug']",
       "items": {
         "type": "string"
       },

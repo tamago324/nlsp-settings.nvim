@@ -34,13 +34,13 @@
     },
     "fortran-ls.hoverSignature": {
       "default": false,
-      "description": "Show signature information in hover for argument (also enables variableHover).",
+      "description": "Show signature information in hover for argument (also enables 'variableHover').",
       "scope": "resource",
       "type": "boolean"
     },
     "fortran-ls.includeSymbolMem": {
       "default": true,
-      "description": "Include type members in document outline (also used for Go to Symbol in File)",
+      "description": "Include type members in document outline (also used for 'Go to Symbol in File')",
       "scope": "resource",
       "type": "boolean"
     },
