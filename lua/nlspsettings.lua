@@ -76,7 +76,7 @@ local load_setting_json = function(path)
     return
   end
 
-  _settings[name] = lsp_json_to_table(decoded)
+  _settings[name] = lsp_json_to_table(decoded) or {}
 end
 
 local get_settings_files = function(path)
