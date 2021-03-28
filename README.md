@@ -12,8 +12,6 @@ You can also use it with [jsonls](https://github.com/vscode-langservers/vscode-j
 
 
 
-
-
 ## Requirements
 
 * Neovim
@@ -51,6 +49,8 @@ require"lspconfig".jsonls.setup {
 
 
 ### Step2. Write settings.
+
+For a list of language servers that have JSON Schema, see [here](schemas/README.md).
 
 Example) Settings the [sumneko_lua](https://github.com/sumneko/lua-language-server) settings:
 
