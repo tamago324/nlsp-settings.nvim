@@ -1,6 +1,9 @@
 name: gen_schemas
 
-on: [push]
+on:
+  schedule:
+    # １時間に１回実行する
+    - cron: '* */1 * * *'
 
 jobs:
   gen_schamges:
