@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of als",
+  "properties": {
+    "ada.defaultCharset": {
+      "default": "iso-8859-1",
+      "description": "The character set to use while reading files from disk.",
+      "scope": "resource",
+      "type": "string"
+    },
+    "ada.displayMethodAncestryOnNavigation": {
+      "default": "usage_and_abstract_only",
+      "description": "Controls the policy for displaying overriding and overridden subprograms on navigation requests such as Go To Definition or Go To Implementations.",
+      "enum": [
+        "never",
+        "usage_and_abstract_only",
+        "definition_only",
+        "always"
+      ],
+      "enumDescriptions": [
+        "Never list overridding and/or overridden suprograms.",
+        "List overridding and/or overridden suprograms on dispatching calls and on abstract subprogram declarations.",
+        "List overridding and/or overridden suprograms on declarations only.",
+        "Always list overridding and/or overridden suprograms when possible."
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "ada.enableDiagnostics": {
+      "default": true,
+      "description": "The emission of diagnostics.",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "ada.projectFile": {
+      "default": "",
+      "description": "Project file (*.gpr) for given workspace.",
+      "scope": "resource",
+      "type": "string"
+    },
+    "ada.renameInComments": {
+      "default": false,
+      "description": "Enable editing Ada comments while executing `textDocument/rename` reques.",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "ada.scenarioVariables": {
+      "default": {},
+      "description": "Scenario variables.",
+      "scope": "resource",
+      "type": "object"
+    },
+    "ada.trace.server": {
+      "default": "off",
+      "description": "Traces the communication between VSCode and the language server.",
+      "enum": [
+        "off",
+        "messages",
+        "verbose"
+      ],
+      "scope": "window",
+      "type": "string"
+    }
+  }
+}

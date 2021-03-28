@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of perlls",
+  "properties": {
+    "perl.debugAdapterPort": {
+      "default": "13603",
+      "description": "port to use for connection between vscode and debug adapter inside Perl::LanguageServer. On a multi user system every user must use a differnt port.",
+      "type": "string"
+    },
+    "perl.disableCache": {
+      "default": false,
+      "description": "if true, the LanguageServer will not cache the result of parsing source files on disk, so it can be used within readonly directories",
+      "type": "boolean"
+    },
+    "perl.enable": {
+      "default": true,
+      "description": "enable/disable this extension",
+      "type": "boolean"
+    },
+    "perl.fileFilter": {
+      "default": null,
+      "description": "array for filtering perl file, defaults to *.pm|*.pl",
+      "type": "array"
+    },
+    "perl.ignoreDirs": {
+      "default": null,
+      "description": "directories to ignore, defaults to .vscode, .git, .svn",
+      "type": "array"
+    },
+    "perl.logFile": {
+      "default": null,
+      "description": "If set, log output is written to the given logfile, insetad of displaying it in the vscode output pane. Log output is always appended so you are responsible for rotating the file.",
+      "type": "string"
+    },
+    "perl.logLevel": {
+      "default": 0,
+      "description": "Log level 0-2",
+      "type": "integer"
+    },
+    "perl.pathMap": {
+      "default": null,
+      "description": "mapping of local to remote paths",
+      "type": "array"
+    },
+    "perl.perlCmd": {
+      "default": null,
+      "description": "defaults to perl",
+      "type": "string"
+    },
+    "perl.perlInc": {
+      "default": null,
+      "description": "array with paths to add to perl library path. This setting is used by the syntax checker and for the debugee and also for the LanguageServer itself.",
+      "type": "array"
+    },
+    "perl.showLocalVars": {
+      "default": false,
+      "description": "if true, show also local variables in symbol view",
+      "type": "boolean"
+    },
+    "perl.sshAddr": {
+      "default": null,
+      "description": "ip address of remote system",
+      "type": "string"
+    },
+    "perl.sshArgs": {
+      "default": null,
+      "description": "optional arguments for ssh",
+      "type": "string"
+    },
+    "perl.sshCmd": {
+      "default": null,
+      "description": "defaults to ssh on unix and plink on windows",
+      "type": "string"
+    },
+    "perl.sshPort": {
+      "default": null,
+      "description": "optional, port for ssh to remote system",
+      "type": "string"
+    },
+    "perl.sshUser": {
+      "default": null,
+      "description": "user for ssh login",
+      "type": "string"
+    },
+    "perl.sshWorkspaceRoot": {
+      "default": null,
+      "description": "path of the workspace root on remote system",
+      "type": "string"
+    }
+  }
+}
