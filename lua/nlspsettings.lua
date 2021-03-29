@@ -154,33 +154,27 @@ M.update_settings = function(server_name)
     server_name = { server_name, 's' },
   }
 
-  local errors = nil
+  local err = load_setting_json(string.format('%s/%s.json', config.get('config_home'), server_name))
+  if err then
+    return true
+  end
 
   -- server_name のすべてのクライアントの設定を更新する
-  local reloaded_list = {}
   for _, client in ipairs(vim.lsp.get_active_clients()) do
-    if client.name == server_name and (not vim.tbl_contains(reloaded_list, client.id)) then
+    if client.name == server_name then
       -- 前の JSON の設定を消す
       -- XXX: 消すだけじゃだめかも... デフォルトの値を設定してあげないといけないかもしれない
       local settings = remove_keys(client.config.settings, _settings[server_name])
+      settings = merge_table(settings, _settings[server_name])
+      client.workspace_did_change_configuration(settings)
 
-      -- 読み込む
-      local err = load_setting_json(string.format('%s/%s.json', config.get('config_home'), server_name))
-      if not err then
-        settings = merge_table(settings, _settings[server_name])
-        client.workspace_did_change_configuration(settings)
-        -- Neovim 標準の workspace/configuration のハンドラで使っているため、更新しておく
-        -- see https://github.com/neovim/neovim/blob/55d6699dfd58edb53d32270a5a9a567a48ce7c08/runtime/lua/vim/lsp/handlers.lua#L160-L184
-        client.config.settings = settings
-
-        table.insert(reloaded_list, client.id)
-      else
-        errors = true
-      end
+      -- Neovim 標準の workspace/configuration のハンドラで使っているため、更新しておく
+      -- see https://github.com/neovim/neovim/blob/55d6699dfd58edb53d32270a5a9a567a48ce7c08/runtime/lua/vim/lsp/handlers.lua#L160-L184
+      client.config.settings = settings
     end
   end
 
-  return errors
+  return false
 end
 
 M._setup_autocmds = function()
