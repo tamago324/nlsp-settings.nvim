@@ -217,7 +217,7 @@ mt.__index = function(t, k)
     }
 
     settings = settings or {}
-    return vim.tbl_deep_extend('force', _settings[k] or {}, settings)
+    return vim.tbl_deep_extend('keep', _settings[k] or {}, settings)
   end
 
   return X
