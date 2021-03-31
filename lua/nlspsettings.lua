@@ -113,6 +113,16 @@ M.load_settings = function(path)
   end
 end
 
+local get_server_settings = function(server_name)
+  -- Priority: JSON settings > setup() settings > default_config.settings
+
+  local server = servers[server_name]
+  local default_settings = lspconfig[server_name].document_config.default_config.settings
+
+  local new_settings = vim.tbl_deep_extend('keep', server.settings, server.config_settings)
+  return vim.tbl_deep_extend('keep', new_settings, default_settings or {})
+end
+
 --- server_name.json を読み、 workspace/didChangeConfiguration でサーバーに通知する
 ---@param server_name any
 M.update_settings = function(server_name)
@@ -125,12 +135,7 @@ M.update_settings = function(server_name)
     return true
   end
 
-  -- Priority: JSON settings > setup() settings > default_config.settings
-  local server = servers[server_name]
-  local new_settings = vim.tbl_deep_extend('keep', server.settings, server.config_settings)
-  local default_settings = lspconfig[server_name].document_config.default_config.settings
-  new_settings = vim.tbl_deep_extend('keep', new_settings, default_settings or {})
-
+  local new_settings = get_server_settings(server_name)
   -- -- 新しく接続するクライアントのために設定する
   -- lspconfig[server_name].settings = new_settings
 
@@ -145,6 +150,13 @@ M.update_settings = function(server_name)
   end
 
   return false
+end
+
+M.make_on_new_config = function(on_new_config)
+  return lspconfig.util.add_hook_before(on_new_config, function(new_config, _root_dir)
+    -- for `workspace/configuration`
+    new_config.settings = get_server_settings(new_config.name)
+  end)
 end
 
 M._setup_autocmds = function()

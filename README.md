@@ -98,8 +98,11 @@ nlspsettings.setup()
 lspconfig.sumneko_lua.setup{
   cmd = { '/path/to/bin/Linux/lua-language-server', '-E', '/path/to/main.lua', },
 
+  -- Required for automatic settings update.
+  on_new_config = nlspsettings.make_on_new_config()
+
   -- Use `nlspsettings.xxx.get()` to load the `settings` from `sumneko_lua.json`
-  settings = nlspsettings.sumneko_lua.get()
+  settings = nlspsettings.sumneko_lua.get(),
 
   -- -- It is also possible to merge other `settings` by passing the table.
   -- -- If it is the same key, it will be overwritten by the setting value in the JSON file.
