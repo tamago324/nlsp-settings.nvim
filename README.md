@@ -102,6 +102,7 @@ lspconfig.sumneko_lua.setup{
   settings = nlspsettings.sumneko_lua.get()
 
   -- -- It is also possible to merge other `settings` by passing the table.
+  -- -- If it is the same key, it will be overwritten by the setting value in the JSON file.
   -- settings = nlspsettings.sumneko_lua.get {
   --   Lua = {
   --     workspace = {

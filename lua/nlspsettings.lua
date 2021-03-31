@@ -1,5 +1,6 @@
 local jsonls = require'nlspsettings.jsonls'
 local config = require'nlspsettings.config'
+local lspconfig = require'lspconfig'
 
 local uv = vim.loop
 local a = vim.api
@@ -7,7 +8,12 @@ local a = vim.api
 
 local M = {}
 
-local _settings = {}
+local servers = {
+  -- server_name = {
+  --   settings = {},
+  --   config_settings = {}
+  -- }
+}
 
 
 --- Decodes from JSON.
@@ -62,7 +68,8 @@ local load_setting_json = function(path)
   }
 
   local name = path:match('([^/]+)%.json$')
-  _settings[name] = {}
+  servers[name] = {}
+  servers[name].settings = {}
 
   if vim.fn.filereadable(path) == 0 then
     return
@@ -76,7 +83,8 @@ local load_setting_json = function(path)
     return
   end
 
-  _settings[name] = lsp_json_to_table(decoded) or {}
+  servers[name].settings = lsp_json_to_table(decoded) or {}
+  servers[name].config_settings = {}
 end
 
 local get_settings_files = function(path)
@@ -105,48 +113,6 @@ M.load_settings = function(path)
   end
 end
 
-
---- テーブルをマージする
----
----@param old_tbl table
----@param new_tbl table
----@return table
-local merge_table
-merge_table = function(old_tbl, new_tbl)
-  local res = vim.deepcopy(old_tbl)
-
-  for k, _ in pairs(new_tbl) do
-    if old_tbl[k] ~= nil and type(old_tbl[k]) == 'table' and type(new_tbl[k]) == 'table' then
-      res[k] = merge_table(res[k], new_tbl[k])
-    else
-      res[k] = new_tbl[k]
-    end
-  end
-
-  return res
-end
-
---- client.config.settings から 前の JSON の設定を消す
----
----@param client_settings table
----@param old_json_settings table
----@return table removed_client_settings
-local remove_keys
-remove_keys = function(client_settings, json_settings)
-  local res = vim.deepcopy(client_settings)
-
-  for k, _ in pairs(json_settings) do
-    if res[k] ~= nil and type(res[k]) == 'table' and type(json_settings[k]) == 'table' then
-      res[k] = remove_keys(res[k], json_settings[k])
-    else
-      -- remove
-      res[k] = nil
-    end
-  end
-
-  return res
-end
-
 --- server_name.json を読み、 workspace/didChangeConfiguration でサーバーに通知する
 ---@param server_name any
 M.update_settings = function(server_name)
@@ -159,18 +125,22 @@ M.update_settings = function(server_name)
     return true
   end
 
+  -- Priority: JSON settings > setup() settings > default_config.settings
+  local server = servers[server_name]
+  local new_settings = vim.tbl_deep_extend('keep', server.settings, server.config_settings)
+  local default_settings = lspconfig[server_name].document_config.default_config.settings
+  new_settings = vim.tbl_deep_extend('keep', new_settings, default_settings or {})
+
+  -- -- 新しく接続するクライアントのために設定する
+  -- lspconfig[server_name].settings = new_settings
+
   -- server_name のすべてのクライアントの設定を更新する
   for _, client in ipairs(vim.lsp.get_active_clients()) do
     if client.name == server_name then
-      -- 前の JSON の設定を消す
-      -- XXX: 消すだけじゃだめかも... デフォルトの値を設定してあげないといけないかもしれない
-      local settings = remove_keys(client.config.settings, _settings[server_name])
-      settings = merge_table(settings, _settings[server_name])
-      client.workspace_did_change_configuration(settings)
-
+      client.workspace_did_change_configuration(new_settings)
       -- Neovim 標準の workspace/configuration のハンドラで使っているため、更新しておく
       -- see https://github.com/neovim/neovim/blob/55d6699dfd58edb53d32270a5a9a567a48ce7c08/runtime/lua/vim/lsp/handlers.lua#L160-L184
-      client.config.settings = settings
+      client.config.settings = new_settings
     end
   end
 
@@ -207,7 +177,6 @@ end
 
 local mt = {}
 
--- nlspsettings.sumneko_lua.load()
 mt.__index = function(t, k)
   local X = {}
 
@@ -217,12 +186,16 @@ mt.__index = function(t, k)
     }
 
     settings = settings or {}
-    return vim.tbl_deep_extend('keep', _settings[k] or {}, settings)
+    servers[k].config_settings = settings
+    return vim.tbl_deep_extend('keep', servers[k].settings or {}, settings)
   end
 
   return X
 end
 
-M.settings = _settings
+-- M.settings = servers
+M._get_servers = function()
+  return servers
+end
 
 return setmetatable(M, mt)
