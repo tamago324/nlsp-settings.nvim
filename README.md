@@ -85,18 +85,22 @@ require'nlspsettings'.setup {
 
 ### Step 3. Load settings.
 
-Example) To load sumneko_lua settings from settings json file:
+By calling `nlspsettings.setup()`, you can use `on_new_config` to automatically load JSON files on all language servers.
 
 ```lua
--- You need to call setup().
-local nlspsettings = require'nlspsettings'
-nlspsettings.setup()
+-- You need to call lspconfig.*.setup().
+require'nlspsettings'.setup()
+```
 
+
+It is still possible to write `settings` in lua.
+However, if you have the same key, the value in the JSON file will take precedence.
+
+Example) Write sumneko_lua settings in Lua
+
+```
 lspconfig.sumneko_lua.setup{
   cmd = { '/path/to/bin/Linux/lua-language-server', '-E', '/path/to/main.lua', },
-
-  -- Set the function to read the settings from the JSON file to on_new_config.
-  on_new_config = nlspsettings.make_on_new_config()
 
   -- You can also specify a value in settings, but if it is the same key,
   -- it will be overwritten by the value in the JSON file.
