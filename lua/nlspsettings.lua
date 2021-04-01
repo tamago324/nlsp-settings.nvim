@@ -61,6 +61,9 @@ local lsp_json_to_table = function(t)
   return res
 end
 
+--- load settings from JSON file
+---@param path string JSON file path
+---@return boolean is_error if error then true
 local load_setting_json = function(path)
   vim.validate {
     path = { path, 's' },
@@ -88,32 +91,9 @@ local load_setting_json = function(path)
   servers[name].settings = lsp_json_to_table(decoded) or {}
 end
 
-local get_settings_files = function(path)
-  local handle = uv.fs_scandir(path)
-  if handle == nil then
-    return {}
-  end
-
-  local res = {}
-
-  while true do
-    local name, _ = uv.fs_scandir_next(handle)
-    if name == nil then
-      break
-    end
-    table.insert(res, path .. '/' .. name)
-  end
-
-  return res
-end
-
-M.load_settings = function()
-  local files = get_settings_files(config.get('config_home'))
-  for _, v in ipairs(files) do
-    load_setting_json(v)
-  end
-end
-
+--- Returns the current settings for the specified server
+---@param server_name string
+---@return table merged_settings
 local get_settings = function(server_name)
   local settings = servers[server_name].settings or {}
   local new_settings = servers[server_name].conf_settings or {}
@@ -125,7 +105,7 @@ local get_settings = function(server_name)
   return vim.tbl_deep_extend('keep', settings, new_settings)
 end
 
---- server_name.json を読み、 workspace/didChangeConfiguration でサーバーに通知する
+--- Read the JSON file and notify the server in workspace/didChangeConfiguration
 ---@param server_name any
 M.update_settings = function(server_name)
   vim.validate {
@@ -157,9 +137,12 @@ M.update_settings = function(server_name)
   return false
 end
 
+--- Make an on_new_config function that sets the settings
+---@param on_new_config function
+---@return function
 M.make_on_new_config = function(on_new_config)
   -- before にしたのは、settings を上書きできるようにするため
-  -- XXX: どっちがいいのか、なやむ
+  -- XXX: before か after かどっちがいいのか、なやむ
   return lspconfig.util.add_hook_before(on_new_config, function(new_config, _)
     local server_name = new_config.name
 
@@ -174,7 +157,7 @@ M.make_on_new_config = function(on_new_config)
   end)
 end
 
-M._setup_autocmds = function()
+local setup_autocmds = function()
   local postfix = config.get('config_home'):match('[^/]+$')
   local pattern = string.format('*/%s/*.json', postfix)
 
@@ -182,6 +165,37 @@ M._setup_autocmds = function()
   vim.cmd( [[  autocmd!]])
   vim.cmd(([[  autocmd BufWritePost %s lua require'nlspsettings.command'._BufWritePost(vim.fn.expand('<afile>'))]]):format(pattern))
   vim.cmd( [[augroup END]])
+end
+
+--- Returns a list of settings files under path
+---@param path string config_home
+---@return table settings_files List of settings file
+local get_settings_files = function(path)
+  local handle = uv.fs_scandir(path)
+  if handle == nil then
+    return {}
+  end
+
+  local res = {}
+
+  while true do
+    local name, _ = uv.fs_scandir_next(handle)
+    if name == nil then
+      break
+    end
+    table.insert(res, path .. '/' .. name)
+  end
+
+  return res
+end
+
+
+--- load settings files under config_home
+local load_settings = function()
+  local files = get_settings_files(config.get('config_home'))
+  for _, v in ipairs(files) do
+    load_setting_json(v)
+  end
 end
 
 M.setup = function(opts)
@@ -198,8 +212,10 @@ M.setup = function(opts)
     config_home = opts.config_home
   })
 
-  M.load_settings()
-  M._setup_autocmds()
+  -- XXX: ここで読む必要ある？？
+  --      get_settings() で読めばいいのでは？
+  load_settings()
+  setup_autocmds()
 end
 
 local mt = {}

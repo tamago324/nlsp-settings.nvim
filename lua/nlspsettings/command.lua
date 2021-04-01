@@ -5,9 +5,9 @@ local a = vim.api
 
 local M = {}
 
---- カレントバッファに接続しているサーバーの名前を返す
----@param bufnr number
----@return string
+--- Returns the name of the server connected to the current buffer.
+---@param bufnr number? buffer number
+---@return string server_name
 local get_server_name = function(bufnr)
   vim.validate {
     bufnr = { bufnr, 'n', true }
@@ -43,6 +43,7 @@ local get_server_name = function(bufnr)
   return server_name
 end
 
+--- Open a settings file that matches the current buffer
 M.open_buf_config = function()
   local server_name = get_server_name()
   if server_name == nil then
@@ -52,6 +53,8 @@ M.open_buf_config = function()
   M.open_config(server_name)
 end
 
+---Open the settings file for the specified server.
+---@param server_name string
 M.open_config = function(server_name)
   vim.validate {
     server_name = { server_name, 's' }
@@ -70,19 +73,9 @@ M.open_config = function(server_name)
   vim.api.nvim_command(string.format([[%s %s/%s.json]], cmd, home, server_name))
 end
 
+---Update the setting values.
+---@param server_name string
 M.update_settings = function(server_name)
-  -- local actived = false
-  -- for _, client in ipairs(vim.lsp.get_active_clients()) do
-  --   if client.name == server_name then
-  --     actived = true
-  --   end
-  -- end
-  --
-  -- if not actived then
-  --   -- a.nvim_echo({{string.format(' Nlsp[%s][Info] The server is not running, so it is not updating.', server_name), 'Normal'}}, false, {})
-  --   return
-  -- end
-
   vim.cmd [[redraw]]
   local errors = nlspsettings.update_settings(server_name)
   if errors then
@@ -92,6 +85,9 @@ M.update_settings = function(server_name)
   end
 end
 
+
+---What to do when BufWritePost fires
+---@param afile string
 M._BufWritePost = function(afile)
   local server_name = string.match(afile, '([^/]+)%.json$')
   M.update_settings(server_name)
