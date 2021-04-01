@@ -1,6 +1,5 @@
 local defaults_values = {
   config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
-  update_settings_on_save = true,
 }
 
 

@@ -93,10 +93,8 @@ M.update_settings = function(server_name)
 end
 
 M._BufWritePost = function(afile)
-  if config.get('update_settings_on_save') then
-    local server_name = string.match(afile, '([^/]+)%.json$')
-    M.update_settings(server_name)
-  end
+  local server_name = string.match(afile, '([^/]+)%.json$')
+  M.update_settings(server_name)
 end
 
 

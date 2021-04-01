@@ -79,9 +79,6 @@ NOTE: The path where settings json file is stored can be changed by the `config_
 ```lua
 require'nlspsettings'.setup {
   config_home = vim.fn.stdpath('config') .. '/lspsettings'
-
-  -- When saved, it will use workspace/didChangeConfiguration to notify the server of the configuration.
-  -- update_settings_on_save = true
 }
 ```
 
