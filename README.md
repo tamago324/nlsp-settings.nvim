@@ -98,21 +98,21 @@ nlspsettings.setup()
 lspconfig.sumneko_lua.setup{
   cmd = { '/path/to/bin/Linux/lua-language-server', '-E', '/path/to/main.lua', },
 
-  -- Use `nlspsettings.xxx.get()` to load the `settings` from `sumneko_lua.json`
-  settings = nlspsettings.sumneko_lua.get()
+  -- Set the function to read the settings from the JSON file to on_new_config.
+  on_new_config = nlspsettings.make_on_new_config()
 
-  -- -- It is also possible to merge other `settings` by passing the table.
-  -- -- If it is the same key, it will be overwritten by the setting value in the JSON file.
-  -- settings = nlspsettings.sumneko_lua.get {
-  --   Lua = {
-  --     workspace = {
-  --       library = {
-  --         [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-  --         [vim.fn.stdpath("config") .. '/lua'] = true,
-  --       }
-  --     }
-  --   }
-  -- }
+  -- You can also specify a value in settings, but if it is the same key,
+  -- it will be overwritten by the value in the JSON file.
+  settings = {
+    Lua = {
+      workspace = {
+        library = {
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.stdpath("config") .. '/lua'] = true,
+        }
+      }
+    }
+  }
 }
 ```
 

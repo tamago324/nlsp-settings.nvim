@@ -1,4 +1,3 @@
-local jsonls = require'nlspsettings.jsonls'
 local config = require'nlspsettings.config'
 local lspconfig = require'lspconfig'
 
@@ -11,7 +10,7 @@ local M = {}
 local servers = {
   -- server_name = {
   --   settings = {},
-  --   config_settings = {}
+  --   conf_settings = {}
   -- }
 }
 
@@ -68,8 +67,11 @@ local load_setting_json = function(path)
   }
 
   local name = path:match('([^/]+)%.json$')
-  servers[name] = {}
-  servers[name].settings = {}
+  if servers[name] == nil then
+    servers[name] = {}
+    servers[name].settings = {}
+    servers[name].conf_settings = {}
+  end
 
   if vim.fn.filereadable(path) == 0 then
     return
@@ -84,7 +86,6 @@ local load_setting_json = function(path)
   end
 
   servers[name].settings = lsp_json_to_table(decoded) or {}
-  servers[name].config_settings = {}
 end
 
 local get_settings_files = function(path)
@@ -106,11 +107,22 @@ local get_settings_files = function(path)
   return res
 end
 
-M.load_settings = function(path)
+M.load_settings = function()
   local files = get_settings_files(config.get('config_home'))
   for _, v in ipairs(files) do
     load_setting_json(v)
   end
+end
+
+local get_settings = function(server_name)
+  local settings = servers[server_name].settings or {}
+  local new_settings = servers[server_name].conf_settings or {}
+
+  -- Priority:
+  --   1. JSON settings
+  --   2. setup({settings = ...})
+  --   3. default_config.settings
+  return vim.tbl_deep_extend('keep', settings, new_settings)
 end
 
 --- server_name.json を読み、 workspace/didChangeConfiguration でサーバーに通知する
@@ -120,31 +132,46 @@ M.update_settings = function(server_name)
     server_name = { server_name, 's' },
   }
 
+  if #vim.lsp.get_active_clients() == 0 then
+    -- on_new_config() が呼ばれたときに、読むから、JSON を読む必要はない
+    return false
+  end
+
   local err = load_setting_json(string.format('%s/%s.json', config.get('config_home'), server_name))
   if err then
     return true
   end
 
-  -- Priority: JSON settings > setup() settings > default_config.settings
-  local server = servers[server_name]
-  local new_settings = vim.tbl_deep_extend('keep', server.settings, server.config_settings)
-  local default_settings = lspconfig[server_name].document_config.default_config.settings
-  new_settings = vim.tbl_deep_extend('keep', new_settings, default_settings or {})
-
-  -- -- 新しく接続するクライアントのために設定する
-  -- lspconfig[server_name].settings = new_settings
+  -- JSON ファイルの設定と setup() の設定をマージする
+  local new_settings = get_settings(server_name)
 
   -- server_name のすべてのクライアントの設定を更新する
   for _, client in ipairs(vim.lsp.get_active_clients()) do
     if client.name == server_name then
       client.workspace_did_change_configuration(new_settings)
-      -- Neovim 標準の workspace/configuration のハンドラで使っているため、更新しておく
-      -- see https://github.com/neovim/neovim/blob/55d6699dfd58edb53d32270a5a9a567a48ce7c08/runtime/lua/vim/lsp/handlers.lua#L160-L184
+      -- Neovim 標準の workspace/configuration のハンドラで使っているため、常に同期を取るべき
       client.config.settings = new_settings
     end
   end
 
   return false
+end
+
+M.make_on_new_config = function(on_new_config)
+  -- before にしたのは、settings を上書きできるようにするため
+  -- XXX: どっちがいいのか、なやむ
+  return lspconfig.util.add_hook_before(on_new_config, function(new_config, _)
+    local server_name = new_config.name
+
+    if servers[server_name] == nil then
+      servers[server_name] = {}
+    end
+
+    -- 1度だけ、保持する ()
+    -- new_config.settings は `setup({settings = ...}) + default_config.settings`
+    servers[server_name].conf_settings = vim.deepcopy(new_config.settings)
+    new_config.settings = get_settings(server_name)
+  end)
 end
 
 M._setup_autocmds = function()
@@ -177,17 +204,17 @@ end
 
 local mt = {}
 
-mt.__index = function(t, k)
+mt.__index = function(_, k)
   local X = {}
 
-  X.get = function(settings)
-    vim.validate {
-      settings = { settings, 't', true }
-    }
+  X.get = function(_)
+    local msg = string.format(
+      [[nlspsettings.%s.get() is deprecated. Use require('nlspsettings').make_on_new_config() instead.]]
+      , k
+    )
+    a.nvim_echo({{msg, 'WarningMsg'}}, true, {})
 
-    settings = settings or {}
-    servers[k].config_settings = settings
-    return vim.tbl_deep_extend('keep', servers[k].settings or {}, settings)
+    return {}
   end
 
   return X
