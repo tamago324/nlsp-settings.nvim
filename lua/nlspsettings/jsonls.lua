@@ -1,5 +1,3 @@
-local config = require'nlspsettings.config'
-
 local uv = vim.loop
 
 
