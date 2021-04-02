@@ -98,7 +98,7 @@ However, if you have the same key, the value in the JSON file will take preceden
 
 Example) Write sumneko_lua settings in Lua
 
-```
+```lua
 lspconfig.sumneko_lua.setup{
   cmd = { '/path/to/bin/Linux/lua-language-server', '-E', '/path/to/main.lua', },
 
