@@ -106,7 +106,7 @@ local get_settings = function(server_name)
 end
 
 --- Read the JSON file and notify the server in workspace/didChangeConfiguration
----@param server_name any
+---@param server_name string
 M.update_settings = function(server_name)
   vim.validate {
     server_name = { server_name, 's' },
@@ -234,6 +234,8 @@ local setup_default_config = function()
   )
 end
 
+--- Setup to read from a JSON file.
+---@param opts table
 M.setup = function(opts)
   vim.validate {
     opts = { opts, 't', true }
