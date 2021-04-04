@@ -1,9 +1,7 @@
 local config = require'nlspsettings.config'
 local lspconfig = require'lspconfig'
-local util = require'nlspsettings.util'
 
 local uv = vim.loop
-local a = vim.api
 
 
 local M = {}
@@ -161,7 +159,7 @@ M.update_settings = function(server_name)
     end
   end
 
-  return false
+  return errors
 end
 
 --- Make an on_new_config function that sets the settings
