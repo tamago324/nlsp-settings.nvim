@@ -67,6 +67,7 @@
 - [ ] svelte
 - [x] terraformls
 - [ ] texlab
+- [ ] tflint
 - [ ] tsserver
 - [ ] vala_ls
 - [ ] vimls
