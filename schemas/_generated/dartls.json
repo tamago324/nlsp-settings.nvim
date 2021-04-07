@@ -113,6 +113,16 @@
       "scope": "window",
       "type": "boolean"
     },
+    "dart.automaticCommentSlashes": {
+      "default": "tripleSlash",
+      "enum": [
+        "none",
+        "tripleSlash",
+        "all"
+      ],
+      "markdownDescription": "Determines when to insert comment slashes when pressing `<enter>` in the editor (requires restart).\n\n- `none` - never insert slashes automatically.\n- `tripleSlash` - insert `///` when pressing `<enter>` in a triple-slash comment.\n- `all` - insert `///` when pressing `<enter>` in a triple-slash comment and also `//` when pressing `<enter>` in a double-slash comment.",
+      "scope": "window"
+    },
     "dart.buildRunnerAdditionalArgs": {
       "default": [],
       "items": {
