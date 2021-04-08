@@ -311,6 +311,11 @@
       "description": "Whether to enable codeActions",
       "type": "boolean"
     },
+    "vetur.languageFeatures.semanticTokens": {
+      "default": true,
+      "description": "Whether to enable semantic highlighting. Currently only works for typescript",
+      "type": "boolean"
+    },
     "vetur.languageFeatures.updateImportOnFileMove": {
       "default": true,
       "description": "Whether to automatic updating import path when rename or move a file",
