@@ -63,6 +63,7 @@
 - [x] sourcekit
 - [ ] sqlls
 - [ ] sqls
+- [ ] stylelint_lsp
 - [x] sumneko_lua
 - [ ] svelte
 - [x] terraformls
