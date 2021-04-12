@@ -85,6 +85,11 @@
         "string"
       ]
     },
+    "rust-analyzer.cargo.useRustcWrapperForBuildScripts": {
+      "default": true,
+      "markdownDescription": "Use `RUSTC_WRAPPER=rust-analyzer` when running build scripts to\navoid compiling unnecessary things.",
+      "type": "boolean"
+    },
     "rust-analyzer.cargoRunner": {
       "default": null,
       "description": "Custom cargo runner extension ID.",
