@@ -394,16 +394,13 @@
       "type": "boolean"
     },
     "dart.flutterRunAdditionalArgs": {
-      "default": null,
+      "default": [],
       "items": {
         "type": "string"
       },
-      "markdownDescription": "Additional args to pass to the `flutter run` command. If unspecified, defaults may be provided depending on the host environment.",
+      "markdownDescription": "Additional args to pass to the `flutter run` command.",
       "scope": "resource",
-      "type": [
-        "null",
-        "array"
-      ]
+      "type": "array"
     },
     "dart.flutterRunLogFile": {
       "default": null,
