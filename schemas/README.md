@@ -66,6 +66,7 @@
 - [ ] stylelint_lsp
 - [x] sumneko_lua
 - [ ] svelte
+- [ ] svls
 - [x] terraformls
 - [ ] texlab
 - [ ] tflint
