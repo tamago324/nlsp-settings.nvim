@@ -164,6 +164,17 @@
           "scope": "resource",
           "type": "string"
         },
+        "deprecated": {
+          "default": "None",
+          "description": "%config.diagnostics.deprecated%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None"
+          ],
+          "scope": "resource",
+          "type": "string"
+        },
         "doc-field-no-class": {
           "default": "Any",
           "description": "%config.diagnostics.doc-field-no-class%",
@@ -531,6 +542,18 @@
         "count-down-loop": {
           "default": "Warning",
           "description": "%config.diagnostics.count-down-loop%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint"
+          ],
+          "scope": "resource",
+          "type": "string"
+        },
+        "deprecated": {
+          "default": "Warning",
+          "description": "%config.diagnostics.deprecated%",
           "enum": [
             "Error",
             "Warning",
