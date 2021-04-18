@@ -63,7 +63,7 @@
 - [x] sourcekit
 - [ ] sqlls
 - [ ] sqls
-- [ ] stylelint_lsp
+- [x] stylelint_lsp
 - [x] sumneko_lua
 - [ ] svelte
 - [ ] svls
