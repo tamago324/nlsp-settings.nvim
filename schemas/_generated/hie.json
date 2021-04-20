@@ -5,6 +5,7 @@
     "haskell.completionSnippetsOn": {
       "default": true,
       "description": "Show snippets with type information when using code completion",
+      "markdownDeprecationMessage": "**Deprecated**: Please use `#haskell.plugin.ghcide-completions.config.snippetsOn#` instead.",
       "scope": "resource",
       "title": "Completion Snippets",
       "type": "boolean"
@@ -58,6 +59,18 @@
     "haskell.plugin.eval.globalOn": {
       "default": true,
       "description": "Enables eval plugin",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.ghcide-completions.config.autoExtendOn": {
+      "default": true,
+      "markdownDescription": "Extends the import list automatically when completing a out-of-scope identifier",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.ghcide-completions.config.snippetsOn": {
+      "default": true,
+      "markdownDescription": "Inserts snippets when using code completions",
       "scope": "resource",
       "type": "boolean"
     },
@@ -161,6 +174,32 @@
       "description": "Enables wingman (tactic) plugin",
       "scope": "resource",
       "type": "boolean"
+    },
+    "haskell.plugin.tactics.config.hole_severity": {
+      "default": null,
+      "description": "The severity to use when showing hole diagnostics.",
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        null
+      ],
+      "enumDescriptions": [
+        "error",
+        "warning",
+        "info",
+        "hint",
+        "none"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "haskell.plugin.tactics.config.timeout_duration": {
+      "default": 2,
+      "markdownDescription": "The timeout for Wingman actions, in seconds",
+      "scope": "resource",
+      "type": "integer"
     },
     "haskell.releasesURL": {
       "default": "",
