@@ -238,6 +238,11 @@
       "markdownDescription": "Whether to show experimental rust-analyzer diagnostics that might\nhave more false positives than usual.",
       "type": "boolean"
     },
+    "rust-analyzer.diagnostics.remapPrefix": {
+      "default": {},
+      "markdownDescription": "Map of prefixes to be substituted when parsing diagnostic file paths.\nThis should be the reverse mapping of what is passed to `rustc` as `--remap-path-prefix`.",
+      "type": "object"
+    },
     "rust-analyzer.diagnostics.warningsAsHint": {
       "default": [],
       "items": {
