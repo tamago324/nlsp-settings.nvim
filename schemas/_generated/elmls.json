@@ -26,6 +26,11 @@
       "scope": "window",
       "type": "string"
     },
+    "elmLS.elmTestRunner.showElmTestOutput": {
+      "description": "Show output of elm-test as terminal task",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "elmLS.onlyUpdateDiagnosticsOnSave": {
       "default": false,
       "description": "Only update compiler diagnostics on save, not on document change.",
