@@ -76,4 +76,5 @@
 - [ ] vls
 - [x] vuels
 - [x] yamlls
+- [x] zeta_note
 - [ ] zls
