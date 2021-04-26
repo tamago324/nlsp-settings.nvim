@@ -341,6 +341,7 @@
             },
             "type": "array"
           },
+          "env": {},
           "executable": {
             "type": "string"
           },
