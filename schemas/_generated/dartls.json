@@ -570,13 +570,13 @@
     },
     "dart.previewFlutterUiGuides": {
       "default": false,
-      "markdownDescription": "Whether to enable the [Flutter UI Guides preview](https://dartcode.org/releases/v3-1/#preview-flutter-ui-guides).",
+      "markdownDescription": "EXPERIMENTAL: Whether to enable the [Flutter UI Guides preview](https://dartcode.org/releases/v3-1/#preview-flutter-ui-guides).",
       "scope": "window",
       "type": "boolean"
     },
     "dart.previewFlutterUiGuidesCustomTracking": {
       "default": false,
-      "description": "Whether to enable custom tracking of Flutter UI guidelines (to hide some latency of waiting for the next Flutter Outline).",
+      "description": "EXPERIMENTAL: Whether to enable custom tracking of Flutter UI guidelines (to hide some latency of waiting for the next Flutter Outline).",
       "scope": "window",
       "type": "boolean"
     },
