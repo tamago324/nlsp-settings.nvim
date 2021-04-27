@@ -213,11 +213,15 @@
       "type": "boolean"
     },
     "rust-analyzer.debug.sourceFileMap": {
+      "const": "auto",
       "default": {
         "/rustc/<id>": "${env:USERPROFILE}/.rustup/toolchains/<toolchain-id>/lib/rustlib/src/rust"
       },
       "description": "Optional source file mappings passed to the debug engine.",
-      "type": "object"
+      "type": [
+        "object",
+        "string"
+      ]
     },
     "rust-analyzer.diagnostics.disabled": {
       "default": [],
