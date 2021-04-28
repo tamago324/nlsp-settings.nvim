@@ -332,7 +332,7 @@
     },
     "rust-analyzer.inlayHints.smallerHints": {
       "default": true,
-      "markdownDescription": "Whether inlay hints font size should be smaller than editor's font size.",
+      "description": "Whether inlay hints font size should be smaller than editor's font size.",
       "type": "boolean"
     },
     "rust-analyzer.inlayHints.typeHints": {
