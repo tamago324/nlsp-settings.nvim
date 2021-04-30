@@ -16,6 +16,12 @@
       "scope": "resource",
       "type": "string"
     },
+    "Lua.completion.autoRequire": {
+      "default": true,
+      "markdownDescription": "%config.completion.autoRequire%",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "Lua.completion.callSnippet": {
       "default": "Disable",
       "enum": [
@@ -945,6 +951,12 @@
       "markdownDescription": "%config.hover.enable%",
       "scope": "resource",
       "type": "boolean"
+    },
+    "Lua.hover.enumsLimit": {
+      "default": 5,
+      "markdownDescription": "%config.hover.enumsLimit%",
+      "scope": "resource",
+      "type": "integer"
     },
     "Lua.hover.fieldInfer": {
       "default": 3000,
