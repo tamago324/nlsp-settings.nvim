@@ -33,6 +33,7 @@
 - [ ] hls
 - [ ] html
 - [ ] intelephense
+- [ ] java_language_server
 - [ ] jdtls
 - [ ] jedi_language_server
 - [x] jsonls
