@@ -66,6 +66,12 @@
       "scope": "resource",
       "type": "string"
     },
+    "Lua.completion.showParams": {
+      "default": true,
+      "markdownDescription": "%config.completion.showParams%",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "Lua.completion.workspaceWord": {
       "default": true,
       "markdownDescription": "%config.completion.workspaceWord%",
