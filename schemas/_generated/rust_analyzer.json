@@ -10,16 +10,16 @@
       "type": "boolean"
     },
     "rust-analyzer.assist.importMergeBehavior": {
-      "default": "full",
+      "default": "crate",
       "enum": [
         "none",
-        "full",
-        "last"
+        "crate",
+        "module"
       ],
       "enumDescriptions": [
-        "No merging",
-        "Merge all layers of the import trees",
-        "Only merge the last layer of the import trees"
+        "Do not merge imports at all.",
+        "Merge imports from the same crate into a single `use` statement.",
+        "Merge imports from the same module into a single `use` statement."
       ],
       "markdownDescription": "The strategy to use when inserting new imports or merging imports.",
       "type": "string"
