@@ -47,6 +47,11 @@
       "description": "Enable/disable hover feature",
       "type": "boolean"
     },
+    "yaml.maxItemsComputed": {
+      "default": 5000,
+      "description": "The maximum number of outline symbols and folding regions computed (limited for performance reasons).",
+      "type": "integer"
+    },
     "yaml.schemaStore.enable": {
       "default": true,
       "description": "Automatically pull available YAML schemas from JSON Schema Store",
