@@ -12,6 +12,11 @@
       "description": "Custom tags for the parser to use",
       "type": "array"
     },
+    "yaml.disableAdditionalProperties": {
+      "default": false,
+      "description": "Globally set additionalProperties to false for all objects. So if its true, no extra properties are allowed inside yaml.",
+      "type": "boolean"
+    },
     "yaml.format.bracketSpacing": {
       "default": true,
       "description": "Print spaces between brackets in objects",
