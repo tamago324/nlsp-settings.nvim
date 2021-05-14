@@ -55,6 +55,7 @@
 - [x] pyright
 - [x] r_language_server
 - [ ] racket_langserver
+- [ ] rescriptls
 - [ ] rls
 - [ ] rnix
 - [ ] rome
