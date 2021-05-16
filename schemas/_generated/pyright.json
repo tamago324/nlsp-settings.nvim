@@ -153,6 +153,17 @@
           ],
           "type": "string"
         },
+        "reportIncompleteStub": {
+          "default": "none",
+          "description": "Diagnostics for the use of a module-level “__getattr__” function, indicating that the stub is incomplete.",
+          "enum": [
+            "none",
+            "information",
+            "warning",
+            "error"
+          ],
+          "type": "string"
+        },
         "reportInvalidStringEscapeSequence": {
           "default": "warning",
           "description": "Diagnostics for invalid escape sequences used within string literals. The Python specification indicates that such sequences will generate a syntax error in future versions.",
@@ -166,7 +177,7 @@
         },
         "reportInvalidStubStatement": {
           "default": "none",
-          "description": "Diagnostics for type stub statements that do not conform to PEP 484",
+          "description": "Diagnostics for type stub statements that do not conform to PEP 484.",
           "enum": [
             "none",
             "information",
