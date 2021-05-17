@@ -480,6 +480,11 @@
         "array"
       ]
     },
+    "rust-analyzer.semanticStringTokens": {
+      "default": true,
+      "markdownDescription": "Use semantic tokens for strings.\n\nIn some editors (e.g. vscode) semantic tokens override other highlighting grammars.\nBy disabling semantic tokens for strings, other grammars can be used to highlight\ntheir contents.",
+      "type": "boolean"
+    },
     "rust-analyzer.server.extraEnv": {
       "default": null,
       "markdownDescription": "Extra environment variables that will be passed to the rust-analyzer executable. Useful for passing e.g. `RA_LOG` for debugging.",
