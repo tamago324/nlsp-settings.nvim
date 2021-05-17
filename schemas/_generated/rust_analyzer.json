@@ -276,6 +276,11 @@
       "markdownDescription": "Controls file watching implementation.",
       "type": "string"
     },
+    "rust-analyzer.highlighting.strings": {
+      "default": true,
+      "markdownDescription": "Use semantic tokens for strings.\n\nIn some editors (e.g. vscode) semantic tokens override other highlighting grammars.\nBy disabling semantic tokens for strings, other grammars can be used to highlight\ntheir contents.",
+      "type": "boolean"
+    },
     "rust-analyzer.hoverActions.debug": {
       "default": true,
       "markdownDescription": "Whether to show `Debug` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
@@ -479,11 +484,6 @@
         "null",
         "array"
       ]
-    },
-    "rust-analyzer.semanticStringTokens": {
-      "default": true,
-      "markdownDescription": "Use semantic tokens for strings.\n\nIn some editors (e.g. vscode) semantic tokens override other highlighting grammars.\nBy disabling semantic tokens for strings, other grammars can be used to highlight\ntheir contents.",
-      "type": "boolean"
     },
     "rust-analyzer.server.extraEnv": {
       "default": null,
