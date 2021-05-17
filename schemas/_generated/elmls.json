@@ -20,6 +20,23 @@
       "scope": "window",
       "type": "string"
     },
+    "elmLS.elmReviewDiagnostics": {
+      "default": "off",
+      "description": "Set severity or disable linting diagnostics for elm-review.",
+      "enum": [
+        "off",
+        "warning",
+        "error"
+      ],
+      "scope": "window",
+      "type": "string"
+    },
+    "elmLS.elmReviewPath": {
+      "default": "",
+      "description": "The path to your elm-review executable. Should be empty by default, in that case it will assume the name and try to first get it from a local npm installation or a global one. If you set it manually it will not try to load from the npm folder.",
+      "scope": "window",
+      "type": "string"
+    },
     "elmLS.elmTestPath": {
       "default": "",
       "description": "The path to your elm-test executable. Should be empty by default, in that case it will assume the name and try to first get it from a local npm installation or a global one. If you set it manually it will not try to load from the npm folder.",
