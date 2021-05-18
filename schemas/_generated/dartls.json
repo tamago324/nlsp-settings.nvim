@@ -138,6 +138,15 @@
       "scope": "window",
       "type": "boolean"
     },
+    "dart.cliConsole": {
+      "default": "debugConsole",
+      "description": "Whether to run Dart CLI apps in the Debug Console or the VS Code integrated terminal. The Debug Console has more functionality because the process is controlled by the debug adapter, but is unable to accept input from the user via stdin.",
+      "enum": [
+        "debugConsole",
+        "terminal"
+      ],
+      "scope": "window"
+    },
     "dart.closingLabels": {
       "default": true,
       "description": "Whether to show annotations against constructor, method invocations and lists that span multiple lines.",
@@ -457,6 +466,19 @@
       "description": "Whether to set newly connected devices as the current device in Flutter projects.",
       "scope": "window",
       "type": "boolean"
+    },
+    "dart.flutterShowEmulators": {
+      "default": "local",
+      "enum": [
+        "local",
+        "always"
+      ],
+      "enumDescriptions": [
+        "Only show for local workspaces",
+        "Always show, even for remote sessions"
+      ],
+      "markdownDescription": "When to show the Flutter emulators. These are usually hidden for remote workspaces because it is usually not possible to see or interact with emulators in a remote session. If you are using remoting/containers in a way that you can interact with launched emulator processes, you may wish to set this to 'always'.",
+      "scope": "window"
     },
     "dart.flutterShowWebServerDevice": {
       "default": "remote",
