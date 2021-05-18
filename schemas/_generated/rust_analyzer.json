@@ -539,6 +539,32 @@
         "`nightly` updates are shipped daily (extension updates automatically by downloading artifacts directly from GitHub), they contain cutting-edge features and latest bug fixes. These releases help us get your feedback very quickly and speed up rust-analyzer development **drastically**."
       ],
       "type": "string"
+    },
+    "rust-analyzer.workspace.symbol.search.kind": {
+      "default": "only_types",
+      "enum": [
+        "only_types",
+        "all_symbols"
+      ],
+      "enumDescriptions": [
+        "Search for types only",
+        "Search for all symbols kinds"
+      ],
+      "markdownDescription": "Workspace symbol search kind.",
+      "type": "string"
+    },
+    "rust-analyzer.workspace.symbol.search.scope": {
+      "default": "workspace",
+      "enum": [
+        "workspace",
+        "workspace_and_dependencies"
+      ],
+      "enumDescriptions": [
+        "Search in current workspace only",
+        "Search in current workspace and dependencies"
+      ],
+      "markdownDescription": "Workspace symbol search scope.",
+      "type": "string"
     }
   }
 }
