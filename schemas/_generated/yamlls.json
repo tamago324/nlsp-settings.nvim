@@ -62,6 +62,11 @@
       "description": "Automatically pull available YAML schemas from JSON Schema Store",
       "type": "boolean"
     },
+    "yaml.schemaStore.url": {
+      "default": "https://www.schemastore.org/api/json/catalog.json",
+      "description": "URL of schema store catalog to use",
+      "type": "string"
+    },
     "yaml.schemas": {
       "default": {},
       "description": "Associate schemas to YAML files in the current workspace",
