@@ -16,6 +16,91 @@
       "description": "Additional Julia arguments.",
       "type": "array"
     },
+    "julia.completionmode": {
+      "default": "import",
+      "description": "Sets the mode for completions.",
+      "enum": [
+        "exportedonly",
+        "import",
+        "qualify"
+      ],
+      "enumDescriptions": [
+        "Show completions for the current namespace.",
+        "Show completions for the current namespace and unexported variables of `using`ed modules. Selection of an unexported variable will result in the automatic insertion of an explicit `using` statement.",
+        "Show completions for the current namespace and unexported variables of `using`ed modules. Selection of an unexported variable will complete to a qualified variable name."
+      ],
+      "scope": "window",
+      "type": "string"
+    },
+    "julia.debuggerDefaultCompiled": {
+      "default": [
+        "Base.",
+        "-Base.!",
+        "-Base.all",
+        "-Base.all!",
+        "-Base.any",
+        "-Base.any!",
+        "-Base.cd",
+        "-Base.iterate",
+        "-Base.collect",
+        "-Base.collect_similar",
+        "-Base._collect",
+        "-Base.collect_to!",
+        "-Base.collect_to_with_first!",
+        "-Base.filter",
+        "-Base.filter!",
+        "-Base.foreach",
+        "-Base.findall",
+        "-Base.findfirst",
+        "-Base.findlast",
+        "-Base.findnext",
+        "-Base.findprev",
+        "-Base.Generator",
+        "-Base.map",
+        "-Base.map!",
+        "-Base.maximum!",
+        "-Base.minimum!",
+        "-Base.mktemp",
+        "-Base.mktempdir",
+        "-Base.open",
+        "-Base.prod!",
+        "-Base.redirect_stderr",
+        "-Base.redirect_stdin",
+        "-Base.redirect_stdout",
+        "-Base.reenable_sigint",
+        "-Base.setindex!",
+        "-Base.setprecision",
+        "-Base.setrounding",
+        "-Base.show",
+        "-Base.sprint",
+        "-Base.sum",
+        "-Base.sum!",
+        "-Base.task_local_storage",
+        "-Base.timedwait",
+        "-Base.withenv",
+        "Core",
+        "Core.Compiler.",
+        "Core.IR",
+        "Core.Intrinsics",
+        "DelimitedFiles",
+        "Distributed",
+        "LinearAlgebra.",
+        "Serialization",
+        "Statistics",
+        "-Statistics.mean",
+        "SparseArrays",
+        "Mmap"
+      ],
+      "description": "Functions or modules that are set to compiled mode when setting the defaults.",
+      "scope": "window",
+      "type": "array"
+    },
+    "julia.deleteJuliaCovFiles": {
+      "default": "true",
+      "description": "Delete Julia .cov files when running tests with coverage, leaving only a .lcov file behind.",
+      "scope": "window",
+      "type": "boolean"
+    },
     "julia.editor": {
       "default": null,
       "markdownDescription": "Command to open files from the REPL (via setting the `JULIA_EDITOR` environment variable). Defaults to `code`/`code-insiders` if unset.",
@@ -75,6 +160,7 @@
       "enum": [
         "REPL",
         "inline",
+        "inline, errors in REPL",
         "both"
       ],
       "enumDescriptions": [
@@ -236,7 +322,31 @@
     },
     "julia.packageServer": {
       "default": "",
-      "description": "Julia package server. Set's the `JULIA_PKG_SERVER` environment variable *before* starting a Julia process. Leave this empty to use the systemwide default. Requires a restart of the Julia process.",
+      "markdownDescription": "Julia package server. Set's the `JULIA_PKG_SERVER` environment variable *before* starting a Julia process. Leave this empty to use the systemwide default. Requires a restart of the Julia process.",
+      "scope": "machine-overridable",
+      "type": "string"
+    },
+    "julia.persistentSession.enabled": {
+      "default": false,
+      "markdownDescription": "Experimental: Starts the interactive Julia session in a persistent `tmux` session. Note that `tmux` must be available in the shell defined below.",
+      "scope": "machine-overridable",
+      "type": "boolean"
+    },
+    "julia.persistentSession.shell": {
+      "default": "/bin/sh",
+      "description": "Shell used to start the persistent session.",
+      "scope": "machine-overridable",
+      "type": "string"
+    },
+    "julia.persistentSession.shellExecutionArgument": {
+      "default": "-c",
+      "markdownDescription": "Argument to execute code in the configured shell, e.g. `-c` for sh-likes or `/c` for `cmd`.",
+      "scope": "machine-overridable",
+      "type": "string"
+    },
+    "julia.persistentSession.tmuxSessionName": {
+      "default": "julia_vscode",
+      "markdownDescription": "Name of the `tmux` session.",
       "scope": "machine-overridable",
       "type": "string"
     },
