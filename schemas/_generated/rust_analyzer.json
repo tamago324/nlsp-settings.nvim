@@ -4,25 +4,32 @@
   "properties": {
     "$generated-end": false,
     "$generated-start": false,
+    "rust-analyzer.assist.importEnforceGranularity": {
+      "default": false,
+      "markdownDescription": "Whether to enforce the import granularity setting for all files. If set to false rust-analyzer will try to keep import styles consistent per file.",
+      "type": "boolean"
+    },
+    "rust-analyzer.assist.importGranularity": {
+      "default": "crate",
+      "enum": [
+        "preserve",
+        "crate",
+        "module",
+        "item"
+      ],
+      "enumDescriptions": [
+        "Do not change the granularity of any imports and preserve the original structure written by the developer.",
+        "Merge imports from the same crate into a single use statement. Conversely, imports from different crates are split into separate statements.",
+        "Merge imports from the same module into a single use statement. Conversely, imports from different modules are split into separate statements.",
+        "Flatten imports so that each has its own use statement."
+      ],
+      "markdownDescription": "How imports should be grouped into use statements.",
+      "type": "string"
+    },
     "rust-analyzer.assist.importGroup": {
       "default": true,
       "markdownDescription": "Group inserted imports by the [following order](https://rust-analyzer.github.io/manual.html#auto-import). Groups are separated by newlines.",
       "type": "boolean"
-    },
-    "rust-analyzer.assist.importMergeBehavior": {
-      "default": "crate",
-      "enum": [
-        "none",
-        "crate",
-        "module"
-      ],
-      "enumDescriptions": [
-        "Do not merge imports at all.",
-        "Merge imports from the same crate into a single `use` statement.",
-        "Merge imports from the same module into a single `use` statement."
-      ],
-      "markdownDescription": "The strategy to use when inserting new imports or merging imports.",
-      "type": "string"
     },
     "rust-analyzer.assist.importPrefix": {
       "default": "plain",
