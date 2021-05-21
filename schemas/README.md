@@ -34,7 +34,7 @@
 - [ ] html
 - [ ] intelephense
 - [ ] java_language_server
-- [ ] jdtls
+- [x] jdtls
 - [ ] jedi_language_server
 - [x] jsonls
 - [x] julials
