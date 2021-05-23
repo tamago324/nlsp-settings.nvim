@@ -48,6 +48,7 @@
 - [x] perlls
 - [ ] phpactor
 - [ ] powershell_es
+- [ ] prismals
 - [x] purescriptls
 - [x] pyls
 - [ ] pyls_ms
