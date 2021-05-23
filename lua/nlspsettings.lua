@@ -104,6 +104,7 @@ local get_settings = function(server_name)
   --   3. default_config.settings
   return vim.tbl_deep_extend('keep', settings, new_settings)
 end
+M.get_settings = get_settings
 
 --- Read the JSON file and notify the server in workspace/didChangeConfiguration
 ---@param server_name string

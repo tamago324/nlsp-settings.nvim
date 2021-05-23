@@ -33,6 +33,14 @@ setup({opts})                                           *nlspsettings.setup()*
                       settings files.
                       Default: `'~/.config/nvim/nlsp-settings'`
 
+get_settings({name})                             *nlspsettings.get_settings()*
+    Gets the configuration of the specified server.
+
+    Parameters: ~
+        {opts} (string)
+
+    Return: ~
+        table:
 
 ------------------------------------------------------------------------------
 Lua module: nlspsettings.jsonls                          *nlspsettings.jsonls*
