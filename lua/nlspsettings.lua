@@ -129,7 +129,12 @@ M.update_settings = function(server_name)
   -- server_name のすべてのクライアントの設定を更新する
   for _, client in ipairs(vim.lsp.get_active_clients()) do
     if client.name == server_name then
-      client.workspace_did_change_configuration(new_settings)
+      -- XXX: なぜか、エラーになる...
+      -- client.workspace_did_change_configuration(new_settings)
+      client.notify('workspace/didChangeConfiguration', {
+        settings = new_settings;
+      })
+
       -- Neovim 標準の workspace/configuration のハンドラで使っているため、常に同期を取るべき
       client.config.settings = new_settings
     end
