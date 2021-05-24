@@ -257,6 +257,12 @@
       "scope": "window",
       "type": "boolean"
     },
+    "dart.enableServerSnippets": {
+      "default": false,
+      "markdownDescription": "This setting is currently unused and should be left set to 'false'. It will be updated and enabled by default in the future.",
+      "scope": "window",
+      "type": "boolean"
+    },
     "dart.enableSnippets": {
       "default": true,
       "description": "Whether to include Dart and Flutter snippets in code completion.",
