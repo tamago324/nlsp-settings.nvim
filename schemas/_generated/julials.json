@@ -367,6 +367,11 @@
       "scope": "application",
       "type": "boolean"
     },
+    "julia.usePlotNavigator": {
+      "default": true,
+      "description": "Whether to automatically show the plot navigator when plotting.",
+      "type": "boolean"
+    },
     "julia.usePlotPane": {
       "default": true,
       "description": "Display plots within VS Code. Might require a restart of the Julia process.",
