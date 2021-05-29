@@ -2,6 +2,7 @@ local config = require'nlspsettings.config'
 local nlspsettings = require'nlspsettings'
 
 local a = vim.api
+local uv = vim.loop
 
 local M = {}
 
@@ -69,8 +70,22 @@ M.open_config = function(server_name)
     vim.fn.mkdir(home, 'p')
   end
 
+  local path = string.format('%s/%s.json', home, server_name)
+
+  -- If the file does not exist, LSP will not be able to complete it, so create it
+  do
+    local stat = uv.fs_stat(path)
+    local exists = not vim.tbl_isempty(stat or {})
+    if not exists then
+      local mode = tonumber('644', 8)
+      local fd = uv.fs_open(path, "w", mode)
+      if not fd then error('Could not create file: ' .. path) end
+      uv.fs_close(fd)
+    end
+  end
+
   local cmd = (vim.api.nvim_buf_get_option(0, 'modified') and 'split') or 'edit'
-  vim.api.nvim_command(string.format([[%s %s/%s.json]], cmd, home, server_name))
+  vim.api.nvim_command(string.format([[%s %s]], cmd, path))
 end
 
 ---Update the setting values.
