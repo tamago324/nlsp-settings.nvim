@@ -176,7 +176,7 @@
     },
     "rust-analyzer.completion.addCallArgumentSnippets": {
       "default": true,
-      "markdownDescription": "Whether to add argument snippets when completing functions.",
+      "markdownDescription": "Whether to add argument snippets when completing functions.\nOnly applies when `#rust-analyzer.completion.addCallParenthesis#` is set.",
       "type": "boolean"
     },
     "rust-analyzer.completion.addCallParenthesis": {
