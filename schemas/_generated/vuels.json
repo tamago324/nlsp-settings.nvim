@@ -331,6 +331,11 @@
       ],
       "type": "string"
     },
+    "vetur.underline.refValue": {
+      "default": true,
+      "description": "Enable underline `.value` when using composition API.",
+      "type": "boolean"
+    },
     "vetur.useWorkspaceDependencies": {
       "default": false,
       "description": "Use dependencies from workspace. Currently only for TypeScript.",
