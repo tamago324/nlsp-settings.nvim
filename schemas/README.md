@@ -9,6 +9,7 @@
 - [ ] clojure_lsp
 - [ ] cmake
 - [x] codeqlls
+- [ ] crystalline
 - [x] cssls
 - [x] dartls
 - [ ] denols
