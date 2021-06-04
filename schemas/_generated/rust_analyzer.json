@@ -323,6 +323,11 @@
       "markdownDescription": "Use markdown syntax for links in hover.",
       "type": "boolean"
     },
+    "rust-analyzer.hoverActions.references": {
+      "default": false,
+      "markdownDescription": "Whether to show `References` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
+      "type": "boolean"
+    },
     "rust-analyzer.hoverActions.run": {
       "default": true,
       "markdownDescription": "Whether to show `Run` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
