@@ -2,6 +2,12 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of yamlls",
   "properties": {
+    "redhat.telemetry.enabled": {
+      "default": null,
+      "markdownDescription": "Enable usage data and errors to be sent to Red Hat servers. Read our [privacy statement](https://developers.redhat.com/article/tool-data-collection).",
+      "scope": "window",
+      "type": "boolean"
+    },
     "yaml.completion": {
       "default": true,
       "description": "Enable/disable completion feature",
