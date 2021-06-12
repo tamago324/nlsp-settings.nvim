@@ -78,12 +78,6 @@
       "scope": "resource",
       "type": "array"
     },
-    "purescript.editorMode": {
-      "default": false,
-      "description": "(DEPRECATED - ignored from purs 0.13.8) Whether to set the editor-mode flag on the IDE server",
-      "scope": "resource",
-      "type": "boolean"
-    },
     "purescript.fastRebuild": {
       "default": true,
       "description": "Enable purs IDE server fast rebuild",
@@ -112,12 +106,6 @@
       "description": "Path to installed packages. Will be used to control globs passed to IDE server for source locations.  Change requires IDE server restart.",
       "scope": "resource",
       "type": "string"
-    },
-    "purescript.polling": {
-      "default": false,
-      "description": "(DEPRECATED - ignored from purs 0.13.8) Whether to set the polling flag on the IDE server",
-      "scope": "resource",
-      "type": "boolean"
     },
     "purescript.preludeModule": {
       "default": "Prelude",
