@@ -40,6 +40,7 @@
 - [x] jsonls
 - [x] julials
 - [x] kotlin_language_server
+- [ ] lean3ls
 - [x] leanls
 - [ ] metals
 - [x] nimls
