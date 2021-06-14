@@ -73,6 +73,7 @@
 - [x] sumneko_lua
 - [ ] svelte
 - [ ] svls
+- [ ] tailwindcss
 - [x] terraformls
 - [ ] texlab
 - [ ] tflint
