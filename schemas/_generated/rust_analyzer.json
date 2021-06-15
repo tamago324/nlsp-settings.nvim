@@ -2,8 +2,8 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of rust_analyzer",
   "properties": {
-    "$generated-end": false,
-    "$generated-start": false,
+    "$generated-end": {},
+    "$generated-start": {},
     "rust-analyzer.assist.importEnforceGranularity": {
       "default": false,
       "markdownDescription": "Whether to enforce the import granularity setting for all files. If set to false rust-analyzer will try to keep import styles consistent per file.",
