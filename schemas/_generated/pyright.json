@@ -242,7 +242,7 @@
           "type": "string"
         },
         "reportOptionalCall": {
-          "default": "none",
+          "default": "error",
           "description": "Diagnostics for an attempt to call a variable with an Optional type.",
           "enum": [
             "none",
@@ -253,7 +253,7 @@
           "type": "string"
         },
         "reportOptionalContextManager": {
-          "default": "none",
+          "default": "error",
           "description": "Diagnostics for an attempt to use an Optional type as a context manager (as a parameter to a with statement).",
           "enum": [
             "none",
@@ -264,7 +264,7 @@
           "type": "string"
         },
         "reportOptionalIterable": {
-          "default": "none",
+          "default": "error",
           "description": "Diagnostics for an attempt to use an Optional type as an iterable value (e.g. within a for statement).",
           "enum": [
             "none",
@@ -275,7 +275,7 @@
           "type": "string"
         },
         "reportOptionalMemberAccess": {
-          "default": "none",
+          "default": "error",
           "description": "Diagnostics for an attempt to access a member of a variable with an Optional type.",
           "enum": [
             "none",
@@ -286,7 +286,7 @@
           "type": "string"
         },
         "reportOptionalOperand": {
-          "default": "none",
+          "default": "error",
           "description": "Diagnostics for an attempt to use an Optional type as an operand to a binary or unary operator (like '+', '==', 'or', 'not').",
           "enum": [
             "none",
@@ -297,7 +297,7 @@
           "type": "string"
         },
         "reportOptionalSubscript": {
-          "default": "none",
+          "default": "error",
           "description": "Diagnostics for an attempt to subscript (index) a variable with an Optional type.",
           "enum": [
             "none",
