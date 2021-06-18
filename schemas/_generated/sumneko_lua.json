@@ -177,7 +177,7 @@
           "type": "string"
         },
         "deprecated": {
-          "default": "None",
+          "default": "Opened",
           "description": "%config.diagnostics.deprecated%",
           "enum": [
             "Any",
@@ -419,7 +419,7 @@
           "type": "string"
         },
         "undefined-field": {
-          "default": "Opened",
+          "default": "Any",
           "description": "%config.diagnostics.undefined-field%",
           "enum": [
             "Any",
@@ -964,14 +964,8 @@
       "scope": "resource",
       "type": "integer"
     },
-    "Lua.hover.fieldInfer": {
-      "default": 3000,
-      "markdownDescription": "%config.hover.fieldInfer%",
-      "scope": "resource",
-      "type": "integer"
-    },
     "Lua.hover.previewFields": {
-      "default": 100,
+      "default": 20,
       "markdownDescription": "%config.hover.previewFields%",
       "scope": "resource",
       "type": "integer"
@@ -1224,7 +1218,7 @@
       "type": "array"
     },
     "Lua.runtime.plugin": {
-      "default": ".vscode/lua/plugin.lua",
+      "default": "",
       "markdownDescription": "%config.runtime.plugin%",
       "scope": "resource",
       "type": "string"
