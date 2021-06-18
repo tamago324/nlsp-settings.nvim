@@ -4,6 +4,11 @@
   "properties": {
     "$generated-end": {},
     "$generated-start": {},
+    "rust-analyzer.assist.allowMergingIntoGlobImports": {
+      "default": true,
+      "markdownDescription": "Whether to allow import insertion to merge new imports into single path glob imports like `use std::fmt::*;`.",
+      "type": "boolean"
+    },
     "rust-analyzer.assist.importEnforceGranularity": {
       "default": false,
       "markdownDescription": "Whether to enforce the import granularity setting for all files. If set to false rust-analyzer will try to keep import styles consistent per file.",
