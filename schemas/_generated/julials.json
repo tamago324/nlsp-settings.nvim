@@ -170,6 +170,11 @@
       ],
       "type": "string"
     },
+    "julia.focusPlotNavigator": {
+      "default": false,
+      "description": "Whether to automatically show the plot navigator when plotting.",
+      "type": "boolean"
+    },
     "julia.format.calls": {
       "default": true,
       "description": "Format function calls.",
@@ -365,11 +370,6 @@
       "default": false,
       "description": "Use an existing custom sysimage when starting the REPL",
       "scope": "application",
-      "type": "boolean"
-    },
-    "julia.usePlotNavigator": {
-      "default": true,
-      "description": "Whether to automatically show the plot navigator when plotting.",
       "type": "boolean"
     },
     "julia.usePlotPane": {
