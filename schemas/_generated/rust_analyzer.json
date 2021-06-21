@@ -313,6 +313,16 @@
       "markdownDescription": "Use semantic tokens for strings.\n\nIn some editors (e.g. vscode) semantic tokens override other highlighting grammars.\nBy disabling semantic tokens for strings, other grammars can be used to highlight\ntheir contents.",
       "type": "boolean"
     },
+    "rust-analyzer.hover.documentation": {
+      "default": true,
+      "markdownDescription": "Whether to show documentation on hover.",
+      "type": "boolean"
+    },
+    "rust-analyzer.hover.linksInHover": {
+      "default": true,
+      "markdownDescription": "Use markdown syntax for links in hover.",
+      "type": "boolean"
+    },
     "rust-analyzer.hoverActions.debug": {
       "default": true,
       "markdownDescription": "Whether to show `Debug` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
@@ -331,11 +341,6 @@
     "rust-analyzer.hoverActions.implementations": {
       "default": true,
       "markdownDescription": "Whether to show `Implementations` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
-      "type": "boolean"
-    },
-    "rust-analyzer.hoverActions.linksInHover": {
-      "default": true,
-      "markdownDescription": "Use markdown syntax for links in hover.",
       "type": "boolean"
     },
     "rust-analyzer.hoverActions.references": {
