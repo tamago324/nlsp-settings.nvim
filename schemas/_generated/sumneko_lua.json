@@ -78,24 +78,6 @@
       "scope": "resource",
       "type": "boolean"
     },
-    "Lua.develop.debuggerPort": {
-      "default": 11412,
-      "markdownDescription": "%config.develop.debuggerPort%",
-      "scope": "resource",
-      "type": "integer"
-    },
-    "Lua.develop.debuggerWait": {
-      "default": false,
-      "markdownDescription": "%config.develop.debuggerWait%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "Lua.develop.enable": {
-      "default": false,
-      "markdownDescription": "%config.develop.enable%",
-      "scope": "resource",
-      "type": "boolean"
-    },
     "Lua.diagnostics.disable": {
       "items": {
         "type": "string"
@@ -419,7 +401,7 @@
           "type": "string"
         },
         "undefined-field": {
-          "default": "Any",
+          "default": "Opened",
           "description": "%config.diagnostics.undefined-field%",
           "enum": [
             "Any",
@@ -988,17 +970,13 @@
       "scope": "resource",
       "type": "integer"
     },
-    "Lua.intelliSense.searchDepth": {
-      "default": 0,
-      "markdownDescription": "%config.intelliSense.searchDepth%",
-      "scope": "resource",
-      "type": "integer"
-    },
     "Lua.misc.parameters": {
-      "default": "",
+      "items": {
+        "type": "string"
+      },
       "markdownDescription": "%config.misc.parameters%",
       "scope": "resource",
-      "type": "string"
+      "type": "array"
     },
     "Lua.runtime.builtin": {
       "markdownDescription": "%config.runtime.builtin%",
