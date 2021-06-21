@@ -97,6 +97,16 @@
         "string"
       ]
     },
+    "rust-analyzer.cargo.unsetTest": {
+      "default": [
+        "core"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "Unsets `#[cfg(test)]` for the specified crates.",
+      "type": "array"
+    },
     "rust-analyzer.cargo.useRustcWrapperForBuildScripts": {
       "default": true,
       "markdownDescription": "Use `RUSTC_WRAPPER=rust-analyzer` when running build scripts to\navoid compiling unnecessary things.",
