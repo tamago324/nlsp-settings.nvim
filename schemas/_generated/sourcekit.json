@@ -2,6 +2,11 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of sourcekit",
   "properties": {
+    "sourcekit-lsp.inlayHints.enabled": {
+      "default": false,
+      "description": "(experimental) Render inlay type annotations in the editor.",
+      "type": "boolean"
+    },
     "sourcekit-lsp.serverArguments": {
       "default": [],
       "description": "Arguments to pass to sourcekit-lsp. Argument keys and values should be provided as separate entries in the array e.g. ['--log-level', 'debug']",
