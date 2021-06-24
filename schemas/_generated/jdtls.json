@@ -161,6 +161,17 @@
       "scope": "window",
       "type": "string"
     },
+    "java.configuration.maven.notCoveredPluginExecutionSeverity": {
+      "default": "warning",
+      "description": "Specifies severity if the plugin execution is not covered by Maven build lifecycle.",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "window",
+      "type": "string"
+    },
     "java.configuration.maven.userSettings": {
       "default": null,
       "description": "Path to Maven's user settings.xml",
