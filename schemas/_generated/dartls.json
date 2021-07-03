@@ -170,6 +170,15 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "dart.dapLogFile": {
+      "default": null,
+      "markdownDescription": "The path to a log file for communication with the DAP debug adapters. This is useful when trying to diagnose issues with debugging such as missed breakpoints.",
+      "scope": "machine-overridable",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
     "dart.debugExtensionBackendProtocol": {
       "default": "ws",
       "description": "The protocol to use for the Dart Debug Extension backend service and injected client. Using WebSockets can improve performance but may fail when connecting through some proxy servers.",
