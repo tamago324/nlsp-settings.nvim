@@ -51,6 +51,7 @@
 - [ ] phpactor
 - [ ] powershell_es
 - [ ] prismals
+- [ ] puppet
 - [x] purescriptls
 - [x] pyls
 - [ ] pyls_ms
