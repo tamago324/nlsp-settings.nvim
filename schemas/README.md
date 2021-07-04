@@ -48,6 +48,7 @@
 - [ ] ocamllsp
 - [ ] omnisharp
 - [x] perlls
+- [x] perlpls
 - [ ] phpactor
 - [ ] powershell_es
 - [ ] prismals

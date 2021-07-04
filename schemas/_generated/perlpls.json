@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of perlpls",
+  "properties": {
+    "perl.cwd": {
+      "default": ".",
+      "description": "Current working directory to use",
+      "type": "string"
+    },
+    "perl.inc": {
+      "default": [],
+      "description": "Paths to add to @INC.",
+      "type": "array"
+    },
+    "perl.perlcritic.enabled": {
+      "default": true,
+      "description": "Enable perlcritic",
+      "type": "boolean"
+    },
+    "perl.perlcritic.perlcriticrc": {
+      "default": "~/.perlcriticrc",
+      "description": "Path to .perlcriticrc",
+      "type": "string"
+    },
+    "perl.perltidyrc": {
+      "default": "~/.perltidyrc",
+      "description": "Path to .perltidyrc",
+      "type": "string"
+    },
+    "perl.pls": {
+      "default": "pls",
+      "description": "Path to the pls executable script",
+      "type": "string"
+    },
+    "perl.sortImports.args": {
+      "default": [],
+      "description": "Arguments passed in. Each argument is a separate item in the array.",
+      "items": {
+        "type": "string"
+      },
+      "scope": "resource",
+      "type": "array"
+    },
+    "perl.syntax.enabled": {
+      "default": true,
+      "description": "Enable syntax checking",
+      "type": "boolean"
+    },
+    "perl.syntax.perl": {
+      "default": "",
+      "description": "Path to the perl binary to use for syntax checking",
+      "type": "string"
+    }
+  }
+}
