@@ -20,6 +20,7 @@
 - [ ] efm
 - [x] elixirls
 - [x] elmls
+- [ ] ember
 - [ ] erlangls
 - [x] flow
 - [x] fortls
