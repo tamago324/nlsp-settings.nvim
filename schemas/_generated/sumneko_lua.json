@@ -1270,6 +1270,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "Lua.workspace.checkThirdParty": {
+      "default": true,
+      "markdownDescription": "%config.workspace.checkThirdParty%",
+      "scope": "source",
+      "type": "boolean"
+    },
     "Lua.workspace.ignoreDir": {
       "default": [
         ".vscode"
