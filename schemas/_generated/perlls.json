@@ -49,7 +49,7 @@
     },
     "perl.perlInc": {
       "default": null,
-      "description": "array with paths to add to perl library path. This setting is used by the syntax checker and for the debuggee and also for the LanguageServer itself.",
+      "description": "array with paths to add to perl library path. This setting is used by the syntax checker and for the debuggee and also for the LanguageServer itself. perl.perlInc should be absolute paths.",
       "type": "array"
     },
     "perl.showLocalVars": {
