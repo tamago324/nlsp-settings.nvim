@@ -384,6 +384,17 @@
           ],
           "type": "string"
         },
+        "reportUninitializedInstanceVariable": {
+          "default": "none",
+          "description": "Diagnostics for instance variables that are not declared or initialized within class body or `__init__` method.",
+          "enum": [
+            "none",
+            "information",
+            "warning",
+            "error"
+          ],
+          "type": "string"
+        },
         "reportUnknownArgumentType": {
           "default": "none",
           "description": "Diagnostics for call arguments for functions or methods that have an unknown type.",
