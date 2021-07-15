@@ -55,8 +55,6 @@
 - [ ] prismals
 - [ ] puppet
 - [x] purescriptls
-- [x] pyls
-- [ ] pyls_ms
 - [ ] pylsp
 - [x] pyright
 - [x] r_language_server
