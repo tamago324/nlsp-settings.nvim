@@ -78,6 +78,7 @@
         "-Base.task_local_storage",
         "-Base.timedwait",
         "-Base.withenv",
+        "-Base.Broadcast",
         "Core",
         "Core.Compiler.",
         "Core.IR",
