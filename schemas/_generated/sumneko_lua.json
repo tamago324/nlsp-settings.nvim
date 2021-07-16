@@ -1273,7 +1273,7 @@
     "Lua.workspace.checkThirdParty": {
       "default": true,
       "markdownDescription": "%config.workspace.checkThirdParty%",
-      "scope": "source",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.workspace.ignoreDir": {
