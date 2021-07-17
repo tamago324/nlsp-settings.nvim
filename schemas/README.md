@@ -65,6 +65,7 @@
 - [ ] rome
 - [x] rust_analyzer
 - [ ] scry
+- [ ] serve_d
 - [x] solargraph
 - [ ] sorbet
 - [x] sourcekit
