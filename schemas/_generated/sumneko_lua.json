@@ -1318,6 +1318,14 @@
       "markdownDescription": "%config.workspace.useGitIgnore%",
       "scope": "resource",
       "type": "boolean"
+    },
+    "Lua.workspace.userThirdParty": {
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%config.workspace.userThirdParty%",
+      "scope": "resource",
+      "type": "array"
     }
   }
 }
