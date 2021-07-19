@@ -17,7 +17,7 @@
       "type": "array"
     },
     "julia.completionmode": {
-      "default": "import",
+      "default": "qualify",
       "description": "Sets the mode for completions.",
       "enum": [
         "exportedonly",
@@ -156,7 +156,7 @@
       "type": "object"
     },
     "julia.execution.resultType": {
-      "default": "REPL",
+      "default": "both",
       "description": "Specifies how to show inline execution results",
       "enum": [
         "REPL",
@@ -355,6 +355,15 @@
       "markdownDescription": "Name of the `tmux` session.",
       "scope": "machine-overridable",
       "type": "string"
+    },
+    "julia.symbolCacheDownload": {
+      "default": null,
+      "description": "Download symbol server cache files from GitHub.",
+      "scope": "application",
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "julia.trace.server": {
       "default": "off",
