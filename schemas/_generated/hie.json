@@ -156,25 +156,6 @@
       "scope": "resource",
       "type": "boolean"
     },
-    "haskell.plugin.tactic.config.features": {
-      "default": true,
-      "markdownDescription": "Feature set used by Wingman",
-      "scope": "resource",
-      "type": "string"
-    },
-    "haskell.plugin.tactic.config.max_use_ctor_actions": {
-      "default": 5,
-      "markdownDescription": "Maximum number of `Use constructor <x>` code actions that can appear",
-      "scope": "resource",
-      "title": "Max number of constructors",
-      "type": "integer"
-    },
-    "haskell.plugin.tactic.globalOn": {
-      "default": true,
-      "description": "Enables wingman (tactic) plugin",
-      "scope": "resource",
-      "type": "boolean"
-    },
     "haskell.plugin.tactics.config.hole_severity": {
       "default": null,
       "description": "The severity to use when showing hole diagnostics.",
@@ -195,11 +176,24 @@
       "scope": "resource",
       "type": "string"
     },
+    "haskell.plugin.tactics.config.max_use_ctor_actions": {
+      "default": 5,
+      "markdownDescription": "Maximum number of `Use constructor <x>` code actions that can appear",
+      "scope": "resource",
+      "title": "Max number of constructors",
+      "type": "integer"
+    },
     "haskell.plugin.tactics.config.timeout_duration": {
       "default": 2,
       "markdownDescription": "The timeout for Wingman actions, in seconds",
       "scope": "resource",
       "type": "integer"
+    },
+    "haskell.plugin.tactics.globalOn": {
+      "default": true,
+      "description": "Enables Wingman (tactics) plugin",
+      "scope": "resource",
+      "type": "boolean"
     },
     "haskell.releasesURL": {
       "default": "",
