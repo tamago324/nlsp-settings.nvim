@@ -95,14 +95,21 @@ end
 ---@param server_name string
 ---@return table merged_settings
 local get_settings = function(server_name)
-  local settings = servers[server_name].settings or {}
+  local json_settings = servers[server_name].settings or {}
   local new_settings = servers[server_name].conf_settings or {}
 
   -- Priority:
   --   1. JSON settings
   --   2. setup({settings = ...})
   --   3. default_config.settings
-  return vim.tbl_deep_extend('keep', settings, new_settings)
+  local settings = vim.tbl_deep_extend('keep', json_settings, new_settings)
+
+  -- jsonls の場合、 schemas を追加する
+  if server_name == 'jsonls' then
+    settings.json.schemas = vim.list_extend(json_settings.json.schemas or {}, new_settings.json.schemas or {})
+  end
+  return settings
+
 end
 M.get_settings = get_settings
 

@@ -39,6 +39,7 @@ require"lspconfig".jsonls.setup {
   cmd = { '/path/to/json-languageserver', '--stdio' },
 
   -- Set the schema so that it can be completed in settings json file.
+  -- The schemas defined in `jsonls.json` will be merged with the list configured here.
   settings = {
     json = {
       schemas = require'nlspsettings.jsonls'.get_default_schemas()
