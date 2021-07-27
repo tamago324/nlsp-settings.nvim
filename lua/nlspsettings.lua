@@ -150,30 +150,6 @@ M.update_settings = function(server_name)
   return false
 end
 
---- Make an on_new_config function that sets the settings
----@param on_new_config function
----@return function
-M.make_on_new_config = function(on_new_config)
-  local msg = string.format(
-    [[nlspsettings.make_on_new_config() is deprecated. All language servers have already been configured with on_new_config in nlspsettings.setup().]]
-  )
-  a.nvim_echo({{msg, 'WarningMsg'}}, true, {})
-
-  -- before にしたのは、settings を上書きできるようにするため
-  -- XXX: before か after かどっちがいいのか、なやむ
-  return lspconfig.util.add_hook_before(on_new_config, function(new_config, _)
-    local server_name = new_config.name
-
-    if servers[server_name] == nil then
-      servers[server_name] = {}
-    end
-
-    -- 1度だけ、保持する ()
-    -- new_config.settings は `setup({settings = ...}) + default_config.settings`
-    servers[server_name].conf_settings = vim.deepcopy(new_config.settings)
-    new_config.settings = get_settings(server_name)
-  end)
-end
 
 --- Make an on_new_config function that sets the settings
 ---@param on_new_config function
@@ -271,22 +247,6 @@ M.setup = function(opts)
 end
 
 local mt = {}
-
-mt.__index = function(_, k)
-  local X = {}
-
-  X.get = function(_)
-    local msg = string.format(
-      [[nlspsettings.%s.get() is deprecated. Use require('nlspsettings').make_on_new_config() instead.]]
-      , k
-    )
-    a.nvim_echo({{msg, 'WarningMsg'}}, true, {})
-
-    return {}
-  end
-
-  return X
-end
 
 -- M.settings = servers
 M._get_servers = function()
