@@ -2,14 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of hie",
   "properties": {
-    "haskell.completionSnippetsOn": {
-      "default": true,
-      "description": "Show snippets with type information when using code completion",
-      "markdownDeprecationMessage": "**Deprecated**: Please use `#haskell.plugin.ghcide-completions.config.snippetsOn#` instead.",
-      "scope": "resource",
-      "title": "Completion Snippets",
-      "type": "boolean"
-    },
     "haskell.diagnosticsOnChange": {
       "default": true,
       "description": "Compute diagnostics continuously as you type. Turn off to only generate diagnostics on file save.",
@@ -35,14 +27,6 @@
       ],
       "scope": "resource",
       "type": "string"
-    },
-    "haskell.hlintOn": {
-      "default": true,
-      "description": "Get suggestions from hlint",
-      "markdownDeprecationMessage": "**Deprecated**: Please use `#haskell.plugin.hlint.globalOn#` instead.",
-      "scope": "resource",
-      "title": "Hlint",
-      "type": "boolean"
     },
     "haskell.logFile": {
       "default": "",
@@ -108,6 +92,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "haskell.plugin.hlint.config.flags": {
+      "default": [],
+      "markdownDescription": "Flags used by hlint",
+      "scope": "resource",
+      "type": "array"
+    },
     "haskell.plugin.hlint.diagnosticsOn": {
       "default": true,
       "description": "Enables hlint diagnostics",
@@ -156,6 +146,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "haskell.plugin.tactics.config.auto_gas": {
+      "default": 4,
+      "markdownDescription": "The depth of the search tree when performing \"Attempt to fill hole\". Bigger values will be able to derive more solutions, but will take exponentially more time.",
+      "scope": "resource",
+      "type": "integer"
+    },
     "haskell.plugin.tactics.config.hole_severity": {
       "default": null,
       "description": "The severity to use when showing hole diagnostics.",
@@ -182,6 +178,12 @@
       "scope": "resource",
       "title": "Max number of constructors",
       "type": "integer"
+    },
+    "haskell.plugin.tactics.config.proofstate_styling": {
+      "default": true,
+      "markdownDescription": "Should Wingman emit styling markup when showing metaprogram proof states?",
+      "scope": "resource",
+      "type": "boolean"
     },
     "haskell.plugin.tactics.config.timeout_duration": {
       "default": 2,
