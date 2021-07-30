@@ -432,6 +432,11 @@
       "markdownDescription": "Whether to show CodeLens in Rust files.",
       "type": "boolean"
     },
+    "rust-analyzer.lens.forceCustomCommands": {
+      "default": true,
+      "markdownDescription": "Internal config: use custom client-side commands even when the\nclient doesn't set the corresponding capability.",
+      "type": "boolean"
+    },
     "rust-analyzer.lens.implementations": {
       "default": true,
       "markdownDescription": "Whether to show `Implementations` lens. Only applies when\n`#rust-analyzer.lens.enable#` is set.",
