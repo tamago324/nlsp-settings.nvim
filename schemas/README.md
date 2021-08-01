@@ -2,6 +2,7 @@
 
 - [x] als
 - [ ] angularls
+- [ ] ansiblels
 - [x] bashls
 - [ ] beancount
 - [ ] ccls
