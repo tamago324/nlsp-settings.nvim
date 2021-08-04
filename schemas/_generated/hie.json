@@ -209,6 +209,17 @@
       "scope": "resource",
       "type": "string"
     },
+    "haskell.trace.client": {
+      "default": "error",
+      "description": "Traces the communication between VS Code and the language server.",
+      "enum": [
+        "off",
+        "error",
+        "debug"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
     "haskell.trace.server": {
       "default": "off",
       "description": "Traces the communication between VS Code and the language server.",
