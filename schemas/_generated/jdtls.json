@@ -586,10 +586,24 @@
       "type": "string"
     },
     "java.showBuildStatusOnStart.enabled": {
-      "default": false,
+      "anyOf": [
+        {
+          "enum": [
+            "notification",
+            "terminal",
+            "off"
+          ],
+          "enumDescriptions": [
+            "Show the build status via progress notification on start",
+            "Show the build status via terminal on start",
+            "Do not show any build status on start"
+          ]
+        },
+        "boolean"
+      ],
+      "default": "notification",
       "description": "Automatically show build status on startup.",
-      "scope": "window",
-      "type": "boolean"
+      "scope": "window"
     },
     "java.signatureHelp.enabled": {
       "default": false,
