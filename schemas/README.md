@@ -5,6 +5,7 @@
 - [ ] ansiblels
 - [x] bashls
 - [ ] beancount
+- [ ] bicep
 - [ ] ccls
 - [ ] clangd
 - [ ] clojure_lsp
