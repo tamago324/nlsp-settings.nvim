@@ -32,13 +32,9 @@
       "description": "Path to the pls executable script",
       "type": "string"
     },
-    "perl.sortImports.args": {
+    "perl.plsargs": {
       "default": [],
-      "description": "Arguments passed in. Each argument is a separate item in the array.",
-      "items": {
-        "type": "string"
-      },
-      "scope": "resource",
+      "description": "Arguments to pass to the pls command",
       "type": "array"
     },
     "perl.syntax.enabled": {
