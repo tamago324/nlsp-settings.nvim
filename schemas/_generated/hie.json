@@ -211,7 +211,7 @@
     },
     "haskell.trace.client": {
       "default": "error",
-      "description": "Traces the communication between VS Code and the language server.",
+      "description": "Sets the log level in the client side.",
       "enum": [
         "off",
         "error",
