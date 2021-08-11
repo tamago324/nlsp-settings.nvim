@@ -59,6 +59,12 @@
       "scope": "resource",
       "type": "string"
     },
+    "purescript.buildOpenedFiles": {
+      "default": false,
+      "markdownDescription": "**EXPERIMENTAL** Enable purs IDE server fast rebuild of opened files. This includes both newly opened tabs and those present at startup.",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "purescript.censorWarnings": {
       "default": [],
       "description": "The warning codes to censor, both for fast rebuild and a full build. Unrelated to any psa setup. e.g.: [\"ShadowedName\",\"MissingTypeDeclaration\"]",
