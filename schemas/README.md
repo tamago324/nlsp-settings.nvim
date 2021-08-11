@@ -46,6 +46,7 @@
 - [ ] lean3ls
 - [x] leanls
 - [ ] metals
+- [ ] mint
 - [x] nimls
 - [ ] ocamlls
 - [ ] ocamllsp
