@@ -66,11 +66,33 @@
       "scope": "resource",
       "type": "string"
     },
+    "Lua.completion.requireSeparator": {
+      "default": ".",
+      "markdownDescription": "%config.completion.requireSeparator%",
+      "scope": "resource",
+      "type": "string"
+    },
     "Lua.completion.showParams": {
       "default": true,
       "markdownDescription": "%config.completion.showParams%",
       "scope": "resource",
       "type": "boolean"
+    },
+    "Lua.completion.showWord": {
+      "default": "Enable",
+      "enum": [
+        "Enable",
+        "Fallback",
+        "Disable"
+      ],
+      "markdownDescription": "%config.completion.showWord%",
+      "markdownEnumDescriptions": [
+        "%config.completion.showWord.Enable%",
+        "%config.completion.showWord.Fallback%",
+        "%config.completion.showWord.Disable%"
+      ],
+      "scope": "resource",
+      "type": "string"
     },
     "Lua.completion.workspaceWord": {
       "default": true,
@@ -99,6 +121,38 @@
       "markdownDescription": "%config.diagnostics.globals%",
       "scope": "resource",
       "type": "array"
+    },
+    "Lua.diagnostics.ignoredFiles": {
+      "default": "Disable",
+      "enum": [
+        "Enable",
+        "Opened",
+        "Disable"
+      ],
+      "markdownDescription": "%config.diagnostics.ignoredFiles%",
+      "markdownEnumDescriptions": [
+        "%config.diagnostics.files.Enable%",
+        "%config.diagnostics.files.Opened%",
+        "%config.diagnostics.files.Disable%"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "Lua.diagnostics.libraryFiles": {
+      "default": "Disable",
+      "enum": [
+        "Enable",
+        "Opened",
+        "Disable"
+      ],
+      "markdownDescription": "%config.diagnostics.libraryFiles%",
+      "markdownEnumDescriptions": [
+        "%config.diagnostics.files.Enable%",
+        "%config.diagnostics.files.Opened%",
+        "%config.diagnostics.files.Disable%"
+      ],
+      "scope": "resource",
+      "type": "string"
     },
     "Lua.diagnostics.neededFileStatus": {
       "markdownDescription": "%config.diagnostics.neededFileStatus%",
@@ -161,6 +215,17 @@
         "deprecated": {
           "default": "Opened",
           "description": "%config.diagnostics.deprecated%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None"
+          ],
+          "scope": "resource",
+          "type": "string"
+        },
+        "different-requires": {
+          "default": "Any",
+          "description": "%config.diagnostics.different-requires%",
           "enum": [
             "Any",
             "Opened",
@@ -557,6 +622,18 @@
           "scope": "resource",
           "type": "string"
         },
+        "different-requires": {
+          "default": "Warning",
+          "description": "%config.diagnostics.different-requires%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint"
+          ],
+          "scope": "resource",
+          "type": "string"
+        },
         "doc-field-no-class": {
           "default": "Warning",
           "description": "%config.diagnostics.doc-field-no-class%",
@@ -917,10 +994,20 @@
       "type": "boolean"
     },
     "Lua.hint.paramName": {
-      "default": true,
+      "default": "All",
+      "enum": [
+        "All",
+        "Literal",
+        "Disable"
+      ],
       "markdownDescription": "%config.hint.paramName%",
+      "markdownEnumDescriptions": [
+        "%config.hint.paramName.All%",
+        "%config.hint.paramName.Literal%",
+        "%config.hint.paramName.Disable%"
+      ],
       "scope": "resource",
-      "type": "boolean"
+      "type": "string"
     },
     "Lua.hint.paramType": {
       "default": true,
