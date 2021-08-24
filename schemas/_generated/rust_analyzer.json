@@ -407,6 +407,11 @@
       "markdownDescription": "Whether to show inlay type hints for variables.",
       "type": "boolean"
     },
+    "rust-analyzer.joinLines.joinAssignments": {
+      "default": true,
+      "markdownDescription": "Join lines merges consecutive declaration and initialization of an assignment.",
+      "type": "boolean"
+    },
     "rust-analyzer.joinLines.joinElseIf": {
       "default": true,
       "markdownDescription": "Join lines inserts else between consecutive ifs.",
