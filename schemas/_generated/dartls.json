@@ -675,6 +675,12 @@
         "boolean"
       ]
     },
+    "dart.previewVsCodeTestRunner": {
+      "default": false,
+      "description": "PREVIEW: Whether to enable reporting tests into the VS Code Test Runner (requires restart).",
+      "scope": "window",
+      "type": "boolean"
+    },
     "dart.promptToGetPackages": {
       "default": true,
       "description": "Whether to prompt to get packages when opening a project with out of date packages.",
