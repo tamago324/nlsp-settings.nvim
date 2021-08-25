@@ -32,6 +32,21 @@
       "scope": "resource",
       "type": "array"
     },
+    "terraform-ls.terraformExecPath": {
+      "description": "Path to the Terraform binary",
+      "scope": "resource",
+      "type": "string"
+    },
+    "terraform-ls.terraformExecTimeout": {
+      "description": "Overrides Terraform execution timeout (e.g. 30s)",
+      "scope": "resource",
+      "type": "string"
+    },
+    "terraform-ls.terraformLogFilePath": {
+      "description": "Path to a file for Terraform executions to be logged into (TF_LOG_PATH) with support for variables (e.g. Timestamp, Pid, Ppid) via Go template syntax {{.VarName}}",
+      "scope": "resource",
+      "type": "string"
+    },
     "terraform.languageServer": {
       "default": {
         "args": [
