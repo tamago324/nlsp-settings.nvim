@@ -82,6 +82,7 @@
 - [x] terraformls
 - [ ] texlab
 - [ ] tflint
+- [ ] theme_check
 - [ ] tsserver
 - [ ] vala_ls
 - [ ] vimls
