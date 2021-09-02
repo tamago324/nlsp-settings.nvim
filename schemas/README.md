@@ -45,6 +45,7 @@
 - [x] kotlin_language_server
 - [ ] lean3ls
 - [x] leanls
+- [ ] lemminx
 - [ ] metals
 - [ ] mint
 - [x] nimls
