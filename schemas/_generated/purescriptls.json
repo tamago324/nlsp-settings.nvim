@@ -110,7 +110,7 @@
     },
     "purescript.fullBuildOnSave": {
       "default": false,
-      "description": "Whether to rebuild on save. In general, this is a bad idea because it is slow, but when doing live coding, often times many files need to update when one is changed. This allows for that at the expense of speed.",
+      "description": "Whether to perform a full build on save with the configured build command (rather than IDE server fast rebuild). This is not generally recommended because it is slow, but it does mean that dependant modules are rebuilt as necessary.",
       "scope": "resource",
       "type": "boolean"
     },
