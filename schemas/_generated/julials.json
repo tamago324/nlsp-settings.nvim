@@ -140,7 +140,7 @@
     "julia.executablePath": {
       "default": "",
       "description": "Points to the julia executable.",
-      "scope": "machine",
+      "scope": "machine-overridable",
       "type": "string"
     },
     "julia.execution.codeInREPL": {
@@ -361,6 +361,16 @@
       "markdownDescription": "Name of the `tmux` session.",
       "scope": "machine-overridable",
       "type": "string"
+    },
+    "julia.plots.path": {
+      "description": "The output directory to save plots to",
+      "scope": "window",
+      "type": "string"
+    },
+    "julia.showRuntimeDiagnostics": {
+      "default": true,
+      "markdownDescription": "Enable display of runtime diagnostics. These diagnostics are provided by packages that overload a `show` method for the `application/vnd.julia-vscode.diagnostics` MIME type.",
+      "type": "boolean"
     },
     "julia.symbolCacheDownload": {
       "default": null,
