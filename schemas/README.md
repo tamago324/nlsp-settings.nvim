@@ -70,6 +70,7 @@
 - [x] rust_analyzer
 - [ ] scry
 - [ ] serve_d
+- [ ] solang
 - [x] solargraph
 - [ ] sorbet
 - [x] sourcekit
