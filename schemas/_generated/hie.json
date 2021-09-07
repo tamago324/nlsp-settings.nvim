@@ -34,6 +34,18 @@
       "scope": "resource",
       "type": "string"
     },
+    "haskell.openDocumentationInHackage": {
+      "default": true,
+      "description": "When opening 'Documentation' for external libraries, open in hackage by default. Set to false to instead open in vscode.",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.openSourceInHackage": {
+      "default": true,
+      "description": "When opening 'Source' for external libraries, open in hackage by default. Set to false to instead open in vscode.",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "haskell.plugin.class.globalOn": {
       "default": true,
       "description": "Enables type class plugin",
