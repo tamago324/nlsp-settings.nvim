@@ -134,6 +134,11 @@
       "description": "Component preview background style.",
       "type": "boolean"
     },
+    "volar.takeOverBuiltinTsExtension": {
+      "default": true,
+      "description": "If built-in VSCode TypeScript Extension disabled, take over language support for *.ts.",
+      "type": "boolean"
+    },
     "volar.tsPlugin": {
       "default": null,
       "description": "Enable Vue TS Server Plugin.\nSince TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases, this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), then you need to enable this setting.",
@@ -150,7 +155,7 @@
       "type": "boolean"
     },
     "volar.tsPluginStatus": {
-      "default": true,
+      "default": false,
       "description": "Display TS Server Plugin status bar item.",
       "type": "boolean"
     }
