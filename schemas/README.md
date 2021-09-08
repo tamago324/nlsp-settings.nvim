@@ -3,6 +3,7 @@
 - [x] als
 - [ ] angularls
 - [ ] ansiblels
+- [ ] arduino_language_server
 - [x] bashls
 - [ ] beancount
 - [ ] bicep
@@ -52,6 +53,7 @@
 - [ ] ocamlls
 - [ ] ocamllsp
 - [ ] omnisharp
+- [ ] pasls
 - [x] perlls
 - [x] perlpls
 - [ ] phpactor
@@ -89,6 +91,7 @@
 - [ ] vala_ls
 - [ ] vimls
 - [ ] vls
+- [x] volar
 - [x] vuels
 - [x] yamlls
 - [x] zeta_note

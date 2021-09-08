@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of volar",
+  "properties": {
+    "volar-api.trace.server": {
+      "default": "off",
+      "description": "Traces the communication between VS Code and the language server.",
+      "enum": [
+        "off",
+        "messages",
+        "verbose"
+      ],
+      "scope": "window",
+      "type": "string"
+    },
+    "volar-document.trace.server": {
+      "default": "off",
+      "description": "Traces the communication between VS Code and the language server.",
+      "enum": [
+        "off",
+        "messages",
+        "verbose"
+      ],
+      "scope": "window",
+      "type": "string"
+    },
+    "volar-html.trace.server": {
+      "default": "off",
+      "description": "Traces the communication between VS Code and the language server.",
+      "enum": [
+        "off",
+        "messages",
+        "verbose"
+      ],
+      "scope": "window",
+      "type": "string"
+    },
+    "volar.autoCompleteRefs": {
+      "default": true,
+      "description": "Auto-complete Ref value with `.value`.",
+      "type": "boolean"
+    },
+    "volar.checkVueTscVersion": {
+      "default": true,
+      "description": "Check node_modules/vscode-vue-languageservice version when start extension.",
+      "type": "boolean"
+    },
+    "volar.codeLens.pugTools": {
+      "default": true,
+      "description": "[pug ☐] code lens.",
+      "type": "boolean"
+    },
+    "volar.codeLens.references": {
+      "default": true,
+      "description": "[references] code lens.",
+      "type": "boolean"
+    },
+    "volar.codeLens.scriptSetupTools": {
+      "default": true,
+      "description": "[ref sugar ☐] code lens.",
+      "type": "boolean"
+    },
+    "volar.formatting.printWidth": {
+      "default": 100,
+      "description": "HTML formatting print width.",
+      "type": "number"
+    },
+    "volar.icon.finder": {
+      "default": false,
+      "description": "(Experimental) Show code finder icon in title area of editor.",
+      "type": "boolean"
+    },
+    "volar.icon.preview": {
+      "default": false,
+      "description": "(Experimental) Show preview component icon in title area of editor.",
+      "type": "boolean"
+    },
+    "volar.icon.splitEditors": {
+      "default": true,
+      "description": "Show split editor icon in title area of editor.",
+      "type": "boolean"
+    },
+    "volar.lowPowerMode": {
+      "default": false,
+      "description": "Using one language server to do the work of two language serves can reduce system resource usage, but features such as auto-complete will be much slower.",
+      "type": "boolean"
+    },
+    "volar.preferredAttrNameCase": {
+      "default": "auto-kebab",
+      "description": "Preferred attr name case.",
+      "enum": [
+        "auto-kebab",
+        "auto-camel",
+        "kebab",
+        "camel"
+      ],
+      "enumDescriptions": [
+        "Auto Detect from Content (Preferred :kebab-case=\"...\")",
+        "Auto Detect from Content (Preferred :camelCase=\"...\")",
+        ":kebab-case=\"...\"",
+        ":camelCase=\"...\""
+      ],
+      "type": "string"
+    },
+    "volar.preferredTagNameCase": {
+      "default": "auto",
+      "description": "Preferred tag name case.",
+      "enum": [
+        "auto",
+        "both",
+        "kebab",
+        "pascal"
+      ],
+      "enumDescriptions": [
+        "Auto Detect from Content",
+        "<kebab-case> and <PascalCase>",
+        "<kebab-case>",
+        "<PascalCase>"
+      ],
+      "type": "string"
+    },
+    "volar.preview.backgroundColor": {
+      "default": "#fff",
+      "description": "Component preview background color.",
+      "type": "string"
+    },
+    "volar.preview.port": {
+      "default": 3333,
+      "description": "Default port for component preview server.",
+      "type": "number"
+    },
+    "volar.preview.transparentGrid": {
+      "default": true,
+      "description": "Component preview background style.",
+      "type": "boolean"
+    },
+    "volar.tsPlugin": {
+      "default": null,
+      "description": "Enable Vue TS Server Plugin.\nSince TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases, this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), then you need to enable this setting.",
+      "enum": [
+        null,
+        true,
+        false
+      ],
+      "enumDescriptions": [
+        "Don't care (Don't reload VSCode)",
+        "Enable TS Plugin",
+        "Disable TS Plugin"
+      ],
+      "type": "boolean"
+    },
+    "volar.tsPluginStatus": {
+      "default": true,
+      "description": "Display TS Server Plugin status bar item.",
+      "type": "boolean"
+    }
+  }
+}
