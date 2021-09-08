@@ -342,7 +342,7 @@
     },
     "dart.flutterCreateAndroidLanguage": {
       "default": "kotlin",
-      "description": "The programming language to use for Android apps when creating new projects using the 'Flutter: New Application Project' command.",
+      "description": "The programming language to use for Android apps when creating new projects using the 'Flutter: New Project' command.",
       "enum": [
         "java",
         "kotlin"
@@ -351,7 +351,7 @@
     },
     "dart.flutterCreateIOSLanguage": {
       "default": "swift",
-      "description": "The programming language to use for iOS apps when creating new projects using the 'Flutter: New Application Project' command.",
+      "description": "The programming language to use for iOS apps when creating new projects using the 'Flutter: New Project' command.",
       "enum": [
         "objc",
         "swift"
@@ -360,7 +360,7 @@
     },
     "dart.flutterCreateOffline": {
       "default": false,
-      "description": "Whether to use offline mode when creating new projects with the 'Flutter: New Application Project' command.",
+      "description": "Whether to use offline mode when creating new projects with the 'Flutter: New Project' command.",
       "scope": "window",
       "type": "boolean"
     },

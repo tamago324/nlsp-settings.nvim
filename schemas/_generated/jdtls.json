@@ -557,12 +557,6 @@
       "scope": "window",
       "type": "boolean"
     },
-    "java.semanticHighlighting.enabled": {
-      "default": true,
-      "description": "Enable/disable the semantic highlighting.",
-      "scope": "window",
-      "type": "boolean"
-    },
     "java.server.launchMode": {
       "default": "Hybrid",
       "description": "The launch mode for the Java extension",
