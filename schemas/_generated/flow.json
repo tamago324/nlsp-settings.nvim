@@ -19,21 +19,6 @@
       "scope": "resource",
       "type": "boolean"
     },
-    "flow.fileExtensions": {
-      "default": [
-        ".js",
-        ".mjs",
-        ".jsx",
-        ".flow",
-        ".json"
-      ],
-      "description": "(Supported only when useLSP: false). File extensions to consider for flow processing",
-      "items": {
-        "type": "string"
-      },
-      "scope": "resource",
-      "type": "array"
-    },
     "flow.lazyMode": {
       "default": null,
       "description": "Set value to enable flow lazy mode",
@@ -58,21 +43,9 @@
       "scope": "resource",
       "type": "string"
     },
-    "flow.runOnAllFiles": {
-      "default": false,
-      "description": "(Supported only when useLSP: false) Run Flow on all files, No need to put //@flow comment on top of files.",
-      "scope": "resource",
-      "type": "boolean"
-    },
     "flow.runOnEdit": {
       "default": true,
       "description": "If true will run flow on every edit, otherwise will run only when changes are saved (Note: 'useLSP: true' only supports syntax errors)",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "flow.showStatus": {
-      "default": true,
-      "description": "(Supported only when useLSP: false) If true will display flow status is the statusbar",
       "scope": "resource",
       "type": "boolean"
     },
@@ -114,12 +87,6 @@
       "default": true,
       "description": "Complete functions with their parameter signature.",
       "scope": "resource",
-      "type": "boolean"
-    },
-    "flow.useLSP": {
-      "default": true,
-      "description": "Turn off to switch from the official Flow Language Server implementation to talking directly to flow.",
-      "scope": "window",
       "type": "boolean"
     },
     "flow.useNPMPackagedFlow": {
