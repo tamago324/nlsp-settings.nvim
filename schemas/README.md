@@ -83,6 +83,7 @@
 - [ ] svelte
 - [ ] svls
 - [ ] tailwindcss
+- [ ] taplo
 - [x] terraformls
 - [ ] texlab
 - [ ] tflint
