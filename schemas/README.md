@@ -13,6 +13,7 @@
 - [ ] cmake
 - [x] codeqlls
 - [ ] crystalline
+- [ ] csharp_ls
 - [x] cssls
 - [x] dartls
 - [ ] denols
