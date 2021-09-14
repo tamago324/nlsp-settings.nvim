@@ -60,6 +60,7 @@
 - [ ] phpactor
 - [ ] powershell_es
 - [ ] prismals
+- [ ] psalm
 - [x] puppet
 - [x] purescriptls
 - [ ] pylsp
