@@ -29,6 +29,10 @@ local gen_schema = function(url, server_name)
   local json = vim.fn.json_decode(vim.fn.system(string.format('curl -Ls %s', url)))
   local properties
 
+  if json.contributes == nil then
+    return nil
+  end
+
   if vim.tbl_islist(json.contributes.configuration) then
     -- リストなら、 1つ目を取得する
     -- als がリストのため https://raw.githubusercontent.com/AdaCore/ada_language_server/master/integration/vscode/ada/package.json
