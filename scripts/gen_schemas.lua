@@ -29,7 +29,7 @@ local gen_schema = function(url, server_name)
   local json = vim.fn.json_decode(vim.fn.system(string.format('curl -Ls %s', url)))
   local properties
 
-  if json.contributes == nil then
+  if json == nil or json.contributes == nil then
     return nil
   end
 
@@ -56,8 +56,8 @@ local gen_schemas = function()
   for server_name, v in pairs(configs) do
     local docs = v.document_config.docs
     if docs and docs.package_json then
+      print(server_name)
       local res = gen_schema(docs.package_json, server_name)
-      print(server_name, res)
     end
   end
 end
