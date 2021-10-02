@@ -6,12 +6,14 @@
       "default": "Semantic",
       "enum": [
         "Grammar",
-        "Semantic"
+        "Semantic",
+        "SemanticEnhanced"
       ],
       "markdownDescription": "%config.color.mode%",
       "markdownEnumDescriptions": [
         "%config.color.mode.Grammar%",
-        "%config.color.mode.Semantic%"
+        "%config.color.mode.Semantic%",
+        "%config.color.mode.SemanticEnhanced%"
       ],
       "scope": "resource",
       "type": "string"
@@ -39,7 +41,7 @@
       "type": "string"
     },
     "Lua.completion.displayContext": {
-      "default": 6,
+      "default": 0,
       "markdownDescription": "%config.completion.displayContext%",
       "scope": "resource",
       "type": "integer"
@@ -123,7 +125,7 @@
       "type": "array"
     },
     "Lua.diagnostics.ignoredFiles": {
-      "default": "Disable",
+      "default": "Opened",
       "enum": [
         "Enable",
         "Opened",
@@ -139,7 +141,7 @@
       "type": "string"
     },
     "Lua.diagnostics.libraryFiles": {
-      "default": "Disable",
+      "default": "Opened",
       "enum": [
         "Enable",
         "Opened",
@@ -402,6 +404,17 @@
         "trailing-space": {
           "default": "Opened",
           "description": "%config.diagnostics.trailing-space%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None"
+          ],
+          "scope": "resource",
+          "type": "string"
+        },
+        "type-check": {
+          "default": "None",
+          "description": "%config.diagnostics.type-check%",
           "enum": [
             "Any",
             "Opened",
@@ -791,7 +804,7 @@
           "type": "string"
         },
         "redundant-parameter": {
-          "default": "Hint",
+          "default": "Warning",
           "description": "%config.diagnostics.redundant-parameter%",
           "enum": [
             "Error",
@@ -803,7 +816,7 @@
           "type": "string"
         },
         "redundant-value": {
-          "default": "Hint",
+          "default": "Warning",
           "description": "%config.diagnostics.redundant-value%",
           "enum": [
             "Error",
@@ -817,6 +830,18 @@
         "trailing-space": {
           "default": "Hint",
           "description": "%config.diagnostics.trailing-space%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint"
+          ],
+          "scope": "resource",
+          "type": "string"
+        },
+        "type-check": {
+          "default": "Warning",
+          "description": "%config.diagnostics.type-check%",
           "enum": [
             "Error",
             "Warning",

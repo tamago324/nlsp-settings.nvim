@@ -681,12 +681,6 @@
         "boolean"
       ]
     },
-    "dart.previewVsCodeTestRunner": {
-      "default": false,
-      "description": "PREVIEW: Whether to enable reporting tests into the VS Code Test Runner (requires restart).",
-      "scope": "window",
-      "type": "boolean"
-    },
     "dart.promptToGetPackages": {
       "default": true,
       "description": "Whether to prompt to get packages when opening a project with out of date packages.",
@@ -824,8 +818,14 @@
       "type": "boolean"
     },
     "dart.useKnownChromeOSPorts": {
-      "default": true,
+      "default": false,
       "description": "Whether to use specific ports for the VM service and DevTools when running in Chrome OS. This is required to connect from the native Chrome OS browser but will prevent apps from launching if the ports are already in-use (for example if trying to run a second app).",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "dart.useVsCodeTestRunner": {
+      "default": true,
+      "description": "Whether to use the built-in VS Code test runner. Otherwises uses the legacy custom test runner.",
       "scope": "window",
       "type": "boolean"
     },

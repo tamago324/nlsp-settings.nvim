@@ -207,7 +207,8 @@
               "JavaSE-13",
               "JavaSE-14",
               "JavaSE-15",
-              "JavaSE-16"
+              "JavaSE-16",
+              "JavaSE-17"
             ],
             "type": "string"
           },

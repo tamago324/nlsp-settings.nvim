@@ -15,6 +15,7 @@
 - [ ] crystalline
 - [ ] csharp_ls
 - [x] cssls
+- [ ] cucumber_language_server
 - [x] dartls
 - [ ] denols
 - [ ] dhall_lsp_server
@@ -38,8 +39,9 @@
 - [x] hie
 - [ ] hls
 - [ ] html
+- [ ] idris2_lsp
 - [ ] intelephense
-- [ ] java_language_server
+- [x] java_language_server
 - [x] jdtls
 - [ ] jedi_language_server
 - [x] jsonls

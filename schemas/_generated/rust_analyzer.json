@@ -33,7 +33,7 @@
     },
     "rust-analyzer.assist.importGroup": {
       "default": true,
-      "markdownDescription": "Group inserted imports by the [following order](https://rust-analyzer.github.io/manual.html#auto-import). Groups are separated by newlines.",
+      "markdownDescription": "Group inserted imports by the https://rust-analyzer.github.io/manual.html#auto-import[following order]. Groups are separated by newlines.",
       "type": "boolean"
     },
     "rust-analyzer.assist.importPrefix": {
@@ -291,7 +291,7 @@
       "type": "array"
     },
     "rust-analyzer.experimental.procAttrMacros": {
-      "default": false,
+      "default": true,
       "markdownDescription": "Expand attribute macros.",
       "type": "boolean"
     },

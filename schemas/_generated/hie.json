@@ -2,15 +2,9 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of hie",
   "properties": {
-    "haskell.diagnosticsOnChange": {
+    "haskell.checkProject": {
       "default": true,
-      "description": "Compute diagnostics continuously as you type. Turn off to only generate diagnostics on file save.",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "haskell.formatOnImportOn": {
-      "default": true,
-      "description": "When adding an import, use the formatter on the result",
+      "description": "Whether to typecheck the entire project on load. It could drive to bad perfomance in large projects.",
       "scope": "resource",
       "type": "boolean"
     },
@@ -33,6 +27,12 @@
       "description": "If set, redirects the logs to a file.",
       "scope": "resource",
       "type": "string"
+    },
+    "haskell.maxCompletions": {
+      "default": 40,
+      "description": "Maximum number of completions sent to the editor.",
+      "scope": "resource",
+      "type": "integer"
     },
     "haskell.openDocumentationInHackage": {
       "default": true,
@@ -146,6 +146,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "haskell.plugin.refineImports.globalOn": {
+      "default": true,
+      "description": "Enables refine imports plugin",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "haskell.plugin.retrie.globalOn": {
       "default": true,
       "description": "Enables retrie plugin",
@@ -218,6 +224,12 @@
     "haskell.serverExecutablePath": {
       "default": "",
       "markdownDescription": "Manually set a language server executable. Can be something on the $PATH or a path to an executable itself. Works with `~,` `${HOME}` and `${workspaceFolder}`. **Deprecated scope**: This option will be set to `machine` scope in a future release, so it can be changed only globally, not per workspace.",
+      "scope": "resource",
+      "type": "string"
+    },
+    "haskell.serverExtraArgs": {
+      "default": "",
+      "markdownDescription": "Pass additional arguments to the language server.",
       "scope": "resource",
       "type": "string"
     },
