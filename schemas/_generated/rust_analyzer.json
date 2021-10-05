@@ -214,6 +214,11 @@
       "markdownDescription": "Whether to show postfix snippets like `dbg`, `if`, `not`, etc.",
       "type": "boolean"
     },
+    "rust-analyzer.completion.snippets": {
+      "default": {},
+      "markdownDescription": "Custom completion snippets.",
+      "type": "object"
+    },
     "rust-analyzer.debug.engine": {
       "default": "auto",
       "description": "Preferred debug engine.",
