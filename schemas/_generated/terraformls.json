@@ -14,6 +14,11 @@
     "terraform-ls.experimentalFeatures": {
       "description": "Experimental (opt-in) terraform-ls features",
       "properties": {
+        "prefillRequiredFields": {
+          "default": false,
+          "scope": "resource",
+          "type": "boolean"
+        },
         "validateOnSave": {
           "default": false,
           "scope": "resource",
