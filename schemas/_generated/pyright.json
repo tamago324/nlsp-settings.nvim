@@ -219,6 +219,17 @@
           ],
           "type": "string"
         },
+        "reportMissingParameterType": {
+          "default": "none",
+          "description": "Diagnostics for parameters that are missing a type annotation.",
+          "enum": [
+            "none",
+            "information",
+            "warning",
+            "error"
+          ],
+          "type": "string"
+        },
         "reportMissingTypeArgument": {
           "default": "none",
           "description": "Diagnostics for generic class reference with missing type arguments.",
