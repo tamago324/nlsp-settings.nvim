@@ -215,6 +215,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "haskell.releasesDownloadStoragePath": {
+      "default": "",
+      "markdownDescription": "An optional path where downloaded binaries will be stored. Check the default value [here](https://github.com/haskell/vscode-haskell#downloaded-binaries)",
+      "scope": "resource",
+      "type": "string"
+    },
     "haskell.releasesURL": {
       "default": "",
       "description": "An optional URL to override where to check for haskell-language-server releases",
