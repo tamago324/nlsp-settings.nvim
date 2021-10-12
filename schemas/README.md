@@ -26,7 +26,9 @@
 - [x] elixirls
 - [x] elmls
 - [ ] ember
+- [ ] emmet_ls
 - [ ] erlangls
+- [ ] eslint
 - [x] flow
 - [x] fortls
 - [ ] fsautocomplete
