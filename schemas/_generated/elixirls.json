@@ -59,7 +59,7 @@
       "type": "boolean"
     },
     "elixirLS.fetchDeps": {
-      "default": true,
+      "default": false,
       "description": "Automatically fetch project dependencies when compiling",
       "scope": "resource",
       "type": "boolean"
