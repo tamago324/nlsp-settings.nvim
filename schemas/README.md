@@ -30,8 +30,10 @@
 - [ ] erlangls
 - [ ] eslint
 - [x] flow
+- [ ] flux-lsp
 - [x] fortls
 - [ ] fsautocomplete
+- [ ] fstar
 - [ ] gdscript
 - [ ] ghcide
 - [x] gopls
