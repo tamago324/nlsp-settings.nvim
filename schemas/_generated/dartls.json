@@ -672,15 +672,6 @@
       "scope": "window",
       "type": "boolean"
     },
-    "dart.previewLsp": {
-      "default": null,
-      "markdownDescription": "Whether to run the analyzer in [LSP mode](https://microsoft.github.io/language-server-protocol/) (requires restart).",
-      "scope": "window",
-      "type": [
-        "null",
-        "boolean"
-      ]
-    },
     "dart.promptToGetPackages": {
       "default": true,
       "description": "Whether to prompt to get packages when opening a project with out of date packages.",
@@ -820,6 +811,12 @@
     "dart.useKnownChromeOSPorts": {
       "default": false,
       "description": "Whether to use specific ports for the VM service and DevTools when running in Chrome OS. This is required to connect from the native Chrome OS browser but will prevent apps from launching if the ports are already in-use (for example if trying to run a second app).",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "dart.useLsp": {
+      "default": true,
+      "markdownDescription": "Whether to run the analyzer in [LSP mode](https://microsoft.github.io/language-server-protocol/). Some features are not supported if this setting is disabled and in a future release LSP will be the only supported option.",
       "scope": "window",
       "type": "boolean"
     },
