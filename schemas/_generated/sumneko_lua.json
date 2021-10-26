@@ -390,6 +390,17 @@
           "scope": "resource",
           "type": "string"
         },
+        "redundant-return": {
+          "default": "Opened",
+          "description": "%config.diagnostics.redundant-return%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None"
+          ],
+          "scope": "resource",
+          "type": "string"
+        },
         "redundant-value": {
           "default": "Opened",
           "description": "%config.diagnostics.redundant-value%",
@@ -806,6 +817,18 @@
         "redundant-parameter": {
           "default": "Warning",
           "description": "%config.diagnostics.redundant-parameter%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint"
+          ],
+          "scope": "resource",
+          "type": "string"
+        },
+        "redundant-return": {
+          "default": "Warning",
+          "description": "%config.diagnostics.redundant-return%",
           "enum": [
             "Error",
             "Warning",
