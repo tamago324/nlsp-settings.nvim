@@ -166,7 +166,7 @@
     },
     "dart.completeFunctionCalls": {
       "default": true,
-      "markdownDescription": "Whether to insert parentheses and parameter placeholders during code completions when using LSP. This feature is automatically disabled if commit characters are enabled.",
+      "markdownDescription": "Whether to insert parentheses and placeholders for positional and required arguments during code completions when using LSP. This feature is automatically disabled if commit characters are enabled.",
       "scope": "resource",
       "type": "boolean"
     },
@@ -805,12 +805,6 @@
     "dart.updateImportsOnRename": {
       "default": true,
       "description": "Whether to automatically update imports when moving or renaming files. Currently only supports single file moves / renames.",
-      "scope": "window",
-      "type": "boolean"
-    },
-    "dart.useKnownChromeOSPorts": {
-      "default": false,
-      "description": "Whether to use specific ports for the VM service and DevTools when running in Chrome OS. This is required to connect from the native Chrome OS browser but will prevent apps from launching if the ports are already in-use (for example if trying to run a second app).",
       "scope": "window",
       "type": "boolean"
     },
