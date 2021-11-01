@@ -54,6 +54,7 @@
 - [ ] lean3ls
 - [x] leanls
 - [ ] lemminx
+- [x] ltex
 - [ ] metals
 - [ ] mint
 - [x] nimls
