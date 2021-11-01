@@ -157,6 +157,7 @@
       "type": "string"
     },
     "Lua.diagnostics.neededFileStatus": {
+      "additionalProperties": false,
       "markdownDescription": "%config.diagnostics.neededFileStatus%",
       "properties": {
         "ambiguity-1": {
@@ -535,6 +536,7 @@
       "type": "object"
     },
     "Lua.diagnostics.severity": {
+      "additionalProperties": false,
       "markdownDescription": "%config.diagnostics.severity%",
       "properties": {
         "ambiguity-1": {
@@ -1040,6 +1042,7 @@
       "type": "array"
     },
     "Lua.runtime.builtin": {
+      "additionalProperties": false,
       "markdownDescription": "%config.runtime.builtin%",
       "properties": {
         "basic": {
@@ -1247,6 +1250,7 @@
       "type": "string"
     },
     "Lua.runtime.special": {
+      "additionalProperties": false,
       "markdownDescription": "%config.runtime.special%",
       "patternProperties": {
         ".*": {
