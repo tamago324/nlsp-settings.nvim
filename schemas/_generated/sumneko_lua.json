@@ -1243,6 +1243,12 @@
       "scope": "window",
       "type": "array"
     },
+    "Lua.runtime.pathStrict": {
+      "default": false,
+      "markdownDescription": "%config.runtime.pathStrict%",
+      "scope": "window",
+      "type": "boolean"
+    },
     "Lua.runtime.plugin": {
       "default": "",
       "markdownDescription": "%config.runtime.plugin%",
