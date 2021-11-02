@@ -170,6 +170,16 @@
           ],
           "type": "string"
         },
+        "await-in-sync": {
+          "default": "None",
+          "description": "%config.diagnostics.await-in-sync%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None"
+          ],
+          "type": "string"
+        },
         "circle-doc-class": {
           "default": "Any",
           "description": "%config.diagnostics.circle-doc-class%",
@@ -542,6 +552,17 @@
         "ambiguity-1": {
           "default": "Warning",
           "description": "%config.diagnostics.ambiguity-1%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint"
+          ],
+          "type": "string"
+        },
+        "await-in-sync": {
+          "default": "Warning",
+          "description": "%config.diagnostics.await-in-sync%",
           "enum": [
             "Error",
             "Warning",
