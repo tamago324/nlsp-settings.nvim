@@ -1203,7 +1203,9 @@
       "default": "utf8",
       "enum": [
         "utf8",
-        "ansi"
+        "ansi",
+        "utf16le",
+        "utf16be"
       ],
       "markdownDescription": "%config.runtime.fileEncoding%",
       "scope": "window",
