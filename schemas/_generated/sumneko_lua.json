@@ -360,6 +360,16 @@
           ],
           "type": "string"
         },
+        "not-yieldable": {
+          "default": "None",
+          "description": "%config.diagnostics.not-yieldable%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None"
+          ],
+          "type": "string"
+        },
         "redefined-local": {
           "default": "Opened",
           "description": "%config.diagnostics.redefined-local%",
@@ -761,6 +771,17 @@
         "no-implicit-any": {
           "default": "Information",
           "description": "%config.diagnostics.no-implicit-any%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint"
+          ],
+          "type": "string"
+        },
+        "not-yieldable": {
+          "default": "Warning",
+          "description": "%config.diagnostics.not-yieldable%",
           "enum": [
             "Error",
             "Warning",
