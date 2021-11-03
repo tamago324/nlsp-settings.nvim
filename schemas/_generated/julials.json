@@ -334,7 +334,7 @@
     },
     "julia.persistentSession.enabled": {
       "default": false,
-      "markdownDescription": "Experimental: Starts the interactive Julia session in a persistent `tmux` session. Note that `tmux` must be available in the shell defined below.",
+      "markdownDescription": "Experimental: Starts the interactive Julia session in a persistent `tmux` session. Note that `tmux` must be available in the shell defined below. If present the string `$[workspace]` will be replaced with the current file's workspace when the REPL is first opened.",
       "scope": "machine-overridable",
       "type": "boolean"
     },
