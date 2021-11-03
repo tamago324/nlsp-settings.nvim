@@ -361,6 +361,12 @@
       "scope": "window",
       "type": "string"
     },
+    "julia.runtimeCompletions": {
+      "default": false,
+      "description": "Request runtime completions from the integrated REPL.",
+      "scope": "application",
+      "type": "boolean"
+    },
     "julia.showRuntimeDiagnostics": {
       "default": true,
       "markdownDescription": "Enable display of runtime diagnostics. These diagnostics are provided by packages that overload a `show` method for the `application/vnd.julia-vscode.diagnostics` MIME type.",
