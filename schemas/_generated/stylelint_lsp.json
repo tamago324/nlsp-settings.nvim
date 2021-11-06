@@ -49,6 +49,7 @@
         "css",
         "less",
         "postcss",
+        "sass",
         "scss",
         "sugarss",
         "vue",
