@@ -28,6 +28,15 @@
       "scope": "resource",
       "type": "object"
     },
+    "terraform-ls.ignoreDirectoryNames": {
+      "default": [],
+      "description": "Per-workspace list of directory names for the language server to ignore when indexing files",
+      "items": {
+        "type": "string"
+      },
+      "scope": "resource",
+      "type": "array"
+    },
     "terraform-ls.rootModules": {
       "default": [],
       "description": "Per-workspace list of module directories for the language server to read",
