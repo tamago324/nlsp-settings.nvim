@@ -240,6 +240,16 @@
           ],
           "type": "string"
         },
+        "discard-returns": {
+          "default": "Opened",
+          "description": "%config.diagnostics.discard-returns%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None"
+          ],
+          "type": "string"
+        },
         "doc-field-no-class": {
           "default": "Any",
           "description": "%config.diagnostics.doc-field-no-class%",
@@ -639,6 +649,17 @@
         "different-requires": {
           "default": "Warning",
           "description": "%config.diagnostics.different-requires%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint"
+          ],
+          "type": "string"
+        },
+        "discard-returns": {
+          "default": "Warning",
+          "description": "%config.diagnostics.discard-returns%",
           "enum": [
             "Error",
             "Warning",
