@@ -246,11 +246,12 @@
       "type": "string"
     },
     "haskell.trace.client": {
-      "default": "error",
+      "default": "info",
       "description": "Sets the log level in the client side.",
       "enum": [
         "off",
         "error",
+        "info",
         "debug"
       ],
       "scope": "resource",
