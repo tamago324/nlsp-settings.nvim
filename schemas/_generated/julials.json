@@ -310,6 +310,12 @@
         "null"
       ]
     },
+    "julia.symbolserverUpstream": {
+      "default": "https://www.julia-vscode.org/symbolcache",
+      "description": "Symbol server cache download URL.",
+      "scope": "application",
+      "type": "string"
+    },
     "julia.trace.server": {
       "default": "off",
       "description": "Traces the communication between VS Code and the language server.",
