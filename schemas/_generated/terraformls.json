@@ -61,7 +61,7 @@
       "scope": "resource",
       "type": "string"
     },
-    "terraform.enableReferenceCountCodeLens": {
+    "terraform.codelens.referenceCount": {
       "default": true,
       "description": "Display reference counts above top level blocks and attributes.",
       "scope": "resource",
