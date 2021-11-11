@@ -525,6 +525,16 @@
       "scope": "window",
       "type": "array"
     },
+    "java.quickfix.showAt": {
+      "default": "line",
+      "description": "Show quickfixes at the problem or line level.",
+      "enum": [
+        "line",
+        "problem"
+      ],
+      "scope": "window",
+      "type": "string"
+    },
     "java.recommendations.dependency.analytics.show": {
       "default": true,
       "description": "Show the recommended Dependency Analytics extension.",
