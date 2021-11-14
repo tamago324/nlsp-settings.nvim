@@ -28,6 +28,7 @@
 - [ ] ember
 - [ ] emmet_ls
 - [ ] erlangls
+- [ ] esbonio
 - [ ] eslint
 - [x] flow
 - [ ] flux-lsp
