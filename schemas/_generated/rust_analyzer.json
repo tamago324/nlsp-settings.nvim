@@ -388,6 +388,11 @@
       "description": "Whether to show inlay hints.",
       "type": "boolean"
     },
+    "rust-analyzer.inlayHints.hideNamedConstructorHints": {
+      "default": false,
+      "markdownDescription": "Whether to hide inlay hints for constructors.",
+      "type": "boolean"
+    },
     "rust-analyzer.inlayHints.maxLength": {
       "default": 25,
       "markdownDescription": "Maximum length for inlay hints. Set to null to have an unlimited length.",
