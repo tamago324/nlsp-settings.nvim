@@ -6,9 +6,9 @@ local schemas_dir = os.getenv('PWD') .. '/schemas/_generated'
 local function require_all_configs()
   local fin = false
   -- Configs are lazy-loaded, tickle them to populate the `configs` singleton.
-  for _,v in ipairs(vim.fn.glob('nvim-lspconfig/lua/lspconfig/*.lua', 1, 1)) do
+  for _,v in ipairs(vim.fn.glob('nvim-lspconfig/lua/lspconfig/server_configurations/*.lua', 1, 1)) do
     local module_name = v:gsub('.*/', ''):gsub('%.lua$', '')
-    require('lspconfig/'..module_name)
+    configs[module_name] = require('lspconfig.server_configurations.'..module_name)
     fin = true
   end
 
