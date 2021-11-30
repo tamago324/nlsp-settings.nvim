@@ -188,7 +188,7 @@
         "none"
       ],
       "scope": "resource",
-      "type": "string"
+      "type": "integer"
     },
     "haskell.plugin.tactics.config.max_use_ctor_actions": {
       "default": 5,
