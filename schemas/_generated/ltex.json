@@ -1205,6 +1205,8 @@
     "ltex.enabled": {
       "default": [
         "bibtex",
+        "context",
+        "context.tex",
         "html",
         "latex",
         "markdown",

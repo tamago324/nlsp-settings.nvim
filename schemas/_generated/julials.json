@@ -16,6 +16,15 @@
       "description": "Additional Julia arguments.",
       "type": "array"
     },
+    "julia.cellDelimiters": {
+      "default": [
+        "^##(?!#)",
+        "^#(\\s?)%%",
+        "^#-"
+      ],
+      "description": "Cell delimiter regular expressions for Julia files.",
+      "type": "array"
+    },
     "julia.completionmode": {
       "default": "qualify",
       "description": "Sets the mode for completions.",

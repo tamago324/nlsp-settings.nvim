@@ -247,6 +247,16 @@
         "string"
       ]
     },
+    "java.configuration.workspaceCacheLimit": {
+      "default": null,
+      "description": "The number of days (if enabled) to keep unused workspace cache data. Beyond this limit, cached workspace data may be removed.",
+      "minimum": 1,
+      "scope": "application",
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
     "java.contentProvider.preferred": {
       "default": null,
       "description": "Preferred content provider (a 3rd party decompiler id, usually)",
@@ -334,6 +344,12 @@
       "description": "Configure glob patterns for excluding folders. Use `!` to negate patterns to allow subfolders imports. You have to include a parent directory. The order is important.",
       "scope": "window",
       "type": "array"
+    },
+    "java.import.generatesMetadataFilesAtProjectRoot": {
+      "default": false,
+      "markdownDescription": "Specify whether the project metadata files(.project, .classpath, .factorypath, .settings/) will be generated at the project root. Click [HERE](command:_java.metadataFilesGeneration) to learn how to change the setting to make it take effect.",
+      "scope": "window",
+      "type": "boolean"
     },
     "java.import.gradle.arguments": {
       "default": null,

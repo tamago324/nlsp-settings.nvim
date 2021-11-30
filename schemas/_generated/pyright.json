@@ -352,7 +352,7 @@
           "type": "string"
         },
         "reportPropertyTypeMismatch": {
-          "default": "error",
+          "default": "none",
           "description": "Diagnostics for property whose setter and getter have mismatched types.",
           "enum": [
             "none",

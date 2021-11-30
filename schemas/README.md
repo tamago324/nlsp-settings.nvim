@@ -1,1 +1,122 @@
 # Schemas
+
+- [x] als
+- [ ] angularls
+- [ ] ansiblels
+- [ ] arduino_language_server
+- [x] bashls
+- [ ] beancount
+- [ ] bicep
+- [ ] bsl_ls
+- [ ] ccls
+- [ ] clangd
+- [ ] clojure_lsp
+- [ ] cmake
+- [x] codeqlls
+- [ ] crystalline
+- [ ] csharp_ls
+- [x] cssls
+- [ ] cucumber_language_server
+- [x] dartls
+- [ ] denols
+- [ ] dhall_lsp_server
+- [ ] diagnosticls
+- [ ] dockerls
+- [ ] dotls
+- [ ] efm
+- [x] elixirls
+- [x] elmls
+- [ ] ember
+- [ ] emmet_ls
+- [ ] erlangls
+- [ ] esbonio
+- [ ] eslint
+- [x] flow
+- [ ] flux-lsp
+- [x] fortls
+- [ ] fsautocomplete
+- [ ] fstar
+- [ ] gdscript
+- [ ] ghcide
+- [ ] golangci_lint_ls
+- [x] gopls
+- [ ] graphql
+- [ ] groovyls
+- [ ] haxe_language_server
+- [x] hie
+- [ ] hls
+- [ ] html
+- [ ] idris2_lsp
+- [ ] intelephense
+- [x] java_language_server
+- [x] jdtls
+- [ ] jedi_language_server
+- [x] jsonls
+- [ ] jsonnet_ls
+- [x] julials
+- [x] kotlin_language_server
+- [ ] lean3ls
+- [x] leanls
+- [ ] lelwel_ls
+- [ ] lemminx
+- [x] ltex
+- [ ] metals
+- [ ] mint
+- [ ] nickel_ls
+- [x] nimls
+- [ ] ocamlls
+- [ ] ocamllsp
+- [ ] omnisharp
+- [ ] pasls
+- [x] perlls
+- [x] perlpls
+- [ ] phpactor
+- [ ] powershell_es
+- [ ] prismals
+- [ ] psalm
+- [x] puppet
+- [x] purescriptls
+- [ ] pylsp
+- [ ] pyre
+- [x] pyright
+- [x] r_language_server
+- [ ] racket_langserver
+- [ ] rescriptls
+- [ ] rls
+- [ ] rnix
+- [ ] robotframework_ls
+- [ ] rome
+- [x] rust_analyzer
+- [ ] scry
+- [ ] serve_d
+- [ ] sixtyfps
+- [ ] solang
+- [x] solargraph
+- [ ] sorbet
+- [x] sourcekit
+- [x] spectral
+- [ ] sqlls
+- [ ] sqls
+- [x] stylelint_lsp
+- [x] sumneko_lua
+- [ ] svelte
+- [ ] svls
+- [ ] tailwindcss
+- [ ] taplo
+- [ ] terraform_lsp
+- [x] terraformls
+- [ ] texlab
+- [ ] tflint
+- [ ] theme_check
+- [ ] tsserver
+- [ ] typeprof
+- [ ] vala_ls
+- [ ] vdmj
+- [ ] vimls
+- [ ] vls
+- [x] volar
+- [x] vuels
+- [x] yamlls
+- [x] zeta_note
+- [ ] zk
+- [ ] zls

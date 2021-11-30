@@ -110,7 +110,7 @@
     },
     "purescript.fullBuildOnSave": {
       "default": false,
-      "description": "Whether to perform a full build on save with the configured build command (rather than IDE server fast rebuild). This is not generally recommended because it is slow, but it does mean that dependant modules are rebuilt as necessary.",
+      "description": "Whether to perform a full build on save with the configured build command (rather than IDE server fast rebuild). This is not generally recommended because it is slow, but it does mean that dependent modules are rebuilt as necessary.",
       "scope": "resource",
       "type": "boolean"
     },

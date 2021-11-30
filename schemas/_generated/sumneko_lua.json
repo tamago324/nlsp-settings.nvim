@@ -2,6 +2,30 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of sumneko_lua",
   "properties": {
+    "Lua.IntelliSense.traceBeSetted": {
+      "default": false,
+      "markdownDescription": "%config.IntelliSense.traceBeSetted%",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "Lua.IntelliSense.traceFieldInject": {
+      "default": false,
+      "markdownDescription": "%config.IntelliSense.traceFieldInject%",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "Lua.IntelliSense.traceLocalSet": {
+      "default": false,
+      "markdownDescription": "%config.IntelliSense.traceLocalSet%",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "Lua.IntelliSense.traceReturn": {
+      "default": false,
+      "markdownDescription": "%config.IntelliSense.traceReturn%",
+      "scope": "window",
+      "type": "boolean"
+    },
     "Lua.color.mode": {
       "default": "Semantic",
       "enum": [
@@ -65,6 +89,12 @@
         "%config.completion.keywordSnippet.Both%",
         "%config.completion.keywordSnippet.Replace%"
       ],
+      "scope": "window",
+      "type": "string"
+    },
+    "Lua.completion.postfix": {
+      "default": "@",
+      "markdownDescription": "%config.completion.postfix%",
       "scope": "window",
       "type": "string"
     },
