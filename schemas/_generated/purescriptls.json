@@ -84,6 +84,18 @@
       "scope": "resource",
       "type": "array"
     },
+    "purescript.declarationTypeCodeLens": {
+      "default": true,
+      "description": "Enable declaration codelens to add types to declarations",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "purescript.exportsCodeLens": {
+      "default": true,
+      "description": "Enable declaration codelenses for export management",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "purescript.fastRebuild": {
       "default": true,
       "description": "Enable purs IDE server fast rebuild",
