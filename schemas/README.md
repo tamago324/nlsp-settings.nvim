@@ -79,6 +79,7 @@
 - [ ] pylsp
 - [ ] pyre
 - [x] pyright
+- [ ] quick_lint_js
 - [x] r_language_server
 - [ ] racket_langserver
 - [ ] rescriptls
