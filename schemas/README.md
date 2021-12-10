@@ -93,6 +93,7 @@
 - [ ] sixtyfps
 - [ ] solang
 - [x] solargraph
+- [ ] solidity_ls
 - [ ] sorbet
 - [x] sourcekit
 - [x] spectral
