@@ -16,6 +16,7 @@
 - [ ] crystalline
 - [ ] csharp_ls
 - [x] cssls
+- [ ] cssmodules_ls
 - [ ] cucumber_language_server
 - [x] dartls
 - [ ] denols
