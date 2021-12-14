@@ -2,6 +2,15 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of elixirls",
   "properties": {
+    "elixirLS.additionalWatchedExtensions": {
+      "default": [],
+      "description": "Additional file types capable of triggering a build on change",
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
     "elixirLS.dialyzerEnabled": {
       "default": true,
       "description": "Run ElixirLS's rapid Dialyzer when code is saved",
@@ -57,6 +66,12 @@
       "default": false,
       "description": "Show code lenses to run tests in terminal",
       "type": "boolean"
+    },
+    "elixirLS.envVariables": {
+      "description": "Environment variables to use for compilation",
+      "minLength": 0,
+      "scope": "resource",
+      "type": "object"
     },
     "elixirLS.fetchDeps": {
       "default": false,
