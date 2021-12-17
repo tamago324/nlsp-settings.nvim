@@ -33,7 +33,7 @@
 - [ ] esbonio
 - [ ] eslint
 - [x] flow
-- [ ] flux-lsp
+- [ ] flux_lsp
 - [x] fortls
 - [ ] fsautocomplete
 - [ ] fstar
