@@ -41,6 +41,7 @@
 - [ ] ghcide
 - [ ] golangci_lint_ls
 - [x] gopls
+- [ ] grammarly
 - [ ] graphql
 - [ ] groovyls
 - [ ] haxe_language_server
