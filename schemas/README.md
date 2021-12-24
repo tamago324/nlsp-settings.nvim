@@ -84,6 +84,7 @@
 - [ ] quick_lint_js
 - [x] r_language_server
 - [ ] racket_langserver
+- [ ] remark_ls
 - [ ] rescriptls
 - [ ] rls
 - [ ] rnix
