@@ -117,6 +117,7 @@
 - [ ] typeprof
 - [ ] vala_ls
 - [ ] vdmj
+- [ ] verible
 - [ ] vimls
 - [ ] vls
 - [x] volar
