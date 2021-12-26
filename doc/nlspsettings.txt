@@ -31,7 +31,15 @@ setup({opts})                                           *nlspsettings.setup()*
     Fields: ~
         {config_home} (optional, string) The directory containing the
                       settings files.
+
                       Default: `'~/.config/nvim/nlsp-settings'`
+
+        {local_settigns_root_markers} (optional, string)
+                      A list of files and directories to use when looking
+                      for the root directory when opening a file with
+                      |:NlspLocalConfig|.
+
+                      Default: `{ '.git' }`
 
 get_settings({name})                             *nlspsettings.get_settings()*
     Gets the configuration of the specified server.
@@ -62,6 +70,15 @@ COMMANDS                                              *nlsp-settings-commands*
 :NlspBufConfig                                                *:NlspBufConfig*
     Open a settings file that matches the current buffer.
 
+:NlspLocalConfig {server_name}                              *:NlspLocalConfig*
+    Open the local settings file of the specified {server_name}
+    corresponding to the cwd.
+    NOTE: Local version of |:NlspConfig|
+
+:NlspLocalBufConfig                                      *:NlspLocalBufConfig*
+    Open the local settings file of the server corresponding to the
+    current buffer.
+    NOTE: Local version of |:NlspBufConfig|
 
 :NlspUpdateSettings {server_name}                        *:NlspUpdateSettings*
     Update the setting values for the specified {server_name}.
@@ -73,6 +90,9 @@ KEYMAPPINGS                                        *nlsp-settings-keymappings*
 n <Plug>(nlsp-buf-config)                            *<Plug>(nlsp-buf-config)*
     |:NlspBufConfig|
 
+n <Plug>(nlsp-local-buf-config)                *<Plug>(nlsp-local-buf-config)*
+    |:NlspLocalBufConfig|
+
 ==============================================================================
 EXAMPLES                                              *nlsp-settings-examples*
 >
@@ -80,8 +100,6 @@ EXAMPLES                                              *nlsp-settings-examples*
     local on_attach = function(client)
       local map = vim.api.nvim_buf_set_keymap
       map( 'n', '<Space>vl', '<Plug>(nlsp-buf-config)', { noremap = false })
-
-      -- ...
     end
     
     require'nlspsettings'.setup()
