@@ -4,7 +4,7 @@
 - [ ] angularls
 - [ ] ansiblels
 - [ ] arduino_language_server
-- [x] bashls
+- [ ] bashls
 - [ ] beancount
 - [ ] bicep
 - [ ] bsl_ls
@@ -15,7 +15,7 @@
 - [x] codeqlls
 - [ ] crystalline
 - [ ] csharp_ls
-- [x] cssls
+- [ ] cssls
 - [ ] cssmodules_ls
 - [ ] cucumber_language_server
 - [x] dartls
@@ -40,7 +40,7 @@
 - [ ] gdscript
 - [ ] ghcide
 - [ ] golangci_lint_ls
-- [x] gopls
+- [ ] gopls
 - [ ] grammarly
 - [ ] graphql
 - [ ] groovyls
