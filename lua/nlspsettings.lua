@@ -9,7 +9,7 @@ local M = {}
 
 local servers = {
   -- server_name = {
-  --   settings = {},
+  --   global_settings = {},
   --   conf_settings = {}
   -- }
 }
@@ -61,10 +61,34 @@ local lsp_json_to_table = function(t)
   return res
 end
 
+--- load settings file
+---@param path string
+---@return table : json data
+---@return boolean : error
+local load = function(path)
+  vim.validate {
+    path = { path, 's' },
+  }
+
+  if vim.fn.filereadable(path) == 0 then
+    return {}
+  end
+
+  local decoded, err = json_decode(vim.fn.readfile(path))
+  if err ~= nil then
+    return {}, true
+  end
+  if decoded == nil then
+    return {}
+  end
+
+  return lsp_json_to_table(decoded) or {}
+end
+
 --- load settings from JSON file
 ---@param path string JSON file path
 ---@return boolean is_error if error then true
-local load_setting_json = function(path)
+local load_global_setting_json = function(path)
   vim.validate {
     path = { path, 's' },
   }
@@ -72,43 +96,42 @@ local load_setting_json = function(path)
   local name = path:match('([^/]+)%.json$')
   if servers[name] == nil then
     servers[name] = {}
-    servers[name].settings = {}
+    servers[name].global_settings = {}
     servers[name].conf_settings = {}
   end
 
-  if vim.fn.filereadable(path) == 0 then
-    return
+  local data, err = load(path)
+  if err then
+    return err
   end
-
-  local decoded, err = json_decode(vim.fn.readfile(path))
-  if err ~= nil then
-    return true
-  end
-  if decoded == nil then
-    return
-  end
-
-  servers[name].settings = lsp_json_to_table(decoded) or {}
+  servers[name].global_settings = data
 end
 
 --- Returns the current settings for the specified server
+---@param root_dir string
 ---@param server_name string
 ---@return table merged_settings
-local get_settings = function(server_name)
-  local json_settings = servers[server_name].settings or {}
-  local new_settings = servers[server_name].conf_settings or {}
+---@return boolean : error when loading local settings
+local get_settings = function(root_dir, server_name)
+  local local_json_settings, err = load(string.format('%s/.nlsp-settings/%s.json', root_dir, server_name))
+  local global_json_settings = servers[server_name].global_settings or {}
+  local conf_settings = servers[server_name].conf_settings or {}
 
   -- Priority:
-  --   1. JSON settings
-  --   2. setup({settings = ...})
-  --   3. default_config.settings
-  local settings = vim.tbl_deep_extend('keep', json_settings, new_settings)
+  --   1. local JSON settings
+  --   2. global JSON settings
+  --   3. setup({settings = ...})
+  --   4. default_config.settings
+  local settings = vim.empty_dict()
+  settings = vim.tbl_deep_extend('keep', settings, local_json_settings)
+  settings = vim.tbl_deep_extend('keep', settings, global_json_settings)
+  settings = vim.tbl_deep_extend('keep', settings, conf_settings)
 
   -- jsonls の場合、 schemas を追加する
   if server_name == 'jsonls' then
-    settings.json.schemas = vim.list_extend(json_settings.json.schemas or {}, new_settings.json.schemas or {})
+    settings.json.schemas = vim.list_extend(global_json_settings.json.schemas or {}, conf_settings.json.schemas or {})
   end
-  return settings
+  return settings, err
 
 end
 M.get_settings = get_settings
@@ -125,17 +148,25 @@ M.update_settings = function(server_name)
     return false
   end
 
-  local err = load_setting_json(string.format('%s/%s.json', config.get('config_home'), server_name))
+  -- もしかしたら、グローバルの設置が変わっている可能性があるため、ここで読み込む
+  local err = load_global_setting_json(string.format('%s/%s.json', config.get('config_home'), server_name))
   if err then
     return true
   end
 
-  -- JSON ファイルの設定と setup() の設定をマージする
-  local new_settings = get_settings(server_name)
+  local errors = false
 
   -- server_name のすべてのクライアントの設定を更新する
   for _, client in ipairs(vim.lsp.get_active_clients()) do
     if client.name == server_name then
+
+      -- JSON ファイルの設定と setup() の設定をマージする
+      -- 各クライアントの設定を読み込みたいため、ループの中で読み込む
+      local new_settings, err_ = get_settings(client.config.root_dir, server_name)
+      if err then
+        errors = true
+      end
+
       -- XXX: なぜか、エラーになる...
       -- client.workspace_did_change_configuration(new_settings)
       client.notify('workspace/didChangeConfiguration', {
@@ -147,7 +178,7 @@ M.update_settings = function(server_name)
     end
   end
 
-  return false
+  return errors
 end
 
 
@@ -157,7 +188,7 @@ end
 local make_on_new_config = function(on_new_config)
   -- before にしたのは、settings を上書きできるようにするため
   -- XXX: before か after かどっちがいいのか、なやむ
-  return lspconfig.util.add_hook_before(on_new_config, function(new_config, _)
+  return lspconfig.util.add_hook_before(on_new_config, function(new_config, root_dir)
     local server_name = new_config.name
 
     if servers[server_name] == nil then
@@ -167,13 +198,16 @@ local make_on_new_config = function(on_new_config)
     -- 1度だけ、保持する ()
     -- new_config.settings は `setup({settings = ...}) + default_config.settings`
     servers[server_name].conf_settings = vim.deepcopy(new_config.settings)
-    new_config.settings = get_settings(server_name)
+    new_config.settings = get_settings(root_dir, server_name)
   end)
 end
 
 local setup_autocmds = function()
-  local postfix = config.get('config_home'):match('[^/]+$')
-  local pattern = string.format('*/%s/*.json', postfix)
+  local patterns = {
+    string.format('*/%s/*.json', config.get('config_home'):match('[^/]+$')),
+    '*/.nlsp-settings/*.json'
+  }
+  local pattern = table.concat(patterns, ',')
 
   vim.cmd( [[augroup NlspSettings]])
   vim.cmd( [[  autocmd!]])
@@ -208,7 +242,7 @@ end
 local load_settings = function()
   local files = get_settings_files(config.get('config_home'))
   for _, v in ipairs(files) do
-    load_setting_json(v)
+    load_global_setting_json(v)
   end
 end
 
