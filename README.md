@@ -76,13 +76,22 @@ Create a settings file in `~/.config/nvim/nlsp-settings/sumneko_lua.json`.
 
 NOTE: The path where settings json file is stored can be changed by the `config_home` argument of `nlspsettings.setup()`.
 
-
 ```lua
 require'nlspsettings'.setup {
   config_home = vim.fn.stdpath('config') .. '/lspsettings'
 }
 ```
 
+
+#### Local Settings
+
+It also has the ability to read json settings files located under X in the project root.
+
+Example) Settings the [sumneko_lua](https://github.com/sumneko/lua-language-server) settings:
+
+`:NlspLocalConfig sumneko_lua`
+
+Create a settings file in `{project_path}/.nlsp-settings/sumneko_lua.json`.
 
 ### Step 3. Load settings.
 
