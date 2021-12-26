@@ -19,7 +19,7 @@
 - [ ] cssmodules_ls
 - [ ] cucumber_language_server
 - [x] dartls
-- [ ] denols
+- [x] denols
 - [ ] dhall_lsp_server
 - [ ] diagnosticls
 - [ ] dockerls
