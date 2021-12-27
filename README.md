@@ -18,90 +18,68 @@ You can also use it with [jsonls](https://github.com/vscode-langservers/vscode-j
 * [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig/)
 
 
-
 ## Installation
 
 ```vim
 Plug 'neovim/nvim-lspconfig'
 Plug 'tamago324/nlsp-settings.nvim'
+
+-- Recommend
+Plug 'williamboman/nvim-lsp-installer'
 ```
+
+## Getting Started
+
+
+### Step1. Setup LSP servers
+
+```lua
+require'nlspsettings'.setup({
+  config_home = vim.fn.stdpath('config') .. '/nlsp-settings', -- The directory containing the settings files.
+  local_settings_root_markers = { '.git' }, -- A list of files and directories to use when looking for the root directory when opening a file with  :NlspLocalConfig
+  jsonls_append_default_schemas = ture -- (Default: false) Append a list of default schemas to jsonls `settings.json.schemas`
+})
+
+-- If you are using williamboman/nvim-lsp-installer to install jsonls, call setup()
+lsp_installer.on_server_ready(function(server)
+  server:setup()
+end)
+
+-- If you are installing it manually, call setup.
+-- require"lspconfig".jsonls.setup {
+--   cmd = { '/path/to/json-languageserver', '--stdio' }
+-- }
+```
+
+### Step2. Write settings
+
+Execute `:NlspConfig sumneko_lua`. `sumneko_lual.json` will be created under the directory set in `config_home`. You should now have jsonls completion enabled.
 
 
 ## Usage
 
+### Commands
 
-### Step1. Configure jsonls.
-
-[jsonls](https://github.com/vscode-langservers/vscode-json-languageserver) allows for configuration value completion.  
-
-```lua
-require"lspconfig".jsonls.setup {
-  cmd = { '/path/to/json-languageserver', '--stdio' },
-
-  -- Set the schema so that it can be completed in settings json file.
-  -- The schemas defined in `jsonls.json` will be merged with the list configured here.
-  settings = {
-    json = {
-      schemas = require'nlspsettings.jsonls'.get_default_schemas()
-    }
-  }
-}
-```
-
-
-### Step2. Write settings.
+* `:NlspConfig [server_name]`:  Open the global settings file for the specified `{server_name}`.
+* `:NlspBufConfig`: Open the global settings file that matches the current buffer.
+* `:NlspLocalConfig [server_name]`: Open the local settings file of the specified `{server_name}` corresponding to the cwd.
+* `:NlspLocalBufConfig`:  Open the local settings file of the server corresponding to the current buffer.
+* `:NlspUpdateSettings [server_name]`: Update the setting values for the specified `{server_name}`.
 
 For a list of language servers that have JSON Schema, see [here](schemas/README.md).
 
-Example) Settings the [sumneko_lua](https://github.com/sumneko/lua-language-server) settings:
 
-`:NlspConfig sumneko_lua`
+### Settings files for each project
 
-Create a settings file in `~/.config/nvim/nlsp-settings/sumneko_lua.json`.
+You can create a settings file for each project with the following command.
 
-```json
-{
-  "Lua.runtime.version": "LuaJIT",
-  "Lua.diagnostics.enable": true,
-  "Lua.diagnostics.globals": [
-    "vim", "describe", "it", "before_each", "after_each"
-  ],
-  "Lua.diagnostics.disable": [
-    "unused-local", "unused-vararg", "lowercase-global", "undefined-field"
-  ],
-  "Lua.completion.callSnippet": "Both",
-  "Lua.completion.keywordSnippet": "Both"
-}
-```
+* `:NlspLocalConfig [server_name]`.
+* `:NlspUpdateSettings [server_name]`
 
-NOTE: The path where settings json file is stored can be changed by the `config_home` argument of `nlspsettings.setup()`.
-
-```lua
-require'nlspsettings'.setup {
-  config_home = vim.fn.stdpath('config') .. '/lspsettings'
-}
-```
+The settings file will be created in `{project_path}/.nlsp-settings/{server_name}.json`.
 
 
-#### Local Settings
-
-It also has the ability to read json settings files located under X in the project root.
-
-Example) Settings the [sumneko_lua](https://github.com/sumneko/lua-language-server) settings:
-
-`:NlspLocalConfig sumneko_lua`
-
-Create a settings file in `{project_path}/.nlsp-settings/sumneko_lua.json`.
-
-### Step 3. Load settings.
-
-By calling `nlspsettings.setup()`, you can use `on_new_config` to automatically load JSON files on all language servers.
-
-```lua
--- You need to call lspconfig.*.setup().
-require'nlspsettings'.setup()
-```
-
+### Combine with Lua configuration
 
 It is still possible to write `settings` in lua.
 However, if you have the same key, the value in the JSON file will take precedence.
@@ -109,11 +87,10 @@ However, if you have the same key, the value in the JSON file will take preceden
 Example) Write sumneko_lua settings in Lua
 
 ```lua
-lspconfig.sumneko_lua.setup{
-  cmd = { '/path/to/bin/Linux/lua-language-server', '-E', '/path/to/main.lua', },
+local server_opts = {}
 
-  -- You can also specify a value in settings, but if it is the same key,
-  -- it will be overwritten by the value in the JSON file.
+-- lua
+server_opts.sumneko_lua = {
   settings = {
     Lua = {
       workspace = {
@@ -125,6 +102,21 @@ lspconfig.sumneko_lua.setup{
     }
   }
 }
+
+local common_setup_opts = {
+  -- on_attach = on_attach,
+  -- capabilities = require('cmp_nvim_lsp').update_capabilities(
+  --   vim.lsp.protocol.make_client_capabilities()
+  -- )
+}
+
+lsp_installer.on_server_ready(function(server)
+  local opts = vim.deepcopy(common_setup_opts)
+  if server_opts[server.name] then
+      opts = vim.tbl_deep_extend('force', opts, server_opts[server.name])
+  end
+  server:setup(opts)
+end)
 ```
 
 

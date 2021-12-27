@@ -104,27 +104,74 @@ n <Plug>(nlsp-local-buf-config)                *<Plug>(nlsp-local-buf-config)*
 
 ==============================================================================
 EXAMPLES                                              *nlsp-settings-examples*
->
 
+Configuration using `williamboman/nvim-lsp-installer`:
+>
     local on_attach = function(client)
       local map = vim.api.nvim_buf_set_keymap
       map( 'n', '<Space>vl', '<Plug>(nlsp-buf-config)', { noremap = false })
     end
-    
-    require'nlspsettings'.setup()
+
+    require'nlspsettings'.setup({
+      config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
+      local_settings_root_markers = { '.git' },
+      -- append default schemas
+      jsonls_append_default_schemas = true
+    })
+
+    local server_opts = {}
+
+    -- lua
+    server_opts.sumneko_lua = {
+      settings = {
+        Lua = {
+          workspace = {
+            library = {
+              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+              [vim.fn.stdpath("config") .. '/lua'] = true,
+            }
+          }
+        }
+      }
+    }
+
+    local common_setup_opts = {
+      on_attach = on_attach,
+      capabilities = require('cmp_nvim_lsp').update_capabilities(
+        vim.lsp.protocol.make_client_capabilities()
+      )
+    }
+
+    lsp_installer.on_server_ready(function(server)
+      local opts = vim.deepcopy(common_setup_opts)
+      if server_opts[server.name] then
+          opts = vim.tbl_deep_extend('force', opts, server_opts[server.name])
+      end
+      server:setup(opts)
+    end)
+<
+
+Configure lspconfig by itself:
+>
+    local on_attach = function(client)
+      local map = vim.api.nvim_buf_set_keymap
+      map( 'n', '<Space>vl', '<Plug>(nlsp-buf-config)', { noremap = false })
+    end
+
+    require'nlspsettings'.setup({
+      config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
+      local_settings_root_markers = { '.git' },
+      -- append default schemas
+      jsonls_append_default_schemas = true
+    })
     local lspconfig = require'lspconfig'
-    
+
     -- jsonls
     lspconfig.jsonls.setup {
       -- Set the schema so that it can be completed in settings json file.
-      settings = {
-        json = {
-          schemas = require'nlspsettings.jsonls'.get_default_schemas()
-        }
-      },
       on_attach = on_attach,
     }
-    
+
     -- lua
     lspconfig.sumneko_lua.setup{
       settings = {
@@ -139,7 +186,6 @@ EXAMPLES                                              *nlsp-settings-examples*
       },
       on_attach = on_attach,
     }
-<
 
 ==============================================================================
 vim:tw=78:sw=4:sts=4:ts=4:ft=help:norl:et
