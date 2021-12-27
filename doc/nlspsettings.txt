@@ -41,6 +41,15 @@ setup({opts})                                           *nlspsettings.setup()*
 
                       Default: `{ '.git' }`
 
+        {jsonls_append_default_schemas} (optional, string)
+                      Add |nlspsettings.jsonls.get_default_schemas()| to
+                      jsonls `settings.json.schemas`?
+
+                      Default: `false`
+
+                      Setting this value to true is equal to executing the
+                      following code.
+
 get_settings({name})                             *nlspsettings.get_settings()*
     Gets the configuration of the specified server.
 

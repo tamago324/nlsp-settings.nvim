@@ -1,5 +1,6 @@
 local config = require'nlspsettings.config'
 local lspconfig = require'lspconfig'
+local jsonls = require"nlspsettings.jsonls"
 
 local uv = vim.loop
 local a = vim.api
@@ -129,7 +130,23 @@ local get_settings = function(root_dir, server_name)
 
   -- jsonls の場合、 schemas を追加する
   if server_name == 'jsonls' then
-    settings.json.schemas = vim.list_extend(global_json_settings.json.schemas or {}, conf_settings.json.schemas or {})
+    local schemas = {}
+
+    if local_json_settings["json"] ~= nil and local_json_settings["json"]["schemas"] then
+      schemas = vim.list_extend(schemas, local_json_settings.json.schemas or {})
+    end
+    if conf_settings["json"] ~= nil and conf_settings["json"]["schemas"] then
+      schemas = vim.list_extend(schemas, conf_settings.json.schemas or {})
+    end
+    if global_json_settings["json"] ~= nil and global_json_settings["json"]["schemas"] then
+      schemas = vim.list_extend(schemas, global_json_settings.json.schemas or {})
+    end
+
+    if config.get('jsonls_append_default_schemas') then
+      schemas = vim.list_extend(schemas, jsonls.get_default_schemas() or {})
+    end
+
+    settings.json.schemas = schemas
   end
   return settings, err
 
@@ -265,13 +282,7 @@ M.setup = function(opts)
   }
   opts = opts or {}
 
-  vim.validate {
-    config_home = { opts.config_home, 's', true }
-  }
-
-  config.set_default_values({
-    config_home = opts.config_home
-  })
+  config.set_default_values(opts)
 
   -- XXX: ここで読む必要ある？？
   --      get_settings() で読めばいいのでは？
