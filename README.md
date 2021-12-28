@@ -37,7 +37,7 @@ Plug 'williamboman/nvim-lsp-installer'
 require'nlspsettings'.setup({
   config_home = vim.fn.stdpath('config') .. '/nlsp-settings', -- The directory containing the settings files.
   local_settings_root_markers = { '.git' }, -- A list of files and directories to use when looking for the root directory when opening a file with  :NlspLocalConfig
-  jsonls_append_default_schemas = ture -- (Default: false) Append a list of default schemas to jsonls `settings.json.schemas`
+  jsonls_append_default_schemas = true -- (Default: false) Append a list of default schemas to jsonls `settings.json.schemas`
 })
 
 -- If you are using williamboman/nvim-lsp-installer to install jsonls, call setup()
