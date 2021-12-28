@@ -24,37 +24,59 @@ You can also use it with [jsonls](https://github.com/vscode-langservers/vscode-j
 Plug 'neovim/nvim-lspconfig'
 Plug 'tamago324/nlsp-settings.nvim'
 
--- Recommend
+" Recommend
 Plug 'williamboman/nvim-lsp-installer'
 ```
 
 ## Getting Started
 
+### Step1. Install jsonls with nvim-lsp-installer
 
-### Step1. Setup LSP servers
-
-```lua
-require'nlspsettings'.setup({
-  config_home = vim.fn.stdpath('config') .. '/nlsp-settings', -- The directory containing the settings files.
-  local_settings_root_markers = { '.git' }, -- A list of files and directories to use when looking for the root directory when opening a file with  :NlspLocalConfig
-  jsonls_append_default_schemas = true -- (Default: false) Append a list of default schemas to jsonls `settings.json.schemas`
-})
-
--- If you are using williamboman/nvim-lsp-installer to install jsonls, call setup()
-lsp_installer.on_server_ready(function(server)
-  server:setup()
-end)
-
--- If you are installing it manually, call setup.
--- require"lspconfig".jsonls.setup {
---   cmd = { '/path/to/json-languageserver', '--stdio' }
--- }
+```
+:LspInstall jsonls
 ```
 
-### Step2. Write settings
+### Step2. Setup LSP servers
+
+Example: Completion using omnifunc
+
+```lua
+local lsp_installer = require('nvim-lsp-installer')
+local lspconfig = require("lspconfig")
+local nlspsettings = require("nlspsettings")
+
+nlspsettings.setup({
+  config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
+  local_settings_root_markers = { '.git' },
+  jsonls_append_default_schemas = true
+})
+
+function on_attach(client, bufnr)
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+end
+
+local global_capabilities = vim.lsp.protocol.make_client_capabilities()
+global_capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+  capabilities = global_capabilities,
+})
+
+lsp_installer.on_server_ready(function(server)
+  server:setup({
+    on_attach = on_attach
+  })
+end)
+```
+
+TODO: その他の設定は doc を参照
+
+
+### Step3. Write settings
 
 Execute `:NlspConfig sumneko_lua`.  
-`sumneko_lua.json` will be created under the directory set in `config_home`. You should now have jsonls completion enabled.
+`sumneko_lua.json` will be created under the directory set in `config_home`. Type `<C-x><C-o>`. You should now have jsonls completion enabled.
 
 
 ## Usage
