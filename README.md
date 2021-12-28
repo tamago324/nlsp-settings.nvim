@@ -53,7 +53,8 @@ end)
 
 ### Step2. Write settings
 
-Execute `:NlspConfig sumneko_lua`. `sumneko_lual.json` will be created under the directory set in `config_home`. You should now have jsonls completion enabled.
+Execute `:NlspConfig sumneko_lua`.  
+`sumneko_lua.json` will be created under the directory set in `config_home`. You should now have jsonls completion enabled.
 
 
 ## Usage
