@@ -5,25 +5,25 @@
     "Lua.IntelliSense.traceBeSetted": {
       "default": false,
       "markdownDescription": "%config.IntelliSense.traceBeSetted%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.IntelliSense.traceFieldInject": {
       "default": false,
       "markdownDescription": "%config.IntelliSense.traceFieldInject%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.IntelliSense.traceLocalSet": {
       "default": false,
       "markdownDescription": "%config.IntelliSense.traceLocalSet%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.IntelliSense.traceReturn": {
       "default": false,
       "markdownDescription": "%config.IntelliSense.traceReturn%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.color.mode": {
@@ -39,13 +39,13 @@
         "%config.color.mode.Semantic%",
         "%config.color.mode.SemanticEnhanced%"
       ],
-      "scope": "window",
+      "scope": "resource",
       "type": "string"
     },
     "Lua.completion.autoRequire": {
       "default": true,
       "markdownDescription": "%config.completion.autoRequire%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.completion.callSnippet": {
@@ -61,19 +61,19 @@
         "%config.completion.callSnippet.Both%",
         "%config.completion.callSnippet.Replace%"
       ],
-      "scope": "window",
+      "scope": "resource",
       "type": "string"
     },
     "Lua.completion.displayContext": {
       "default": 0,
       "markdownDescription": "%config.completion.displayContext%",
-      "scope": "window",
+      "scope": "resource",
       "type": "integer"
     },
     "Lua.completion.enable": {
       "default": true,
       "markdownDescription": "%config.completion.enable%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.completion.keywordSnippet": {
@@ -89,25 +89,25 @@
         "%config.completion.keywordSnippet.Both%",
         "%config.completion.keywordSnippet.Replace%"
       ],
-      "scope": "window",
+      "scope": "resource",
       "type": "string"
     },
     "Lua.completion.postfix": {
       "default": "@",
       "markdownDescription": "%config.completion.postfix%",
-      "scope": "window",
+      "scope": "resource",
       "type": "string"
     },
     "Lua.completion.requireSeparator": {
       "default": ".",
       "markdownDescription": "%config.completion.requireSeparator%",
-      "scope": "window",
+      "scope": "resource",
       "type": "string"
     },
     "Lua.completion.showParams": {
       "default": true,
       "markdownDescription": "%config.completion.showParams%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.completion.showWord": {
@@ -123,13 +123,13 @@
         "%config.completion.showWord.Fallback%",
         "%config.completion.showWord.Disable%"
       ],
-      "scope": "window",
+      "scope": "resource",
       "type": "string"
     },
     "Lua.completion.workspaceWord": {
       "default": true,
       "markdownDescription": "%config.completion.workspaceWord%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.diagnostics.disable": {
@@ -137,13 +137,13 @@
         "type": "string"
       },
       "markdownDescription": "%config.diagnostics.disable%",
-      "scope": "window",
+      "scope": "resource",
       "type": "array"
     },
     "Lua.diagnostics.enable": {
       "default": true,
       "markdownDescription": "%config.diagnostics.enable%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.diagnostics.globals": {
@@ -151,7 +151,7 @@
         "type": "string"
       },
       "markdownDescription": "%config.diagnostics.globals%",
-      "scope": "window",
+      "scope": "resource",
       "type": "array"
     },
     "Lua.diagnostics.ignoredFiles": {
@@ -167,7 +167,7 @@
         "%config.diagnostics.files.Opened%",
         "%config.diagnostics.files.Disable%"
       ],
-      "scope": "window",
+      "scope": "resource",
       "type": "string"
     },
     "Lua.diagnostics.libraryFiles": {
@@ -183,7 +183,7 @@
         "%config.diagnostics.files.Opened%",
         "%config.diagnostics.files.Disable%"
       ],
-      "scope": "window",
+      "scope": "resource",
       "type": "string"
     },
     "Lua.diagnostics.neededFileStatus": {
@@ -591,7 +591,7 @@
           "type": "string"
         }
       },
-      "scope": "window",
+      "scope": "resource",
       "title": "neededFileStatus",
       "type": "object"
     },
@@ -1040,26 +1040,26 @@
           "type": "string"
         }
       },
-      "scope": "window",
+      "scope": "resource",
       "title": "severity",
       "type": "object"
     },
     "Lua.diagnostics.workspaceDelay": {
       "default": 0,
       "markdownDescription": "%config.diagnostics.workspaceDelay%",
-      "scope": "window",
+      "scope": "resource",
       "type": "integer"
     },
     "Lua.diagnostics.workspaceRate": {
       "default": 100,
       "markdownDescription": "%config.diagnostics.workspaceRate%",
-      "scope": "window",
+      "scope": "resource",
       "type": "integer"
     },
     "Lua.hint.enable": {
       "default": false,
       "markdownDescription": "%config.hint.enable%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.hint.paramName": {
@@ -1075,55 +1075,55 @@
         "%config.hint.paramName.Literal%",
         "%config.hint.paramName.Disable%"
       ],
-      "scope": "window",
+      "scope": "resource",
       "type": "string"
     },
     "Lua.hint.paramType": {
       "default": true,
       "markdownDescription": "%config.hint.paramType%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.hint.setType": {
       "default": false,
       "markdownDescription": "%config.hint.setType%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.hover.enable": {
       "default": true,
       "markdownDescription": "%config.hover.enable%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.hover.enumsLimit": {
       "default": 5,
       "markdownDescription": "%config.hover.enumsLimit%",
-      "scope": "window",
+      "scope": "resource",
       "type": "integer"
     },
     "Lua.hover.previewFields": {
       "default": 20,
       "markdownDescription": "%config.hover.previewFields%",
-      "scope": "window",
+      "scope": "resource",
       "type": "integer"
     },
     "Lua.hover.viewNumber": {
       "default": true,
       "markdownDescription": "%config.hover.viewNumber%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.hover.viewString": {
       "default": true,
       "markdownDescription": "%config.hover.viewString%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.hover.viewStringMax": {
       "default": 1000,
       "markdownDescription": "%config.hover.viewStringMax%",
-      "scope": "window",
+      "scope": "resource",
       "type": "integer"
     },
     "Lua.misc.parameters": {
@@ -1131,7 +1131,7 @@
         "type": "string"
       },
       "markdownDescription": "%config.misc.parameters%",
-      "scope": "window",
+      "scope": "resource",
       "type": "array"
     },
     "Lua.runtime.builtin": {
@@ -1289,7 +1289,7 @@
           "type": "string"
         }
       },
-      "scope": "window",
+      "scope": "resource",
       "type": "object"
     },
     "Lua.runtime.fileEncoding": {
@@ -1301,7 +1301,7 @@
         "utf16be"
       ],
       "markdownDescription": "%config.runtime.fileEncoding%",
-      "scope": "window",
+      "scope": "resource",
       "type": "string"
     },
     "Lua.runtime.nonstandardSymbol": {
@@ -1323,7 +1323,7 @@
         "type": "string"
       },
       "markdownDescription": "%config.runtime.nonstandardSymbol%",
-      "scope": "window",
+      "scope": "resource",
       "type": "array"
     },
     "Lua.runtime.path": {
@@ -1335,19 +1335,19 @@
         "type": "string"
       },
       "markdownDescription": "%config.runtime.path%",
-      "scope": "window",
+      "scope": "resource",
       "type": "array"
     },
     "Lua.runtime.pathStrict": {
       "default": false,
       "markdownDescription": "%config.runtime.pathStrict%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.runtime.plugin": {
       "default": "",
       "markdownDescription": "%config.runtime.plugin%",
-      "scope": "window",
+      "scope": "resource",
       "type": "string"
     },
     "Lua.runtime.special": {
@@ -1370,13 +1370,13 @@
           "type": "string"
         }
       },
-      "scope": "window",
+      "scope": "resource",
       "type": "object"
     },
     "Lua.runtime.unicodeName": {
       "default": false,
       "markdownDescription": "%config.runtime.unicodeName%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.runtime.version": {
@@ -1389,19 +1389,19 @@
         "LuaJIT"
       ],
       "markdownDescription": "%config.runtime.version%",
-      "scope": "window",
+      "scope": "resource",
       "type": "string"
     },
     "Lua.signatureHelp.enable": {
       "default": true,
       "markdownDescription": "%config.signatureHelp.enable%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.telemetry.enable": {
       "default": null,
       "markdownDescription": "%config.telemetry.enable%",
-      "scope": "window",
+      "scope": "resource",
       "type": [
         "boolean",
         "null"
@@ -1410,19 +1410,19 @@
     "Lua.window.progressBar": {
       "default": true,
       "markdownDescription": "%config.window.progressBar%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.window.statusBar": {
       "default": true,
       "markdownDescription": "%config.window.statusBar%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.workspace.checkThirdParty": {
       "default": true,
       "markdownDescription": "%config.workspace.checkThirdParty%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.workspace.ignoreDir": {
@@ -1433,13 +1433,13 @@
         "type": "string"
       },
       "markdownDescription": "%config.workspace.ignoreDir%",
-      "scope": "window",
+      "scope": "resource",
       "type": "array"
     },
     "Lua.workspace.ignoreSubmodules": {
       "default": true,
       "markdownDescription": "%config.workspace.ignoreSubmodules%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.workspace.library": {
@@ -1447,25 +1447,25 @@
         "type": "string"
       },
       "markdownDescription": "%config.workspace.library%",
-      "scope": "window",
+      "scope": "resource",
       "type": "array"
     },
     "Lua.workspace.maxPreload": {
       "default": 1000,
       "markdownDescription": "%config.workspace.maxPreload%",
-      "scope": "window",
+      "scope": "resource",
       "type": "integer"
     },
     "Lua.workspace.preloadFileSize": {
       "default": 100,
       "markdownDescription": "%config.workspace.preloadFileSize%",
-      "scope": "window",
+      "scope": "resource",
       "type": "integer"
     },
     "Lua.workspace.useGitIgnore": {
       "default": true,
       "markdownDescription": "%config.workspace.useGitIgnore%",
-      "scope": "window",
+      "scope": "resource",
       "type": "boolean"
     },
     "Lua.workspace.userThirdParty": {
@@ -1473,7 +1473,7 @@
         "type": "string"
       },
       "markdownDescription": "%config.workspace.userThirdParty%",
-      "scope": "window",
+      "scope": "resource",
       "type": "array"
     }
   }
