@@ -135,9 +135,9 @@
     },
     "deno.suggest.imports.hosts": {
       "default": {
-        "https://cdn.nest.land": true,
         "https://crux.land": true,
-        "https://deno.land": true
+        "https://deno.land": true,
+        "https://x.nest.land": true
       },
       "examples": {
         "https://deno.land": true
