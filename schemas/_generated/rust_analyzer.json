@@ -552,6 +552,11 @@
       "markdownDescription": "Enable support for procedural macros, implies `#rust-analyzer.cargo.runBuildScripts#`.",
       "type": "boolean"
     },
+    "rust-analyzer.procMacro.ignored": {
+      "default": {},
+      "markdownDescription": "These proc-macros will be ignored when trying to expand them.\n\nThis config takes a map of crate names with the exported proc-macro names to ignore as values.",
+      "type": "object"
+    },
     "rust-analyzer.procMacro.server": {
       "default": null,
       "markdownDescription": "Internal config, path to proc-macro server executable (typically,\nthis is rust-analyzer itself, but we override this in tests).",
