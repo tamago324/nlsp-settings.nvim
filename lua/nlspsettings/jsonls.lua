@@ -26,7 +26,7 @@ local make_schemas_table = function(path)
 
     local server_name = string.match(name, '([^/]+)%.json$')
     if server_name ~= nil then
-      res[server_name] = string.format('file://%s/%s', path, name)
+      res[server_name] = string.format('/%s/%s', path, name)
     end
   end
 
