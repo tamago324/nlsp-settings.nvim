@@ -1,21 +1,4 @@
-require'lspconfig'
-local configs = require 'lspconfig/configs'
-
 local schemas_dir = os.getenv('PWD') .. '/schemas/_generated'
-
-local function require_all_configs()
-  local fin = false
-  -- Configs are lazy-loaded, tickle them to populate the `configs` singleton.
-  for _,v in ipairs(vim.fn.glob('nvim-lspconfig/lua/lspconfig/server_configurations/*.lua', 1, 1)) do
-    local module_name = v:gsub('.*/', ''):gsub('%.lua$', '')
-    configs[module_name] = require('lspconfig.server_configurations.'..module_name)
-    fin = true
-  end
-
-  if fin then
-    return
-  end
-end
 
 local write_tmpfile = function(data)
   local tmpname = os.tmpname()
@@ -26,7 +9,7 @@ local write_tmpfile = function(data)
 end
 
 local gen_schema = function(url, server_name)
-  local json = vim.fn.json_decode(vim.fn.system(string.format('curl -Ls %s', url)))
+  local json = vim.json.decode(vim.fn.system(string.format('curl -Ls %s', url)))
   local properties
 
   if json == nil or json.contributes == nil then
@@ -41,7 +24,7 @@ local gen_schema = function(url, server_name)
     properties = json.contributes.configuration.properties
   end
 
-  local schema_data = vim.fn.json_encode({
+  local schema_data = vim.json.encode({
     ['$schema'] = 'http://json-schema.org/draft-04/schema#',
     description = string.format('Setting of %s', server_name),
     properties = properties
@@ -53,14 +36,12 @@ local gen_schema = function(url, server_name)
 end
 
 local gen_schemas = function()
-  for server_name, v in pairs(configs) do
-    local docs = v.document_config.docs
-    if docs and docs.package_json then
-      print(server_name)
-      local res = gen_schema(docs.package_json, server_name)
-    end
+  local gist_url = "https://gist.githubusercontent.com/williamboman/a01c3ce1884d4b57cc93422e7eae7702/raw/lsp-packages.json"
+  local gist_res = vim.json.decode(vim.fn.system(string.format('curl -Ls "%s"', gist_url)))
+  for server_name, url in pairs(gist_res) do
+    print(server_name)
+    local res = gen_schema(url, server_name)
   end
 end
 
-require_all_configs()
 gen_schemas()
