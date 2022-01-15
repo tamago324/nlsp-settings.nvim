@@ -12,16 +12,26 @@ local gen_schema = function(url, server_name)
   local json = vim.json.decode(vim.fn.system(string.format('curl -Ls %s', url)))
   local properties
 
-  if json == nil or json.contributes == nil then
+  if json == nil then
     return nil
   end
 
-  if vim.tbl_islist(json.contributes.configuration) then
-    -- リストなら、 1つ目を取得する
-    -- als がリストのため https://raw.githubusercontent.com/AdaCore/ada_language_server/master/integration/vscode/ada/package.json
-    properties = json.contributes.configuration[1].properties
-  elseif type(json.contributes.configuration) == 'table' then
-    properties = json.contributes.configuration.properties
+  if server_name == 'pylsp' then
+    -- NOTE: that the pylsp entry points to an actual JSON schema file,
+    -- not a package.json containing a JSON schema at .contributes.configuration.
+    properties = json.properties
+  else
+    if json.contributes == nil then
+      return nil
+    end
+
+    if vim.tbl_islist(json.contributes.configuration) then
+      -- リストなら、 1つ目を取得する
+      -- als がリストのため https://raw.githubusercontent.com/AdaCore/ada_language_server/master/integration/vscode/ada/package.json
+      properties = json.contributes.configuration[1].properties
+    elseif type(json.contributes.configuration) == 'table' then
+      properties = json.contributes.configuration.properties
+    end
   end
 
   local schema_data = vim.json.encode({
