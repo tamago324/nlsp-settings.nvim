@@ -1,4 +1,4 @@
-local servers = require'nvim-lsp-installer.servers'
+local has_installer, servers = pcall(require, 'nvim-lsp-installer.servers')
 
 local uv = vim.loop
 
@@ -64,9 +64,13 @@ end
 --- Return the name of a supported server.
 ---@return table
 M.get_langserver_names = function()
-  return vim.tbl_values(vim.tbl_map(function(server)
-    return default_schemas[server.name] and server.name
-  end, servers.get_installed_servers()))
+  if has_installer then
+    return vim.tbl_values(vim.tbl_map(function(server)
+      return default_schemas[server.name] and server.name
+    end, servers.get_installed_servers()))
+  else
+    return vim.tbl_keys(default_schemas)
+  end
 end
 
 
