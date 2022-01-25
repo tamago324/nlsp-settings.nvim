@@ -22,8 +22,10 @@ You can also use it with [jsonls](https://github.com/vscode-langservers/vscode-j
 
 ```vim
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
 Plug 'tamago324/nlsp-settings.nvim'
+
+" Recommend
+Plug 'williamboman/nvim-lsp-installer'
 ```
 
 ## Getting Started
