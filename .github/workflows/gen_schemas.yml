@@ -12,21 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: date +%F > todays-date
       - uses: actions/checkout@v2
-      - name: Restore cache for today's nightly.
-        uses: actions/cache@v1.0.0
+      - name: Setup from neovim nightly
+        uses: rhysd/action-setup-vim@v1
         with:
-          path: _neovim
-          key: ${{ runner.os }}-nightly-${{ hashFiles('todays-date') }}
-      - name: Setup from neovim nightly and run docgen
+          neovim: true
+          version: nightly
+      - name: Run docgen
         run: |
-          test -d _neovim || {
-            mkdir -p _neovim
-            curl -sL https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz | tar xzf - --strip-components=1 -C "${PWD}/_neovim"
-          }
-          export PATH="${PWD}/_neovim/bin:${PATH}"
-          export VIM="${PWD}/_neovim/share/nvim/runtime"
           git clone --depth 1 https://github.com/neovim/nvim-lspconfig
           scripts/gen_schemas.sh
       - name: Commit changes
