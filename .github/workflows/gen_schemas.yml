@@ -1,6 +1,8 @@
 name: gen_schemas
 
 on:
+  # 手動実行できるようにする
+  workflow_dispatch:
   schedule:
     # １時間に１回実行する
     - cron: '0 * * * *'
