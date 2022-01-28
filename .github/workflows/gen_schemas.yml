@@ -19,8 +19,12 @@ jobs:
           key: ${{ runner.os }}-nightly-${{ hashFiles('todays-date') }}
       - name: Setup from neovim nightly and run docgen
         run: |
-          curl -OL https://raw.githubusercontent.com/norcalli/bot-ci/master/scripts/github-actions-setup.sh
-          source github-actions-setup.sh nightly-x64
+          test -d _neovim || {
+            mkdir -p _neovim
+            curl -sL https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz | tar xzf - --strip-components=1 -C "${PWD}/_neovim"
+          }
+          export PATH="${PWD}/_neovim/bin:${PATH}"
+          export VIM="${PWD}/_neovim/share/nvim/runtime"
           git clone --depth 1 https://github.com/neovim/nvim-lspconfig
           scripts/gen_schemas.sh
       - name: Commit changes
