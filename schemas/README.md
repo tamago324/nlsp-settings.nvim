@@ -4,6 +4,8 @@
 - [ ] angularls
 - [ ] ansiblels
 - [ ] arduino_language_server
+- [ ] asm_lsp
+- [ ] awk_ls
 - [ ] bashls
 - [ ] beancount
 - [ ] bicep
@@ -34,6 +36,7 @@
 - [ ] eslint
 - [x] flow
 - [ ] flux_lsp
+- [ ] foam_ls
 - [x] fortls
 - [ ] fsautocomplete
 - [ ] fstar
@@ -49,7 +52,7 @@
 - [ ] hls
 - [ ] html
 - [ ] idris2_lsp
-- [ ] intelephense
+- [x] intelephense
 - [x] java_language_server
 - [x] jdtls
 - [ ] jedi_language_server
@@ -69,16 +72,17 @@
 - [ ] ocamlls
 - [ ] ocamllsp
 - [ ] omnisharp
+- [ ] opencl_ls
 - [ ] pasls
 - [x] perlls
 - [x] perlpls
 - [ ] phpactor
 - [ ] powershell_es
 - [ ] prismals
-- [ ] psalm
+- [x] psalm
 - [x] puppet
 - [x] purescriptls
-- [ ] pylsp
+- [x] pylsp
 - [ ] pyre
 - [x] pyright
 - [ ] quick_lint_js

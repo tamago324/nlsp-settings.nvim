@@ -87,7 +87,7 @@
       "type": "string"
     },
     "elixirLS.mixTarget": {
-      "description": "Mix target to use for compilation (requires Elixir >= 1.8)",
+      "description": "Mix target to use for compilation",
       "minLength": 0,
       "scope": "resource",
       "type": "string"

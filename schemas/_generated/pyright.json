@@ -164,6 +164,17 @@
           ],
           "type": "string"
         },
+        "reportInconsistentConstructor": {
+          "default": "none",
+          "description": "Diagnostics for __init__ and __new__ methods whose signatures are inconsistent.",
+          "enum": [
+            "none",
+            "information",
+            "warning",
+            "error"
+          ],
+          "type": "string"
+        },
         "reportInvalidStringEscapeSequence": {
           "default": "warning",
           "description": "Diagnostics for invalid escape sequences used within string literals. The Python specification indicates that such sequences will generate a syntax error in future versions.",
@@ -197,6 +208,17 @@
           ],
           "type": "string"
         },
+        "reportMatchNotExhaustive": {
+          "default": "none",
+          "description": "Diagnostics for 'match' statements that do not exhaustively match all possible values.",
+          "enum": [
+            "none",
+            "information",
+            "warning",
+            "error"
+          ],
+          "type": "string"
+        },
         "reportMissingImports": {
           "default": "error",
           "description": "Diagnostics for imports that have no corresponding imported python file or type stub file.",
@@ -222,6 +244,17 @@
         "reportMissingParameterType": {
           "default": "none",
           "description": "Diagnostics for parameters that are missing a type annotation.",
+          "enum": [
+            "none",
+            "information",
+            "warning",
+            "error"
+          ],
+          "type": "string"
+        },
+        "reportMissingSuperCall": {
+          "default": "none",
+          "description": "Diagnostics for missing call to parent class for inherited `__init__` methods.",
           "enum": [
             "none",
             "information",
@@ -497,6 +530,17 @@
         "reportUnnecessaryIsInstance": {
           "default": "none",
           "description": "Diagnostics for 'isinstance' or 'issubclass' calls where the result is statically determined to be always true. Such calls are often indicative of a programming error.",
+          "enum": [
+            "none",
+            "information",
+            "warning",
+            "error"
+          ],
+          "type": "string"
+        },
+        "reportUnnecessaryTypeIgnoreComment": {
+          "default": "none",
+          "description": "Diagnostics for '# type: ignore' comments that have no effect.",
           "enum": [
             "none",
             "information",

@@ -560,6 +560,13 @@
       "markdownDescription": "Whether to show `can't find Cargo.toml` error message.",
       "type": "boolean"
     },
+    "rust-analyzer.primeCaches.numThreads": {
+      "default": 0,
+      "markdownDescription": "How many worker threads to to handle priming caches. The default `0` means to pick automatically.",
+      "maximum": 255,
+      "minimum": 0,
+      "type": "number"
+    },
     "rust-analyzer.procMacro.enable": {
       "default": true,
       "markdownDescription": "Enable support for procedural macros, implies `#rust-analyzer.cargo.runBuildScripts#`.",

@@ -8,6 +8,15 @@
       "scope": "window",
       "type": "string"
     },
+    "deno.certificateStores": {
+      "default": null,
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "A list of root certificate stores used to validate TLS certificates when fetching and caching remote resources. This overrides the `DENO_TLS_CA_STORE` environment variable if set.",
+      "scope": "window",
+      "type": "array"
+    },
     "deno.codeLens.implementations": {
       "default": false,
       "examples": [
@@ -155,6 +164,21 @@
       "default": true,
       "scope": "window",
       "type": "boolean"
+    },
+    "deno.tlsCertificate": {
+      "default": null,
+      "markdownDescription": "A path to a PEM certificate to use as the certificate authority when validating TLS certificates when fetching and caching remote resources. This is like using `--cert` on the Deno CLI and overrides the `DENO_CERT` environment variable if set.",
+      "scope": "window",
+      "type": "string"
+    },
+    "deno.unsafelyIgnoreCertificateErrors": {
+      "default": null,
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "**DANGER** disables verification of TLS certificates for the hosts provided. There is likely a better way to deal with any errors than use this option. This is like using `--unsafely-ignore-certificate-errors` in the Deno CLI.",
+      "scope": "window",
+      "type": "array"
     },
     "deno.unstable": {
       "default": false,

@@ -26,22 +26,6 @@
       "scope": "resource",
       "type": "boolean"
     },
-    "Lua.color.mode": {
-      "default": "Semantic",
-      "enum": [
-        "Grammar",
-        "Semantic",
-        "SemanticEnhanced"
-      ],
-      "markdownDescription": "%config.color.mode%",
-      "markdownEnumDescriptions": [
-        "%config.color.mode.Grammar%",
-        "%config.color.mode.Semantic%",
-        "%config.color.mode.SemanticEnhanced%"
-      ],
-      "scope": "resource",
-      "type": "string"
-    },
     "Lua.completion.autoRequire": {
       "default": true,
       "markdownDescription": "%config.completion.autoRequire%",
@@ -1045,7 +1029,7 @@
       "type": "object"
     },
     "Lua.diagnostics.workspaceDelay": {
-      "default": 0,
+      "default": 3,
       "markdownDescription": "%config.diagnostics.workspaceDelay%",
       "scope": "resource",
       "type": "integer"
@@ -1408,6 +1392,30 @@
       "scope": "resource",
       "type": "string"
     },
+    "Lua.semantic.annotation": {
+      "default": true,
+      "markdownDescription": "%config.semantic.annotation%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "Lua.semantic.enable": {
+      "default": true,
+      "markdownDescription": "%config.semantic.enable%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "Lua.semantic.keyword": {
+      "default": false,
+      "markdownDescription": "%config.semantic.keyword%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "Lua.semantic.variable": {
+      "default": true,
+      "markdownDescription": "%config.semantic.variable%",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "Lua.signatureHelp.enable": {
       "default": true,
       "markdownDescription": "%config.signatureHelp.enable%",
@@ -1467,13 +1475,13 @@
       "type": "array"
     },
     "Lua.workspace.maxPreload": {
-      "default": 1000,
+      "default": 5000,
       "markdownDescription": "%config.workspace.maxPreload%",
       "scope": "resource",
       "type": "integer"
     },
     "Lua.workspace.preloadFileSize": {
-      "default": 100,
+      "default": 500,
       "markdownDescription": "%config.workspace.preloadFileSize%",
       "scope": "resource",
       "type": "integer"
