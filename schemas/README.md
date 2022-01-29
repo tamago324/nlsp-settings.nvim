@@ -67,7 +67,7 @@
 - [x] ltex
 - [ ] metals
 - [ ] mint
-- [ ] nickel_ls
+- [x] nickel_ls
 - [x] nimls
 - [ ] ocamlls
 - [ ] ocamllsp
