@@ -52,7 +52,18 @@
     },
     "ada.trace.server": {
       "default": "off",
-      "description": "Traces the communication between VSCode and the language server.",
+      "description": "Traces the communication between VSCode and the Ada language server.",
+      "enum": [
+        "off",
+        "messages",
+        "verbose"
+      ],
+      "scope": "window",
+      "type": "string"
+    },
+    "gpr.trace.server": {
+      "default": "off",
+      "description": "Traces the communication between VSCode and the GPR language server.",
       "enum": [
         "off",
         "messages",
