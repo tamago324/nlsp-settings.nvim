@@ -1,7 +1,7 @@
 local config = require 'nlspsettings.config'
 local nlspsettings = require 'nlspsettings'
 local lspconfig = require 'lspconfig'
-local has_notify, notify = pcall(require, 'notify')
+local notify = vim.F.npcall(require, 'notify')
 
 local path = lspconfig.util.path
 local uv = vim.loop
@@ -14,7 +14,7 @@ local M = {}
 local log = function(message, level)
   local title = 'NLsp Settings'
 
-  if has_notify then
+  if notify then
     notify(message, level, { title = title })
   else
     vim.notify(('[%s] '):format(title) .. message, level)
