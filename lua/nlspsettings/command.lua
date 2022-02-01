@@ -74,7 +74,7 @@ local open_config = function(dir, server_name)
       return
     end
 
-    vim.fn.mkdir(dir, 'p')
+    uv.fs_mkdir(dir, 420)
   end
 
   local filepath = path.join(dir, server_name .. '.json')
