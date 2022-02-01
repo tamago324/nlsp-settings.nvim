@@ -68,7 +68,7 @@ local open_config = function(dir, server_name)
   }
 
   if not path.is_dir(dir) then
-    local prompt = ('Config directory %s not exists, create?'):format(dir)
+    local prompt = ('Config directory "%s" not exists, create?'):format(path.sanitize(dir))
 
     if vim.fn.confirm(prompt, '&Yes\n&No', 1) ~= 1 then
       return
