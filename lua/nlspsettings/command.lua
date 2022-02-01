@@ -133,7 +133,7 @@ end
 --- Open a settings file that matches the current buffer
 M.open_local_buf_config = function()
   with_server_name(nil, function(server_name)
-    if server_name == nil then
+    if not server_name then
       return
     end
 
