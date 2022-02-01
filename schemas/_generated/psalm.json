@@ -114,6 +114,11 @@
       "description": "Optional (Advanced). If provided, this overrides the Psalm script to use, e.g. vendor/bin/psalm-language-server. (Modifying requires VSCode reload)",
       "type": "string"
     },
+    "psalm.psalmVersion": {
+      "default": null,
+      "description": "Optional (Advanced). If provided, this overrides the Psalm version detection (Modifying requires VSCode reload)",
+      "type": "string"
+    },
     "psalm.trace.server": {
       "default": "off",
       "description": "Traces the communication between VSCode and the Psalm language server.",
