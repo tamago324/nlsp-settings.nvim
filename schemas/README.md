@@ -95,6 +95,7 @@
 - [ ] robotframework_ls
 - [ ] rome
 - [x] rust_analyzer
+- [ ] salt_ls
 - [ ] scry
 - [ ] serve_d
 - [ ] sixtyfps
