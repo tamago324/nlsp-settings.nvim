@@ -1,10 +1,9 @@
 local uv = vim.loop
 
-
 local script_abspath = function()
   return debug.getinfo(2, 'S').source:sub(2)
 end
-local _schemas_dir = script_abspath():match('(.*)/lua/nlspsettings/jsonls.lua$') .. '/schemas'
+local _schemas_dir = script_abspath():match '(.*)/lua/nlspsettings/jsonls.lua$' .. '/schemas'
 
 local M = {}
 
@@ -42,7 +41,6 @@ local reset_default_schemas = function()
 end
 reset_default_schemas()
 
-
 --- Return a list of default schemas
 ---@return table
 M.get_default_schemas = function()
@@ -51,19 +49,17 @@ M.get_default_schemas = function()
   for k, v in pairs(default_schemas) do
     table.insert(res, {
       fileMatch = { k .. '.json' },
-      url = v
+      url = v,
     })
   end
 
   return res
 end
 
-
 --- Return the name of a supported server.
 ---@return table
 M.get_langserver_names = function()
   return vim.tbl_keys(default_schemas)
 end
-
 
 return M

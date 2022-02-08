@@ -1,10 +1,8 @@
-local config = require'nlspsettings.config'
-local lspconfig = require'lspconfig'
-local jsonls = require"nlspsettings.jsonls"
+local config = require 'nlspsettings.config'
+local lspconfig = require 'lspconfig'
+local jsonls = require 'nlspsettings.jsonls'
 
 local uv = vim.loop
-local a = vim.api
-
 
 local M = {}
 
@@ -14,7 +12,6 @@ local servers = {
   --   conf_settings = {}
   -- }
 }
-
 
 --- Decodes from JSON.
 ---
@@ -35,7 +32,7 @@ end
 ---@return table
 local lsp_json_to_table = function(t)
   vim.validate {
-    t = { t, 't' }
+    t = { t, 't' },
   }
 
   local res = {}
@@ -43,7 +40,7 @@ local lsp_json_to_table = function(t)
   for key, value in pairs(t) do
     local key_list = {}
 
-    for k in string.gmatch(key, "([^.]+)") do
+    for k in string.gmatch(key, '([^.]+)') do
       table.insert(key_list, k)
     end
 
@@ -94,7 +91,7 @@ local load_global_setting_json = function(path)
     path = { path, 's' },
   }
 
-  local name = path:match('([^/]+)%.json$')
+  local name = path:match '([^/]+)%.json$'
   if servers[name] == nil then
     servers[name] = {}
     servers[name].global_settings = {}
@@ -132,24 +129,23 @@ local get_settings = function(root_dir, server_name)
   if server_name == 'jsonls' then
     local schemas = {}
 
-    if local_json_settings["json"] ~= nil and local_json_settings["json"]["schemas"] then
+    if local_json_settings['json'] ~= nil and local_json_settings['json']['schemas'] then
       schemas = vim.list_extend(schemas, local_json_settings.json.schemas or {})
     end
-    if conf_settings["json"] ~= nil and conf_settings["json"]["schemas"] then
+    if conf_settings['json'] ~= nil and conf_settings['json']['schemas'] then
       schemas = vim.list_extend(schemas, conf_settings.json.schemas or {})
     end
-    if global_json_settings["json"] ~= nil and global_json_settings["json"]["schemas"] then
+    if global_json_settings['json'] ~= nil and global_json_settings['json']['schemas'] then
       schemas = vim.list_extend(schemas, global_json_settings.json.schemas or {})
     end
 
-    if config.get('jsonls_append_default_schemas') then
+    if config.get 'jsonls_append_default_schemas' then
       schemas = vim.list_extend(schemas, jsonls.get_default_schemas() or {})
     end
 
     settings.json.schemas = schemas
   end
   return settings, err
-
 end
 M.get_settings = get_settings
 
@@ -166,7 +162,7 @@ M.update_settings = function(server_name)
   end
 
   -- もしかしたら、グローバルの設置が変わっている可能性があるため、ここで読み込む
-  local err = load_global_setting_json(string.format('%s/%s.json', config.get('config_home'), server_name))
+  local err = load_global_setting_json(string.format('%s/%s.json', config.get 'config_home', server_name))
   if err then
     return true
   end
@@ -176,18 +172,17 @@ M.update_settings = function(server_name)
   -- server_name のすべてのクライアントの設定を更新する
   for _, client in ipairs(vim.lsp.get_active_clients()) do
     if client.name == server_name then
-
       -- JSON ファイルの設定と setup() の設定をマージする
       -- 各クライアントの設定を読み込みたいため、ループの中で読み込む
       local new_settings, err_ = get_settings(client.config.root_dir, server_name)
-      if err then
+      if err_ then
         errors = true
       end
 
       -- XXX: なぜか、エラーになる...
       -- client.workspace_did_change_configuration(new_settings)
       client.notify('workspace/didChangeConfiguration', {
-        settings = new_settings;
+        settings = new_settings,
       })
 
       -- Neovim 標準の workspace/configuration のハンドラで使っているため、常に同期を取るべき
@@ -197,7 +192,6 @@ M.update_settings = function(server_name)
 
   return errors
 end
-
 
 --- Make an on_new_config function that sets the settings
 ---@param on_new_config function
@@ -221,15 +215,19 @@ end
 
 local setup_autocmds = function()
   local patterns = {
-    string.format('*/%s/*.json', config.get('config_home'):match('[^/]+$')),
-    '*/.nlsp-settings/*.json'
+    string.format('*/%s/*.json', config.get('config_home'):match '[^/]+$'),
+    '*/.nlsp-settings/*.json',
   }
   local pattern = table.concat(patterns, ',')
 
-  vim.cmd( [[augroup NlspSettings]])
-  vim.cmd( [[  autocmd!]])
-  vim.cmd(([[  autocmd BufWritePost %s lua require'nlspsettings.command'._BufWritePost(vim.fn.expand('<afile>'))]]):format(pattern))
-  vim.cmd( [[augroup END]])
+  vim.cmd [[augroup NlspSettings]]
+  vim.cmd [[  autocmd!]]
+  vim.cmd(
+    ([[  autocmd BufWritePost %s lua require'nlspsettings.command'._BufWritePost(vim.fn.expand('<afile>'))]]):format(
+      pattern
+    )
+  )
+  vim.cmd [[augroup END]]
 end
 
 --- Returns a list of settings files under path
@@ -254,10 +252,9 @@ local get_settings_files = function(path)
   return res
 end
 
-
 --- load settings files under config_home
 local load_settings = function()
-  local files = get_settings_files(config.get('config_home'))
+  local files = get_settings_files(config.get 'config_home')
   for _, v in ipairs(files) do
     load_global_setting_json(v)
   end
@@ -265,20 +262,16 @@ end
 
 --- Use on_new_config to enable automatic loading of JSON files on all language servers
 local setup_default_config = function()
-  lspconfig.util.default_config = vim.tbl_extend(
-    "force",
-    lspconfig.util.default_config,
-    {
-      on_new_config = make_on_new_config(lspconfig.util.default_config.on_new_config)
-    }
-  )
+  lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
+    on_new_config = make_on_new_config(lspconfig.util.default_config.on_new_config),
+  })
 end
 
 --- Setup to read from a JSON file.
 ---@param opts table
 M.setup = function(opts)
   vim.validate {
-    opts = { opts, 't', true }
+    opts = { opts, 't', true },
   }
   opts = opts or {}
 

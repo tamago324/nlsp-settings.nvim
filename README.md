@@ -26,6 +26,9 @@ Plug 'tamago324/nlsp-settings.nvim'
 
 " Recommend
 Plug 'williamboman/nvim-lsp-installer'
+
+" Optional
+Plug 'rcarriga/nvim-notify'
 ```
 
 ## Getting Started
