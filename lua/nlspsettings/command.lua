@@ -13,11 +13,15 @@ local M = {}
 ---@param level number
 local log = function(message, level)
   local title = 'NLsp Settings'
+  local notify_config = config.get 'nvim_notify'
 
-  if notify then
-    notify(message, level, { title = title })
+  if notify and notify_config and notify_config.enable then
+    notify(message, level, {
+      title = title,
+      timeout = notify_config.timeout
+    })
   else
-    vim.notify(('[%s] '):format(title) .. message, level)
+    vim.notify(('[%s] %s'):format(title, message), level)
   end
 end
 
@@ -50,9 +54,7 @@ local with_server_name = function(bufnr, callback)
   end
 
   if #server_names > 1 then
-    vim.ui.select(server_names, { prompt = 'Select server:' }, function(server_name)
-      callback(server_name)
-    end)
+    vim.ui.select(server_names, { prompt = 'Select server:' }, callback)
   else
     callback(server_names[1])
   end

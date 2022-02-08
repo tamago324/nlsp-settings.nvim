@@ -4,6 +4,10 @@ local defaults_values = {
     '.git',
   },
   jsonls_append_default_schemas = false,
+  nvim_notify = {
+    enable = false,
+    timeout = 5000,
+  }
 }
 
 local config = {}

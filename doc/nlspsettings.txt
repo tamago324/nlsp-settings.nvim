@@ -34,7 +34,7 @@ setup({opts})                                           *nlspsettings.setup()*
 
                       Default: `'~/.config/nvim/nlsp-settings'`
 
-        {local_settigns_root_markers} (optional, string)
+        {local_settigns_root_markers} (optional, table)
                       A list of files and directories to use when looking
                       for the root directory when opening a file with
                       |:NlspLocalConfig|.
@@ -49,6 +49,15 @@ setup({opts})                                           *nlspsettings.setup()*
 
                       Setting this value to true is equal to executing the
                       following code.
+
+        {nvim_notify} (optional, table)
+                      Configuration for nvim-notify integration.
+
+                      Config table:
+                      • `enable` : Enable nvim-notify integration.
+                      • `timeout` : Time to show notification in millisencons.
+
+                      Default: `{ enable = false, timeout = 5000 }`
 
 get_settings({name})                             *nlspsettings.get_settings()*
     Gets the configuration of the specified server.
