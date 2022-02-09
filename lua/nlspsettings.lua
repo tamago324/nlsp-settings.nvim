@@ -111,7 +111,7 @@ end
 ---@return table merged_settings
 ---@return boolean : error when loading local settings
 local get_settings = function(root_dir, server_name)
-  local local_json_settings, err = load(string.format('%s/.nlsp-settings/%s.json', root_dir, server_name))
+  local local_json_settings, err = load(string.format('%s/%s/%s.json', config.get('local_settings_dir'), root_dir, server_name))
   local global_json_settings = servers[server_name].global_settings or {}
   local conf_settings = servers[server_name].conf_settings or {}
 
@@ -216,7 +216,7 @@ end
 local setup_autocmds = function()
   local patterns = {
     string.format('*/%s/*.json', config.get('config_home'):match '[^/]+$'),
-    '*/.nlsp-settings/*.json',
+    string.format('*/%s/*.json', config.get('local_settings_dir')),
   }
   local pattern = table.concat(patterns, ',')
 
