@@ -1029,7 +1029,7 @@
       "type": "object"
     },
     "Lua.diagnostics.workspaceDelay": {
-      "default": 3,
+      "default": 3000,
       "markdownDescription": "%config.diagnostics.workspaceDelay%",
       "scope": "resource",
       "type": "integer"
