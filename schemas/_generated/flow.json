@@ -43,12 +43,6 @@
       "scope": "resource",
       "type": "string"
     },
-    "flow.runOnEdit": {
-      "default": true,
-      "description": "If true will run flow on every edit, otherwise will run only when changes are saved (Note: 'useLSP: true' only supports syntax errors)",
-      "scope": "resource",
-      "type": "boolean"
-    },
     "flow.showUncovered": {
       "default": false,
       "description": "If true will show uncovered code by default",
