@@ -34,6 +34,11 @@ setup({opts})                                           *nlspsettings.setup()*
 
                       Default: `'~/.config/nvim/nlsp-settings'`
 
+        {local_settings_dir} (optional, string) The directory containing the
+              local settings files.
+
+              Default: `'.nlsp-settings'`
+
         {local_settigns_root_markers} (optional, table)
                       A list of files and directories to use when looking
                       for the root directory when opening a file with
