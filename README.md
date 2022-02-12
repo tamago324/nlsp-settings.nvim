@@ -1,5 +1,7 @@
 # nlsp-settings.nvim
 
+[![gen_schemas](https://github.com/tamago324/nlsp-settings.nvim/actions/workflows/gen_schemas.yml/badge.svg)](https://github.com/tamago324/nlsp-settings.nvim/actions/workflows/gen_schemas.yml)
+
 A plugin to configure Neovim LSP using json files like `coc-settings.json`.
 
   <img src="https://github.com/tamago324/images/blob/master/nlsp-settings.nvim/sumneko_lua_completion.gif" alt="sumneko_lua_completion.gif" width="600" style=""/>
