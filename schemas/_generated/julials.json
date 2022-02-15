@@ -4,10 +4,11 @@
   "properties": {
     "julia.NumThreads": {
       "default": null,
-      "description": "Number of threads to use for Julia processes.",
+      "markdownDescription": "Number of threads to use for Julia processes. A value of `auto` works on Julia versions that allow for `--threads=auto`.",
       "scope": "machine-overridable",
       "type": [
         "integer",
+        "string",
         "null"
       ]
     },
@@ -293,6 +294,12 @@
       "markdownDescription": "Name of the `tmux` session.",
       "scope": "machine-overridable",
       "type": "string"
+    },
+    "julia.persistentSession.warnOnKill": {
+      "default": true,
+      "description": "Warn when stopping a persistent session.",
+      "scope": "machine-overridable",
+      "type": "boolean"
     },
     "julia.plots.path": {
       "description": "The output directory to save plots to",
