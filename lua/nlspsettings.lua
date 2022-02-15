@@ -111,7 +111,7 @@ end
 ---@return table merged_settings
 ---@return boolean : error when loading local settings
 local get_settings = function(root_dir, server_name)
-  local local_json_settings, err = load(string.format('%s/%s/%s.json', config.get('local_settings_dir'), root_dir, server_name))
+  local local_json_settings, err = load(string.format('%s/%s/%s.json', root_dir, config.get('local_settings_dir'), server_name))
   local global_json_settings = servers[server_name].global_settings or {}
   local conf_settings = servers[server_name].conf_settings or {}
 
