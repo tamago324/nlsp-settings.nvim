@@ -79,7 +79,8 @@ local open_config = function(dir, server_name)
     uv.fs_mkdir(dir, 420)
   end
 
-  local filepath = path.join(dir, server_name .. '.json')
+  local loader = require('nlspsettings.loaders.' .. config.get('loader'))
+  local filepath = path.join(dir, server_name .. '.' .. loader.file_ext)
 
   -- If the file does not exist, LSP will not be able to complete it, so create it
   if not path.is_file(filepath) then
@@ -147,7 +148,7 @@ M.open_local_buf_config = function()
     local client = unpack(clients)
 
     if client then
-      open_config(path.join(client.config.root_dir, config.get('local_settings_dir')), server.name)
+      open_config(path.join(client.config.root_dir, config.get('local_settings_dir')), server_name)
     else
       log(('[%s] Failed to get root_dir.'):format(server_name), vim.log.levels.ERROR)
     end
@@ -169,7 +170,7 @@ end
 ---What to do when BufWritePost fires
 ---@param afile string
 M._BufWritePost = function(afile)
-  local server_name = path.sanitize(afile):match '([^/]+)%.json$'
+  local server_name = path.sanitize(afile):match '([^/]+)%.%w+$'
   M.update_settings(server_name)
 end
 
