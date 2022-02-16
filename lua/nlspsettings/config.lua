@@ -8,11 +8,26 @@ local defaults_values = {
   nvim_notify = {
     enable = false,
     timeout = 5000,
-  }
+  },
+  loader = 'json'
 }
 
+---@class nlspsettings.config
+---@field values nlspsettings.config.values
 local config = {}
+
+---@class nlspsettings.config.values
+---@field config_home string:nil
+---@field local_settings_dir string
+---@field local_settings_root_markers string[]
+---@field jsonls_append_default_schemas string
+---@field nvim_notify nlspsettings.config.values.nvim_notify
+---@field loader '"json"' | '"yaml"'
 config.values = vim.deepcopy(defaults_values)
+
+---@class nlspsettings.config.values.nvim_notify
+---@field enable boolean
+---@field timeout number
 
 config.set_default_values = function(opts)
   config.values = vim.tbl_deep_extend('force', defaults_values, opts or {})
@@ -23,6 +38,9 @@ config.set_default_values = function(opts)
   end
 end
 
+---
+---@param key string
+---@return any
 config.get = function(key)
   return config.values[key]
 end

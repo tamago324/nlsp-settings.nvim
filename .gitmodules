@@ -1,0 +1,3 @@
+[submodule "lua/nlspsettings/deps/lua-tinyyaml"]
+	path = lua/nlspsettings/deps/lua-tinyyaml
+	url = https://github.com/api7/lua-tinyyaml
