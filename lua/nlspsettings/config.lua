@@ -4,7 +4,7 @@ local defaults_values = {
   local_settings_root_markers = {
     '.git',
   },
-  jsonls_append_default_schemas = false,
+  append_default_schemas = false,
   nvim_notify = {
     enable = false,
     timeout = 5000,
@@ -20,7 +20,7 @@ local config = {}
 ---@field config_home string:nil
 ---@field local_settings_dir string
 ---@field local_settings_root_markers string[]
----@field jsonls_append_default_schemas string
+---@field append_default_schemas boolean
 ---@field nvim_notify nlspsettings.config.values.nvim_notify
 ---@field loader '"json"' | '"yaml"'
 config.values = vim.deepcopy(defaults_values)

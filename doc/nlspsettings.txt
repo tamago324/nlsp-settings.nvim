@@ -46,9 +46,9 @@ setup({opts})                                           *nlspsettings.setup()*
 
                       Default: `{ '.git' }`
 
-        {jsonls_append_default_schemas} (optional, string)
-                      Add |nlspsettings.jsonls.get_default_schemas()| to
-                      jsonls `settings.json.schemas`?
+        {append_default_schemas} (optional, string)
+                      Add |nlspsettings.loaders.{json,yaml}.get_default_schemas()| to
+                      jsonls/yamlls `settings.{json,yaml}.schemas`?
 
                       Default: `false`
 
@@ -130,7 +130,7 @@ Configuration using `williamboman/nvim-lsp-installer`:
       config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
       local_settings_root_markers = { '.git' },
       -- append default schemas
-      jsonls_append_default_schemas = true
+      append_default_schemas = true
     })
 
     local server_opts = {}
@@ -176,7 +176,7 @@ Configure lspconfig by itself:
       config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
       local_settings_root_markers = { '.git' },
       -- append default schemas
-      jsonls_append_default_schemas = true
+      append_default_schemas = true
     })
     local lspconfig = require'lspconfig'
 
