@@ -1,5 +1,6 @@
 local config = require 'nlspsettings.config'
 local lspconfig = require 'lspconfig'
+local utils = require 'nlspsettings.utils'
 
 local uv = vim.loop
 
@@ -122,24 +123,27 @@ local get_settings = function(root_dir, server_name)
 
   -- jsonls の場合、 schemas を追加する
   if server_name == loader.server_name then
-    local schema_data = {}
     local settings_key = loader.settings_key
+    -- もし、setup
+    local s_schemas = settings[settings_key].schemas or {}
 
-    if local_settings[settings_key] ~= nil and local_settings[settings_key]['schemas'] then
-      schema_data = vim.list_extend(schema_data, local_settings[settings_key].schemas or {})
-    end
-    if conf_settings[settings_key] ~= nil and conf_settings[settings_key]['schemas'] then
-      schema_data = vim.list_extend(schema_data, conf_settings[settings_key].schemas or {})
-    end
-    if global_settings[settings_key] ~= nil and global_settings[settings_key]['schemas'] then
-      schema_data = vim.list_extend(schema_data, global_settings[settings_key].schemas or {})
-    end
-
-    -- if config.get 'jsonls_append_default_schemas' then
-    --   schema_data = vim.list_extend(schema_data, schema_data.get_default_schemas() or {})
+    -- XXX: 上でマージしているため、ここでは必要ない
+    -- --- schemas をマージする
+    -- local function merge(base_schemas, ext)
+    --   if ext[settings_key] == nil or ext[settings_key]['schemas'] == nil then
+    --     return base_schemas
+    --   end
+    --
+    --   return utils.extend(base_schemas, ext[settings_key]['schemas'])
     -- end
+    --
+    -- s_schemas = merge(merge(merge(s_schemas, local_settings), global_settings), conf_settings)
 
-    settings[settings_key].schemas = schema_data
+    if config.get 'append_default_schemas' then
+      s_schemas = utils.extend(s_schemas, loader.get_default_schemas())
+    end
+
+    settings[settings_key].schemas = s_schemas
   end
   return settings, err
 end
