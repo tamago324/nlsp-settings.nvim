@@ -6,12 +6,12 @@ local uv = vim.loop
 
 local M = {}
 
-local servers = {
-  -- server_name = {
-  --   global_settings = {},
-  --   conf_settings = {}
-  -- }
-}
+---@class nlspsettings.server_settings
+---@field global_settings table
+---@field conf_settings table
+
+---@type table<string, nlspsettings.server_settings>
+local servers = {}
 
 ---@type nlspsettings.loaders.json|nlspsettings.loaders.yaml
 local loader

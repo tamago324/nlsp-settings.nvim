@@ -35,8 +35,12 @@ json.load = function(path)
   return json_decode(table.concat(vim.fn.readfile(path), "\n"))
 end
 
+---@class nlspsettings.loaders.json.jsonschema
+---@field fileMatch string|string[]
+---@field url string
+
 --- Return a list of default schemas
----@return table
+---@return nlspsettings.loaders.json.jsonschema[]
 json.get_default_schemas = function()
   local res = {}
   for k, v in pairs(schemas.get_base_schemas_data()) do

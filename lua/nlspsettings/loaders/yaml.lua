@@ -29,16 +29,12 @@ yaml.load = function(path)
 end
 
 --- Return a list of default schemas
----@return table
+---@return table<string, string>
 yaml.get_default_schemas = function()
-  -- { json_schema_file_path: file_pattern }
   local res = {}
   for k, v in pairs(schemas.get_base_schemas_data()) do
-      res[v] = { k .. '.yml' }
-    -- table.insert(res, {
-    --   fileMatch = { k .. '.yml', k .. '.yaml' },
-    --   url = v,
-    -- })
+    -- url: globpattern
+    res[v] = k .. '.yml'
   end
   return res
 end
