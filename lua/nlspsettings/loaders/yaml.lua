@@ -22,8 +22,8 @@ yaml.file_ext = 'yml'
 yaml.load = function(path)
   local lines = vim.fn.readfile(path)
   -- see https://github.com/api7/lua-tinyyaml/pull/9
-  if vim.tbl_isempty(lines) then
-    return ''
+  if vim.tbl_isempty(lines) or (#lines == 1 and lines[1] == '') then
+    return {}
   end
   return tinyyaml.parse(table.concat(lines, "\n"))
 end
