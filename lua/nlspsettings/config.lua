@@ -1,6 +1,6 @@
 local defaults_values = {
   config_home = vim.fn.stdpath 'config' .. '/nlsp-settings',
-  local_settings_dir = ".nlsp-settings",
+  local_settings_dir = '.nlsp-settings',
   local_settings_root_markers = {
     '.git',
   },
@@ -9,7 +9,7 @@ local defaults_values = {
     enable = false,
     timeout = 5000,
   },
-  loader = 'json'
+  loader = 'json',
 }
 
 ---@class nlspsettings.config

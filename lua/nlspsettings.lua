@@ -107,7 +107,9 @@ end
 ---@return table merged_settings
 ---@return boolean error when loading local settings
 local get_settings = function(root_dir, server_name)
-  local local_settings, err = load(string.format('%s/%s/%s.%s', config.get('local_settings_dir'), root_dir, server_name, loader.file_ext))
+  local local_settings, err = load(
+    string.format('%s/%s/%s.%s', config.get 'local_settings_dir', root_dir, server_name, loader.file_ext)
+  )
   local global_settings = servers[server_name].global_settings or {}
   local conf_settings = servers[server_name].conf_settings or {}
 
@@ -216,7 +218,7 @@ end
 local setup_autocmds = function()
   local patterns = {
     string.format('*/%s/*.%s', config.get('config_home'):match '[^/]+$', loader.file_ext),
-    string.format('*/%s/*.%s', config.get('local_settings_dir'), loader.file_ext),
+    string.format('*/%s/*.%s', config.get 'local_settings_dir', loader.file_ext),
   }
   local pattern = table.concat(patterns, ',')
 
@@ -277,7 +279,7 @@ M.setup = function(opts)
 
   config.set_default_values(opts)
 
-  loader = require('nlspsettings.loaders.' .. config.get('loader'))
+  loader = require('nlspsettings.loaders.' .. config.get 'loader')
 
   -- XXX: ここで読む必要ある？？
   --      get_settings() で読めばいいのでは？

@@ -25,7 +25,7 @@ yaml.load = function(path)
   if vim.tbl_isempty(lines) or (#lines == 1 and lines[1] == '') then
     return {}
   end
-  return tinyyaml.parse(table.concat(lines, "\n"))
+  return tinyyaml.parse(table.concat(lines, '\n'))
 end
 
 --- Return a list of default schemas

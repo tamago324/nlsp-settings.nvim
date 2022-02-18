@@ -32,7 +32,7 @@ end
 ---@param path string
 ---@return string
 json.load = function(path)
-  return json_decode(table.concat(vim.fn.readfile(path), "\n"))
+  return json_decode(table.concat(vim.fn.readfile(path), '\n'))
 end
 
 ---@class nlspsettings.loaders.json.jsonschema

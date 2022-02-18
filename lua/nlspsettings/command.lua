@@ -18,7 +18,7 @@ local log = function(message, level)
   if notify and notify_config and notify_config.enable then
     notify(message, level, {
       title = title,
-      timeout = notify_config.timeout
+      timeout = notify_config.timeout,
     })
   else
     vim.notify(('[%s] %s'):format(title, message), level)
@@ -79,7 +79,7 @@ local open_config = function(dir, server_name)
     uv.fs_mkdir(dir, 420)
   end
 
-  local loader = require('nlspsettings.loaders.' .. config.get('loader'))
+  local loader = require('nlspsettings.loaders.' .. config.get 'loader')
   local filepath = path.join(dir, server_name .. '.' .. loader.file_ext)
 
   -- If the file does not exist, LSP will not be able to complete it, so create it
@@ -127,7 +127,7 @@ M.open_local_config = function(server_name)
   local root_dir = lspconfig.util.root_pattern(markers)(path.sanitize(start_path))
 
   if root_dir then
-    open_config(path.join(root_dir:gsub('/$', ''), config.get('local_settings_dir')), server_name)
+    open_config(path.join(root_dir:gsub('/$', ''), config.get 'local_settings_dir'), server_name)
   else
     log(('[%s] Failed to get root_dir.'):format(server_name), vim.log.levels.ERROR)
   end
@@ -148,7 +148,7 @@ M.open_local_buf_config = function()
     local client = unpack(clients)
 
     if client then
-      open_config(path.join(client.config.root_dir, config.get('local_settings_dir')), server_name)
+      open_config(path.join(client.config.root_dir, config.get 'local_settings_dir'), server_name)
     else
       log(('[%s] Failed to get root_dir.'):format(server_name), vim.log.levels.ERROR)
     end
