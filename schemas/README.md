@@ -48,6 +48,7 @@
 - [ ] graphql
 - [ ] groovyls
 - [ ] haxe_language_server
+- [ ] hdl_checker
 - [x] hie
 - [ ] hls
 - [ ] html
