@@ -17,5 +17,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           # CLI arguments
-          args: --check --config-path stylua.toml --glob 'lua/**/*.lua' --glob '!**/deps/**/**.lua' -- lua
+          args: --check --config-path stylua.toml --glob 'lua/**/*.lua' --glob '!lua/**/tinyyaml.lua' -- lua
           # Specify `version` to pin a specific version, otherwise action will always use latest version/automatically update
