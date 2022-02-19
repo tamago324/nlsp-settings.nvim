@@ -99,6 +99,7 @@
 - [ ] scry
 - [ ] serve_d
 - [ ] sixtyfps
+- [ ] slint_lsp
 - [ ] solang
 - [x] solargraph
 - [ ] solc
