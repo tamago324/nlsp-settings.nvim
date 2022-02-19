@@ -152,7 +152,6 @@ end)
 
 ## Contributing
 
-* If your language server lacks support, please feel free to make a pull request or issue.
 * All contributions are welcome.
 
 
