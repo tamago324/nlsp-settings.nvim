@@ -6,10 +6,10 @@ local schemas = require 'nlspsettings.schemas'
 ---@field settings_key string settings key
 ---@field file_ext string file extensions
 local json = {
-  name = 'json'                ,
+  name = 'json',
   server_name = 'jsonls',
   settings_key = 'json',
-  file_ext = 'json'
+  file_ext = 'json',
 }
 
 --- Decodes from JSON.

@@ -59,7 +59,7 @@ local open = function(dir, server_name)
       return
     end
 
-    uv.fs_mkdir(dir, tonumber("700", 8))
+    uv.fs_mkdir(dir, tonumber('700', 8))
   end
 
   local loader = require('nlspsettings.loaders.' .. config.get 'loader')
@@ -67,7 +67,7 @@ local open = function(dir, server_name)
 
   -- If the file does not exist, LSP will not be able to complete it, so create it
   if not path.is_file(filepath) then
-    local fd = uv.fs_open(filepath, 'w', tonumber("644", 8))
+    local fd = uv.fs_open(filepath, 'w', tonumber('644', 8))
 
     if not fd then
       log('Could not create file: ' .. filepath, vim.log.levels.ERROR)

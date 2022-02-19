@@ -1,5 +1,5 @@
-local has_notify, notify = pcall(require, "notify")
-local config = require('nlspsettings.config')
+local has_notify, notify = pcall(require, 'notify')
+local config = require 'nlspsettings.config'
 
 local M = {}
 
@@ -19,6 +19,5 @@ M.log = function(message, level)
     vim.notify(('[%s] %s'):format(title, message), level)
   end
 end
-
 
 return M

@@ -7,10 +7,10 @@ local tinyyaml = require 'nlspsettings.loaders.yaml.tinyyaml'
 ---@field settings_key string settings key
 ---@field file_ext string file extensions
 local yaml = {
-  name = 'yaml'                ,
+  name = 'yaml',
   server_name = 'yamlls',
   settings_key = 'yaml',
-  file_ext = 'yml'
+  file_ext = 'yml',
 }
 
 ---

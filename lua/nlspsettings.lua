@@ -23,7 +23,6 @@ local set_loader = function()
   loader_is_set = true
 end
 
-
 --- Convert table key dots to table nests
 ---
 ---@param t table settings setting table
