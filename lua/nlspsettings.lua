@@ -19,7 +19,7 @@ local loader
 local loader_is_set = false
 
 local set_loader = function()
-  loader = require('nlspsettings.loaders.' .. config.get 'loader')
+  loader = require('nlspsettings.loaders.' .. config.get().loader)
   loader_is_set = true
 end
 
@@ -119,8 +119,9 @@ end
 ---@return table merged_settings
 ---@return boolean error when loading local settings
 local get_settings = function(root_dir, server_name)
+  local conf = config.get()
   local local_settings, err = load(
-    string.format('%s/%s/%s.%s', root_dir, config.get 'local_settings_dir', server_name, loader.file_ext)
+    string.format('%s/%s/%s.%s', root_dir, conf.local_settings_dir, server_name, loader.file_ext)
   )
   local global_settings = servers[server_name].global_settings or {}
   local conf_settings = servers[server_name].conf_settings or {}
@@ -153,7 +154,7 @@ local get_settings = function(root_dir, server_name)
     --
     -- s_schemas = merge(merge(merge(s_schemas, local_settings), global_settings), conf_settings)
 
-    if config.get 'append_default_schemas' then
+    if conf.append_default_schemas then
       s_schemas = utils.extend(s_schemas, loader.get_default_schemas())
     end
 
@@ -175,8 +176,10 @@ M.update_settings = function(server_name)
     return false
   end
 
+  local conf = config.get()
+
   -- もしかしたら、グローバルの設置が変わっている可能性があるため、ここで読み込む
-  local err = load_global_setting(string.format('%s/%s.%s', config.get 'config_home', server_name, loader.file_ext))
+  local err = load_global_setting(string.format('%s/%s.%s', conf.config_home, server_name, loader.file_ext))
   if err then
     return true
   end
@@ -228,9 +231,10 @@ local make_on_new_config = function(on_new_config)
 end
 
 local setup_autocmds = function()
+  local conf = config.get()
   local patterns = {
-    string.format('*/%s/*.%s', config.get('config_home'):match '[^/]+$', loader.file_ext),
-    string.format('*/%s/*.%s', config.get 'local_settings_dir', loader.file_ext),
+    string.format('*/%s/*.%s', conf.config_home:match '[^/]+$', loader.file_ext),
+    string.format('*/%s/*.%s', conf.local_settings_dir, loader.file_ext),
   }
   local pattern = table.concat(patterns, ',')
 
@@ -268,7 +272,7 @@ end
 
 --- load settings files under config_home
 local load_settings = function()
-  local files = get_settings_files(config.get 'config_home')
+  local files = get_settings_files(config.get().config_home)
   for _, v in ipairs(files) do
     load_global_setting(v)
   end

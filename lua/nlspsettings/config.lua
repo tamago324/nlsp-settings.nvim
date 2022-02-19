@@ -39,10 +39,9 @@ config.set_default_values = function(opts)
 end
 
 ---
----@param key string
----@return any
-config.get = function(key)
-  return config.values[key]
+---@return nlspsettings.config.values
+config.get = function()
+  return config.values
 end
 
 return config

@@ -62,7 +62,7 @@ local open = function(dir, server_name)
     uv.fs_mkdir(dir, tonumber('700', 8))
   end
 
-  local loader = require('nlspsettings.loaders.' .. config.get 'loader')
+  local loader = require('nlspsettings.loaders.' .. config.get().loader)
   local filepath = path.join(dir, server_name .. '.' .. loader.file_ext)
 
   -- If the file does not exist, LSP will not be able to complete it, so create it
@@ -95,7 +95,7 @@ end
 ---Open the settings file for the specified server.
 ---@param server_name string
 M.open_config = function(server_name)
-  open(config.get 'config_home', server_name)
+  open(config.get().config_home, server_name)
 end
 
 ---Open the settings file for the specified server.
@@ -106,11 +106,12 @@ M.open_local_config = function(server_name)
     start_path = vim.fn.getcwd()
   end
 
-  local markers = config.get 'local_settings_root_markers'
+  local conf = config.get()
+  local markers = conf.local_settings_root_markers
   local root_dir = lspconfig.util.root_pattern(markers)(path.sanitize(start_path))
 
   if root_dir then
-    open(path.join(root_dir:gsub('/$', ''), config.get 'local_settings_dir'), server_name)
+    open(path.join(root_dir:gsub('/$', ''), conf.local_settings_dir), server_name)
   else
     log(('[%s] Failed to get root_dir.'):format(server_name), vim.log.levels.ERROR)
   end
@@ -131,7 +132,7 @@ M.open_local_buf_config = function()
     local client = unpack(clients)
 
     if client then
-      open(path.join(client.config.root_dir, config.get 'local_settings_dir'), server_name)
+      open(path.join(client.config.root_dir, config.get().local_settings_dir), server_name)
     else
       log(('[%s] Failed to get root_dir.'):format(server_name), vim.log.levels.ERROR)
     end

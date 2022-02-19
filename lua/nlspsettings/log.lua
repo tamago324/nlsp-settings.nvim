@@ -8,7 +8,7 @@ local M = {}
 ---@param level number
 M.log = function(message, level)
   local title = 'NLsp Settings'
-  local notify_config = config.get 'nvim_notify'
+  local notify_config = config.get().nvim_notify
 
   if notify and notify_config and notify_config.enable then
     notify(message, level, {
