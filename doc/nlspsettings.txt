@@ -4,7 +4,7 @@
 ==============================================================================
 INTRODUCTION                                      *nlsp-settings-introduction*
 
-A plugin to configure Neovim LSP using json files like `coc-settings.json`.
+A plugin to configure Neovim LSP using json/yaml files like `coc-settings.json`.
 
 
 ==============================================================================
@@ -12,7 +12,6 @@ REQUIREMENTS                                      *nlsp-settings-requirements*
 
 * Neovim
 * neovim/nvim-lspconfig
-
 
 ==============================================================================
 INTERFACE                                            *nlsp-settings-interface*
@@ -29,58 +28,69 @@ setup({opts})                                           *nlspsettings.setup()*
         {opts} (optional, table)
 
     Fields: ~
-        {config_home} (optional, string) The directory containing the
-                      settings files.
+        {config_home} (optional, string)
+            The directory containing the settings files.
 
-                      Default: `'~/.config/nvim/nlsp-settings'`
+            Default: `'~/.config/nvim/nlsp-settings'`
 
-        {local_settings_dir} (optional, string) The directory containing the
-              local settings files.
+        {local_settings_dir} (optional, string)
+            The directory containing the local settings files.
 
-              Default: `'.nlsp-settings'`
+            Default: `'.nlsp-settings'`
 
         {local_settigns_root_markers} (optional, table)
-                      A list of files and directories to use when looking
-                      for the root directory when opening a file with
-                      |:NlspLocalConfig|.
+            A list of files and directories to use when looking for the
+            root directory when opening a file with |:NlspLocalConfig|.
 
-                      Default: `{ '.git' }`
+            Default: `{ '.git' }`
 
-        {jsonls_append_default_schemas} (optional, string)
-                      Add |nlspsettings.jsonls.get_default_schemas()| to
-                      jsonls `settings.json.schemas`?
+        {loader} (optional, `"json"` | `"yaml"`)
+            Specify the loader to load the configuration file.
+            You will also need to install a language server.
 
-                      Default: `false`
+            `"json"`:
+                Language server: `jsonls`
+                Settings file name: `{server_name}.json`
 
-                      Setting this value to true is equal to executing the
-                      following code.
+            `"yaml"`:
+                Language server: `yamlls`
+                Settings file name: `{server_name}.yml`
+
+            Default: `"json"`
+
+        {append_default_schemas} (optional, boolean)
+            Add defaults to the language server schemas in the |loader|.
+
+            Default: `false`
 
         {nvim_notify} (optional, table)
-                      Configuration for nvim-notify integration.
+            Configuration for nvim-notify integration.
 
-                      Config table:
-                      • `enable` : Enable nvim-notify integration.
-                      • `timeout` : Time to show notification in millisencons.
+            Config table:
+            • `enable` : Enable nvim-notify integration.
+            • `timeout` : Time to show notification in millisencons.
 
-                      Default: `{ enable = false, timeout = 5000 }`
+            Default: `{ enable = false, timeout = 5000 }`
 
-get_settings({name})                             *nlspsettings.get_settings()*
-    Gets the configuration of the specified server.
-
-    Parameters: ~
-        {opts} (string)
-
-    Return: ~
-        table:
 
 ------------------------------------------------------------------------------
-Lua module: nlspsettings.jsonls                          *nlspsettings.jsonls*
+Lua module: nlspsettings.json                                *nlspsettings.json*
 
-get_default_schemas()              *nlspsettings.jsonls.get_default_schemas()*
+get_default_schemas()                  *nlspsettings.json.get_default_schemas()*
     Return a list of default schemas
 
     Return: ~
-        table:
+        table
+
+
+------------------------------------------------------------------------------
+Lua module: nlspsettings.yaml                                *nlspsettings.yaml*
+
+get_default_schemas()                  *nlspsettings.yaml.get_default_schemas()*
+    Return a list of default schemas
+
+    Return: ~
+        table
 
 
 ------------------------------------------------------------------------------
@@ -88,7 +98,6 @@ COMMANDS                                              *nlsp-settings-commands*
 
 :NlspConfig {server_name}                                        *:NlspConfig*
     Open the settings file for the specified {server_name}.
-
 
 :NlspBufConfig                                                *:NlspBufConfig*
     Open a settings file that matches the current buffer.
@@ -116,90 +125,6 @@ n <Plug>(nlsp-buf-config)                            *<Plug>(nlsp-buf-config)*
 n <Plug>(nlsp-local-buf-config)                *<Plug>(nlsp-local-buf-config)*
     |:NlspLocalBufConfig|
 
-==============================================================================
-EXAMPLES                                              *nlsp-settings-examples*
-
-Configuration using `williamboman/nvim-lsp-installer`:
->
-    local on_attach = function(client)
-      local map = vim.api.nvim_buf_set_keymap
-      map( 'n', '<Space>vl', '<Plug>(nlsp-buf-config)', { noremap = false })
-    end
-
-    require'nlspsettings'.setup({
-      config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
-      local_settings_root_markers = { '.git' },
-      -- append default schemas
-      jsonls_append_default_schemas = true
-    })
-
-    local server_opts = {}
-
-    -- lua
-    server_opts.sumneko_lua = {
-      settings = {
-        Lua = {
-          workspace = {
-            library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config") .. '/lua'] = true,
-            }
-          }
-        }
-      }
-    }
-
-    local common_setup_opts = {
-      on_attach = on_attach,
-      capabilities = require('cmp_nvim_lsp').update_capabilities(
-        vim.lsp.protocol.make_client_capabilities()
-      )
-    }
-
-    lsp_installer.on_server_ready(function(server)
-      local opts = vim.deepcopy(common_setup_opts)
-      if server_opts[server.name] then
-          opts = vim.tbl_deep_extend('force', opts, server_opts[server.name])
-      end
-      server:setup(opts)
-    end)
-<
-
-Configure lspconfig by itself:
->
-    local on_attach = function(client)
-      local map = vim.api.nvim_buf_set_keymap
-      map( 'n', '<Space>vl', '<Plug>(nlsp-buf-config)', { noremap = false })
-    end
-
-    require'nlspsettings'.setup({
-      config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
-      local_settings_root_markers = { '.git' },
-      -- append default schemas
-      jsonls_append_default_schemas = true
-    })
-    local lspconfig = require'lspconfig'
-
-    -- jsonls
-    lspconfig.jsonls.setup {
-      -- Set the schema so that it can be completed in settings json file.
-      on_attach = on_attach,
-    }
-
-    -- lua
-    lspconfig.sumneko_lua.setup{
-      settings = {
-        Lua = {
-          workspace = {
-            library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config") .. '/lua'] = true,
-            }
-          }
-        }
-      },
-      on_attach = on_attach,
-    }
 
 ==============================================================================
 vim:tw=78:sw=4:sts=4:ts=4:ft=help:norl:et

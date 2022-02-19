@@ -3,12 +3,10 @@ local uv = vim.loop
 local script_abspath = function()
   return debug.getinfo(2, 'S').source:sub(2)
 end
-local _schemas_dir = script_abspath():match '(.*)/lua/nlspsettings/jsonls.lua$' .. '/schemas'
-
-local M = {}
+local _schemas_dir = script_abspath():match '(.*)/lua/nlspsettings/schemas.lua$' .. '/schemas'
 
 --- path のディレクトリ内にあるすべての *.json の設定を生成する
----@return table
+---@return table<string, string> { server_name: file_path }
 local make_schemas_table = function(path)
   local handle = uv.fs_scandir(path)
   if handle == nil then
@@ -32,34 +30,28 @@ local make_schemas_table = function(path)
   return res
 end
 
-local default_schemas = {}
-
-local reset_default_schemas = function()
+-- ベースとなるスキーマの情報をリセットする
+local base_schemas_data = {}
+local reset_base_scemas_data = function()
   local generated_schemas_table = make_schemas_table(_schemas_dir .. '/_generated')
   local local_schemas_table = make_schemas_table(_schemas_dir)
-  default_schemas = vim.tbl_extend('force', generated_schemas_table, local_schemas_table)
+  base_schemas_data = vim.tbl_extend('force', generated_schemas_table, local_schemas_table)
 end
-reset_default_schemas()
+reset_base_scemas_data()
 
---- Return a list of default schemas
----@return table
-M.get_default_schemas = function()
-  local res = {}
-
-  for k, v in pairs(default_schemas) do
-    table.insert(res, {
-      fileMatch = { k .. '.json' },
-      url = v,
-    })
-  end
-
-  return res
+---ベースとなるスキーマを返す
+---@return table<string, string> { server_name, file_path }
+local get_base_schemas_data = function()
+  return base_schemas_data
 end
 
 --- Return the name of a supported server.
 ---@return table
-M.get_langserver_names = function()
-  return vim.tbl_keys(default_schemas)
+local get_langserver_names = function()
+  return vim.tbl_keys(base_schemas_data)
 end
 
-return M
+return {
+  get_base_schemas_data = get_base_schemas_data,
+  get_langserver_names = get_langserver_names,
+}

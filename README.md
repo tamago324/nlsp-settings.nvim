@@ -2,7 +2,7 @@
 
 [![gen_schemas](https://github.com/tamago324/nlsp-settings.nvim/actions/workflows/gen_schemas.yml/badge.svg)](https://github.com/tamago324/nlsp-settings.nvim/actions/workflows/gen_schemas.yml)
 
-A plugin to configure Neovim LSP using json files like `coc-settings.json`.
+A plugin to configure Neovim LSP using json/yaml files like `coc-settings.json`.
 
   <img src="https://github.com/tamago324/images/blob/master/nlsp-settings.nvim/sumneko_lua_completion.gif" alt="sumneko_lua_completion.gif" width="600" style=""/>
 
@@ -54,7 +54,8 @@ nlspsettings.setup({
   config_home = vim.fn.stdpath('config') .. '/nlsp-settings',
   local_settings_dir = ".nlsp-settings",
   local_settings_root_markers = { '.git' },
-  jsonls_append_default_schemas = true
+  append_default_schemas = true
+  loader = 'json'
 })
 
 function on_attach(client, bufnr)
@@ -151,7 +152,6 @@ end)
 
 ## Contributing
 
-* If your language server lacks support, please feel free to make a pull request or issue.
 * All contributions are welcome.
 
 
