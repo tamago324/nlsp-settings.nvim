@@ -4,7 +4,7 @@
 ==============================================================================
 INTRODUCTION                                      *nlsp-settings-introduction*
 
-A plugin to configure Neovim LSP using json files like `coc-settings.json`.
+A plugin to configure Neovim LSP using json/yaml files like `coc-settings.json`.
 
 
 ==============================================================================
@@ -44,22 +44,22 @@ setup({opts})                                           *nlspsettings.setup()*
 
             Default: `{ '.git' }`
 
-        {loader} (optional, "json" | "yaml")
-            設定ファイルを読み込む loader を指定します。
-            それぞれ、対応する言語サーバーのインストールが必要です。
+        {loader} (optional, `"json"` | `"yaml"`)
+            Specify the loader to load the configuration file.
+            You will also need to install a language server.
 
-            "json":
-                言語サーバー: jsonls
-                設定ファイル名: サーバー名.json
+            `"json"`:
+                Language server: `jsonls`
+                Settings file name: `{server_name}.json`
 
-            "yaml"
-                言語サーバー: yamlls
-                設定ファイル名: サーバー名.yml
+            `"yaml"`:
+                Language server: `yamlls`
+                Settings file name: `{server_name}.yml`
 
             Default: `"json"`
 
         {append_default_schemas} (optional, boolean)
-            loader に対応する言語サーバーの schemas にデフォルトを追加します。
+            Add defaults to the language server schemas in the |loader|.
 
             Default: `false`
 
