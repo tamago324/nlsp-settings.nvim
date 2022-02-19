@@ -29,40 +29,52 @@ setup({opts})                                           *nlspsettings.setup()*
         {opts} (optional, table)
 
     Fields: ~
-        {config_home} (optional, string) The directory containing the
-                      settings files.
+        {config_home} (optional, string)
+            The directory containing the settings files.
 
-                      Default: `'~/.config/nvim/nlsp-settings'`
+            Default: `'~/.config/nvim/nlsp-settings'`
 
-        {local_settings_dir} (optional, string) The directory containing the
-              local settings files.
+        {local_settings_dir} (optional, string)
+            The directory containing the local settings files.
 
-              Default: `'.nlsp-settings'`
+            Default: `'.nlsp-settings'`
 
         {local_settigns_root_markers} (optional, table)
-                      A list of files and directories to use when looking
-                      for the root directory when opening a file with
-                      |:NlspLocalConfig|.
+            A list of files and directories to use when looking for the
+            root directory when opening a file with |:NlspLocalConfig|.
 
-                      Default: `{ '.git' }`
+            Default: `{ '.git' }`
 
-        {append_default_schemas} (optional, string)
-                      Add |nlspsettings.loaders.{json,yaml}.get_default_schemas()| to
-                      jsonls/yamlls `settings.{json,yaml}.schemas`?
+        {loader} (optional, "json" | "yaml")
+            設定ファイルを読み込む loader を指定します。
+            それぞれ、以下のようになります。
 
-                      Default: `false`
+            "json": jsonls を使って、言語サーバー名.json を読みます。
+            "yaml": yamlls を使って、言語サーバー名.yml か言語サーバー名.yaml を読みます。
+                    もし、複数ファイル見つかった場合、yml を優先して読みます。
 
-                      Setting this value to true is equal to executing the
-                      following code.
+
+            Default: `"json"`
+                      
+
+        {append_default_schemas} (optional, boolean)
+            loader に対応する言語サーバーの schemas にデフォルトを追加します。
+
+            Default: `false`
+
+            Setting this value to true is equal to executing the
+            following code.
+
+            ここに書く
 
         {nvim_notify} (optional, table)
-                      Configuration for nvim-notify integration.
+            Configuration for nvim-notify integration.
 
-                      Config table:
-                      • `enable` : Enable nvim-notify integration.
-                      • `timeout` : Time to show notification in millisencons.
+            Config table:
+            • `enable` : Enable nvim-notify integration.
+            • `timeout` : Time to show notification in millisencons.
 
-                      Default: `{ enable = false, timeout = 5000 }`
+            Default: `{ enable = false, timeout = 5000 }`
 
 get_settings({name})                             *nlspsettings.get_settings()*
     Gets the configuration of the specified server.
@@ -74,13 +86,13 @@ get_settings({name})                             *nlspsettings.get_settings()*
         table:
 
 ------------------------------------------------------------------------------
-Lua module: nlspsettings.jsonls                          *nlspsettings.jsonls*
+Lua module: nlspsettings.json                                *nlspsettings.json*
 
-get_default_schemas()              *nlspsettings.jsonls.get_default_schemas()*
+get_default_schemas()                  *nlspsettings.json.get_default_schemas()*
     Return a list of default schemas
 
     Return: ~
-        table:
+        table
 
 
 ------------------------------------------------------------------------------
@@ -88,7 +100,6 @@ COMMANDS                                              *nlsp-settings-commands*
 
 :NlspConfig {server_name}                                        *:NlspConfig*
     Open the settings file for the specified {server_name}.
-
 
 :NlspBufConfig                                                *:NlspBufConfig*
     Open a settings file that matches the current buffer.

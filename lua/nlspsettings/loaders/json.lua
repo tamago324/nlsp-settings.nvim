@@ -1,19 +1,16 @@
 local schemas = require 'nlspsettings.schemas'
 
 ---@class nlspsettings.loaders.json
----@field server_name string
----@field name string
----@field settings_key string
----@field file_ext string
-local json = {}
--- サーバー名
-json.server_name = 'jsonls'
--- 設定言語の名前
-json.name = 'json'
--- settings のキー
-json.settings_key = 'json'
--- 設定ファイルの拡張子
-json.file_ext = 'json'
+---@field name string loader name
+---@field server_name string LSP server name
+---@field settings_key string settings key
+---@field file_ext string file extensions
+local json = {
+  name = 'json'                ,
+  server_name = 'jsonls',
+  settings_key = 'json',
+  file_ext = 'json'
+}
 
 --- Decodes from JSON.
 ---

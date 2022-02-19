@@ -1,20 +1,17 @@
 local schemas = require 'nlspsettings.schemas'
-local tinyyaml = require 'nlspsettings.deps.lua-tinyyaml.tinyyaml'
+local tinyyaml = require 'nlspsettings.loaders.yaml.tinyyaml'
 
 ---@class nlspsettings.loaders.yaml
----@field server_name string
----@field name string
----@field settings_key string
----@field file_ext string
-local yaml = {}
--- サーバー名
-yaml.server_name = 'yamlls'
--- 設定言語の名前
-yaml.name = 'yaml'
--- settings のキー
-yaml.settings_key = 'yaml'
--- 設定ファイルの拡張子
-yaml.file_ext = 'yml'
+---@field name string loader name
+---@field server_name string LSP server name
+---@field settings_key string settings key
+---@field file_ext string file extensions
+local yaml = {
+  name = 'yaml'                ,
+  server_name = 'yamlls',
+  settings_key = 'yaml',
+  file_ext = 'yml'
+}
 
 ---
 ---@param path string
@@ -25,7 +22,13 @@ yaml.load = function(path)
   if vim.tbl_isempty(lines) or (#lines == 1 and lines[1] == '') then
     return {}
   end
-  return tinyyaml.parse(table.concat(lines, '\n'))
+
+  local ok, result = pcall(tinyyaml.parse, table.concat(lines, '\n'))
+  if ok then
+    return result
+  else
+    return nil, result
+  end
 end
 
 --- Return a list of default schemas

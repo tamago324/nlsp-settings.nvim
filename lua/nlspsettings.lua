@@ -16,6 +16,14 @@ local servers = {}
 ---@type nlspsettings.loaders.json|nlspsettings.loaders.yaml
 local loader
 
+local loader_is_set = false
+
+local set_loader = function()
+  loader = require('nlspsettings.loaders.' .. config.get 'loader')
+  loader_is_set = true
+end
+
+
 --- Convert table key dots to table nests
 ---
 ---@param t table settings setting table
@@ -73,6 +81,13 @@ local load = function(path)
   return lsp_table_to_lua_table(data) or {}
 end
 
+---設定ファイル名からサーバー名を取得する
+---@param path string
+---@return string
+local get_server_name_from_path = function(path)
+  return path:match '([^/]+)%.%w+$'
+end
+
 --- load settings from settings file
 ---@param path string settings file path
 ---@return boolean is_error if error then true
@@ -81,9 +96,7 @@ local load_global_setting = function(path)
     path = { path, 's' },
   }
 
-  -- TODO: loader.extensions で回す
-  -- キャプチャしたものを取得したいため、関数を呼び出している
-  local name = path:gmatch('([^/]+)%.' .. loader.file_ext .. '$')()
+  local name = get_server_name_from_path(path)
   if name == nil then
     return
   end
@@ -108,7 +121,7 @@ end
 ---@return boolean error when loading local settings
 local get_settings = function(root_dir, server_name)
   local local_settings, err = load(
-    string.format('%s/%s/%s.%s', config.get 'local_settings_dir', root_dir, server_name, loader.file_ext)
+    string.format('%s/%s/%s.%s', root_dir, config.get 'local_settings_dir', server_name, loader.file_ext)
   )
   local global_settings = servers[server_name].global_settings or {}
   local conf_settings = servers[server_name].conf_settings or {}
@@ -232,7 +245,7 @@ local setup_autocmds = function()
   vim.cmd [[augroup END]]
 end
 
---- Returns a list of settings files under path
+---path 以下にあるloaderに対応する設定ファイルのリストを返す
 ---@param path string config_home
 ---@return table settings_files List of settings file
 local get_settings_files = function(path)
@@ -279,7 +292,7 @@ M.setup = function(opts)
 
   config.set_default_values(opts)
 
-  loader = require('nlspsettings.loaders.' .. config.get 'loader')
+  set_loader()
 
   -- XXX: ここで読む必要ある？？
   --      get_settings() で読めばいいのでは？
@@ -293,6 +306,16 @@ local mt = {}
 -- M.settings = servers
 M._get_servers = function()
   return servers
+end
+
+---
+---@return nlspsettings.loaders.json.jsonschema[]|table<string, string>
+M.get_default_schemas = function()
+  if not loader_is_set then
+    set_loader()
+  end
+
+  return loader.get_default_schemas()
 end
 
 return setmetatable(M, mt)

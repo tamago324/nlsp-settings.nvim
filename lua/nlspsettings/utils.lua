@@ -1,5 +1,3 @@
-local uv = vim.loop
-
 ---@param t table
 ---@return boolean
 local is_table = function(t)

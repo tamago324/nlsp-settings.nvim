@@ -1,29 +1,12 @@
 local config = require 'nlspsettings.config'
 local nlspsettings = require 'nlspsettings'
 local lspconfig = require 'lspconfig'
-local notify = vim.F.npcall(require, 'notify')
+local log = require('nlspsettings.log').log
 
 local path = lspconfig.util.path
 local uv = vim.loop
 
 local M = {}
-
---- Logs a message with the given log level.
----@param message string
----@param level number
-local log = function(message, level)
-  local title = 'NLsp Settings'
-  local notify_config = config.get 'nvim_notify'
-
-  if notify and notify_config and notify_config.enable then
-    notify(message, level, {
-      title = title,
-      timeout = notify_config.timeout,
-    })
-  else
-    vim.notify(('[%s] %s'):format(title, message), level)
-  end
-end
 
 --- Get the path to the buffer number
 ---@param bufnr number?
@@ -63,7 +46,7 @@ end
 --- open config file
 ---@param dir string
 ---@param server_name string
-local open_config = function(dir, server_name)
+local open = function(dir, server_name)
   vim.validate {
     server_name = { server_name, 's' },
     dir = { dir, 's' },
@@ -112,7 +95,7 @@ end
 ---Open the settings file for the specified server.
 ---@param server_name string
 M.open_config = function(server_name)
-  open_config(config.get 'config_home', server_name)
+  open(config.get 'config_home', server_name)
 end
 
 ---Open the settings file for the specified server.
@@ -127,7 +110,7 @@ M.open_local_config = function(server_name)
   local root_dir = lspconfig.util.root_pattern(markers)(path.sanitize(start_path))
 
   if root_dir then
-    open_config(path.join(root_dir:gsub('/$', ''), config.get 'local_settings_dir'), server_name)
+    open(path.join(root_dir:gsub('/$', ''), config.get 'local_settings_dir'), server_name)
   else
     log(('[%s] Failed to get root_dir.'):format(server_name), vim.log.levels.ERROR)
   end
@@ -148,7 +131,7 @@ M.open_local_buf_config = function()
     local client = unpack(clients)
 
     if client then
-      open_config(path.join(client.config.root_dir, config.get 'local_settings_dir'), server_name)
+      open(path.join(client.config.root_dir, config.get 'local_settings_dir'), server_name)
     else
       log(('[%s] Failed to get root_dir.'):format(server_name), vim.log.levels.ERROR)
     end
