@@ -139,8 +139,13 @@ local get_settings = function(root_dir, server_name)
   -- jsonls の場合、 schemas を追加する
   if server_name == loader.server_name then
     local settings_key = loader.settings_key
-    -- もし、setup
-    local s_schemas = settings[settings_key].schemas or {}
+
+    if settings[settings_key] == nil then
+      -- 何も設定していない場合、存在しないキーから取得しようとして落ちてしまうため、ここでセットしておく
+      settings[settings_key] = {}
+      settings[settings_key].schemas = {}
+    end
+    local s_schemas = settings[settings_key].schemas
 
     -- XXX: 上でマージしているため、ここでは必要ない
     -- --- schemas をマージする

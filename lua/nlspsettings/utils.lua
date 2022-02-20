@@ -1,7 +1,7 @@
 ---@param t table
 ---@return boolean
 local is_table = function(t)
-  return type(t) == 'table' and not vim.tbl_islist(t)
+  return type(t) == 'table' and (not vim.tbl_islist(t) or vim.tbl_isempty(t))
 end
 
 --- * YAMLの場合、table のみ
