@@ -1061,6 +1061,17 @@
       "scope": "resource",
       "type": "integer"
     },
+    "Lua.format.defaultConfig": {
+      "markdownDescription": "%config.format.defaultConfig%",
+      "scope": "resource",
+      "type": "object"
+    },
+    "Lua.format.enable": {
+      "default": "true",
+      "markdownDescription": "%config.format.enable%",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "Lua.hint.arrayIndex": {
       "default": "Auto",
       "enum": [
@@ -1447,6 +1458,9 @@
       "default": null,
       "markdownDescription": "%config.telemetry.enable%",
       "scope": "resource",
+      "tags": [
+        "telemetry"
+      ],
       "type": [
         "boolean",
         "null"
