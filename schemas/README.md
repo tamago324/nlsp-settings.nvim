@@ -49,6 +49,7 @@
 - [ ] groovyls
 - [ ] haxe_language_server
 - [ ] hdl_checker
+- [ ] hhvm
 - [x] hie
 - [ ] hls
 - [ ] html
