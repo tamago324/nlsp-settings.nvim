@@ -181,6 +181,12 @@
       ],
       "type": "string"
     },
+    "julia.execution.saveOnEval": {
+      "default": false,
+      "markdownDescription": "Save file before execution",
+      "scope": "machine-overridable",
+      "type": "boolean"
+    },
     "julia.focusPlotNavigator": {
       "default": false,
       "description": "Whether to automatically show the plot navigator when plotting.",
