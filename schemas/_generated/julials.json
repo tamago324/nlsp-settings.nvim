@@ -184,7 +184,7 @@
     "julia.execution.saveOnEval": {
       "default": false,
       "markdownDescription": "Save file before execution",
-      "scope": "machine-overridable",
+      "scope": "window",
       "type": "boolean"
     },
     "julia.focusPlotNavigator": {
