@@ -232,6 +232,11 @@
       "markdownDescription": "Whether to show postfix snippets like `dbg`, `if`, `not`, etc.",
       "type": "boolean"
     },
+    "rust-analyzer.completion.privateEditable.enable": {
+      "default": false,
+      "markdownDescription": "Enables completions of private items and fields that are defined in the current workspace even if they are not visible at the current position.",
+      "type": "boolean"
+    },
     "rust-analyzer.completion.snippets": {
       "default": {
         "Arc::new": {
