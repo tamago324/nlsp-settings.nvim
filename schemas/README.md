@@ -44,6 +44,7 @@
 - [ ] ghcide
 - [ ] golangci_lint_ls
 - [ ] gopls
+- [ ] gradle_ls
 - [ ] grammarly
 - [ ] graphql
 - [ ] groovyls
