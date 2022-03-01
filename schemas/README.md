@@ -74,6 +74,7 @@
 - [x] nimls
 - [ ] ocamlls
 - [ ] ocamllsp
+- [ ] ols
 - [ ] omnisharp
 - [ ] opencl_ls
 - [ ] pasls
