@@ -22,6 +22,12 @@
       "scope": "resource",
       "type": "string"
     },
+    "haskell.ignorePATH": {
+      "default": false,
+      "description": "Whether to ignore haskell-language-server on PATH",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "haskell.logFile": {
       "default": "",
       "description": "If set, redirects the logs to a file.",
