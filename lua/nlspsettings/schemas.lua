@@ -1,9 +1,16 @@
 local uv = vim.loop
 
-local script_abspath = function()
-  return debug.getinfo(2, 'S').source:sub(2)
+local path_sep = uv.os_uname().version:match 'Windows' and '\\' or '/'
+local function join_paths(...)
+  local result = table.concat({ ... }, path_sep)
+  return result
 end
-local _schemas_dir = script_abspath():match '(.*)/lua/nlspsettings/schemas.lua$' .. '/schemas'
+
+local script_abspath = debug.getinfo(1, 'S').source:sub(2)
+local pattern = join_paths('(.*)', 'lua', 'nlspsettings', 'schemas.lua$')
+local nlsp_abstpath = script_abspath:match(pattern)
+local _schemas_dir = join_paths(nlsp_abstpath, 'schemas')
+local _generated_dir = join_paths(_schemas_dir, '_generated')
 
 --- path のディレクトリ内にあるすべての *.json の設定を生成する
 ---@return table<string, string> { server_name: file_path }
@@ -33,7 +40,7 @@ end
 -- ベースとなるスキーマの情報をリセットする
 local base_schemas_data = {}
 local reset_base_scemas_data = function()
-  local generated_schemas_table = make_schemas_table(_schemas_dir .. '/_generated')
+  local generated_schemas_table = make_schemas_table(_generated_dir)
   local local_schemas_table = make_schemas_table(_schemas_dir)
   base_schemas_data = vim.tbl_extend('force', generated_schemas_table, local_schemas_table)
 end
