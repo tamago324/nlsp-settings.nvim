@@ -12,6 +12,7 @@
 - [ ] bsl_ls
 - [ ] ccls
 - [ ] clangd
+- [ ] clarity_lsp
 - [ ] clojure_lsp
 - [ ] cmake
 - [x] codeqlls
