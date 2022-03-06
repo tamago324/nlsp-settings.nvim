@@ -80,6 +80,7 @@
 - [ ] opencl_ls
 - [ ] pasls
 - [x] perlls
+- [x] perlnavigator
 - [x] perlpls
 - [ ] phpactor
 - [ ] powershell_es
@@ -93,6 +94,7 @@
 - [ ] quick_lint_js
 - [x] r_language_server
 - [ ] racket_langserver
+- [ ] reason_ls
 - [ ] remark_ls
 - [ ] rescriptls
 - [ ] rls
