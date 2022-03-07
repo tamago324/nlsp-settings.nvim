@@ -470,11 +470,6 @@
       "markdownDescription": "Whether to show function parameter name inlay hints at the call\nsite.",
       "type": "boolean"
     },
-    "rust-analyzer.inlayHints.smallerHints": {
-      "default": true,
-      "description": "Whether inlay hints font size should be smaller than editor's font size.",
-      "type": "boolean"
-    },
     "rust-analyzer.inlayHints.typeHints": {
       "default": true,
       "markdownDescription": "Whether to show inlay type hints for variables.",
