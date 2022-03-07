@@ -123,6 +123,7 @@
 - [ ] svls
 - [ ] tailwindcss
 - [ ] taplo
+- [ ] teal_ls
 - [ ] terraform_lsp
 - [x] terraformls
 - [ ] texlab
