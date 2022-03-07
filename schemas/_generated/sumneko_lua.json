@@ -990,7 +990,7 @@
           "type": "string"
         },
         "unknown-diag-code": {
-          "default": "Waiting",
+          "default": "Warning",
           "description": "%config.diagnostics.unknown-diag-code%",
           "enum": [
             "Error",
