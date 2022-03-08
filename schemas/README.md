@@ -84,6 +84,7 @@
 - [x] perlnavigator
 - [x] perlpls
 - [ ] phpactor
+- [ ] please
 - [ ] powershell_es
 - [ ] prismals
 - [x] psalm
