@@ -232,7 +232,7 @@
         ],
         "type": "object"
       },
-      "scope": "machine",
+      "scope": "machine-overridable",
       "type": "array"
     },
     "java.configuration.updateBuildConfiguration": {
