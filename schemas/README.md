@@ -114,6 +114,7 @@
 - [ ] solidity_ls
 - [ ] sorbet
 - [x] sourcekit
+- [ ] sourcery
 - [x] spectral
 - [ ] sqlls
 - [ ] sqls
