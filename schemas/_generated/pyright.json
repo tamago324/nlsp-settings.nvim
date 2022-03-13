@@ -637,6 +637,17 @@
           ],
           "type": "string"
         },
+        "reportUnusedExpression": {
+          "default": "warning",
+          "description": "Diagnostics for simple expressions whose value is not used in any way.",
+          "enum": [
+            "none",
+            "information",
+            "warning",
+            "error"
+          ],
+          "type": "string"
+        },
         "reportUnusedFunction": {
           "default": "none",
           "description": "Diagnostics for a function or method with a private name (starting with an underscore) that is not accessed.",
