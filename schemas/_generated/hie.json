@@ -22,23 +22,29 @@
       "scope": "resource",
       "type": "string"
     },
-    "haskell.ignorePATH": {
-      "default": false,
-      "description": "Whether to ignore haskell-language-server on PATH",
-      "scope": "resource",
-      "type": "boolean"
-    },
     "haskell.logFile": {
       "default": "",
       "description": "If set, redirects the logs to a file.",
       "scope": "resource",
       "type": "string"
     },
+    "haskell.manageHLS": {
+      "default": true,
+      "description": "Let this extension manage required HLS versions via ghcup.",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "haskell.maxCompletions": {
       "default": 40,
       "description": "Maximum number of completions sent to the editor.",
       "scope": "resource",
       "type": "integer"
+    },
+    "haskell.metadataURL": {
+      "default": "",
+      "description": "An optional URL to override where ghcup checks for tool download info (usually at: https://raw.githubusercontent.com/haskell/ghcup-metadata/master/ghcup-0.0.7.yaml)",
+      "scope": "resource",
+      "type": "string"
     },
     "haskell.openDocumentationInHackage": {
       "default": true,
@@ -229,7 +235,7 @@
     },
     "haskell.releasesURL": {
       "default": "",
-      "description": "An optional URL to override where to check for haskell-language-server releases",
+      "description": "An optional URL to override where ghcup checks for HLS-GHC compatibilty list (usually at: https://raw.githubusercontent.com/haskell/ghcup-metadata/master/hls-metadata-0.0.1.json)",
       "scope": "resource",
       "type": "string"
     },
@@ -273,21 +279,11 @@
       "scope": "resource",
       "type": "string"
     },
-    "haskell.updateBehavior": {
-      "default": "keep-up-to-date",
-      "enum": [
-        "keep-up-to-date",
-        "prompt",
-        "never-check"
-      ],
-      "enumDescriptions": [
-        "Always download the latest available version when it is published",
-        "Prompt before upgrading to a newer version",
-        "Don't check for newer versions"
-      ],
-      "markdownDescription": "Determine what to do when a new version of the language server is available.",
-      "scope": "machine",
-      "type": "string"
+    "haskell.useSystemGHCup": {
+      "default": null,
+      "description": "Whether to use the system ghcup or an internal one for installing HLS.",
+      "scope": "resource",
+      "type": "boolean"
     }
   }
 }
