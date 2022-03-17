@@ -29,10 +29,20 @@
       "type": "string"
     },
     "haskell.manageHLS": {
-      "default": true,
-      "description": "Let this extension manage required HLS versions via ghcup.",
+      "default": null,
+      "description": "How to manage/find HLS installations.",
+      "enum": [
+        "system-ghcup",
+        "internal-ghcup",
+        "PATH"
+      ],
+      "enumDescriptions": [
+        "Will use a user-wide installation of ghcup (usually in '~/.ghcup') to manage HLS automatically",
+        "Will use an internal installation of ghcup to manage HLS automatically, to avoid interfering with system ghcup",
+        "Discovers HLS executables in system PATH"
+      ],
       "scope": "resource",
-      "type": "boolean"
+      "type": "string"
     },
     "haskell.maxCompletions": {
       "default": 40,
