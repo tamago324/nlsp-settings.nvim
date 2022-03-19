@@ -71,6 +71,7 @@
 - [x] ltex
 - [ ] metals
 - [ ] mint
+- [ ] mm0_ls
 - [x] nickel_ls
 - [x] nimls
 - [ ] ocamlls
