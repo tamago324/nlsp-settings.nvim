@@ -461,6 +461,26 @@
       "markdownDescription": "Whether to hide inlay hints for constructors.",
       "type": "boolean"
     },
+    "rust-analyzer.inlayHints.lifetimeElisionHints": {
+      "default": "never",
+      "enum": [
+        "always",
+        "never",
+        "skip_trivial"
+      ],
+      "enumDescriptions": [
+        "Always show lifetime elision hints.",
+        "Never show lifetime elision hints.",
+        "Only show lifetime elision hints if a return type is involved."
+      ],
+      "markdownDescription": "Whether to show inlay type hints for elided lifetimes in function signatures.",
+      "type": "string"
+    },
+    "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": {
+      "default": false,
+      "markdownDescription": "Whether to prefer using parameter names as the name for elided lifetime hints if possible.",
+      "type": "boolean"
+    },
     "rust-analyzer.inlayHints.maxLength": {
       "default": 25,
       "markdownDescription": "Maximum length for inlay hints. Set to null to have an unlimited length.",
