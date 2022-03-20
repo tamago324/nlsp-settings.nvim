@@ -88,6 +88,7 @@
 - [ ] please
 - [ ] powershell_es
 - [ ] prismals
+- [ ] prosemd_lsp
 - [x] psalm
 - [x] puppet
 - [x] purescriptls
