@@ -495,6 +495,11 @@
       "markdownDescription": "Whether to show function parameter name inlay hints at the call\nsite.",
       "type": "boolean"
     },
+    "rust-analyzer.inlayHints.reborrowHints": {
+      "default": false,
+      "markdownDescription": "Whether to show inlay type hints for compiler inserted reborrows.",
+      "type": "boolean"
+    },
     "rust-analyzer.inlayHints.renderColons": {
       "default": true,
       "markdownDescription": "Whether to render trailing colons for parameter hints, and trailing colons for parameter hints.",
