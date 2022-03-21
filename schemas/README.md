@@ -54,6 +54,7 @@
 - [ ] hhvm
 - [x] hie
 - [ ] hls
+- [ ] hoon_ls
 - [ ] html
 - [ ] idris2_lsp
 - [x] intelephense
