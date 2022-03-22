@@ -461,7 +461,7 @@
       "markdownDescription": "Whether to hide inlay hints for constructors.",
       "type": "boolean"
     },
-    "rust-analyzer.inlayHints.lifetimeElisionHints": {
+    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": {
       "default": "never",
       "enum": [
         "always",
