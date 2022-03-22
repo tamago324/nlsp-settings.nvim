@@ -34,6 +34,11 @@
       ],
       "type": "string"
     },
+    "swift.autoGenerateLaunchConfigurations": {
+      "default": true,
+      "description": "When loading a `Package.swift` auto-generate `launch.json` configurations for running any executables.",
+      "type": "boolean"
+    },
     "swift.buildArguments": {
       "default": [],
       "items": {
