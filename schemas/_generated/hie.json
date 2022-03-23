@@ -22,6 +22,30 @@
       "scope": "resource",
       "type": "string"
     },
+    "haskell.ghcupExecutablePath": {
+      "default": "",
+      "markdownDescription": "Manually set a ghcup executable path.",
+      "scope": "resource",
+      "type": "string"
+    },
+    "haskell.installCabal": {
+      "default": true,
+      "description": "Whether to also install/manage cabal when 'manageHLS' is set to 'GHCup'.",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.installGHC": {
+      "default": true,
+      "description": "Whether to also install/manage GHC when 'manageHLS' is set to 'GHCup'.",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.installStack": {
+      "default": true,
+      "description": "Whether to also install/manage stack when 'manageHLS' is set to 'GHCup'.",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "haskell.logFile": {
       "default": "",
       "description": "If set, redirects the logs to a file.",
@@ -32,14 +56,12 @@
       "default": null,
       "description": "How to manage/find HLS installations.",
       "enum": [
-        "system-ghcup",
-        "internal-ghcup",
+        "GHCup",
         "PATH"
       ],
       "enumDescriptions": [
-        "Will use a user-wide installation of ghcup (usually in '~/.ghcup') to manage HLS automatically",
-        "Will use an internal installation of ghcup to manage HLS automatically, to avoid interfering with system ghcup",
-        "Discovers HLS executables in system PATH"
+        "Will use ghcup and manage Haskell toolchain in the default location (usually '~/.ghcup')",
+        "Discovers HLS and other executables in system PATH"
       ],
       "scope": "resource",
       "type": "string"
@@ -251,7 +273,7 @@
     },
     "haskell.releasesDownloadStoragePath": {
       "default": "",
-      "markdownDescription": "An optional path where downloaded binaries will be stored. Check the default value [here](https://github.com/haskell/vscode-haskell#downloaded-binaries)",
+      "markdownDescription": "An optional path where downloaded metadata will be stored. Check the default value [here](https://github.com/haskell/vscode-haskell#downloaded-binaries)",
       "scope": "resource",
       "type": "string"
     },
@@ -301,9 +323,9 @@
       "scope": "resource",
       "type": "string"
     },
-    "haskell.useSystemGHCup": {
-      "default": null,
-      "description": "Whether to use the system ghcup or an internal one for installing HLS.",
+    "haskell.upgradeGHCup": {
+      "default": true,
+      "description": "Whether to upgrade GHCup automatically when 'manageHLS' is set to 'GHCup'.",
       "scope": "resource",
       "type": "boolean"
     }
