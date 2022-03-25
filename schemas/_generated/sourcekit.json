@@ -37,6 +37,7 @@
     "swift.autoGenerateLaunchConfigurations": {
       "default": true,
       "description": "When loading a `Package.swift` auto-generate `launch.json` configurations for running any executables.",
+      "order": 3,
       "type": "boolean"
     },
     "swift.buildArguments": {
@@ -57,7 +58,7 @@
       "items": {
         "type": "string"
       },
-      "order": 3,
+      "order": 5,
       "type": "array"
     },
     "swift.path": {
@@ -65,6 +66,12 @@
       "markdownDescription": "The path of the folder containing the Swift executables. The default is to look in **$PATH**.",
       "order": 1,
       "type": "string"
+    },
+    "swift.problemMatchCompileErrors": {
+      "default": true,
+      "description": "List compile errors in the Problems View.",
+      "order": 4,
+      "type": "boolean"
     }
   }
 }
