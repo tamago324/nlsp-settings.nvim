@@ -53,7 +53,7 @@
       "type": "string"
     },
     "haskell.manageHLS": {
-      "default": null,
+      "default": "PATH",
       "description": "How to manage/find HLS installations.",
       "enum": [
         "GHCup",
