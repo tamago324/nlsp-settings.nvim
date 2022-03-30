@@ -48,19 +48,20 @@
       "type": "boolean"
     },
     "deno.codeLens.test": {
-      "default": true,
+      "default": false,
       "markdownDescription": "Enables or disables the display of code lenses that allow running of individual tests in the code.",
       "scope": "resource",
       "type": "boolean"
     },
     "deno.codeLens.testArgs": {
       "default": [
-        "--allow-all"
+        "--allow-all",
+        "--no-check"
       ],
       "items": {
         "type": "string"
       },
-      "markdownDescription": "Additional arguments to use with the run test code lens.  Defaults to `[ \"--allow-all\" ]`.",
+      "markdownDescription": "Additional arguments to use with the run test code lens.  Defaults to `[ \"--allow-all\", \"--no-check\" ]`.",
       "scope": "resource",
       "type": "array"
     },
@@ -176,6 +177,24 @@
     },
     "deno.suggest.paths": {
       "default": true,
+      "scope": "window",
+      "type": "boolean"
+    },
+    "deno.testing.args": {
+      "default": [
+        "--allow-all",
+        "--no-check"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "Arguments to use when running tests via the Test Explorer.  Defaults to `[ \"--allow-all\" ]`.",
+      "scope": "window",
+      "type": "array"
+    },
+    "deno.testing.enable": {
+      "default": true,
+      "markdownDescription": "Enable the testing API for the language server. When folder is Deno enabled, tests will be available in the Test Explorer view.",
       "scope": "window",
       "type": "boolean"
     },
