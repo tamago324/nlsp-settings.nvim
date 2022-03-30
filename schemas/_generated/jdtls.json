@@ -439,6 +439,22 @@
       "scope": "application",
       "type": "array"
     },
+    "java.inlayHints.parameterNames.enabled": {
+      "default": "literals",
+      "enum": [
+        "none",
+        "literals",
+        "all"
+      ],
+      "enumDescriptions": [
+        "Disable parameter name hints",
+        "Enable parameter name hints only for literal arguments",
+        "Enable parameter name hints for literal and non-literal arguments"
+      ],
+      "markdownDescription": "Enable/disable inlay hints for parameter names:\n```java\n\nInteger.valueOf(/* s: */ '123', /* radix: */ 10)\n \n```\n",
+      "scope": "window",
+      "type": "string"
+    },
     "java.jdt.ls.java.home": {
       "default": null,
       "description": "Specifies the folder path to the JDK (11 or more recent) used to launch the Java Language Server. This setting will replace the Java extension's embedded JRE to start the Java Language Server. \n\nOn Windows, backslashes must be escaped, i.e.\n\"java.jdt.ls.java.home\":\"C:\\\\Program Files\\\\Java\\\\jdk11.0_8\"",
