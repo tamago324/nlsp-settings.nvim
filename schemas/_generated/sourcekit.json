@@ -3,7 +3,7 @@
   "description": "Setting of sourcekit",
   "properties": {
     "sourcekit-lsp.inlayHints.enabled": {
-      "default": false,
+      "default": true,
       "description": "Render inlay type annotations in the editor. Inlay hints require Swift 5.6 or later.",
       "type": "boolean"
     },
