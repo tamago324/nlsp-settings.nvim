@@ -748,6 +748,12 @@
       "markdownDescription": "Workspace symbol search kind.",
       "type": "string"
     },
+    "rust-analyzer.workspace.symbol.search.limit": {
+      "default": 128,
+      "markdownDescription": "Limits the number of items returned from a workspace symbol search (Defaults to 128).\nSome clients like vs-code issue new searches on result filtering and don't require all results to be returned in the initial search.\nOther clients requires all results upfront and might require a higher limit.",
+      "minimum": 0,
+      "type": "integer"
+    },
     "rust-analyzer.workspace.symbol.search.scope": {
       "default": "workspace",
       "enum": [
