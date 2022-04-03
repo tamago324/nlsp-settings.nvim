@@ -190,6 +190,18 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "haskell.plugin.rename.config.crossModule": {
+      "default": false,
+      "description": "Enables renaming across modules (experimental)",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "haskell.plugin.rename.globalOn": {
+      "default": true,
+      "description": "Enables rename plugin",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "haskell.plugin.retrie.globalOn": {
       "default": true,
       "description": "Enables retrie plugin",
