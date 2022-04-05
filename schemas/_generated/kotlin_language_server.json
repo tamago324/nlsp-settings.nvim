@@ -29,7 +29,7 @@
       "type": "string"
     },
     "kotlin.externalSources.autoConvertToKotlin": {
-      "default": true,
+      "default": false,
       "description": "Specifies whether decompiled/external classes should be auto-converted to Kotlin.",
       "type": "boolean"
     },
