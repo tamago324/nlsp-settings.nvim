@@ -40,6 +40,12 @@
       "order": 3,
       "type": "boolean"
     },
+    "swift.backgroundCompilation": {
+      "default": false,
+      "markdownDescription": "**Experimental**: Run `swift build` in the background whenever a file is saved.",
+      "order": 6,
+      "type": "boolean"
+    },
     "swift.buildArguments": {
       "default": [],
       "items": {
