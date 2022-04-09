@@ -284,9 +284,9 @@
           ],
           "type": "string"
         },
-        "duplicate-doc-class": {
+        "duplicate-doc-alias": {
           "default": "Any",
-          "description": "%config.diagnostics.duplicate-doc-class%",
+          "description": "%config.diagnostics.duplicate-doc-alias%",
           "enum": [
             "Any",
             "Opened",
@@ -384,9 +384,9 @@
           ],
           "type": "string"
         },
-        "no-implicit-any": {
+        "no-unknown": {
           "default": "None",
-          "description": "%config.diagnostics.no-implicit-any%",
+          "description": "%config.diagnostics.no-unknown%",
           "enum": [
             "Any",
             "Opened",
@@ -714,9 +714,9 @@
           ],
           "type": "string"
         },
-        "duplicate-doc-class": {
+        "duplicate-doc-alias": {
           "default": "Warning",
-          "description": "%config.diagnostics.duplicate-doc-class%",
+          "description": "%config.diagnostics.duplicate-doc-alias%",
           "enum": [
             "Error",
             "Warning",
@@ -824,9 +824,9 @@
           ],
           "type": "string"
         },
-        "no-implicit-any": {
+        "no-unknown": {
           "default": "Information",
-          "description": "%config.diagnostics.no-implicit-any%",
+          "description": "%config.diagnostics.no-unknown%",
           "enum": [
             "Error",
             "Warning",
