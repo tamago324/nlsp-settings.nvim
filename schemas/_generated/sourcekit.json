@@ -37,13 +37,13 @@
     "swift.autoGenerateLaunchConfigurations": {
       "default": true,
       "markdownDescription": "When loading a `Package.swift`, auto-generate `launch.json` configurations for running any executables.",
-      "order": 3,
+      "order": 4,
       "type": "boolean"
     },
     "swift.backgroundCompilation": {
       "default": false,
       "markdownDescription": "**Experimental**: Run `swift build` in the background whenever a file is saved.",
-      "order": 6,
+      "order": 7,
       "type": "boolean"
     },
     "swift.buildArguments": {
@@ -51,7 +51,7 @@
       "items": {
         "type": "string"
       },
-      "markdownDescription": "Arguments to pass to `swift build`. Keys and values should be provided as separate entries.",
+      "markdownDescription": "Arguments to pass to `swift build`. Keys and values should be provided as separate entries. If you have created a copy of the build task in `tasks.json` then these build arguments will not be propogated to that task.",
       "order": 2,
       "type": "array"
     },
@@ -64,7 +64,7 @@
       "items": {
         "type": "string"
       },
-      "order": 5,
+      "order": 6,
       "type": "array"
     },
     "swift.path": {
@@ -76,8 +76,19 @@
     "swift.problemMatchCompileErrors": {
       "default": true,
       "description": "List compile errors in the Problems View.",
-      "order": 4,
+      "order": 5,
       "type": "boolean"
+    },
+    "swift.testEnvironmentVariables": {
+      "default": {},
+      "markdownDescription": "Environment variables to set when running tests. To set environment variables when debugging an application you should edit the relevant `launch.json` configuration",
+      "order": 3,
+      "patternProperties": {
+        ".*": {
+          "type": "string"
+        }
+      },
+      "type": "object"
     }
   }
 }
