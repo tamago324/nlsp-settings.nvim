@@ -3,18 +3,16 @@ if exists('g:loaded_nlspsettings')
 endif
 let g:loaded_nlspsettings = 1
 
+command! -nargs=* -complete=custom,v:lua.require'nlspsettings.command.completion'.complete
+            \ LspSettings lua require("nlspsettings.command")._command(<f-args>)
+
+" deprecated
 function! s:complete(arg, line, pos) abort
   return join(luaeval('require("nlspsettings.schemas").get_langserver_names()'), "\n")
 endfunction
 
-command! -nargs=1 -complete=custom,s:complete NlspConfig lua require('nlspsettings.command').open_config(<f-args>)
-command! -nargs=1 -complete=custom,s:complete NlspLocalConfig lua require('nlspsettings.command').open_local_config(<f-args>)
-
-command! -nargs=0 NlspBufConfig lua require('nlspsettings.command').open_buf_config()
-command! -nargs=0 NlspLocalBufConfig lua require('nlspsettings.command').open_local_buf_config()
-
-command! -nargs=1 -complete=custom,s:complete NlspUpdateSettings lua require('nlspsettings.command').update_settings(<f-args>)
-
-nnoremap <Plug>(nlsp-buf-config) <Cmd>lua require('nlspsettings.command').open_buf_config()<CR>
-nnoremap <Plug>(nlsp-local-buf-config) <Cmd>lua require('nlspsettings.command').open_local_buf_config()<CR>
-
+command! -nargs=1 -complete=custom,s:complete NlspConfig lua require('nlspsettings.deprecated').open()
+command! -nargs=1 -complete=custom,s:complete NlspLocalConfig lua require('nlspsettings.deprecated').open_local()
+command! -nargs=0 NlspBufConfig lua require('nlspsettings.deprecated').open_buffer()
+command! -nargs=0 NlspLocalBufConfig lua require('nlspsettings.deprecated').open_local_buffer()
+command! -nargs=1 -complete=custom,s:complete NlspUpdateSettings lua require('nlspsettings.deprecated').update()

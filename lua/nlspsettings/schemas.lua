@@ -1,12 +1,23 @@
+local config = require 'nlspsettings.config'
+
 local uv = vim.loop
 
-local path_sep = uv.os_uname().version:match 'Windows' and '\\' or '/'
+local on_windows = uv.os_uname().version:match 'Windows'
+local path_sep = on_windows and '\\' or '/'
 local function join_paths(...)
   local result = table.concat({ ... }, path_sep)
   return result
 end
+local function system_path(path)
+  if not on_windows then
+    return path
+  end
+  return path:gsub('/', '\\')
+end
 
-local script_abspath = debug.getinfo(1, 'S').source:sub(2)
+-- on windows, neovim returns paths like:
+-- C:\\Users\\USER\\AppData\\Local\\nvim\\lua/folder/file.lua
+local script_abspath = system_path(debug.getinfo(1, 'S').source:sub(2))
 local pattern = join_paths('(.*)', 'lua', 'nlspsettings', 'schemas.lua$')
 local nlsp_abstpath = script_abspath:match(pattern)
 local _schemas_dir = join_paths(nlsp_abstpath, 'schemas')
@@ -55,7 +66,12 @@ end
 --- Return the name of a supported server.
 ---@return table
 local get_langserver_names = function()
-  return vim.tbl_keys(base_schemas_data)
+  if not config.get().open_strictly then
+    return vim.tbl_keys(base_schemas_data)
+  end
+  return vim.tbl_values(vim.tbl_map(function(server_name)
+    return base_schemas_data[server_name] and server_name
+  end, vim.tbl_keys(require 'lspconfig.configs')))
 end
 
 return {

@@ -82,19 +82,19 @@ TODO: その他の設定は doc を参照
 
 ### Step3. Write settings
 
-Execute `:NlspConfig sumneko_lua`.  
+Execute `:LspSettings sumneko_lua`.  
 `sumneko_lua.json` will be created under the directory set in `config_home`. Type `<C-x><C-o>`. You should now have jsonls completion enabled.
 
 
 ## Usage
 
-### Commands
+### LspSettings command
 
-* `:NlspConfig [server_name]`:  Open the global settings file for the specified `{server_name}`.
-* `:NlspBufConfig`: Open the global settings file that matches the current buffer.
-* `:NlspLocalConfig [server_name]`: Open the local settings file of the specified `{server_name}` corresponding to the cwd.
-* `:NlspLocalBufConfig`:  Open the local settings file of the server corresponding to the current buffer.
-* `:NlspUpdateSettings [server_name]`: Update the setting values for the specified `{server_name}`.
+* `:LspSettings [server_name]`:  Open the global settings file for the specified `{server_name}`.
+* `:LspSettings buffer`: Open the global settings file that matches the current buffer.
+* `:LspSettings local [server_name]`: Open the local settings file of the specified `{server_name}` corresponding to the cwd.
+* `:LspSettings local buffer` or `LspSettings buffer local`:  Open the local settings file of the server corresponding to the current buffer.
+* `:LspSettings update [server_name]`: Update the setting values for the specified `{server_name}`.
 
 For a list of language servers that have JSON Schema, see [here](schemas/README.md).
 
@@ -103,8 +103,8 @@ For a list of language servers that have JSON Schema, see [here](schemas/README.
 
 You can create a settings file for each project with the following command.
 
-* `:NlspLocalConfig [server_name]`.
-* `:NlspUpdateSettings [server_name]`
+* `:LspSettings local [server_name]`.
+* `:LspSettings update [server_name]`
 
 The settings file will be created in `{project_path}/.nlsp-settings/{server_name}.json`.
 

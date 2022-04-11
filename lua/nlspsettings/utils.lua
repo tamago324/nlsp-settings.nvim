@@ -1,3 +1,5 @@
+local log = require 'nlspsettings.log'
+
 ---@param t table
 ---@return boolean
 local is_table = function(t)
@@ -32,7 +34,7 @@ local extend = function(t1, t2)
   if (vim.tbl_islist(t1) and is_table(t2)) or (is_table(t1) and vim.tbl_islist(t2)) then
     -- list + table
     -- table + list
-    vim.notify_once('[Nlspsettings] Cannot merge list and table', vim.log.levels.WARN, {})
+    log.warn('Cannot merge list and table', true)
   end
   return t1
 end

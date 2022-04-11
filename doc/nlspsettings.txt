@@ -40,7 +40,7 @@ setup({opts})                                           *nlspsettings.setup()*
 
         {local_settigns_root_markers} (optional, table)
             A list of files and directories to use when looking for the
-            root directory when opening a file with |:NlspLocalConfig|.
+            root directory when opening a file with `:LspSettings local` .
 
             Default: `{ '.git' }`
 
@@ -58,8 +58,22 @@ setup({opts})                                           *nlspsettings.setup()*
 
             Default: `"json"`
 
+        {ignored_servers} (optional, table)
+            List of server names that should not appear in the server
+            choices when running `:LspSettings buffer` and
+            `:LspSettings local buffer` if more than one server is
+            connected to the current buffer.
+
+            Default: `{}`
+
         {append_default_schemas} (optional, boolean)
             Add defaults to the language server schemas in the |loader|.
+
+            Default: `false`
+
+        {open_strictly} (optional, boolean)
+            Determines if server given from command line should have a
+            config in `nvim-lspconfig`.
 
             Default: `false`
 
@@ -94,36 +108,27 @@ get_default_schemas()                  *nlspsettings.yaml.get_default_schemas()*
 
 
 ------------------------------------------------------------------------------
-COMMANDS                                              *nlsp-settings-commands*
+COMMANDS                                    *:LspSettings* *nlspsettings-commands*
 
-:NlspConfig {server_name}                                        *:NlspConfig*
+:LspSettings {server_name}
     Open the settings file for the specified {server_name}.
 
-:NlspBufConfig                                                *:NlspBufConfig*
+:LspSettings buffer
     Open a settings file that matches the current buffer.
 
-:NlspLocalConfig {server_name}                              *:NlspLocalConfig*
+:LspSettings local {server_name}
     Open the local settings file of the specified {server_name}
     corresponding to the cwd.
-    NOTE: Local version of |:NlspConfig|
+    NOTE: Local version of `:LspSettings`
 
-:NlspLocalBufConfig                                      *:NlspLocalBufConfig*
+:LspSettings buffer local
+:LspSettings local buffer
     Open the local settings file of the server corresponding to the
     current buffer.
-    NOTE: Local version of |:NlspBufConfig|
+    NOTE: Local version of `:LspSettings buffer`
 
-:NlspUpdateSettings {server_name}                        *:NlspUpdateSettings*
+:LspSettings update {server_name}
     Update the setting values for the specified {server_name}.
-
-
-------------------------------------------------------------------------------
-KEYMAPPINGS                                        *nlsp-settings-keymappings*
-
-n <Plug>(nlsp-buf-config)                            *<Plug>(nlsp-buf-config)*
-    |:NlspBufConfig|
-
-n <Plug>(nlsp-local-buf-config)                *<Plug>(nlsp-local-buf-config)*
-    |:NlspLocalBufConfig|
 
 
 ==============================================================================
