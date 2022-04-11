@@ -1,7 +1,8 @@
 local config = require 'nlspsettings.config'
+local parser = require 'nlspsettings.command.parser'
 local nlspsettings = require 'nlspsettings'
 local lspconfig = require 'lspconfig'
-local log = require('nlspsettings.log').log
+local log = require 'nlspsettings.log'
 
 local path = lspconfig.util.path
 local uv = vim.loop
@@ -27,7 +28,10 @@ local with_server_name = function(bufnr, callback)
   local server_names = {}
   local clients = vim.lsp.buf_get_clients(bufnr)
   for _, _client in pairs(clients) do
-    if not vim.tbl_contains(server_names, _client.name) then
+    if
+      not vim.tbl_contains(server_names, _client.name)
+      and not vim.tbl_contains(config.get().ignored_servers, _client.name)
+    then
       table.insert(server_names, _client.name)
     end
   end
@@ -70,7 +74,7 @@ local open = function(dir, server_name)
     local fd = uv.fs_open(filepath, 'w', tonumber('644', 8))
 
     if not fd then
-      log('Could not create file: ' .. filepath, vim.log.levels.ERROR)
+      log.error('Could not create file: ' .. filepath)
       return
     end
 
@@ -113,7 +117,7 @@ M.open_local_config = function(server_name)
   if root_dir then
     open(path.join(root_dir:gsub('/$', ''), conf.local_settings_dir), server_name)
   else
-    log(('[%s] Failed to get root_dir.'):format(server_name), vim.log.levels.ERROR)
+    log.error(('[%s] Failed to get root_dir.'):format(server_name))
   end
 end
 
@@ -134,7 +138,7 @@ M.open_local_buf_config = function()
     if client then
       open(path.join(client.config.root_dir, config.get().local_settings_dir), server_name)
     else
-      log(('[%s] Failed to get root_dir.'):format(server_name), vim.log.levels.ERROR)
+      log.error(('[%s] Failed to get root_dir.'):format(server_name))
     end
   end)
 end
@@ -145,17 +149,39 @@ M.update_settings = function(server_name)
   vim.api.nvim_command 'redraw'
 
   if nlspsettings.update_settings(server_name) then
-    log(('[%s] Failed to update the settings.'):format(server_name), vim.log.levels.ERROR)
+    log.error(('[%s] Failed to update the settings.'):format(server_name))
   else
-    log(('[%s] Success to update the settings.'):format(server_name), vim.log.levels.INFO)
+    log.info(('[%s] Success to update the settings.'):format(server_name))
   end
 end
 
 ---What to do when BufWritePost fires
----@param afile string
-M._BufWritePost = function(afile)
-  local server_name = path.sanitize(afile):match '([^/]+)%.%w+$'
+---@param file string
+M._BufWritePost = function(file)
+  local server_name = path.sanitize(file):match '([^/]+)%.%w+$'
   M.update_settings(server_name)
+end
+
+---Executes command from action
+---@param result nlspsettings.command.parser.result
+---@param actions table
+M._execute = function(result, actions)
+  if actions[result.action] then
+    actions[result.action](result.server)
+  end
+end
+
+---Parses a command and executes it
+---@vararg string
+M._command = function(...)
+  local result = parser.parse { ... }
+  M._execute(result, {
+    [parser.Actions.OPEN] = M.open_config,
+    [parser.Actions.OPEN_BUFFER] = M.open_buf_config,
+    [parser.Actions.OPEN_LOCAL] = M.open_local_config,
+    [parser.Actions.OPEN_LOCAL_BUFFER] = M.open_local_buf_config,
+    [parser.Actions.UPDATE] = M.update_settings,
+  })
 end
 
 return M

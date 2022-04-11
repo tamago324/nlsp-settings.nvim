@@ -1,6 +1,7 @@
 local config = require 'nlspsettings.config'
 local lspconfig = require 'lspconfig'
 local utils = require 'nlspsettings.utils'
+local lspconfig_util = require 'lspconfig.util'
 
 local uv = vim.loop
 
@@ -238,12 +239,12 @@ end
 local setup_autocmds = function()
   local conf = config.get()
   local patterns = {
-    string.format('*/%s/*.%s', conf.config_home:match '[^/]+$', loader.file_ext),
-    string.format('*/%s/*.%s', conf.local_settings_dir, loader.file_ext),
+    string.format('*/%s/*.%s', lspconfig_util.path.sanitize(conf.config_home):match '[^/]+$', loader.file_ext),
+    string.format('*/%s/*.%s', lspconfig_util.path.sanitize(conf.local_settings_dir), loader.file_ext),
   }
   local pattern = table.concat(patterns, ',')
 
-  vim.cmd [[augroup NlspSettings]]
+  vim.cmd [[augroup LspSettings]]
   vim.cmd [[  autocmd!]]
   vim.cmd(
     ([[  autocmd BufWritePost %s lua require'nlspsettings.command'._BufWritePost(vim.fn.expand('<afile>'))]]):format(
