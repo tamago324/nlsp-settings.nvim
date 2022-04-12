@@ -73,6 +73,12 @@
       ],
       "scope": "window",
       "type": "string"
+    },
+    "json.validate.enable": {
+      "default": true,
+      "description": "%json.validate.enable.desc%",
+      "scope": "window",
+      "type": "boolean"
     }
   }
 }
