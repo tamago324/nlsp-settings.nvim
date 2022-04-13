@@ -5,6 +5,7 @@
     "sourcekit-lsp.inlayHints.enabled": {
       "default": true,
       "description": "Render inlay type annotations in the editor. Inlay hints require Swift 5.6 or later.",
+      "order": 103,
       "type": "boolean"
     },
     "sourcekit-lsp.serverArguments": {
@@ -13,15 +14,12 @@
       "items": {
         "type": "string"
       },
+      "order": 102,
       "type": "array"
     },
     "sourcekit-lsp.serverPath": {
       "markdownDescription": "The path of the `sourcekit-lsp` executable. The default is to look in the path where `swift` is found.",
-      "type": "string"
-    },
-    "sourcekit-lsp.toolchainPath": {
-      "default": "",
-      "description": "(optional) The path of the Swift toolchain. By default, Sourcekit-LSP uses the toolchain it is installed in.",
+      "order": 101,
       "type": "string"
     },
     "sourcekit-lsp.trace.server": {
@@ -32,6 +30,7 @@
         "messages",
         "verbose"
       ],
+      "order": 104,
       "type": "string"
     },
     "swift.autoGenerateLaunchConfigurations": {
