@@ -107,6 +107,17 @@
       "markdownDescription": "Run build scripts (`build.rs`) for more precise code analysis.",
       "type": "boolean"
     },
+    "rust-analyzer.cargo.runBuildScriptsCommand": {
+      "default": null,
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "Advanced option, fully override the command rust-analyzer uses to\nrun build scripts and build procedural macros. The command should\ninclude `--message-format=json` or a similar option.",
+      "type": [
+        "null",
+        "array"
+      ]
+    },
     "rust-analyzer.cargo.target": {
       "default": null,
       "markdownDescription": "Compilation target (target triple).",
