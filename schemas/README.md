@@ -123,6 +123,7 @@
 - [x] spectral
 - [ ] sqlls
 - [ ] sqls
+- [ ] steep
 - [x] stylelint_lsp
 - [x] sumneko_lua
 - [ ] svelte
