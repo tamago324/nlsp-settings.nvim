@@ -2,37 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of sourcekit",
   "properties": {
-    "sourcekit-lsp.inlayHints.enabled": {
-      "default": true,
-      "description": "Render inlay type annotations in the editor. Inlay hints require Swift 5.6 or later.",
-      "order": 103,
-      "type": "boolean"
-    },
-    "sourcekit-lsp.serverArguments": {
-      "default": [],
-      "description": "Arguments to pass to Sourcekit-LSP. Argument keys and values should be provided as separate entries in the array e.g. ['--log-level', 'debug']",
-      "items": {
-        "type": "string"
-      },
-      "order": 102,
-      "type": "array"
-    },
-    "sourcekit-lsp.serverPath": {
-      "markdownDescription": "The path of the `sourcekit-lsp` executable. The default is to look in the path where `swift` is found.",
-      "order": 101,
-      "type": "string"
-    },
-    "sourcekit-lsp.trace.server": {
-      "default": "off",
-      "description": "Traces the communication between VS Code and the SourceKit-LSP language server.",
-      "enum": [
-        "off",
-        "messages",
-        "verbose"
-      ],
-      "order": 104,
-      "type": "string"
-    },
     "swift.autoGenerateLaunchConfigurations": {
       "default": true,
       "markdownDescription": "When loading a `Package.swift`, auto-generate `launch.json` configurations for running any executables.",
