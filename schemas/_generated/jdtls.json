@@ -657,6 +657,12 @@
       "description": "Automatically show build status on startup.",
       "scope": "window"
     },
+    "java.signatureHelp.description.enabled": {
+      "default": false,
+      "description": "Enable/disable to show the description in signature help.",
+      "scope": "window",
+      "type": "boolean"
+    },
     "java.signatureHelp.enabled": {
       "default": false,
       "description": "Enable/disable the signature help.",
