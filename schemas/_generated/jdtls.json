@@ -499,6 +499,21 @@
       "scope": "window",
       "type": "boolean"
     },
+    "java.project.encoding": {
+      "default": "ignore",
+      "enum": [
+        "ignore",
+        "warning",
+        "setDefault"
+      ],
+      "enumDescriptions": [
+        "Ignore project encoding settings",
+        "Show warning if a project has no explicit encoding set",
+        "Set the default workspace encoding settings"
+      ],
+      "markdownDescription": "Project encoding settings",
+      "scope": "window"
+    },
     "java.project.importHint": {
       "default": true,
       "description": "Enable/disable the server-mode switch information, when Java projects import is skipped on startup.",
