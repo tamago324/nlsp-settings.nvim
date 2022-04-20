@@ -462,11 +462,6 @@
       "markdownDescription": "Whether to show inlay type hints for return types of closures with blocks.",
       "type": "boolean"
     },
-    "rust-analyzer.inlayHints.enable": {
-      "default": true,
-      "description": "Whether to show inlay hints.",
-      "type": "boolean"
-    },
     "rust-analyzer.inlayHints.hideNamedConstructorHints": {
       "default": false,
       "markdownDescription": "Whether to hide inlay hints for constructors.",
