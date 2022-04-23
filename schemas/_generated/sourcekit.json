@@ -23,12 +23,6 @@
       "order": 2,
       "type": "array"
     },
-    "swift.diagnostics": {
-      "default": false,
-      "description": "Output additional diagnostics to the Swift Output View.",
-      "order": 8,
-      "type": "boolean"
-    },
     "swift.excludePathsFromPackageDependencies": {
       "default": [
         ".git",
