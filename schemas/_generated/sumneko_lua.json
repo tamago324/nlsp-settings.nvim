@@ -364,6 +364,26 @@
           ],
           "type": "string"
         },
+        "missing-parameter": {
+          "default": "Opened",
+          "description": "%config.diagnostics.missing-parameter%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None"
+          ],
+          "type": "string"
+        },
+        "need-check-nil": {
+          "default": "Opened",
+          "description": "%config.diagnostics.need-check-nil%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None"
+          ],
+          "type": "string"
+        },
         "newfield-call": {
           "default": "Any",
           "description": "%config.diagnostics.newfield-call%",
@@ -794,6 +814,28 @@
         "lowercase-global": {
           "default": "Information",
           "description": "%config.diagnostics.lowercase-global%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint"
+          ],
+          "type": "string"
+        },
+        "missing-parameter": {
+          "default": "Warning",
+          "description": "%config.diagnostics.missing-parameter%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint"
+          ],
+          "type": "string"
+        },
+        "need-check-nil": {
+          "default": "Warning",
+          "description": "%config.diagnostics.need-check-nil%",
           "enum": [
             "Error",
             "Warning",
@@ -1397,7 +1439,8 @@
             "dofile",
             "loadfile",
             "pcall",
-            "xpcall"
+            "xpcall",
+            "assert"
           ],
           "type": "string"
         }
