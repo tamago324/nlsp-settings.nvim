@@ -43,6 +43,11 @@
       "description": "Whether global symbols in the project should be indexed automatically in the background. This enables e.g. code completion for unimported classes and functions.",
       "type": "boolean"
     },
+    "kotlin.java.home": {
+      "default": "",
+      "description": "A custom JAVA_HOME for the language server and debug adapter to use.",
+      "type": "string"
+    },
     "kotlin.languageServer.debugAttach.autoSuspend": {
       "default": false,
       "description": "[DEBUG] If enabled (together with debugAttach.enabled), the language server will not immediately launch but instead listen on the specified attach port and wait for a debugger. This is ONLY useful if you need to debug the language server ITSELF.",
