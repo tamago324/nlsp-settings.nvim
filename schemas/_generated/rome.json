@@ -66,6 +66,11 @@
         "string",
         "null"
       ]
+    },
+    "rome.unstable": {
+      "default": false,
+      "markdownDescription": "**BETA**: enables unstable features",
+      "type": "boolean"
     }
   }
 }
