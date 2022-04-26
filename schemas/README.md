@@ -7,12 +7,12 @@
 - [ ] asm_lsp
 - [ ] astro
 - [ ] awk_ls
-- [ ] bashls
+- [x] bashls
 - [ ] beancount
 - [ ] bicep
 - [ ] bsl_ls
 - [ ] ccls
-- [ ] clangd
+- [x] clangd
 - [ ] clarity_lsp
 - [ ] clojure_lsp
 - [ ] cmake
@@ -47,7 +47,7 @@
 - [ ] golangci_lint_ls
 - [ ] gopls
 - [ ] gradle_ls
-- [ ] grammarly
+- [x] grammarly
 - [ ] graphql
 - [ ] groovyls
 - [ ] haxe_language_server
@@ -106,7 +106,7 @@
 - [ ] rls
 - [ ] rnix
 - [ ] robotframework_ls
-- [ ] rome
+- [x] rome
 - [x] rust_analyzer
 - [ ] salt_ls
 - [ ] scry
@@ -117,7 +117,7 @@
 - [x] solargraph
 - [ ] solc
 - [ ] solidity_ls
-- [ ] sorbet
+- [x] sorbet
 - [x] sourcekit
 - [ ] sourcery
 - [x] spectral
@@ -126,7 +126,7 @@
 - [ ] steep
 - [x] stylelint_lsp
 - [x] sumneko_lua
-- [ ] svelte
+- [x] svelte
 - [ ] svls
 - [ ] tailwindcss
 - [ ] taplo

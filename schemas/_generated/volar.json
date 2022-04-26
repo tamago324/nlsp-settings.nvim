@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of volar",
   "properties": {
-    "volar-api.trace.server": {
+    "volar-document-features.trace.server": {
       "default": "off",
       "description": "Traces the communication between VS Code and the language server.",
       "enum": [
@@ -13,7 +13,7 @@
       "scope": "window",
       "type": "string"
     },
-    "volar-document.trace.server": {
+    "volar-language-features-2.trace.server": {
       "default": "off",
       "description": "Traces the communication between VS Code and the language server.",
       "enum": [
@@ -24,7 +24,7 @@
       "scope": "window",
       "type": "string"
     },
-    "volar-html.trace.server": {
+    "volar-language-features.trace.server": {
       "default": "off",
       "description": "Traces the communication between VS Code and the language server.",
       "enum": [
@@ -36,17 +36,17 @@
       "type": "string"
     },
     "volar.autoCompleteRefs": {
-      "default": true,
+      "default": false,
       "description": "Auto-complete Ref value with `.value`.",
       "type": "boolean"
     },
-    "volar.checkVueTscVersion": {
+    "volar.autoWrapParentheses": {
       "default": true,
-      "description": "Check node_modules/vscode-vue-languageservice version when start extension.",
+      "description": "Auto-wrap `()` to As Expression in interpolations for fix issue #520.",
       "type": "boolean"
     },
     "volar.codeLens.pugTools": {
-      "default": true,
+      "default": false,
       "description": "[pug ☐] code lens.",
       "type": "boolean"
     },
@@ -56,36 +56,16 @@
       "type": "boolean"
     },
     "volar.codeLens.scriptSetupTools": {
-      "default": true,
+      "default": false,
       "description": "[ref sugar ☐] code lens.",
       "type": "boolean"
     },
-    "volar.formatting.printWidth": {
-      "default": 100,
-      "description": "HTML formatting print width.",
-      "type": "number"
-    },
-    "volar.icon.finder": {
-      "default": false,
-      "description": "(Experimental) Show code finder icon in title area of editor.",
-      "type": "boolean"
-    },
-    "volar.icon.preview": {
-      "default": false,
-      "description": "(Experimental) Show preview component icon in title area of editor.",
-      "type": "boolean"
-    },
-    "volar.icon.splitEditors": {
+    "volar.completion.autoImportComponent": {
       "default": true,
-      "description": "Show split editor icon in title area of editor.",
+      "description": "Enabled auto-import for component with tag completion.",
       "type": "boolean"
     },
-    "volar.lowPowerMode": {
-      "default": false,
-      "description": "Using one language server to do the work of two language serves can reduce system resource usage, but features such as auto-complete will be much slower.",
-      "type": "boolean"
-    },
-    "volar.preferredAttrNameCase": {
+    "volar.completion.preferredAttrNameCase": {
       "default": "auto-kebab",
       "description": "Preferred attr name case.",
       "enum": [
@@ -102,7 +82,7 @@
       ],
       "type": "string"
     },
-    "volar.preferredTagNameCase": {
+    "volar.completion.preferredTagNameCase": {
       "default": "auto",
       "description": "Preferred tag name case.",
       "enum": [
@@ -119,6 +99,16 @@
       ],
       "type": "string"
     },
+    "volar.icon.preview": {
+      "default": true,
+      "description": "Show Vite / Nuxt App preview icon.",
+      "type": "boolean"
+    },
+    "volar.icon.splitEditors": {
+      "default": true,
+      "description": "Show split editor icon in title area of editor.",
+      "type": "boolean"
+    },
     "volar.preview.backgroundColor": {
       "default": "#fff",
       "description": "Component preview background color.",
@@ -134,29 +124,24 @@
       "description": "Component preview background style.",
       "type": "boolean"
     },
-    "volar.takeOverBuiltinTsExtension": {
-      "default": true,
-      "description": "If built-in VSCode TypeScript Extension disabled, take over language support for *.ts.",
-      "type": "boolean"
-    },
-    "volar.tsPlugin": {
-      "default": null,
-      "description": "Enable Vue TS Server Plugin.\nSince TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases, this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), then you need to enable this setting.",
+    "volar.takeOverMode.enabled": {
+      "default": "auto",
+      "description": "Take over language support for *.ts.",
       "enum": [
-        null,
+        "auto",
         true,
         false
       ],
       "enumDescriptions": [
-        "Don't care (Don't reload VSCode)",
-        "Enable TS Plugin",
-        "Disable TS Plugin"
+        "Auto enable take over mode when built-in TS extension disabled.",
+        "Alway enable take over mode.",
+        "Never enable take over mode."
       ],
       "type": "boolean"
     },
-    "volar.tsPluginStatus": {
+    "volar.vueserver.useSecondServer": {
       "default": false,
-      "description": "Display TS Server Plugin status bar item.",
+      "description": "Use second server to progress heavy diagnostic works, the main server workhorse computing intellisense, operations such as auto-complete can respond faster. Note that this will lead to more memory usage.",
       "type": "boolean"
     }
   }
