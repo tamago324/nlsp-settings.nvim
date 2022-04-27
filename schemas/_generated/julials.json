@@ -162,6 +162,12 @@
       "scope": "window",
       "type": "object"
     },
+    "julia.execution.inlineResultsForCellEvaluation": {
+      "default": false,
+      "markdownDescription": "Show separate inline results for all code blocks in a cell",
+      "scope": "window",
+      "type": "boolean"
+    },
     "julia.execution.resultType": {
       "default": "both",
       "description": "Specifies how to show inline execution results",
