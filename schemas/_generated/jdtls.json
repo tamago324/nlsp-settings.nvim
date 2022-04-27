@@ -146,12 +146,6 @@
       "scope": "window",
       "type": "integer"
     },
-    "java.completion.overwrite": {
-      "default": true,
-      "description": "When set to true, code completion overwrites the current text. When set to false, code is simply added instead.",
-      "scope": "window",
-      "type": "boolean"
-    },
     "java.configuration.checkProjectSettingsExclusions": {
       "default": false,
       "deprecationMessage": "Please use 'java.import.generatesMetadataFilesAtProjectRoot' to control whether to generate the project metadata files at the project root. And use 'files.exclude' to control whether to hide the project metadata files from the file explorer.",
