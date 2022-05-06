@@ -10,8 +10,12 @@ local function require_all_configs()
   -- Configs are lazy-loaded, tickle them to populate the `configs` singleton.
   for _,v in ipairs(vim.fn.glob('nvim-lspconfig/lua/lspconfig/server_configurations/*.lua', 1, 1)) do
     local module_name = v:gsub('.*/', ''):gsub('%.lua$', '')
-    configs[module_name] = require('lspconfig.server_configurations.'..module_name)
-    fin = true
+
+    -- vim.fn.getcwd() が使われているため、必ずエラーになってしまうため、その対応
+    if module_name ~= 'glint' then
+      configs[module_name] = require('lspconfig.server_configurations.'..module_name)
+      fin = true
+    end
   end
 
   if fin then
