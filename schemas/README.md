@@ -5,7 +5,7 @@
 - [ ] ansiblels
 - [ ] arduino_language_server
 - [ ] asm_lsp
-- [ ] astro
+- [x] astro
 - [ ] awk_ls
 - [x] bashls
 - [ ] beancount
