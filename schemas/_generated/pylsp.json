@@ -345,7 +345,7 @@
       "type": "boolean"
     },
     "pylsp.plugins.rope_completion.enabled": {
-      "default": true,
+      "default": false,
       "description": "Enable or disable the plugin.",
       "type": "boolean"
     },
