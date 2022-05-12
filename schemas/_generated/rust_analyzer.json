@@ -17,6 +17,18 @@
       "markdownDescription": "Placeholder expression to use for missing expressions in assists.",
       "type": "string"
     },
+    "rust-analyzer.cachePriming.enable": {
+      "default": true,
+      "markdownDescription": "Warm up caches on project load.",
+      "type": "boolean"
+    },
+    "rust-analyzer.cachePriming.numThreads": {
+      "default": 0,
+      "markdownDescription": "How many worker threads to to handle priming caches. The default `0` means to pick automatically.",
+      "maximum": 255,
+      "minimum": 0,
+      "type": "number"
+    },
     "rust-analyzer.cargo.autoreload": {
       "default": true,
       "markdownDescription": "Automatically refresh project info via `cargo metadata` on\n`Cargo.toml` or `.cargo/config.toml` changes.",
@@ -597,18 +609,6 @@
       "default": true,
       "markdownDescription": "Whether to show `can't find Cargo.toml` error message.",
       "type": "boolean"
-    },
-    "rust-analyzer.primeCaches.enable": {
-      "default": true,
-      "markdownDescription": "Warm up caches on project load.",
-      "type": "boolean"
-    },
-    "rust-analyzer.primeCaches.numThreads": {
-      "default": 0,
-      "markdownDescription": "How many worker threads to to handle priming caches. The default `0` means to pick automatically.",
-      "maximum": 255,
-      "minimum": 0,
-      "type": "number"
     },
     "rust-analyzer.procMacro.attributes.enable": {
       "default": true,
