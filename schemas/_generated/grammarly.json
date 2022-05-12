@@ -261,6 +261,11 @@
       "required": true,
       "scope": "window",
       "type": "array"
+    },
+    "grammarly.startTextCheckInPausedState": {
+      "default": false,
+      "description": "Start text checking session in paused state",
+      "type": "boolean"
     }
   }
 }
