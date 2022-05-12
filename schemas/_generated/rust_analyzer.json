@@ -501,9 +501,22 @@
       "type": "boolean"
     },
     "rust-analyzer.inlayHints.reborrowHints.enable": {
-      "default": false,
+      "default": "never",
+      "enum": [
+        "always",
+        "never",
+        "mutable"
+      ],
+      "enumDescriptions": [
+        "Always show reborrow hints.",
+        "Never show reborrow hints.",
+        "Only show mutable reborrow hints."
+      ],
       "markdownDescription": "Whether to show inlay type hints for compiler inserted reborrows.",
-      "type": "boolean"
+      "type": [
+        "string",
+        "boolean"
+      ]
     },
     "rust-analyzer.inlayHints.renderColons": {
       "default": true,
