@@ -378,7 +378,7 @@
     },
     "rust-analyzer.hover.actions.debug.enable": {
       "default": true,
-      "markdownDescription": "Whether to show `Debug` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
+      "markdownDescription": "Whether to show `Debug` action. Only applies when\n`#rust-analyzer.hover.actions.enable#` is set.",
       "type": "boolean"
     },
     "rust-analyzer.hover.actions.enable": {
@@ -388,22 +388,22 @@
     },
     "rust-analyzer.hover.actions.gotoTypeDef.enable": {
       "default": true,
-      "markdownDescription": "Whether to show `Go to Type Definition` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
+      "markdownDescription": "Whether to show `Go to Type Definition` action. Only applies when\n`#rust-analyzer.hover.actions.enable#` is set.",
       "type": "boolean"
     },
     "rust-analyzer.hover.actions.implementations.enable": {
       "default": true,
-      "markdownDescription": "Whether to show `Implementations` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
+      "markdownDescription": "Whether to show `Implementations` action. Only applies when\n`#rust-analyzer.hover.actions.enable#` is set.",
       "type": "boolean"
     },
     "rust-analyzer.hover.actions.references.enable": {
       "default": false,
-      "markdownDescription": "Whether to show `References` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
+      "markdownDescription": "Whether to show `References` action. Only applies when\n`#rust-analyzer.hover.actions.enable#` is set.",
       "type": "boolean"
     },
     "rust-analyzer.hover.actions.run.enable": {
       "default": true,
-      "markdownDescription": "Whether to show `Run` action. Only applies when\n`#rust-analyzer.hoverActions.enable#` is set.",
+      "markdownDescription": "Whether to show `Run` action. Only applies when\n`#rust-analyzer.hover.actions.enable#` is set.",
       "type": "boolean"
     },
     "rust-analyzer.hover.documentation.enable": {
