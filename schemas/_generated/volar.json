@@ -132,6 +132,21 @@
       "description": "Component preview background style.",
       "type": "boolean"
     },
+    "volar.splitEditors.layout.left": {
+      "default": [
+        "script",
+        "scriptSetup",
+        "styles"
+      ],
+      "type": "array"
+    },
+    "volar.splitEditors.layout.right": {
+      "default": [
+        "template",
+        "customBlocks"
+      ],
+      "type": "array"
+    },
     "volar.takeOverMode.enabled": {
       "default": "auto",
       "description": "Take over language support for *.ts.",
