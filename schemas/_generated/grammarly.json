@@ -222,6 +222,32 @@
       "scope": "language-overridable",
       "type": "boolean"
     },
+    "grammarly.files.exclude": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "Configure [glob patterns](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options) for excluding files and folders.",
+      "order": 2,
+      "required": true,
+      "scope": "window",
+      "type": "array"
+    },
+    "grammarly.files.include": {
+      "default": [
+        "**/readme.md",
+        "**/README.md",
+        "**/*.txt"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "Configure [glob patterns](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options) for including files and folders.",
+      "order": 1,
+      "required": true,
+      "scope": "window",
+      "type": "array"
+    },
     "grammarly.patterns": {
       "default": [
         "**/readme.md",
@@ -232,6 +258,7 @@
       "items": {
         "type": "string"
       },
+      "markdownDeprecationMessage": "Use [Files: Include](#grammarly.files.include#)",
       "order": 0,
       "required": true,
       "scope": "window",
@@ -257,7 +284,7 @@
         },
         "type": "object"
       },
-      "order": 1,
+      "order": 99,
       "required": true,
       "scope": "window",
       "type": "array"
