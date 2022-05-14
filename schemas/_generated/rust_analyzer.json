@@ -56,21 +56,25 @@
       "type": "boolean"
     },
     "rust-analyzer.cargo.features": {
+      "anyOf": [
+        {
+          "enum": [
+            "all"
+          ],
+          "enumDescriptions": [
+            "Pass `--all-features` to cargo"
+          ],
+          "type": "string"
+        },
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      ],
       "default": [],
-      "enum": [
-        "all"
-      ],
-      "enumDescriptions": [
-        "Pass `--all-features` to cargo"
-      ],
-      "items": {
-        "type": "string"
-      },
-      "markdownDescription": "List of features to activate.\n\nSet this to `\"all\"` to pass `--all-features` to cargo.",
-      "type": [
-        "string",
-        "array"
-      ]
+      "markdownDescription": "List of features to activate.\n\nSet this to `\"all\"` to pass `--all-features` to cargo."
     },
     "rust-analyzer.cargo.noDefaultFeatures": {
       "default": false,
@@ -157,7 +161,7 @@
     },
     "rust-analyzer.checkOnSave.noDefaultFeatures": {
       "default": null,
-      "markdownDescription": "Do not activate the `default` feature.",
+      "markdownDescription": "Whether to pass `--no-default-features` to cargo. Defaults to\n`#rust-analyzer.cargo.noDefaultFeatures#`.",
       "type": [
         "null",
         "boolean"
@@ -193,24 +197,19 @@
       "type": "boolean"
     },
     "rust-analyzer.completion.callable.snippets": {
-      "anyOf": [
-        {
-          "enum": [
-            "fill_arguments",
-            "add_parentheses"
-          ],
-          "enumDescriptions": [
-            "Add call parentheses and pre-fill arguments",
-            "Add call parentheses"
-          ],
-          "type": "string"
-        },
-        {
-          "type": "null"
-        }
-      ],
       "default": "fill_arguments",
-      "markdownDescription": "Whether to add parenthesis and argument snippets when completing function."
+      "enum": [
+        "fill_arguments",
+        "add_parentheses",
+        "none"
+      ],
+      "enumDescriptions": [
+        "Add call parentheses and pre-fill arguments.",
+        "Add call parentheses.",
+        "Do no snippet completions for callables."
+      ],
+      "markdownDescription": "Whether to add parenthesis and argument snippets when completing function.",
+      "type": "string"
     },
     "rust-analyzer.completion.postfix.enable": {
       "default": true,
@@ -474,26 +473,19 @@
       "type": "boolean"
     },
     "rust-analyzer.inlayHints.lifetimeElisionHints.enable": {
-      "anyOf": [
-        {
-          "enum": [
-            "always",
-            "never",
-            "skip_trivial"
-          ],
-          "enumDescriptions": [
-            "Always show lifetime elision hints.",
-            "Never show lifetime elision hints.",
-            "Only show lifetime elision hints if a return type is involved."
-          ],
-          "type": "string"
-        },
-        {
-          "type": "boolean"
-        }
-      ],
       "default": "never",
-      "markdownDescription": "Whether to show inlay type hints for elided lifetimes in function signatures."
+      "enum": [
+        "always",
+        "never",
+        "skip_trivial"
+      ],
+      "enumDescriptions": [
+        "Always show lifetime elision hints.",
+        "Never show lifetime elision hints.",
+        "Only show lifetime elision hints if a return type is involved."
+      ],
+      "markdownDescription": "Whether to show inlay type hints for elided lifetimes in function signatures.",
+      "type": "string"
     },
     "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": {
       "default": false,
@@ -515,26 +507,19 @@
       "type": "boolean"
     },
     "rust-analyzer.inlayHints.reborrowHints.enable": {
-      "anyOf": [
-        {
-          "enum": [
-            "always",
-            "never",
-            "mutable"
-          ],
-          "enumDescriptions": [
-            "Always show reborrow hints.",
-            "Never show reborrow hints.",
-            "Only show mutable reborrow hints."
-          ],
-          "type": "string"
-        },
-        {
-          "type": "boolean"
-        }
-      ],
       "default": "never",
-      "markdownDescription": "Whether to show inlay type hints for compiler inserted reborrows."
+      "enum": [
+        "always",
+        "never",
+        "mutable"
+      ],
+      "enumDescriptions": [
+        "Always show reborrow hints.",
+        "Never show reborrow hints.",
+        "Only show mutable reborrow hints."
+      ],
+      "markdownDescription": "Whether to show inlay type hints for compiler inserted reborrows.",
+      "type": "string"
     },
     "rust-analyzer.inlayHints.renderColons": {
       "default": true,
@@ -809,8 +794,8 @@
         "all_symbols"
       ],
       "enumDescriptions": [
-        "Search for types only",
-        "Search for all symbols kinds"
+        "Search for types only.",
+        "Search for all symbols kinds."
       ],
       "markdownDescription": "Workspace symbol search kind.",
       "type": "string"
@@ -828,8 +813,8 @@
         "workspace_and_dependencies"
       ],
       "enumDescriptions": [
-        "Search in current workspace only",
-        "Search in current workspace and dependencies"
+        "Search in current workspace only.",
+        "Search in current workspace and dependencies."
       ],
       "markdownDescription": "Workspace symbol search scope.",
       "type": "string"
