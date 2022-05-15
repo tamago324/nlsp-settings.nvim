@@ -23,14 +23,19 @@
       "type": "string"
     },
     "perl.containerName": {
-      "default": "exec",
+      "default": null,
       "description": "Image to start or container to exec inside or pod to use",
       "type": "string"
     },
     "perl.debugAdapterPort": {
-      "default": "13603",
+      "default": 13603,
       "description": "port to use for connection between vscode and debug adapter inside Perl::LanguageServer. On a multi user system every user must use a different port.",
-      "type": "string"
+      "type": "integer"
+    },
+    "perl.debugAdapterPortRange": {
+      "default": 100,
+      "description": "if debugAdapterPort is in use try ports from debugAdapterPort to debugAdapterPort + debugAdapterPortRange. Default 100.",
+      "type": "integer"
     },
     "perl.disableCache": {
       "default": false,
