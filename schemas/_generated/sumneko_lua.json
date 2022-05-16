@@ -1109,7 +1109,7 @@
       "type": "object"
     },
     "Lua.format.enable": {
-      "default": "true",
+      "default": true,
       "markdownDescription": "%config.format.enable%",
       "scope": "resource",
       "type": "boolean"
