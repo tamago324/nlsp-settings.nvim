@@ -38,6 +38,16 @@
       "title": "CSS: Hover Info",
       "type": "boolean"
     },
+    "astro.format.indentFrontmatter": {
+      "default": true,
+      "title": "Formatting: Indent the frontmatter by one level of indentation",
+      "type": "boolean"
+    },
+    "astro.format.newLineAfterFrontmatter": {
+      "default": true,
+      "title": "Formatting: Add a line return between the frontmatter and the template",
+      "type": "boolean"
+    },
     "astro.html.completions.emmet": {
       "default": true,
       "description": "Enable Emmet completions for HTML",
