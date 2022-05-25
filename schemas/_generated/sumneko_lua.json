@@ -124,6 +124,17 @@
       "scope": "resource",
       "type": "array"
     },
+    "Lua.diagnostics.disableScheme": {
+      "default": [
+        "git"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%config.diagnostics.disableScheme%",
+      "scope": "resource",
+      "type": "array"
+    },
     "Lua.diagnostics.enable": {
       "default": true,
       "markdownDescription": "%config.diagnostics.enable%",
@@ -1563,6 +1574,19 @@
       "markdownDescription": "%config.workspace.preloadFileSize%",
       "scope": "resource",
       "type": "integer"
+    },
+    "Lua.workspace.supportScheme": {
+      "default": [
+        "file",
+        "untitled",
+        "git"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%config.workspace.supportScheme%",
+      "scope": "resource",
+      "type": "array"
     },
     "Lua.workspace.useGitIgnore": {
       "default": true,
