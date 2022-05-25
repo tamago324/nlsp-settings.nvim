@@ -39,13 +39,15 @@
       "type": "boolean"
     },
     "astro.format.indentFrontmatter": {
-      "default": true,
-      "title": "Formatting: Indent the frontmatter by one level of indentation",
+      "default": false,
+      "description": "Indent the formatter by one level of indentation",
+      "title": "Formatting: Indent frontmatter",
       "type": "boolean"
     },
     "astro.format.newLineAfterFrontmatter": {
       "default": true,
-      "title": "Formatting: Add a line return between the frontmatter and the template",
+      "description": "Add a line return between the frontmatter and the template",
+      "title": "Formatting: Add line return after the frontmatter",
       "type": "boolean"
     },
     "astro.html.completions.emmet": {
