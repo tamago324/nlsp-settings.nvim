@@ -814,6 +814,11 @@
       "scope": "window",
       "type": "string"
     },
+    "rust-analyzer.typing.autoClosingAngleBrackets.enable": {
+      "default": false,
+      "markdownDescription": "Whether to insert closing angle brackets when typing an opening angle bracket of a generic argument list.",
+      "type": "boolean"
+    },
     "rust-analyzer.workspace.symbol.search.kind": {
       "default": "only_types",
       "enum": [
