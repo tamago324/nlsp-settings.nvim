@@ -484,9 +484,19 @@
       "type": "integer"
     },
     "rust-analyzer.inlayHints.closureReturnTypeHints.enable": {
-      "default": false,
-      "markdownDescription": "Whether to show inlay type hints for return types of closures with blocks.",
-      "type": "boolean"
+      "default": "never",
+      "enum": [
+        "always",
+        "never",
+        "with_block"
+      ],
+      "enumDescriptions": [
+        "Always show type hints for return types of closures.",
+        "Never show type hints for return types of closures.",
+        "Only show type hints for return types of closures with blocks."
+      ],
+      "markdownDescription": "Whether to show inlay type hints for return types of closures.",
+      "type": "string"
     },
     "rust-analyzer.inlayHints.lifetimeElisionHints.enable": {
       "default": "never",
