@@ -10,7 +10,7 @@
     },
     "perlnavigator.includePaths": {
       "default": [],
-      "description": "Array of paths added to @INC. You can use $workspaceRoot as a placeholder.",
+      "description": "Array of paths added to @INC. You can use $workspaceFolder as a placeholder.",
       "scope": "resource",
       "type": "array"
     },
