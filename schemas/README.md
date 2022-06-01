@@ -145,6 +145,7 @@
 - [ ] vls
 - [x] volar
 - [x] vuels
+- [ ] wgsl_analyzer
 - [x] yamlls
 - [x] zeta_note
 - [ ] zk
