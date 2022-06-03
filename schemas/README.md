@@ -3,6 +3,7 @@
 - [x] als
 - [ ] angularls
 - [ ] ansiblels
+- [ ] apex_ls
 - [ ] arduino_language_server
 - [ ] asm_lsp
 - [x] astro
@@ -127,6 +128,7 @@
 - [x] stylelint_lsp
 - [x] sumneko_lua
 - [x] svelte
+- [ ] svlangserver
 - [ ] svls
 - [ ] tailwindcss
 - [ ] taplo
