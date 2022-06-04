@@ -23,6 +23,12 @@
       "order": 2,
       "type": "array"
     },
+    "swift.buildPath": {
+      "default": "",
+      "markdownDescription": "Path to the build directory passed to all swift package manager commands.",
+      "order": 8,
+      "type": "string"
+    },
     "swift.excludePathsFromPackageDependencies": {
       "default": [
         ".git",
