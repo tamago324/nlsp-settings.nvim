@@ -72,6 +72,7 @@
 - [ ] lelwel_ls
 - [ ] lemminx
 - [x] ltex
+- [ ] marksman
 - [ ] metals
 - [ ] mint
 - [ ] mm0_ls
@@ -138,17 +139,18 @@
 - [ ] texlab
 - [ ] tflint
 - [ ] theme_check
+- [ ] tilt_ls
 - [ ] tsserver
 - [ ] typeprof
 - [ ] vala_ls
 - [ ] vdmj
 - [ ] verible
 - [ ] vimls
+- [ ] visualforce_ls
 - [ ] vls
 - [x] volar
 - [x] vuels
 - [ ] wgsl_analyzer
 - [x] yamlls
-- [x] zeta_note
 - [ ] zk
 - [ ] zls
