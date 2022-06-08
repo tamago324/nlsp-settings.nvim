@@ -129,7 +129,7 @@
 - [x] stylelint_lsp
 - [x] sumneko_lua
 - [x] svelte
-- [ ] svlangserver
+- [x] svlangserver
 - [ ] svls
 - [ ] tailwindcss
 - [ ] taplo
