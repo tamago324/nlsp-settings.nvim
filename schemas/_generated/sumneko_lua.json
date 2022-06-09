@@ -2,30 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of sumneko_lua",
   "properties": {
-    "Lua.IntelliSense.traceBeSetted": {
-      "default": false,
-      "markdownDescription": "%config.IntelliSense.traceBeSetted%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "Lua.IntelliSense.traceFieldInject": {
-      "default": false,
-      "markdownDescription": "%config.IntelliSense.traceFieldInject%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "Lua.IntelliSense.traceLocalSet": {
-      "default": false,
-      "markdownDescription": "%config.IntelliSense.traceLocalSet%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "Lua.IntelliSense.traceReturn": {
-      "default": false,
-      "markdownDescription": "%config.IntelliSense.traceReturn%",
-      "scope": "resource",
-      "type": "boolean"
-    },
     "Lua.completion.autoRequire": {
       "default": true,
       "markdownDescription": "%config.completion.autoRequire%",
@@ -117,6 +93,7 @@
       "type": "boolean"
     },
     "Lua.diagnostics.disable": {
+      "default": [],
       "items": {
         "type": "string"
       },
@@ -142,6 +119,7 @@
       "type": "boolean"
     },
     "Lua.diagnostics.globals": {
+      "default": [],
       "items": {
         "type": "string"
       },
@@ -158,9 +136,9 @@
       ],
       "markdownDescription": "%config.diagnostics.ignoredFiles%",
       "markdownEnumDescriptions": [
-        "%config.diagnostics.files.Enable%",
-        "%config.diagnostics.files.Opened%",
-        "%config.diagnostics.files.Disable%"
+        "%config.diagnostics.ignoredFiles.Enable%",
+        "%config.diagnostics.ignoredFiles.Opened%",
+        "%config.diagnostics.ignoredFiles.Disable%"
       ],
       "scope": "resource",
       "type": "string"
@@ -174,9 +152,9 @@
       ],
       "markdownDescription": "%config.diagnostics.libraryFiles%",
       "markdownEnumDescriptions": [
-        "%config.diagnostics.files.Enable%",
-        "%config.diagnostics.files.Opened%",
-        "%config.diagnostics.files.Disable%"
+        "%config.diagnostics.libraryFiles.Enable%",
+        "%config.diagnostics.libraryFiles.Opened%",
+        "%config.diagnostics.libraryFiles.Disable%"
       ],
       "scope": "resource",
       "type": "string"
@@ -468,6 +446,16 @@
         "redundant-value": {
           "default": "Opened",
           "description": "%config.diagnostics.redundant-value%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None"
+          ],
+          "type": "string"
+        },
+        "spell-check": {
+          "default": "None",
+          "description": "%config.diagnostics.spell-check%",
           "enum": [
             "Any",
             "Opened",
@@ -943,6 +931,17 @@
           ],
           "type": "string"
         },
+        "spell-check": {
+          "default": "Information",
+          "description": "%config.diagnostics.spell-check%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint"
+          ],
+          "type": "string"
+        },
         "trailing-space": {
           "default": "Hint",
           "description": "%config.diagnostics.trailing-space%",
@@ -1115,8 +1114,17 @@
       "type": "integer"
     },
     "Lua.format.defaultConfig": {
+      "additionalProperties": false,
+      "default": [],
       "markdownDescription": "%config.format.defaultConfig%",
+      "patternProperties": {
+        ".*": {
+          "default": "",
+          "type": "string"
+        }
+      },
       "scope": "resource",
+      "title": "defaultConfig",
       "type": "object"
     },
     "Lua.format.enable": {
@@ -1140,6 +1148,12 @@
       ],
       "scope": "resource",
       "type": "string"
+    },
+    "Lua.hint.await": {
+      "default": true,
+      "markdownDescription": "%config.hint.await%",
+      "scope": "resource",
+      "type": "boolean"
     },
     "Lua.hint.enable": {
       "default": false,
@@ -1187,6 +1201,12 @@
       "scope": "resource",
       "type": "integer"
     },
+    "Lua.hover.expandAlias": {
+      "default": true,
+      "markdownDescription": "%config.hover.expandAlias%",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "Lua.hover.previewFields": {
       "default": 20,
       "markdownDescription": "%config.hover.previewFields%",
@@ -1212,6 +1232,7 @@
       "type": "integer"
     },
     "Lua.misc.parameters": {
+      "default": [],
       "items": {
         "type": "string"
       },
@@ -1375,6 +1396,7 @@
         }
       },
       "scope": "resource",
+      "title": "builtin",
       "type": "object"
     },
     "Lua.runtime.fileEncoding": {
@@ -1386,10 +1408,23 @@
         "utf16be"
       ],
       "markdownDescription": "%config.runtime.fileEncoding%",
+      "markdownEnumDescriptions": [
+        "%config.runtime.fileEncoding.utf8%",
+        "%config.runtime.fileEncoding.ansi%",
+        "%config.runtime.fileEncoding.utf16le%",
+        "%config.runtime.fileEncoding.utf16be%"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "Lua.runtime.meta": {
+      "default": "${version} ${language} ${encoding}",
+      "markdownDescription": "%config.runtime.meta%",
       "scope": "resource",
       "type": "string"
     },
     "Lua.runtime.nonstandardSymbol": {
+      "default": [],
       "items": {
         "enum": [
           "//",
@@ -1437,6 +1472,7 @@
     },
     "Lua.runtime.special": {
       "additionalProperties": false,
+      "default": [],
       "markdownDescription": "%config.runtime.special%",
       "patternProperties": {
         ".*": {
@@ -1457,6 +1493,7 @@
         }
       },
       "scope": "resource",
+      "title": "special",
       "type": "object"
     },
     "Lua.runtime.unicodeName": {
@@ -1475,6 +1512,13 @@
         "LuaJIT"
       ],
       "markdownDescription": "%config.runtime.version%",
+      "markdownEnumDescriptions": [
+        "%config.runtime.version.Lua 5.1%",
+        "%config.runtime.version.Lua 5.2%",
+        "%config.runtime.version.Lua 5.3%",
+        "%config.runtime.version.Lua 5.4%",
+        "%config.runtime.version.LuaJIT%"
+      ],
       "scope": "resource",
       "type": "string"
     },
@@ -1507,6 +1551,15 @@
       "markdownDescription": "%config.signatureHelp.enable%",
       "scope": "resource",
       "type": "boolean"
+    },
+    "Lua.spell.dict": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%config.spell.dict%",
+      "scope": "resource",
+      "type": "array"
     },
     "Lua.telemetry.enable": {
       "default": null,
@@ -1556,6 +1609,7 @@
       "type": "boolean"
     },
     "Lua.workspace.library": {
+      "default": [],
       "items": {
         "type": "string"
       },
@@ -1595,6 +1649,7 @@
       "type": "boolean"
     },
     "Lua.workspace.userThirdParty": {
+      "default": [],
       "items": {
         "type": "string"
       },
