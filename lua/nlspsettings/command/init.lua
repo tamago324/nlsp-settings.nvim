@@ -81,8 +81,7 @@ local open = function(dir, server_name)
     uv.fs_close(fd)
   end
 
-  local cmd = (vim.api.nvim_buf_get_option(0, 'modified') and 'split') or 'edit'
-  vim.api.nvim_command(cmd .. ' ' .. filepath)
+  vim.cmd(string.format('tabnew %s', filepath))
 end
 
 --- Open a settings file that matches the current buffer
