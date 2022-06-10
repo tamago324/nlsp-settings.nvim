@@ -680,6 +680,11 @@
         "string"
       ]
     },
+    "rust-analyzer.restartServerOnConfigChange": {
+      "default": false,
+      "markdownDescription": "Whether to restart the server automatically when certain settings that require a restart are changed.",
+      "type": "boolean"
+    },
     "rust-analyzer.runnableEnv": {
       "anyOf": [
         {
