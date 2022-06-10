@@ -406,6 +406,17 @@
           ],
           "type": "string"
         },
+        "reportTypeCommentUsage": {
+          "default": "none",
+          "description": "Diagnostics for usage of deprecated type comments.",
+          "enum": [
+            "none",
+            "information",
+            "warning",
+            "error"
+          ],
+          "type": "string"
+        },
         "reportTypedDictNotRequiredAccess": {
           "default": "error",
           "description": "Diagnostics for an attempt to access a non-required key within a TypedDict without a check for its presence.",
