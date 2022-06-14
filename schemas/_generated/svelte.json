@@ -128,12 +128,6 @@
       "title": "HTML: Linked Editing",
       "type": "boolean"
     },
-    "svelte.plugin.html.renameTags.enable": {
-      "default": true,
-      "description": "Enable rename for the opening/closing tag pairs in HTML",
-      "title": "HTML: Rename tags",
-      "type": "boolean"
-    },
     "svelte.plugin.html.tagComplete.enable": {
       "default": true,
       "description": "Enable HTML tag auto closing",
@@ -271,12 +265,6 @@
       "title": "TypeScript: Completions",
       "type": "boolean"
     },
-    "svelte.plugin.typescript.definitions.enable": {
-      "default": true,
-      "description": "Enable go to definition for TypeScript",
-      "title": "TypeScript: Go to Definition",
-      "type": "boolean"
-    },
     "svelte.plugin.typescript.diagnostics.enable": {
       "default": true,
       "description": "Enable diagnostic messages for TypeScript",
@@ -295,28 +283,10 @@
       "title": "TypeScript",
       "type": "boolean"
     },
-    "svelte.plugin.typescript.findReferences.enable": {
-      "default": true,
-      "description": "Enable find-references for TypeScript",
-      "title": "TypeScript: Find References",
-      "type": "boolean"
-    },
     "svelte.plugin.typescript.hover.enable": {
       "default": true,
       "description": "Enable hover info for TypeScript",
       "title": "TypeScript: Hover Info",
-      "type": "boolean"
-    },
-    "svelte.plugin.typescript.implementation.enable": {
-      "default": true,
-      "description": "Enable go to implementation for Typescript",
-      "title": "Typescript: Go to Implementation",
-      "type": "boolean"
-    },
-    "svelte.plugin.typescript.rename.enable": {
-      "default": true,
-      "description": "Enable rename functionality for JS/TS variables inside Svelte files",
-      "title": "TypeScript: Rename",
       "type": "boolean"
     },
     "svelte.plugin.typescript.selectionRange.enable": {
@@ -335,12 +305,6 @@
       "default": true,
       "description": "Enable signature help (parameter hints) for TypeScript",
       "title": "TypeScript: Signature Help",
-      "type": "boolean"
-    },
-    "svelte.plugin.typescript.typeDefinition.enable": {
-      "default": true,
-      "description": "Enable go to Type Definition for Typescript",
-      "title": "Typescript: Go to Type Definition",
       "type": "boolean"
     },
     "svelte.trace.server": {
