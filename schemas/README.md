@@ -45,6 +45,7 @@
 - [ ] fstar
 - [ ] gdscript
 - [ ] ghcide
+- [ ] ghdl_ls
 - [ ] golangci_lint_ls
 - [ ] gopls
 - [ ] gradle_ls
