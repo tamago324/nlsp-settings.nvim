@@ -89,6 +89,7 @@
 - [x] perlls
 - [x] perlnavigator
 - [x] perlpls
+- [ ] phan
 - [ ] phpactor
 - [ ] please
 - [ ] powershell_es
