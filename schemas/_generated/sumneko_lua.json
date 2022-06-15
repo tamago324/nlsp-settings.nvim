@@ -1487,7 +1487,9 @@
             "loadfile",
             "pcall",
             "xpcall",
-            "assert"
+            "assert",
+            "error",
+            "type"
           ],
           "type": "string"
         }
