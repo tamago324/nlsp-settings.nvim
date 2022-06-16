@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of zls",
+  "properties": {
+    "zigLanguageClient.debugLog": {
+      "description": "Enable debug logging in release builds of zls.",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "zigLanguageClient.path": {
+      "description": "Path to `zls` executable. Example: `C:/zls/zig-cache/bin/zls.exe`.",
+      "scope": "resource",
+      "type": "string"
+    }
+  }
+}

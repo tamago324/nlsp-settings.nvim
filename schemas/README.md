@@ -20,7 +20,7 @@
 - [x] codeqlls
 - [ ] crystalline
 - [ ] csharp_ls
-- [ ] cssls
+- [x] cssls
 - [ ] cssmodules_ls
 - [ ] cucumber_language_server
 - [x] dartls
@@ -41,24 +41,24 @@
 - [ ] flux_lsp
 - [ ] foam_ls
 - [x] fortls
-- [ ] fsautocomplete
+- [x] fsautocomplete
 - [ ] fstar
 - [ ] gdscript
 - [ ] ghcide
 - [ ] ghdl_ls
 - [ ] golangci_lint_ls
-- [ ] gopls
+- [x] gopls
 - [ ] gradle_ls
 - [x] grammarly
 - [ ] graphql
 - [ ] groovyls
-- [ ] haxe_language_server
+- [x] haxe_language_server
 - [ ] hdl_checker
-- [ ] hhvm
+- [x] hhvm
 - [x] hie
 - [ ] hls
 - [ ] hoon_ls
-- [ ] html
+- [x] html
 - [ ] idris2_lsp
 - [x] intelephense
 - [x] java_language_server
@@ -82,7 +82,7 @@
 - [ ] ocamlls
 - [ ] ocamllsp
 - [ ] ols
-- [ ] omnisharp
+- [x] omnisharp
 - [ ] opencl_ls
 - [ ] openscad_ls
 - [ ] pasls
@@ -106,8 +106,8 @@
 - [ ] racket_langserver
 - [ ] reason_ls
 - [ ] remark_ls
-- [ ] rescriptls
-- [ ] rls
+- [x] rescriptls
+- [x] rls
 - [ ] rnix
 - [ ] robotframework_ls
 - [x] rome
@@ -120,7 +120,7 @@
 - [ ] solang
 - [x] solargraph
 - [ ] solc
-- [ ] solidity_ls
+- [x] solidity_ls
 - [x] sorbet
 - [x] sourcekit
 - [ ] sourcery
@@ -133,7 +133,7 @@
 - [x] svelte
 - [x] svlangserver
 - [ ] svls
-- [ ] tailwindcss
+- [x] tailwindcss
 - [ ] taplo
 - [ ] teal_ls
 - [ ] terraform_lsp
@@ -155,4 +155,4 @@
 - [ ] wgsl_analyzer
 - [x] yamlls
 - [ ] zk
-- [ ] zls
+- [x] zls

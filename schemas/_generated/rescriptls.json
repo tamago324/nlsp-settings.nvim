@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of rescriptls",
+  "properties": {
+    "rescript.settings.askToStartBuild": {
+      "default": true,
+      "description": "Whether you want the extension to prompt for autostarting a ReScript build if a project is opened with no build running.",
+      "scope": "language-overridable",
+      "type": "boolean"
+    },
+    "rescript.settings.autoRunCodeAnalysis": {
+      "default": false,
+      "description": "Automatically start ReScript's code analysis.",
+      "type": "boolean"
+    }
+  }
+}

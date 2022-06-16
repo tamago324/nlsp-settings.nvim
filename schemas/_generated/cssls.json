@@ -1,0 +1,324 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of cssls",
+  "properties": {
+    "css.completion.completePropertyWithSemicolon": {
+      "default": true,
+      "description": "%css.completion.completePropertyWithSemicolon.desc%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "css.completion.triggerPropertyValueCompletion": {
+      "default": true,
+      "description": "%css.completion.triggerPropertyValueCompletion.desc%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "css.customData": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%css.customData.desc%",
+      "scope": "resource",
+      "type": "array"
+    },
+    "css.format.braceStyle": {
+      "default": "collapse",
+      "enum": [
+        "collapse",
+        "expand"
+      ],
+      "markdownDescription": "%css.format.braceStyle.desc%",
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.format.enable": {
+      "default": true,
+      "description": "%css.format.enable.desc%",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "css.format.maxPreserveNewLines": {
+      "default": null,
+      "markdownDescription": "%css.format.maxPreserveNewLines.desc%",
+      "scope": "resource",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "css.format.newlineBetweenRules": {
+      "default": true,
+      "markdownDescription": "%css.format.newlineBetweenRules.desc%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "css.format.newlineBetweenSelectors": {
+      "default": true,
+      "markdownDescription": "%css.format.newlineBetweenSelectors.desc%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "css.format.preserveNewLines": {
+      "default": true,
+      "markdownDescription": "%css.format.preserveNewLines.desc%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "css.format.spaceAroundSelectorSeparator": {
+      "default": false,
+      "markdownDescription": "%css.format.spaceAroundSelectorSeparator.desc%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "css.hover.documentation": {
+      "default": true,
+      "description": "%css.hover.documentation%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "css.hover.references": {
+      "default": true,
+      "description": "%css.hover.references%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "css.lint.argumentsInColorFunction": {
+      "default": "error",
+      "description": "%css.lint.argumentsInColorFunction.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.boxModel": {
+      "default": "ignore",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "markdownDescription": "%css.lint.boxModel.desc%",
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.compatibleVendorPrefixes": {
+      "default": "ignore",
+      "description": "%css.lint.compatibleVendorPrefixes.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.duplicateProperties": {
+      "default": "ignore",
+      "description": "%css.lint.duplicateProperties.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.emptyRules": {
+      "default": "warning",
+      "description": "%css.lint.emptyRules.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.float": {
+      "default": "ignore",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "markdownDescription": "%css.lint.float.desc%",
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.fontFaceProperties": {
+      "default": "warning",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "markdownDescription": "%css.lint.fontFaceProperties.desc%",
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.hexColorLength": {
+      "default": "error",
+      "description": "%css.lint.hexColorLength.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.idSelector": {
+      "default": "ignore",
+      "description": "%css.lint.idSelector.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.ieHack": {
+      "default": "ignore",
+      "description": "%css.lint.ieHack.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.importStatement": {
+      "default": "ignore",
+      "description": "%css.lint.importStatement.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.important": {
+      "default": "ignore",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "markdownDescription": "%css.lint.important.desc%",
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.propertyIgnoredDueToDisplay": {
+      "default": "warning",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "markdownDescription": "%css.lint.propertyIgnoredDueToDisplay.desc%",
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.universalSelector": {
+      "default": "ignore",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "markdownDescription": "%css.lint.universalSelector.desc%",
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.unknownAtRules": {
+      "default": "warning",
+      "description": "%css.lint.unknownAtRules.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.unknownProperties": {
+      "default": "warning",
+      "description": "%css.lint.unknownProperties.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.unknownVendorSpecificProperties": {
+      "default": "ignore",
+      "description": "%css.lint.unknownVendorSpecificProperties.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.validProperties": {
+      "default": [],
+      "description": "%css.lint.validProperties.desc%",
+      "items": {
+        "type": "string"
+      },
+      "scope": "resource",
+      "type": "array",
+      "uniqueItems": true
+    },
+    "css.lint.vendorPrefix": {
+      "default": "warning",
+      "description": "%css.lint.vendorPrefix.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.lint.zeroUnits": {
+      "default": "ignore",
+      "description": "%css.lint.zeroUnits.desc%",
+      "enum": [
+        "ignore",
+        "warning",
+        "error"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
+    "css.trace.server": {
+      "default": "off",
+      "description": "%css.trace.server.desc%",
+      "enum": [
+        "off",
+        "messages",
+        "verbose"
+      ],
+      "scope": "window",
+      "type": "string"
+    },
+    "css.validate": {
+      "default": true,
+      "description": "%css.validate.desc%",
+      "scope": "resource",
+      "type": "boolean"
+    }
+  }
+}
