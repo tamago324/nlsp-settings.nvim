@@ -142,7 +142,7 @@
 - [ ] tflint
 - [ ] theme_check
 - [ ] tilt_ls
-- [ ] tsserver
+- [x] tsserver
 - [ ] typeprof
 - [ ] vala_ls
 - [ ] vdmj
