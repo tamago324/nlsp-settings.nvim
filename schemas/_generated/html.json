@@ -54,12 +54,6 @@
       "scope": "window",
       "type": "boolean"
     },
-    "html.format.endWithNewline": {
-      "default": false,
-      "description": "%html.format.endWithNewline.desc%",
-      "scope": "resource",
-      "type": "boolean"
-    },
     "html.format.extraLiners": {
       "default": "head, body, /html",
       "markdownDescription": "%html.format.extraLiners.desc%",
