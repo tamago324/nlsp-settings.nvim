@@ -110,7 +110,7 @@
       "type": "boolean"
     },
     "volar.preview.backgroundColor": {
-      "default": "#fff",
+      "default": "transparent",
       "description": "Component preview background color.",
       "type": "string"
     },
@@ -128,7 +128,7 @@
       "type": "string"
     },
     "volar.preview.transparentGrid": {
-      "default": true,
+      "default": false,
       "description": "Component preview background style.",
       "type": "boolean"
     },
