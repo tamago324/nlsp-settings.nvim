@@ -8,6 +8,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "perlnavigator.includeLib": {
+      "default": true,
+      "description": "Boolean to indicate if $project/lib should be added to the path by default",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "perlnavigator.includePaths": {
       "default": [],
       "description": "Array of paths added to @INC. You can use $workspaceFolder as a placeholder.",
