@@ -44,6 +44,12 @@
       "scope": "resource",
       "type": "string"
     },
+    "perlnavigator.perltidyEnabled": {
+      "default": true,
+      "description": "Enable perl tidy.",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "perlnavigator.perltidyProfile": {
       "default": "",
       "description": "Path to perl tidy profile (no aliases, .bat files or ~/)",
