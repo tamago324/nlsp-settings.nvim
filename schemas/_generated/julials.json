@@ -107,7 +107,7 @@
       "type": "array"
     },
     "julia.deleteJuliaCovFiles": {
-      "default": "true",
+      "default": true,
       "description": "Delete Julia .cov files when running tests with coverage, leaving only a .lcov file behind.",
       "scope": "window",
       "type": "boolean"
