@@ -73,6 +73,7 @@
 - [ ] lelwel_ls
 - [ ] lemminx
 - [x] ltex
+- [ ] m68k
 - [ ] marksman
 - [ ] metals
 - [ ] mint
