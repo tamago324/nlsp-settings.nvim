@@ -468,6 +468,12 @@
         "null"
       ]
     },
+    "java.jdt.ls.lombokSupport.enabled": {
+      "default": true,
+      "description": "Whether to load lombok processors from project classpath",
+      "scope": "window",
+      "type": "boolean"
+    },
     "java.jdt.ls.vmargs": {
       "default": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m",
       "description": "Specifies extra VM arguments used to launch the Java Language Server. Eg. use `-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m ` to optimize memory usage with the parallel garbage collector",
