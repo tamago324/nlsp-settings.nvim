@@ -756,6 +756,32 @@
           ],
           "type": "string"
         },
+        "missing-return": {
+          "default": "Any",
+          "description": "%config.diagnostics.missing-return%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Any!",
+            "Opened!",
+            "None!"
+          ],
+          "type": "string"
+        },
+        "missing-return-value": {
+          "default": "Any",
+          "description": "%config.diagnostics.missing-return-value%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Any!",
+            "Opened!",
+            "None!"
+          ],
+          "type": "string"
+        },
         "need-check-nil": {
           "default": "Opened",
           "description": "%config.diagnostics.need-check-nil%",
@@ -873,9 +899,35 @@
           ],
           "type": "string"
         },
+        "redundant-return-value": {
+          "default": "Any",
+          "description": "%config.diagnostics.redundant-return-value%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Any!",
+            "Opened!",
+            "None!"
+          ],
+          "type": "string"
+        },
         "redundant-value": {
           "default": "Any",
           "description": "%config.diagnostics.redundant-value%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Any!",
+            "Opened!",
+            "None!"
+          ],
+          "type": "string"
+        },
+        "return-type-mismatch": {
+          "default": "Opened",
+          "description": "%config.diagnostics.return-type-mismatch%",
           "enum": [
             "Any",
             "Opened",
@@ -1435,6 +1487,36 @@
           ],
           "type": "string"
         },
+        "missing-return": {
+          "default": "Warning",
+          "description": "%config.diagnostics.missing-return%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Error!",
+            "Warning!",
+            "Information!",
+            "Hint!"
+          ],
+          "type": "string"
+        },
+        "missing-return-value": {
+          "default": "Warning",
+          "description": "%config.diagnostics.missing-return-value%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Error!",
+            "Warning!",
+            "Information!",
+            "Hint!"
+          ],
+          "type": "string"
+        },
         "need-check-nil": {
           "default": "Warning",
           "description": "%config.diagnostics.need-check-nil%",
@@ -1570,9 +1652,39 @@
           ],
           "type": "string"
         },
+        "redundant-return-value": {
+          "default": "Warning",
+          "description": "%config.diagnostics.redundant-return-value%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Error!",
+            "Warning!",
+            "Information!",
+            "Hint!"
+          ],
+          "type": "string"
+        },
         "redundant-value": {
           "default": "Warning",
           "description": "%config.diagnostics.redundant-value%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Error!",
+            "Warning!",
+            "Information!",
+            "Hint!"
+          ],
+          "type": "string"
+        },
+        "return-type-mismatch": {
+          "default": "Warning",
+          "description": "%config.diagnostics.return-type-mismatch%",
           "enum": [
             "Error",
             "Warning",
@@ -1896,6 +2008,22 @@
       "markdownDescription": "%config.hint.paramType%",
       "scope": "resource",
       "type": "boolean"
+    },
+    "Lua.hint.semicolon": {
+      "default": "SameLine",
+      "enum": [
+        "All",
+        "SameLine",
+        "Disable"
+      ],
+      "markdownDescription": "%config.hint.semicolon%",
+      "markdownEnumDescriptions": [
+        "%config.hint.semicolon.All%",
+        "%config.hint.semicolon.SameLine%",
+        "%config.hint.semicolon.Disable%"
+      ],
+      "scope": "resource",
+      "type": "string"
     },
     "Lua.hint.setType": {
       "default": false,
@@ -2288,6 +2416,18 @@
         "boolean",
         "null"
       ]
+    },
+    "Lua.type.castNumberToInteger": {
+      "default": false,
+      "markdownDescription": "%config.type.castNumberToInteger%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "Lua.type.weakUnionCheck": {
+      "default": false,
+      "markdownDescription": "%config.type.weakUnionCheck%",
+      "scope": "resource",
+      "type": "boolean"
     },
     "Lua.window.progressBar": {
       "default": true,
