@@ -192,6 +192,14 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "javascript.preferences.autoImportFileExcludePatterns": {
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%typescript.preferences.autoImportFileExcludePatterns%",
+      "scope": "resource",
+      "type": "array"
+    },
     "javascript.preferences.importModuleSpecifier": {
       "default": "shortest",
       "description": "%typescript.preferences.importModuleSpecifier%",
@@ -669,6 +677,14 @@
       "markdownDescription": "%typescript.npm%",
       "scope": "machine",
       "type": "string"
+    },
+    "typescript.preferences.autoImportFileExcludePatterns": {
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%typescript.preferences.autoImportFileExcludePatterns%",
+      "scope": "resource",
+      "type": "array"
     },
     "typescript.preferences.importModuleSpecifier": {
       "default": "shortest",
