@@ -5,7 +5,7 @@
     "terraform.codelens.referenceCount": {
       "default": false,
       "description": "Display reference counts above top level blocks and attributes.",
-      "scope": "resource",
+      "scope": "window",
       "type": "boolean"
     }
   }
