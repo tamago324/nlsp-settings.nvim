@@ -17,6 +17,11 @@
       "type": "array",
       "uniqueItems": true
     },
+    "pylsp.plugins.autopep8.enabled": {
+      "default": true,
+      "description": "Enable or disable the plugin (disabling required to use `yapf`).",
+      "type": "boolean"
+    },
     "pylsp.plugins.flake8.config": {
       "default": null,
       "description": "Path to the config file that will be the authoritative config source.",
