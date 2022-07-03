@@ -46,6 +46,11 @@
       "default": "",
       "description": "Path to the perl binary to use for syntax checking",
       "type": "string"
+    },
+    "perl.syntax.perlargs": {
+      "default": [],
+      "description": "Additional arguments to pass to perl when syntax checking",
+      "type": "array"
     }
   }
 }
