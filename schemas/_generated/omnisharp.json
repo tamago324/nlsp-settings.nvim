@@ -446,12 +446,12 @@
       "type": "boolean"
     },
     "omnisharp.sdkPath": {
-      "description": "Specifies the path to a .NET SDK installation to use for project loading instead of the highest version installed. Applies when \"useModernNet\" is set to true. Example: \"/home/username/dotnet/sdks/6.0.300\".",
+      "description": "Specifies the path to a .NET SDK installation to use for project loading instead of the highest version installed. Applies when \"useModernNet\" is set to true. Example: /home/username/dotnet/sdks/6.0.300.",
       "scope": "window",
       "type": "string"
     },
     "omnisharp.sdkVersion": {
-      "description": "Specifies the version of the .NET SDK to use for project loading instead of the highest version installed. Applies when \"useModernNet\" is set to true. Example: \"6.0.300\".",
+      "description": "Specifies the version of the .NET SDK to use for project loading instead of the highest version installed. Applies when \"useModernNet\" is set to true. Example: 6.0.300.",
       "scope": "window",
       "type": "string"
     },
