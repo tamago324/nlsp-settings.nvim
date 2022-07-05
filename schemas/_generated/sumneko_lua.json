@@ -2423,6 +2423,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "Lua.type.weakNilCheck": {
+      "default": false,
+      "markdownDescription": "%config.type.weakNilCheck%",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "Lua.type.weakUnionCheck": {
       "default": false,
       "markdownDescription": "%config.type.weakUnionCheck%",
