@@ -97,6 +97,12 @@
       "scope": "window",
       "type": "string"
     },
+    "astro.typescript.allowArbitraryAttributes": {
+      "default": false,
+      "description": "Enable the usage of non-standard HTML attributes, such as the ones added by AlpineJS or petite-vue",
+      "title": "TypeScript: Allow arbitrary attributes on HTML elements",
+      "type": "boolean"
+    },
     "astro.typescript.codeActions.enabled": {
       "default": true,
       "description": "Enable code actions for TypeScript",
