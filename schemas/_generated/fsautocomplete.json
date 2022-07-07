@@ -175,8 +175,9 @@
       "type": "boolean"
     },
     "FSharp.indentationSize": {
+      "default": 4,
       "description": "The number of spaces used for indentation when generating code, e.g. for interface stubs",
-      "minimum": 0,
+      "minimum": 1,
       "type": "number"
     },
     "FSharp.infoPanelReplaceHover": {
