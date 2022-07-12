@@ -15,6 +15,12 @@
       "scope": "window",
       "type": "boolean"
     },
+    "json.format.keepLines": {
+      "default": false,
+      "description": "%json.format.keepLines.desc%",
+      "scope": "window",
+      "type": "boolean"
+    },
     "json.maxItemsComputed": {
       "default": 5000,
       "description": "%json.maxItemsComputed.desc%",
