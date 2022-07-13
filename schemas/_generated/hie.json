@@ -407,7 +407,8 @@
       "description": "Traces the communication between VS Code and the language server.",
       "enum": [
         "off",
-        "messages"
+        "messages",
+        "verbose"
       ],
       "scope": "resource",
       "type": "string"
