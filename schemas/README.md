@@ -3,6 +3,7 @@
 - [x] als
 - [ ] angularls
 - [ ] ansiblels
+- [ ] antlersls
 - [ ] apex_ls
 - [ ] arduino_language_server
 - [ ] asm_lsp
