@@ -94,7 +94,7 @@
 - [ ] phan
 - [ ] phpactor
 - [ ] please
-- [ ] powershell_es
+- [x] powershell_es
 - [ ] prismals
 - [ ] prosemd_lsp
 - [x] psalm
