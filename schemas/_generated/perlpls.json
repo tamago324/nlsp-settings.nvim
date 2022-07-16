@@ -37,6 +37,11 @@
       "description": "Arguments to pass to the pls command",
       "type": "array"
     },
+    "perl.syntax.args": {
+      "default": [],
+      "description": "Additional arguments to pass when syntax checking. This is useful if there is a BEGIN block in your code that changes behavior depending on the contents of @ARGV.",
+      "type": "array"
+    },
     "perl.syntax.enabled": {
       "default": true,
       "description": "Enable syntax checking",
@@ -46,11 +51,6 @@
       "default": "",
       "description": "Path to the perl binary to use for syntax checking",
       "type": "string"
-    },
-    "perl.syntax.perlargs": {
-      "default": [],
-      "description": "Additional arguments to pass to perl when syntax checking",
-      "type": "array"
     }
   }
 }
