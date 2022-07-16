@@ -99,6 +99,11 @@
       ],
       "type": "string"
     },
+    "volar.diagnostics.delay": {
+      "default": 200,
+      "description": "Delay time for diagnostics.",
+      "type": "number"
+    },
     "volar.icon.preview": {
       "default": true,
       "description": "Show Vite / Nuxt App preview icon.",
