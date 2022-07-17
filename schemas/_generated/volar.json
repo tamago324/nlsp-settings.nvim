@@ -165,7 +165,10 @@
         "Alway enable take over mode.",
         "Never enable take over mode."
       ],
-      "type": "boolean"
+      "type": [
+        "boolean",
+        "string"
+      ]
     },
     "volar.updateImportsOnFileMove.enabled": {
       "default": true,
