@@ -352,6 +352,14 @@
     },
     "rust-analyzer.files.watcher": {
       "default": "client",
+      "enum": [
+        "client",
+        "server"
+      ],
+      "enumDescriptions": [
+        "Use the client (editor) to watch files for changes",
+        "Use server-side file watching"
+      ],
       "markdownDescription": "Controls file watching implementation.",
       "type": "string"
     },
