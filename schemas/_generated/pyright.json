@@ -538,6 +538,17 @@
           ],
           "type": "string"
         },
+        "reportUnnecessaryContains": {
+          "default": "none",
+          "description": "Diagnostics for 'in' operation that is statically determined to be unnecessary. Such operations are sometimes indicative of a programming error.",
+          "enum": [
+            "none",
+            "information",
+            "warning",
+            "error"
+          ],
+          "type": "string"
+        },
         "reportUnnecessaryIsInstance": {
           "default": "none",
           "description": "Diagnostics for 'isinstance' or 'issubclass' calls where the result is statically determined to be always true. Such calls are often indicative of a programming error.",
