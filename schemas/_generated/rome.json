@@ -71,6 +71,22 @@
       "default": false,
       "markdownDescription": "**BETA**: enables unstable features",
       "type": "boolean"
+    },
+    "rome_lsp.trace.server": {
+      "default": "off",
+      "description": "Traces the communication between VS Code and the language server.",
+      "enum": [
+        "off",
+        "messages",
+        "verbose"
+      ],
+      "enumDescriptions": [
+        "No traces",
+        "Error only",
+        "Full log"
+      ],
+      "scope": "window",
+      "type": "string"
     }
   }
 }
