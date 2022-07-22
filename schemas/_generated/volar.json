@@ -157,12 +157,10 @@
       "description": "Take over language support for *.ts.",
       "enum": [
         "auto",
-        true,
         false
       ],
       "enumDescriptions": [
         "Auto enable take over mode when built-in TS extension disabled.",
-        "Alway enable take over mode.",
         "Never enable take over mode."
       ],
       "type": [
