@@ -128,7 +128,7 @@
     },
     "csharp.unitTestDebuggingOptions": {
       "default": {},
-      "description": "Options to use with the debugger when launching for unit test debugging. Any launch.json option is valid here.",
+      "description": "Options to use with the debugger when launching for unit test debugging.",
       "properties": {
         "allowFastEvaluate": {
           "default": true,
