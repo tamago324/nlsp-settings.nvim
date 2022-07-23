@@ -20,6 +20,20 @@
         "string",
         "null"
       ]
+    },
+    "rescript.settings.inlayHints.enable": {
+      "default": false,
+      "description": "Enable (experimental) inlay hints.",
+      "type": "boolean"
+    },
+    "rescript.settings.inlayHints.maxLength": {
+      "default": 25,
+      "markdownDescription": "Maximum length of character for inlay hints. Set to null to have an unlimited length. Inlay hints that exceed the maximum length will not be shown.",
+      "minimum": 0,
+      "type": [
+        "null",
+        "integer"
+      ]
     }
   }
 }

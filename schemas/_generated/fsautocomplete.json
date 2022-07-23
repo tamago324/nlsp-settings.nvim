@@ -2,22 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of fsautocomplete",
   "properties": {
-    "FAKE.showTargetsOutlineIn": {
-      "default": "explorer",
-      "description": "Set the activity (left bar) where the FAKE targets outline view will be displayed.\nRequires restart.",
-      "enum": [
-        "explorer",
-        "fsharp"
-      ],
-      "scope": "application",
-      "type": "string"
-    },
-    "FAKE.targetsOutline": {
-      "default": true,
-      "description": "Enables the Targets Outline tree view.",
-      "scope": "resource",
-      "type": "boolean"
-    },
     "FSharp.abstractClassStubGeneration": {
       "default": true,
       "description": "Enables a codefix that generates missing members for an abstract class when in an type inheriting from that abstract class.",
