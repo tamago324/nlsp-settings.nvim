@@ -31,6 +31,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "zls.enable_inlay_hints": {
+      "default": false,
+      "description": "Inlay hint support",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "zls.enable_semantic_tokens": {
       "default": true,
       "description": "Semantic token support",
@@ -52,6 +58,18 @@
     "zls.include_at_in_builtins": {
       "default": false,
       "description": "Whether the @ sign should be part of the completion of builtins",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "zls.inlay_hints_exclude_single_argument": {
+      "default": true,
+      "description": "don't show inlay hints for single argument calls",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "zls.inlay_hints_show_builtin": {
+      "default": true,
+      "description": "enable inlay hints for builtin functions",
       "scope": "resource",
       "type": "boolean"
     },
