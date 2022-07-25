@@ -21,6 +21,11 @@
         "null"
       ]
     },
+    "rescript.settings.codeLens.enable": {
+      "default": false,
+      "description": "Enable (experimental) code lens for function definitions.",
+      "type": "boolean"
+    },
     "rescript.settings.inlayHints.enable": {
       "default": false,
       "description": "Enable (experimental) inlay hints.",
