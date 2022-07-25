@@ -137,12 +137,12 @@
     },
     "powershell.cwd": {
       "default": null,
-      "description": "An explicit start path where the Powershell Integrated Console will be launched. Both the PowerShell process and the shell's location will be set to this directory. Predefined variables can be used (i.e. ${fileDirname} to use the current opened file's directory).",
+      "description": "An explicit start path where the PowerShell Extension Terminal will be launched. Both the PowerShell process and the shell's location will be set to this directory. Predefined variables can be used (i.e. ${fileDirname} to use the current opened file's directory).",
       "type": "string"
     },
     "powershell.debugging.createTemporaryIntegratedConsole": {
       "default": false,
-      "description": "Determines whether a temporary PowerShell Integrated Console is created for each debugging session, useful for debugging PowerShell classes and binary modules.",
+      "description": "Determines whether a temporary PowerShell Extension Terminal is created for each debugging session. Useful for debugging PowerShell classes and binary modules.",
       "type": "boolean"
     },
     "powershell.developer.bundledModulesPath": {
@@ -206,17 +206,17 @@
     },
     "powershell.integratedConsole.showOnStartup": {
       "default": true,
-      "description": "Shows the integrated console when the PowerShell extension is initialized.",
+      "description": "Shows the Extension Terminal when the PowerShell extension is initialized.",
       "type": "boolean"
     },
     "powershell.integratedConsole.suppressStartupBanner": {
       "default": false,
-      "description": "Do not show the Powershell Integrated Console banner on launch",
+      "description": "Do not show the Powershell Extension Terminal banner on launch",
       "type": "boolean"
     },
     "powershell.integratedConsole.useLegacyReadLine": {
       "default": false,
-      "description": "Falls back to the legacy (lightweight) ReadLine experience. This will disable the use of PSReadLine in the PowerShell Integrated Console.",
+      "description": "Falls back to the legacy ReadLine experience. This will disable the use of PSReadLine in the PowerShell Extension Terminal.",
       "type": "boolean"
     },
     "powershell.pester.codeLens": {
@@ -318,7 +318,7 @@
     },
     "powershell.startAutomatically": {
       "default": true,
-      "description": "Starts PowerShell extension features automatically when a PowerShell file opens. If false, to start the extension, use the 'PowerShell: Restart Current Session' command. IntelliSense, code navigation, integrated console, code formatting, and other features are not enabled until the extension starts.",
+      "description": "Starts PowerShell extension features automatically when a PowerShell file opens. If false, to start the extension, use the 'PowerShell: Restart Current Session' command. IntelliSense, code navigation, Extension Terminal, code formatting, and other features are not enabled until the extension starts.",
       "type": "boolean"
     },
     "powershell.useX86Host": {
