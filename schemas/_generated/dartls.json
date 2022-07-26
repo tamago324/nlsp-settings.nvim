@@ -28,7 +28,7 @@
     },
     "dart.analyzerAdditionalArgs": {
       "default": [],
-      "description": "Additional arguments to pass to the Dart analysis server.",
+      "description": "Additional arguments to pass to the Dart Analysis Server.",
       "items": {
         "type": "string"
       },
@@ -46,7 +46,7 @@
     },
     "dart.analyzerPath": {
       "default": null,
-      "description": "The path to a custom Dart analysis server.",
+      "description": "The path to a custom Dart Analysis Server. This setting is intended for use by Dart Analysis Server developers.",
       "scope": "machine-overridable",
       "type": [
         "null",
@@ -55,7 +55,7 @@
     },
     "dart.analyzerSshHost": {
       "default": null,
-      "description": "An SSH host to run the analysis server.\nThis can be useful when modifying code on a remote machine using SSHFS.",
+      "description": "An SSH host to run the Analysis Server.\nThis can be useful when modifying code on a remote machine using SSHFS.",
       "scope": "window",
       "type": [
         "null",
@@ -64,7 +64,7 @@
     },
     "dart.analyzerVmServicePort": {
       "default": null,
-      "description": "The port number to be used for the Dart analysis server VM service.",
+      "description": "The port number to be used for the Dart Analysis Server VM service. This setting is intended for use by Dart Analysis Server developers.",
       "scope": "window",
       "type": [
         "null",
@@ -73,7 +73,7 @@
     },
     "dart.notifyAnalyzerErrors": {
       "default": true,
-      "description": "Whether to show a notification the first few times an analysis server exception occurs.",
+      "description": "Whether to show a notification the first few times an Analysis Server exception occurs.",
       "scope": "window",
       "type": "boolean"
     },
