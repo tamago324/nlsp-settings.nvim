@@ -607,7 +607,7 @@
           "type": "string"
         },
         "cast-type-mismatch": {
-          "default": "Any",
+          "default": "Opened",
           "description": "%config.diagnostics.cast-type-mismatch%",
           "enum": [
             "Any",
@@ -2501,6 +2501,15 @@
       "scope": "resource",
       "type": "string"
     },
+    "Lua.runtime.pluginArgs": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%config.runtime.pluginArgs%",
+      "scope": "resource",
+      "type": "array"
+    },
     "Lua.runtime.special": {
       "additionalProperties": false,
       "default": {},
@@ -2607,7 +2616,7 @@
       ]
     },
     "Lua.type.castNumberToInteger": {
-      "default": false,
+      "default": true,
       "markdownDescription": "%config.type.castNumberToInteger%",
       "scope": "resource",
       "type": "boolean"
