@@ -21,7 +21,7 @@
         "null"
       ]
     },
-    "rescript.settings.codeLens.enable": {
+    "rescript.settings.codeLens": {
       "default": false,
       "description": "Enable (experimental) code lens for function definitions.",
       "type": "boolean"
