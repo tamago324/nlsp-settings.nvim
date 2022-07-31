@@ -120,7 +120,7 @@
       "type": "string"
     },
     "volar.preview.port": {
-      "default": 3333,
+      "default": 3334,
       "description": "Default port for component preview server.",
       "type": "number"
     },
