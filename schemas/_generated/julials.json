@@ -372,6 +372,12 @@
       "default": true,
       "description": "Load Revise.jl on startup of the REPL.",
       "type": "boolean"
+    },
+    "julia.workspace.showModules": {
+      "default": true,
+      "description": "Show top-level modules in the workspace.",
+      "scope": "application",
+      "type": "boolean"
     }
   }
 }
