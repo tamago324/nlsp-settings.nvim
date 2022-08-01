@@ -611,6 +611,17 @@
       },
       "type": "object"
     },
+    "haxe.renameSourceFolders": {
+      "default": [
+        "src",
+        "source",
+        "Source",
+        "test",
+        "tests"
+      ],
+      "deprecationMessage": "Folders to look for renamable identifiers. Rename will not see or touch files outside of those folders.",
+      "type": "array"
+    },
     "haxe.taskPresentation": {
       "additionalProperties": false,
       "default": {
