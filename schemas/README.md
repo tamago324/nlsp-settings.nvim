@@ -24,6 +24,7 @@
 - [x] cssls
 - [ ] cssmodules_ls
 - [ ] cucumber_language_server
+- [ ] dagger
 - [x] dartls
 - [x] denols
 - [ ] dhall_lsp_server
