@@ -842,6 +842,11 @@
       "markdownDescription": "Whether to insert closing angle brackets when typing an opening angle bracket of a generic argument list.",
       "type": "boolean"
     },
+    "rust-analyzer.typing.continueCommentsOnNewline": {
+      "default": true,
+      "markdownDescription": "Whether to prefix newlines after comments with the corresponding comment prefix.",
+      "type": "boolean"
+    },
     "rust-analyzer.workspace.symbol.search.kind": {
       "default": "only_types",
       "enum": [
