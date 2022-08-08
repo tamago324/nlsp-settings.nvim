@@ -104,6 +104,7 @@
 - [x] pylsp
 - [ ] pyre
 - [x] pyright
+- [ ] qml_lsp
 - [ ] quick_lint_js
 - [x] r_language_server
 - [ ] racket_langserver
