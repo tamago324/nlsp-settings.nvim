@@ -137,6 +137,7 @@
 - [x] svelte
 - [x] svlangserver
 - [ ] svls
+- [ ] syntax_tree
 - [x] tailwindcss
 - [ ] taplo
 - [ ] teal_ls
