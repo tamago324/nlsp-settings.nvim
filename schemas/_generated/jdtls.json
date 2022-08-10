@@ -408,6 +408,12 @@
       "scope": "window",
       "type": "boolean"
     },
+    "java.import.maven.offline.enabled": {
+      "default": false,
+      "description": "Enable/disable the Maven offline mode.",
+      "scope": "window",
+      "type": "boolean"
+    },
     "java.imports.gradle.wrapper.checksums": {
       "default": [],
       "description": "Defines allowed/disallowed SHA-256 checksums of Gradle Wrappers",
