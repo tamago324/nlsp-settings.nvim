@@ -212,6 +212,11 @@
         "null"
       ]
     },
+    "rust.ignore_deprecation_warning": {
+      "default": false,
+      "description": "Whether to surpress the deprecation notification on start up.",
+      "type": "boolean"
+    },
     "rust.jobs": {
       "default": null,
       "description": "Number of Cargo jobs to be run in parallel.",
