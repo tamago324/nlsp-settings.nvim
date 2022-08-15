@@ -86,6 +86,18 @@
       "title": "HTML: Tag Completion",
       "type": "boolean"
     },
+    "astro.language-server.ls-path": {
+      "description": "Path to the language server executable. You won't need this in most cases, set this only when needing a specific version of the language server",
+      "scope": "application",
+      "title": "Language Server: Path",
+      "type": "string"
+    },
+    "astro.language-server.runtime": {
+      "description": "Path to the node executable used to execute the language server. You won't need this in most cases",
+      "scope": "application",
+      "title": "Language Server: Runtime",
+      "type": "string"
+    },
     "astro.trace.server": {
       "default": "off",
       "description": "Traces the communication between VS Code and the language server.",
