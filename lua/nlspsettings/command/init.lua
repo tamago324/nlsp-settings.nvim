@@ -111,8 +111,15 @@ M.open_local_config = function(server_name)
   end
 
   local conf = config.get()
-  local markers = conf.local_settings_root_markers
-  local root_dir = lspconfig.util.root_pattern(markers)(path.sanitize(start_path))
+  local root_dir
+  if lspconfig[server_name] then
+    root_dir = lspconfig[server_name].get_root_dir(path.sanitize(start_path))
+  end
+
+  if not root_dir then
+    local markers = conf.local_settings_root_markers_fallback
+    root_dir = lspconfig.util.root_pattern(markers)(path.sanitize(start_path))
+  end
 
   if root_dir then
     open(path.join(root_dir:gsub('/$', ''), conf.local_settings_dir), server_name)
