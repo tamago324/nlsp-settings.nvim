@@ -418,6 +418,11 @@
       "markdownDescription": "Whether to show documentation on hover.",
       "type": "boolean"
     },
+    "rust-analyzer.hover.documentation.keywords.enable": {
+      "default": true,
+      "markdownDescription": "Whether to show keyword hover popups. Only applies when\n`#rust-analyzer.hover.documentation.enable#` is set.",
+      "type": "boolean"
+    },
     "rust-analyzer.hover.links.enable": {
       "default": true,
       "markdownDescription": "Use markdown syntax for links in hover.",
