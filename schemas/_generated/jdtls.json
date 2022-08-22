@@ -375,7 +375,7 @@
     "java.import.gradle.java.home": {
       "default": null,
       "description": "The location to the JVM used to run the Gradle daemon.",
-      "scope": "machine",
+      "scope": "machine-overridable",
       "type": "string"
     },
     "java.import.gradle.jvmArguments": {
@@ -483,6 +483,12 @@
     "java.jdt.ls.lombokSupport.enabled": {
       "default": true,
       "description": "Whether to load lombok processors from project classpath",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "java.jdt.ls.protobufSupport.enabled": {
+      "default": true,
+      "markdownDescription": "Specify whether to automatically add Protobuf output source directories to the classpath.\n\n**Note:** Only works for Gradle `com.google.protobuf` plugin `0.8.4` or higher.",
       "scope": "window",
       "type": "boolean"
     },

@@ -2,12 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of zls",
   "properties": {
-    "zls.build_runner_cache_path": {
-      "default": null,
-      "description": "Path to a directory that will be used as cache when `zig run`ning the build runner",
-      "scope": "resource",
-      "type": "string"
-    },
     "zls.build_runner_path": {
       "default": null,
       "description": "Path to the build_runner.zig file.",
@@ -54,6 +48,12 @@
       "description": "Whether to enable unused variable warnings",
       "scope": "resource",
       "type": "boolean"
+    },
+    "zls.global_cache_path": {
+      "default": null,
+      "description": "Path to the global cache directory",
+      "scope": "resource",
+      "type": "string"
     },
     "zls.include_at_in_builtins": {
       "default": false,

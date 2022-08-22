@@ -13,6 +13,7 @@
 - [ ] beancount
 - [ ] bicep
 - [ ] bsl_ls
+- [ ] bufls
 - [ ] ccls
 - [x] clangd
 - [ ] clarity_lsp
@@ -81,7 +82,9 @@
 - [ ] mint
 - [ ] mm0_ls
 - [x] nickel_ls
+- [ ] nil_ls
 - [x] nimls
+- [ ] nxls
 - [ ] ocamlls
 - [ ] ocamllsp
 - [ ] ols
@@ -109,6 +112,7 @@
 - [x] r_language_server
 - [ ] racket_langserver
 - [ ] reason_ls
+- [ ] relay_lsp
 - [ ] remark_ls
 - [x] rescriptls
 - [x] rls

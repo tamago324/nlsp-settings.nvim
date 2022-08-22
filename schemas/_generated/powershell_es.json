@@ -9,12 +9,12 @@
     },
     "powershell.buttons.showPanelMovementButtons": {
       "default": false,
-      "description": "Show buttons in the editor titlebar for moving the panel around.",
+      "description": "Show buttons in the editor title-bar for moving the panel around.",
       "type": "boolean"
     },
     "powershell.buttons.showRunButtons": {
       "default": true,
-      "description": "Show the Run and Run Selection buttons in the editor titlebar.",
+      "description": "Show the Run and Run Selection buttons in the editor title-bar.",
       "type": "boolean"
     },
     "powershell.codeFolding.enable": {

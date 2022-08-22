@@ -277,7 +277,7 @@
     "julia.persistentSession.alwaysCopy": {
       "default": false,
       "description": "Always copy the command for connecting to an external REPL to the clipboard.",
-      "scope": "machine-overridable",
+      "scope": "application",
       "type": "boolean"
     },
     "julia.persistentSession.enabled": {
@@ -289,13 +289,13 @@
     "julia.persistentSession.shell": {
       "default": "/bin/sh",
       "description": "Shell used to start the persistent session.",
-      "scope": "machine-overridable",
+      "scope": "machine",
       "type": "string"
     },
     "julia.persistentSession.shellExecutionArgument": {
       "default": "-c",
       "markdownDescription": "Argument to execute code in the configured shell, e.g. `-c` for sh-likes or `/c` for `cmd`.",
-      "scope": "machine-overridable",
+      "scope": "machine",
       "type": "string"
     },
     "julia.persistentSession.tmuxSessionName": {
@@ -307,7 +307,7 @@
     "julia.persistentSession.warnOnKill": {
       "default": true,
       "description": "Warn when stopping a persistent session.",
-      "scope": "machine-overridable",
+      "scope": "application",
       "type": "boolean"
     },
     "julia.plots.path": {
