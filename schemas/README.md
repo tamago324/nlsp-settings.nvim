@@ -81,6 +81,7 @@
 - [ ] mint
 - [ ] mm0_ls
 - [x] nickel_ls
+- [ ] nil_ls
 - [x] nimls
 - [ ] ocamlls
 - [ ] ocamllsp
@@ -109,6 +110,7 @@
 - [x] r_language_server
 - [ ] racket_langserver
 - [ ] reason_ls
+- [ ] relay_lsp
 - [ ] remark_ls
 - [x] rescriptls
 - [x] rls
