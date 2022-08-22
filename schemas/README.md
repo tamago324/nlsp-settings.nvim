@@ -13,6 +13,7 @@
 - [ ] beancount
 - [ ] bicep
 - [ ] bsl_ls
+- [ ] bufls
 - [ ] ccls
 - [x] clangd
 - [ ] clarity_lsp
