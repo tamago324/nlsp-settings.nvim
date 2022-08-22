@@ -84,6 +84,7 @@
 - [x] nickel_ls
 - [ ] nil_ls
 - [x] nimls
+- [ ] nxls
 - [ ] ocamlls
 - [ ] ocamllsp
 - [ ] ols

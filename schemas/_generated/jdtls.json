@@ -486,6 +486,12 @@
       "scope": "window",
       "type": "boolean"
     },
+    "java.jdt.ls.protobufSupport.enabled": {
+      "default": true,
+      "markdownDescription": "Specify whether to automatically add Protobuf output source directories to the classpath.\n\n**Note:** Only works for Gradle `com.google.protobuf` plugin `0.8.4` or higher.",
+      "scope": "window",
+      "type": "boolean"
+    },
     "java.jdt.ls.vmargs": {
       "default": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m",
       "description": "Specifies extra VM arguments used to launch the Java Language Server. Eg. use `-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m ` to optimize memory usage with the parallel garbage collector",
