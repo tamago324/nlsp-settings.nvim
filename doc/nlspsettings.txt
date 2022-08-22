@@ -38,9 +38,10 @@ setup({opts})                                           *nlspsettings.setup()*
 
             Default: `'.nlsp-settings'`
 
-        {local_settigns_root_markers} (optional, table)
+        {local_settigns_root_markers_fallback} (optional, table)
             A list of files and directories to use when looking for the
-            root directory when opening a file with `:LspSettings local` .
+            root directory when opening a file with `:LspSettings local`  if
+            not found by `nvim-lspconfig`.
 
             Default: `{ '.git' }`
 
