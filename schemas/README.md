@@ -49,6 +49,7 @@
 - [ ] gdscript
 - [ ] ghcide
 - [ ] ghdl_ls
+- [ ] glslls
 - [ ] golangci_lint_ls
 - [x] gopls
 - [ ] gradle_ls
@@ -156,6 +157,7 @@
 - [ ] vala_ls
 - [ ] vdmj
 - [ ] verible
+- [ ] veridian
 - [ ] vimls
 - [ ] visualforce_ls
 - [ ] vls
