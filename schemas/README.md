@@ -49,6 +49,7 @@
 - [ ] gdscript
 - [ ] ghcide
 - [ ] ghdl_ls
+- [ ] glslls
 - [ ] golangci_lint_ls
 - [x] gopls
 - [ ] gradle_ls
