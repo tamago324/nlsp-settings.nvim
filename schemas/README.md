@@ -81,6 +81,8 @@
 - [ ] marksman
 - [ ] metals
 - [ ] mint
+- [ ] mlir_lsp_server
+- [ ] mlir_pdll_lsp_server
 - [ ] mm0_ls
 - [x] nickel_ls
 - [ ] nil_ls
@@ -145,6 +147,7 @@
 - [ ] syntax_tree
 - [x] tailwindcss
 - [ ] taplo
+- [ ] tblgen_lsp_server
 - [ ] teal_ls
 - [ ] terraform_lsp
 - [x] terraformls
