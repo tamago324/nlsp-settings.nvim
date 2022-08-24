@@ -355,8 +355,16 @@
       "description": "Specifies whether notifications should be shown if OmniSharp encounters warnings or errors loading a project. Note that these warnings/errors are always emitted to the OmniSharp log",
       "type": "boolean"
     },
+    "omnisharp.dotNetCliPaths": {
+      "description": "Paths to a local download of the .NET CLI to use for running any user code.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
     "omnisharp.dotnetPath": {
-      "description": "Specified the path to a dotnet installation to use when \"useModernNet\" is set to true, instead of the default system one. Example: \"/home/username/mycustomdotnetdirectory\".",
+      "description": "Specified the path to a dotnet installation to use when \"useModernNet\" is set to true, instead of the default system one. This only influences the dotnet installation to use for hosting Omnisharp itself. Example: \"/home/username/mycustomdotnetdirectory\".",
       "scope": "window",
       "type": "string"
     },
