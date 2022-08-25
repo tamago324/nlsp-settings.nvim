@@ -3,6 +3,7 @@ local defaults_values = {
   local_settings_dir = '.nlsp-settings',
   local_settings_root_markers_fallback = {
     '.git',
+    '.nlsp-settings',
   },
   ignored_servers = {},
   append_default_schemas = false,
