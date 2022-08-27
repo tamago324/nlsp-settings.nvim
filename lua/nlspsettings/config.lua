@@ -1,8 +1,9 @@
 local defaults_values = {
   config_home = vim.fn.stdpath 'config' .. '/nlsp-settings',
   local_settings_dir = '.nlsp-settings',
-  local_settings_root_markers = {
+  local_settings_root_markers_fallback = {
     '.git',
+    '.nlsp-settings',
   },
   ignored_servers = {},
   append_default_schemas = false,
@@ -21,7 +22,7 @@ local config = {}
 ---@class nlspsettings.config.values
 ---@field config_home string:nil
 ---@field local_settings_dir string
----@field local_settings_root_markers string[]
+---@field local_settings_root_markers_fallback string[]
 ---@field ignored_servers string[]
 ---@field append_default_schemas boolean
 ---@field open_strictly boolean
@@ -37,8 +38,8 @@ config.set_default_values = function(opts)
   config.values = vim.tbl_deep_extend('force', defaults_values, opts or {})
 
   -- For an empty table
-  if not next(config.values.local_settings_root_markers) then
-    config.values.local_settings_root_markers = defaults_values.local_settings_root_markers
+  if not next(config.values.local_settings_root_markers_fallback) then
+    config.values.local_settings_root_markers_fallback = defaults_values.local_settings_root_markers_fallback
   end
 end
 
