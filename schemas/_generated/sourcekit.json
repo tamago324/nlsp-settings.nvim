@@ -21,12 +21,14 @@
       },
       "markdownDescription": "Arguments to pass to `swift build`. Keys and values should be provided as separate entries. If you have created a copy of the build task in `tasks.json` then these build arguments will not be propogated to that task.",
       "order": 2,
+      "scope": "machine-overridable",
       "type": "array"
     },
     "swift.buildPath": {
       "default": "",
       "markdownDescription": "Path to the build directory passed to all swift package manager commands.",
       "order": 8,
+      "scope": "machine-overridable",
       "type": "string"
     },
     "swift.excludePathsFromPackageDependencies": {
@@ -45,6 +47,7 @@
       "default": "",
       "markdownDescription": "The path of the folder containing the Swift executables. The default is to look in **$PATH**.",
       "order": 1,
+      "scope": "machine-overridable",
       "type": "string"
     },
     "swift.problemMatchCompileErrors": {
@@ -62,6 +65,7 @@
           "type": "string"
         }
       },
+      "scope": "machine-overridable",
       "type": "object"
     }
   }
