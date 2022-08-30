@@ -14,6 +14,11 @@
       "title": "Enable TypeScript Svelte plugin",
       "type": "boolean"
     },
+    "svelte.language-server.debug": {
+      "description": "- You normally don't set this - Enable more verbose logging for the language server useful for debugging language server execution.",
+      "title": "Language Server Debug Mode",
+      "type": "boolean"
+    },
     "svelte.language-server.ls-path": {
       "description": "- You normally don't set this - Path to the language server executable. If you installed the \"svelte-language-server\" npm package, it's within there at \"bin/server.js\". Path can be either relative to your workspace root or absolute. Set this only if you want to use a custom version of the language server. This will then also use the workspace version of TypeScript. This setting can only be changed in user settings for security reasons.",
       "scope": "application",
