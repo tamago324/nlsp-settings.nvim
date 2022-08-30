@@ -471,6 +471,17 @@
       "scope": "window",
       "type": "array"
     },
+    "java.jdt.ls.androidSupport.enabled": {
+      "default": "auto",
+      "enum": [
+        "auto",
+        "on",
+        "off"
+      ],
+      "markdownDescription": "[Experimental] Specify whether to enable Android project importing. When set to `auto`, the Android support will be enabled in Visual Studio Code - Insiders.\n\n**Note:** Only works for Android Gradle Plugin `3.2.0` or higher.",
+      "scope": "window",
+      "type": "string"
+    },
     "java.jdt.ls.java.home": {
       "default": null,
       "description": "Specifies the folder path to the JDK (17 or more recent) used to launch the Java Language Server. This setting will replace the Java extension's embedded JRE to start the Java Language Server. \n\nOn Windows, backslashes must be escaped, i.e.\n\"java.jdt.ls.java.home\":\"C:\\\\Program Files\\\\Java\\\\jdk-17.0_3\"",
