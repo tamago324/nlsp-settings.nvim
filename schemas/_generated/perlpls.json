@@ -3,51 +3,105 @@
   "description": "Setting of perlpls",
   "properties": {
     "perl.cwd": {
-      "default": ".",
+      "deprecationMessage": "Deprecated: Please use pls.cwd instead.",
       "description": "Current working directory to use",
+      "markdownDeprecationMessage": "**Deprecated**: Please use `pls.cwd` instead.",
       "type": "string"
     },
     "perl.inc": {
-      "default": [],
+      "deprecationMessage": "Deprecated: Please use pls.inc instead.",
       "description": "Paths to add to @INC.",
+      "markdownDeprecationMessage": "**Deprecated**: Please use `pls.inc` instead.",
       "type": "array"
     },
     "perl.perlcritic.enabled": {
-      "default": true,
+      "deprecationMessage": "Deprecated: Please use pls.perlcritic.enabled instead.",
       "description": "Enable perlcritic",
+      "markdownDeprecationMessage": "**Deprecated**: Please use `pls.perlcritic.enabled` instead.",
       "type": "boolean"
     },
     "perl.perlcritic.perlcriticrc": {
-      "default": "~/.perlcriticrc",
+      "deprecationMessage": "Deprecated: Please use pls.perlcritic.perlcriticrc instead.",
       "description": "Path to .perlcriticrc",
+      "markdownDeprecationMessage": "**Deprecated**: Please use `pls.perlcritic.perlcriticrc` instead.",
       "type": "string"
     },
     "perl.perltidyrc": {
-      "default": "~/.perltidyrc",
+      "deprecationMessage": "Deprecated: Please use pls.perltidy.perltidyrc iarknstead.",
       "description": "Path to .perltidyrc",
+      "markdownDeprecationMessage": "**Deprecated**: Please use `pls.perltidy.perltidyrc` instead.",
       "type": "string"
     },
     "perl.pls": {
-      "default": "pls",
+      "deprecationMessage": "Deprecated: Please use pls.cmd instead.",
       "description": "Path to the pls executable script",
+      "markdownDeprecationMessage": "**Deprecated**: Please use `pls.cmd` instead.",
       "type": "string"
     },
     "perl.plsargs": {
+      "deprecationMessage": "Deprecated: Please use pls.args instead.",
+      "description": "Arguments to pass to the pls command",
+      "markdownDeprecationMessage": "**Deprecated**: Please use `pls.args` instead.",
+      "type": "array"
+    },
+    "perl.syntax.enabled": {
+      "deprecationMessage": "Deprecated: Please use pls.syntax.enabled instead.",
+      "description": "Enable syntax checking",
+      "markdownDeprecationMessage": "**Deprecated**: Please use `pls.syntax.enabled` instead.",
+      "type": "boolean"
+    },
+    "perl.syntax.perl": {
+      "deprecationMessage": "Deprecated: Please use pls.syntax.perl instead.",
+      "description": "Path to the perl binary to use for syntax checking",
+      "markdownDeprecationMessage": "**Deprecated**: Please use `pls.syntax.perl` instead.",
+      "type": "string"
+    },
+    "pls.args": {
       "default": [],
       "description": "Arguments to pass to the pls command",
       "type": "array"
     },
-    "perl.syntax.args": {
+    "pls.cmd": {
+      "default": "pls",
+      "description": "Path to the pls executable script",
+      "type": "string"
+    },
+    "pls.cwd": {
+      "default": ".",
+      "description": "Current working directory to use",
+      "type": "string"
+    },
+    "pls.inc": {
+      "default": [],
+      "description": "Paths to add to @INC.",
+      "type": "array"
+    },
+    "pls.perlcritic.enabled": {
+      "default": true,
+      "description": "Enable perlcritic",
+      "type": "boolean"
+    },
+    "pls.perlcritic.perlcriticrc": {
+      "default": "~/.perlcriticrc",
+      "description": "Path to .perlcriticrc",
+      "type": "string"
+    },
+    "pls.perltidy.perltidyrc": {
+      "default": "~/.perltidyrc",
+      "description": "Path to .perltidyrc",
+      "type": "string"
+    },
+    "pls.syntax.args": {
       "default": [],
       "description": "Additional arguments to pass when syntax checking. This is useful if there is a BEGIN block in your code that changes behavior depending on the contents of @ARGV.",
       "type": "array"
     },
-    "perl.syntax.enabled": {
+    "pls.syntax.enabled": {
       "default": true,
       "description": "Enable syntax checking",
       "type": "boolean"
     },
-    "perl.syntax.perl": {
+    "pls.syntax.perl": {
       "default": "",
       "description": "Path to the perl binary to use for syntax checking",
       "type": "string"
