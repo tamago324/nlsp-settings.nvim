@@ -185,6 +185,11 @@
       "description": "Loads user and system-wide PowerShell profiles (profile.ps1 and Microsoft.VSCode_profile.ps1) into the PowerShell session. This affects IntelliSense and interactive script execution, but it does not affect the debugger.",
       "type": "boolean"
     },
+    "powershell.enableReferencesCodeLens": {
+      "default": true,
+      "description": "Displays a code lens above function definitions showing the number of times the function is referenced in the workspace. Large workspaces should disable this setting due to high performance impact.",
+      "type": "boolean"
+    },
     "powershell.helpCompletion": {
       "default": "BlockComment",
       "description": "Controls the comment-based help completion behavior triggered by typing '##'. Set the generated help style with 'BlockComment' or 'LineComment'. Disable the feature with 'Disabled'.",
