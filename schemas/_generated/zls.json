@@ -19,6 +19,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "zls.enable_ast_check_diagnostics": {
+      "default": false,
+      "description": "Whether to enable ast-check diagnostics",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "zls.enable_import_embedfile_argument_completions": {
       "default": false,
       "description": "Whether to enable import/embedFile argument completions (NOTE: these are triggered manually as updating the autotrigger characters may cause issues)",
@@ -40,12 +46,6 @@
     "zls.enable_snippets": {
       "default": false,
       "description": "Whether to enable snippet completions",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "zls.enable_unused_variable_warnings": {
-      "default": false,
-      "description": "Whether to enable unused variable warnings",
       "scope": "resource",
       "type": "boolean"
     },
