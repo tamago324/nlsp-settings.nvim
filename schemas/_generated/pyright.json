@@ -441,7 +441,7 @@
         },
         "reportUndefinedVariable": {
           "default": "error",
-          "description": "Diagnostics for a missing or misnamed “self” parameter in instance methods and “cls” parameter in class methods. Instance methods in metaclasses (classes that derive from “type”) are allowed to use “cls” for instance methods.",
+          "description": "Diagnostics for undefined variables.",
           "enum": [
             "none",
             "information",
