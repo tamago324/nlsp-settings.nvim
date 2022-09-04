@@ -14,6 +14,12 @@
       "scope": "resource",
       "type": "string"
     },
+    "zls.check_for_update": {
+      "default": "true",
+      "description": "Whether to automatically check for new updates",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "zls.debugLog": {
       "description": "Enable debug logging in release builds of zls.",
       "scope": "resource",
