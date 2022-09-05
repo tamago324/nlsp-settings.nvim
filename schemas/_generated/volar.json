@@ -114,6 +114,55 @@
       "description": "Show split editor icon in title area of editor.",
       "type": "boolean"
     },
+    "volar.initialIndent": {
+      "default": {
+        "html": true
+      },
+      "description": "Whether to have initial indent.",
+      "properties": {
+        "css": {
+          "default": false,
+          "type": "boolean"
+        },
+        "html": {
+          "default": true,
+          "type": "boolean"
+        },
+        "javascript": {
+          "default": false,
+          "type": "boolean"
+        },
+        "javascriptreact": {
+          "default": false,
+          "type": "boolean"
+        },
+        "json": {
+          "default": false,
+          "type": "boolean"
+        },
+        "jsonc": {
+          "default": false,
+          "type": "boolean"
+        },
+        "pug": {
+          "default": false,
+          "type": "boolean"
+        },
+        "scss": {
+          "default": false,
+          "type": "boolean"
+        },
+        "typescript": {
+          "default": false,
+          "type": "boolean"
+        },
+        "typescriptreact": {
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
     "volar.preview.backgroundColor": {
       "default": "#f0f0f0",
       "description": "Component preview background color.",
