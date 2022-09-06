@@ -104,17 +104,7 @@
       "description": "Delay time for diagnostics.",
       "type": "number"
     },
-    "volar.icon.preview": {
-      "default": true,
-      "description": "Show Vite / Nuxt App preview icon.",
-      "type": "boolean"
-    },
-    "volar.icon.splitEditors": {
-      "default": true,
-      "description": "Show split editor icon in title area of editor.",
-      "type": "boolean"
-    },
-    "volar.initialIndent": {
+    "volar.format.initialIndent": {
       "default": {
         "html": true
       },
@@ -144,10 +134,6 @@
           "default": false,
           "type": "boolean"
         },
-        "pug": {
-          "default": false,
-          "type": "boolean"
-        },
         "scss": {
           "default": false,
           "type": "boolean"
@@ -162,6 +148,16 @@
         }
       },
       "type": "object"
+    },
+    "volar.icon.preview": {
+      "default": true,
+      "description": "Show Vite / Nuxt App preview icon.",
+      "type": "boolean"
+    },
+    "volar.icon.splitEditors": {
+      "default": true,
+      "description": "Show split editor icon in title area of editor.",
+      "type": "boolean"
     },
     "volar.preview.backgroundColor": {
       "default": "#f0f0f0",
