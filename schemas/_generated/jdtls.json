@@ -130,7 +130,7 @@
       "type": "array"
     },
     "java.completion.guessMethodArguments": {
-      "default": false,
+      "default": true,
       "description": "When set to true, method arguments are guessed when a method is selected from as list of code assist proposals.",
       "scope": "window",
       "type": "boolean"
@@ -718,7 +718,7 @@
       "type": "boolean"
     },
     "java.signatureHelp.enabled": {
-      "default": false,
+      "default": true,
       "description": "Enable/disable the signature help.",
       "scope": "window",
       "type": "boolean"
