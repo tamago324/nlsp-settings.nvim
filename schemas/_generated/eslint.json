@@ -18,11 +18,21 @@
     "eslint.codeAction.disableRuleComment": {
       "additionalProperties": false,
       "default": {
+        "commentStyle": "line",
         "enable": true,
         "location": "separateLine"
       },
       "markdownDescription": "Show disable lint rule in the quick fix menu.",
       "properties": {
+        "commentStyle": {
+          "default": "line",
+          "definition": "The comment style to use when disabling a rule on a specific line.",
+          "enum": [
+            "line",
+            "block"
+          ],
+          "type": "string"
+        },
         "enable": {
           "default": true,
           "description": "Show the disable code actions.",
