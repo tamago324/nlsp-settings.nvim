@@ -40,12 +40,14 @@
     },
     "astro.format.indentFrontmatter": {
       "default": false,
+      "deprecationMessage": "The `astro.format` settings are deprecated. Formatting is now powered by Prettier and can be configured through a Prettier configuration file.",
       "description": "Indent the formatter by one level of indentation",
       "title": "Formatting: Indent frontmatter",
       "type": "boolean"
     },
     "astro.format.newLineAfterFrontmatter": {
       "default": true,
+      "deprecationMessage": "The `astro.format` settings are deprecated. Formatting is now powered by Prettier and can be configured through a Prettier configuration file.",
       "description": "Add a line return between the frontmatter and the template",
       "title": "Formatting: Add line return after the frontmatter",
       "type": "boolean"
