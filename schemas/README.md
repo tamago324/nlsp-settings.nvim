@@ -132,6 +132,7 @@
 - [ ] solang
 - [x] solargraph
 - [ ] solc
+- [ ] solidity
 - [x] solidity_ls
 - [x] sorbet
 - [x] sourcekit
