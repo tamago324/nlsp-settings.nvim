@@ -38,7 +38,8 @@
       "description": "Enables / disables the solidity formatter (prettier solidity default)",
       "enum": [
         "none",
-        "prettier"
+        "prettier",
+        "forge"
       ],
       "type": "string"
     },
