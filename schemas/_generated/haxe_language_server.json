@@ -583,6 +583,41 @@
       ],
       "scope": "resource"
     },
+    "haxe.importsSortOrder": {
+      "default": "all-alphabetical",
+      "enum": [
+        "all-alphabetical",
+        "stdlib -> libs -> project",
+        "non-project -> project"
+      ],
+      "markdownDescription": "Sort order of imports",
+      "type": "string"
+    },
+    "haxe.inlayHints.conditionals": {
+      "default": false,
+      "markdownDescription": "Show inlay hints for conditionals",
+      "type": "boolean"
+    },
+    "haxe.inlayHints.functionReturnTypes": {
+      "default": true,
+      "markdownDescription": "Show inlay hints for function return types",
+      "type": "boolean"
+    },
+    "haxe.inlayHints.parameterNames": {
+      "default": true,
+      "markdownDescription": "Show inlay hints for parameter names",
+      "type": "boolean"
+    },
+    "haxe.inlayHints.parameterTypes": {
+      "default": false,
+      "markdownDescription": "Show inlay hints for parameter types",
+      "type": "boolean"
+    },
+    "haxe.inlayHints.variableTypes": {
+      "default": true,
+      "markdownDescription": "Show inlay hints for variables",
+      "type": "boolean"
+    },
     "haxe.maxCompletionItems": {
       "default": 1000,
       "markdownDescription": "Upper limit for the number of completion items that can be shown at once.",
@@ -619,7 +654,7 @@
         "test",
         "tests"
       ],
-      "deprecationMessage": "Folders to look for renamable identifiers. Rename will not see or touch files outside of those folders.",
+      "markdownDescription": "Folders to look for renamable identifiers. Rename will not see or touch files outside of those folders.",
       "type": "array"
     },
     "haxe.taskPresentation": {
