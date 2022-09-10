@@ -593,30 +593,44 @@
       "markdownDescription": "Sort order of imports",
       "type": "string"
     },
-    "haxe.inlayHints.conditionals": {
-      "default": false,
-      "markdownDescription": "Show inlay hints for conditionals",
-      "type": "boolean"
-    },
-    "haxe.inlayHints.functionReturnTypes": {
-      "default": true,
-      "markdownDescription": "Show inlay hints for function return types",
-      "type": "boolean"
-    },
-    "haxe.inlayHints.parameterNames": {
-      "default": true,
-      "markdownDescription": "Show inlay hints for parameter names",
-      "type": "boolean"
-    },
-    "haxe.inlayHints.parameterTypes": {
-      "default": false,
-      "markdownDescription": "Show inlay hints for parameter types",
-      "type": "boolean"
-    },
-    "haxe.inlayHints.variableTypes": {
-      "default": true,
-      "markdownDescription": "Show inlay hints for variables",
-      "type": "boolean"
+    "haxe.inlayHints": {
+      "additionalProperties": false,
+      "default": {
+        "conditionals": false,
+        "functionReturnTypes": true,
+        "parameterNames": true,
+        "parameterTypes": false,
+        "variableTypes": true
+      },
+      "markdownDescription": "Options for inlay hints feature",
+      "properties": {
+        "conditionals": {
+          "default": false,
+          "markdownDescription": "Show inlay hints for conditionals",
+          "type": "boolean"
+        },
+        "functionReturnTypes": {
+          "default": true,
+          "markdownDescription": "Show inlay hints for function return types",
+          "type": "boolean"
+        },
+        "parameterNames": {
+          "default": true,
+          "markdownDescription": "Show inlay hints for parameter names",
+          "type": "boolean"
+        },
+        "parameterTypes": {
+          "default": false,
+          "markdownDescription": "Show inlay hints for parameter types",
+          "type": "boolean"
+        },
+        "variableTypes": {
+          "default": true,
+          "markdownDescription": "Show inlay hints for variables",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
     },
     "haxe.maxCompletionItems": {
       "default": 1000,
