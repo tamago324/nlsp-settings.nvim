@@ -698,6 +698,11 @@
         "string"
       ]
     },
+    "rust-analyzer.references.excludeImports": {
+      "default": false,
+      "markdownDescription": "Exclude imports from find-all-references.",
+      "type": "boolean"
+    },
     "rust-analyzer.restartServerOnConfigChange": {
       "default": false,
       "markdownDescription": "Whether to restart the server automatically when certain settings that require a restart are changed.",
