@@ -460,6 +460,11 @@
       "markdownDescription": "Whether to allow import insertion to merge new imports into single path glob imports like `use std::fmt::*;`.",
       "type": "boolean"
     },
+    "rust-analyzer.imports.prefer.core": {
+      "default": false,
+      "markdownDescription": "Prefer to use imports of the core crate over the std crate.",
+      "type": "boolean"
+    },
     "rust-analyzer.imports.prefix": {
       "default": "plain",
       "enum": [
