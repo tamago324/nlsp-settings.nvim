@@ -12,6 +12,7 @@
 - [x] bashls
 - [ ] beancount
 - [ ] bicep
+- [ ] blueprint_ls
 - [ ] bsl_ls
 - [ ] bufls
 - [ ] ccls
