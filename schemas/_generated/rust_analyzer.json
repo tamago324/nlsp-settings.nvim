@@ -625,6 +625,19 @@
       "markdownDescription": "Whether to show `Implementations` lens. Only applies when\n`#rust-analyzer.lens.enable#` is set.",
       "type": "boolean"
     },
+    "rust-analyzer.lens.location": {
+      "default": "above_name",
+      "enum": [
+        "above_name",
+        "above_whole_item"
+      ],
+      "enumDescriptions": [
+        "Render annotations above the name of the item.",
+        "Render annotations above the whole item, including documentation comments and attributes."
+      ],
+      "markdownDescription": "Where to render annotations.",
+      "type": "string"
+    },
     "rust-analyzer.lens.references.adt.enable": {
       "default": false,
       "markdownDescription": "Whether to show `References` lens for Struct, Enum, and Union.\nOnly applies when `#rust-analyzer.lens.enable#` is set.",
