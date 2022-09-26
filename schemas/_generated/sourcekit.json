@@ -31,6 +31,13 @@
       "scope": "machine-overridable",
       "type": "string"
     },
+    "swift.disableAutoResolve": {
+      "default": false,
+      "markdownDescription": "Disable automatic running of `swift package resolve`.",
+      "order": 9,
+      "scope": "machine-overridable",
+      "type": "boolean"
+    },
     "swift.excludePathsFromPackageDependencies": {
       "default": [
         ".git",
