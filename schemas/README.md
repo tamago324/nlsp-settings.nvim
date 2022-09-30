@@ -86,6 +86,7 @@
 - [ ] mlir_lsp_server
 - [ ] mlir_pdll_lsp_server
 - [ ] mm0_ls
+- [ ] move_analyzer
 - [x] nickel_ls
 - [ ] nil_ls
 - [x] nimls
