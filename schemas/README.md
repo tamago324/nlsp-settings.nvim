@@ -38,6 +38,7 @@
 - [x] elmls
 - [ ] ember
 - [ ] emmet_ls
+- [ ] erg_language_server
 - [ ] erlangls
 - [ ] esbonio
 - [x] eslint
@@ -125,6 +126,7 @@
 - [ ] rnix
 - [ ] robotframework_ls
 - [x] rome
+- [ ] ruby_ls
 - [x] rust_analyzer
 - [ ] salt_ls
 - [ ] scry
