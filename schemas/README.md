@@ -79,7 +79,7 @@
 - [ ] lelwel_ls
 - [ ] lemminx
 - [x] ltex
-- [ ] luau_lsp
+- [x] luau_lsp
 - [ ] m68k
 - [ ] marksman
 - [ ] metals
