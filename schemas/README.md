@@ -47,6 +47,7 @@
 - [ ] foam_ls
 - [x] fortls
 - [x] fsautocomplete
+- [ ] fsharp_language_server
 - [ ] fstar
 - [ ] gdscript
 - [ ] ghcide
