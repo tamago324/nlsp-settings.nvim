@@ -26,6 +26,7 @@
 - [x] cssls
 - [ ] cssmodules_ls
 - [ ] cucumber_language_server
+- [ ] dafny
 - [ ] dagger
 - [x] dartls
 - [x] denols
