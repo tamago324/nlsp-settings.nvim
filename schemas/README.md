@@ -1,6 +1,7 @@
 # Schemas
 
 - [x] als
+- [ ] anakin_language_server
 - [ ] angularls
 - [ ] ansiblels
 - [ ] antlersls
