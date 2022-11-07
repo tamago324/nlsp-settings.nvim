@@ -132,6 +132,7 @@
           "exp-in-action",
           "global-in-nil-env",
           "index-in-func-name",
+          "invisible",
           "jump-local-scope",
           "keyword",
           "local-limit",
@@ -155,6 +156,7 @@
           "luadoc-miss-operator-name",
           "luadoc-miss-param-extends",
           "luadoc-miss-param-name",
+          "luadoc-miss-see-name",
           "luadoc-miss-sign-name",
           "luadoc-miss-symbol",
           "luadoc-miss-type-name",
@@ -843,6 +845,19 @@
         "global-in-nil-env": {
           "default": "Any",
           "description": "%config.diagnostics.global-in-nil-env%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Any!",
+            "Opened!",
+            "None!"
+          ],
+          "type": "string"
+        },
+        "invisible": {
+          "default": "Any",
+          "description": "%config.diagnostics.invisible%",
           "enum": [
             "Any",
             "Opened",
@@ -1606,6 +1621,21 @@
           ],
           "type": "string"
         },
+        "invisible": {
+          "default": "Warning",
+          "description": "%config.diagnostics.invisible%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Error!",
+            "Warning!",
+            "Information!",
+            "Hint!"
+          ],
+          "type": "string"
+        },
         "lowercase-global": {
           "default": "Information",
           "description": "%config.diagnostics.lowercase-global%",
@@ -2121,11 +2151,54 @@
       "scope": "resource",
       "type": "integer"
     },
+    "Lua.diagnostics.workspaceEvent": {
+      "default": "OnSave",
+      "enum": [
+        "OnChange",
+        "OnSave",
+        "None"
+      ],
+      "markdownDescription": "%config.diagnostics.workspaceEvent%",
+      "markdownEnumDescriptions": [
+        "%config.diagnostics.workspaceEvent.OnChange%",
+        "%config.diagnostics.workspaceEvent.OnSave%",
+        "%config.diagnostics.workspaceEvent.None%"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
     "Lua.diagnostics.workspaceRate": {
       "default": 100,
       "markdownDescription": "%config.diagnostics.workspaceRate%",
       "scope": "resource",
       "type": "integer"
+    },
+    "Lua.doc.packageName": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%config.doc.packageName%",
+      "scope": "resource",
+      "type": "array"
+    },
+    "Lua.doc.privateName": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%config.doc.privateName%",
+      "scope": "resource",
+      "type": "array"
+    },
+    "Lua.doc.protectedName": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%config.doc.protectedName%",
+      "scope": "resource",
+      "type": "array"
     },
     "Lua.format.defaultConfig": {
       "additionalProperties": false,
@@ -2260,6 +2333,12 @@
       "markdownDescription": "%config.hover.viewStringMax%",
       "scope": "resource",
       "type": "integer"
+    },
+    "Lua.misc.executablePath": {
+      "default": "",
+      "markdownDescription": "%config.misc.executablePath%",
+      "scope": "resource",
+      "type": "string"
     },
     "Lua.misc.parameters": {
       "default": [],
