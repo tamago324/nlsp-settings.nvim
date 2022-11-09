@@ -86,6 +86,7 @@
 - [ ] m68k
 - [ ] marksman
 - [ ] metals
+- [ ] millet
 - [ ] mint
 - [ ] mlir_lsp_server
 - [ ] mlir_pdll_lsp_server
