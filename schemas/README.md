@@ -168,6 +168,7 @@
 - [ ] theme_check
 - [ ] tilt_ls
 - [x] tsserver
+- [ ] turtle_ls
 - [ ] typeprof
 - [ ] vala_ls
 - [ ] vdmj
