@@ -45,6 +45,7 @@
 - [ ] erlangls
 - [ ] esbonio
 - [x] eslint
+- [ ] fennel-ls
 - [x] flow
 - [ ] flux_lsp
 - [ ] foam_ls
