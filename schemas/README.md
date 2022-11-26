@@ -98,6 +98,7 @@
 - [x] nickel_ls
 - [ ] nil_ls
 - [x] nimls
+- [ ] ntt
 - [ ] nxls
 - [ ] ocamlls
 - [ ] ocamllsp
