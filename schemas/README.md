@@ -115,6 +115,7 @@
 - [ ] please
 - [x] powershell_es
 - [ ] prismals
+- [ ] prolog_ls
 - [ ] prosemd_lsp
 - [x] psalm
 - [x] puppet
