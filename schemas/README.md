@@ -139,6 +139,7 @@
 - [ ] ruby_ls
 - [x] rust_analyzer
 - [ ] salt_ls
+- [ ] scheme_langserver
 - [ ] scry
 - [ ] serve_d
 - [ ] sixtyfps
