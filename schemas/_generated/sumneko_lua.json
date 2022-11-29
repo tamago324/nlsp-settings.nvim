@@ -817,7 +817,7 @@
           "type": "string"
         },
         "duplicate-set-field": {
-          "default": "Any",
+          "default": "Opened",
           "description": "%config.diagnostics.duplicate-set-field%",
           "enum": [
             "Any",
