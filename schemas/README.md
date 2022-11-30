@@ -144,6 +144,7 @@
 - [ ] serve_d
 - [ ] sixtyfps
 - [ ] slint_lsp
+- [ ] smarty_ls
 - [ ] solang
 - [x] solargraph
 - [ ] solc
