@@ -176,6 +176,7 @@
 - [x] tsserver
 - [ ] turtle_ls
 - [ ] typeprof
+- [ ] unison
 - [ ] vala_ls
 - [ ] vdmj
 - [ ] verible
