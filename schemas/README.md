@@ -56,6 +56,7 @@
 - [ ] gdscript
 - [ ] ghcide
 - [ ] ghdl_ls
+- [ ] gleam
 - [ ] glslls
 - [ ] golangci_lint_ls
 - [x] gopls
