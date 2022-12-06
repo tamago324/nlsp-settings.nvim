@@ -157,6 +157,7 @@
 - [x] spectral
 - [ ] sqlls
 - [ ] sqls
+- [ ] starlark-rust
 - [ ] steep
 - [x] stylelint_lsp
 - [x] sumneko_lua
