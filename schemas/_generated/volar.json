@@ -2,6 +2,11 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of volar",
   "properties": {
+    "volar.addSpaceBetweenDoubleCurlyBrackets": {
+      "default": true,
+      "description": "Auto add space between double curly brackets: {{|}} -> {{ | }}",
+      "type": "boolean"
+    },
     "volar.autoCompleteRefs": {
       "default": false,
       "description": "Auto-complete Ref value with `.value`.",
@@ -201,6 +206,11 @@
         "type": "string"
       },
       "type": "array"
+    },
+    "volar.vueserver.configFilePath": {
+      "default": "./volar.config.js",
+      "description": "Path to volar.config.js.",
+      "type": "string"
     },
     "volar.vueserver.diagnosticModel": {
       "default": "push",
