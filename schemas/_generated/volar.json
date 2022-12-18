@@ -71,6 +71,11 @@
       "description": "Delay time for diagnostics.",
       "type": "number"
     },
+    "volar.doctor.checkVueTsc": {
+      "default": false,
+      "description": "Check vue-tsc version.",
+      "type": "boolean"
+    },
     "volar.doctor.statusBarItem": {
       "default": true,
       "description": "Show known problems in status bar.",
@@ -217,6 +222,11 @@
     },
     "volar.vueserver.json.customBlockSchemaUrls": {
       "type": "object"
+    },
+    "volar.vueserver.maxFileSize": {
+      "default": 20971520,
+      "description": "Maximum file size for Vue Server to load. (default: 20MB)",
+      "type": "number"
     },
     "volar.vueserver.maxOldSpaceSize": {
       "default": null,
