@@ -76,6 +76,7 @@
 - [x] java_language_server
 - [x] jdtls
 - [ ] jedi_language_server
+- [ ] jqls
 - [x] jsonls
 - [ ] jsonnet_ls
 - [x] julials
