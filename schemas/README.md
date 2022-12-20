@@ -179,6 +179,7 @@
 - [ ] turtle_ls
 - [ ] typeprof
 - [ ] unison
+- [ ] uvls
 - [ ] vala_ls
 - [ ] vdmj
 - [ ] verible
