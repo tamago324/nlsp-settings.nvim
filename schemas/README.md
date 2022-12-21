@@ -139,7 +139,7 @@
 - [ ] robotframework_ls
 - [x] rome
 - [ ] ruby_ls
-- [ ] ruff-lsp
+- [ ] ruff_lsp
 - [x] rust_analyzer
 - [ ] salt_ls
 - [ ] scheme_langserver
