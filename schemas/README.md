@@ -148,6 +148,7 @@
 - [ ] sixtyfps
 - [ ] slint_lsp
 - [ ] smarty_ls
+- [ ] smithy_ls
 - [ ] solang
 - [x] solargraph
 - [ ] solc
