@@ -130,6 +130,7 @@
 - [ ] quick_lint_js
 - [x] r_language_server
 - [ ] racket_langserver
+- [ ] raku_navigator
 - [ ] reason_ls
 - [ ] relay_lsp
 - [ ] remark_ls
