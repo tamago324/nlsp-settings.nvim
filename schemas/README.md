@@ -22,6 +22,7 @@
 - [ ] clojure_lsp
 - [ ] cmake
 - [x] codeqlls
+- [ ] coffeesense
 - [ ] crystalline
 - [ ] csharp_ls
 - [x] cssls
