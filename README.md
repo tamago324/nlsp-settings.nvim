@@ -35,13 +35,13 @@ Plug 'rcarriga/nvim-notify'
 
 ## Getting Started
 
-### Step1. Install jsonls with nvim-lsp-installer
+### Step 1. Install jsonls with nvim-lsp-installer
 
 ```
 :LspInstall jsonls
 ```
 
-### Step2. Setup LSP servers
+### Step 2. Setup LSP servers
 
 Example: Completion using omnifunc
 
@@ -80,11 +80,12 @@ end)
 TODO: その他の設定は doc を参照
 
 
-### Step3. Write settings
+### Step 3. Write settings
 
 Execute `:LspSettings sumneko_lua`.  
 `sumneko_lua.json` will be created under the directory set in `config_home`. Type `<C-x><C-o>`. You should now have jsonls completion enabled.
 
+> :exclamation: Each time Neovim is opened, `:LspSettings update [server_name]` must be executed *after the LSP server attaches*
 
 ## Usage
 
