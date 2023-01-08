@@ -32,7 +32,7 @@
       "description": "[ref sugar ☐] code lens.",
       "type": "boolean"
     },
-    "volar.completion.normalizeComponentAutoImportName": {
+    "volar.completion.normalizeComponentImportName": {
       "default": true,
       "description": "Normalize import name for auto import. (\"myCompVue\" -> \"MyComp\")",
       "type": "boolean"
