@@ -2,6 +2,9 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of volar",
   "properties": {
+    "typescript.tsdk": {
+      "type": "string"
+    },
     "volar.addSpaceBetweenDoubleCurlyBrackets": {
       "default": true,
       "description": "Auto add space between double curly brackets: {{|}} -> {{ | }}",
