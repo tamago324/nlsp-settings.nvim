@@ -109,6 +109,7 @@
 - [x] omnisharp
 - [ ] opencl_ls
 - [ ] openscad_ls
+- [ ] openscad_lsp
 - [ ] pasls
 - [x] perlls
 - [x] perlnavigator
