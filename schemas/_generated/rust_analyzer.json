@@ -818,6 +818,15 @@
       "markdownDescription": "Whether to show `can't find Cargo.toml` error message.",
       "type": "boolean"
     },
+    "rust-analyzer.numThreads": {
+      "default": null,
+      "markdownDescription": "How many worker threads in the main loop. The default `null` means to pick automatically.",
+      "minimum": 0,
+      "type": [
+        "null",
+        "integer"
+      ]
+    },
     "rust-analyzer.procMacro.attributes.enable": {
       "default": true,
       "markdownDescription": "Expand attribute macros. Requires `#rust-analyzer.procMacro.enable#` to be set.",
