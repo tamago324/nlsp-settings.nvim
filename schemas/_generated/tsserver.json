@@ -843,12 +843,6 @@
       "scope": "resource",
       "type": "boolean"
     },
-    "typescript.suggest.includeCompletionsWithSnippetText": {
-      "default": true,
-      "description": "%configuration.suggest.includeCompletionsWithSnippetText%",
-      "scope": "resource",
-      "type": "boolean"
-    },
     "typescript.suggest.jsdoc.generateReturns": {
       "default": true,
       "markdownDescription": "%configuration.suggest.jsdoc.generateReturns%",
