@@ -14,6 +14,7 @@
 - [ ] beancount
 - [ ] bicep
 - [ ] blueprint_ls
+- [ ] bright_script
 - [ ] bsl_ls
 - [ ] bufls
 - [ ] ccls
