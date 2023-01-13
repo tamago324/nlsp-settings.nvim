@@ -38,6 +38,7 @@
 - [ ] dockerls
 - [ ] dolmenls
 - [ ] dotls
+- [ ] drools_lsp
 - [ ] efm
 - [x] elixirls
 - [x] elmls
