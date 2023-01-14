@@ -56,6 +56,7 @@
 - [x] fsautocomplete
 - [ ] fsharp_language_server
 - [ ] fstar
+- [ ] futhark_lsp
 - [ ] gdscript
 - [ ] ghcide
 - [ ] ghdl_ls
