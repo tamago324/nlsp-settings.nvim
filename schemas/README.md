@@ -39,6 +39,7 @@
 - [ ] dolmenls
 - [ ] dotls
 - [ ] drools_lsp
+- [ ] ds_pinyin_lsp
 - [ ] efm
 - [x] elixirls
 - [x] elmls
