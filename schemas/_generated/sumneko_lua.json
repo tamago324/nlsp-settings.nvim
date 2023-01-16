@@ -2,6 +2,18 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of sumneko_lua",
   "properties": {
+    "Lua.addonManager.authentication.noAsk": {
+      "default": false,
+      "markdownDescription": "Don't ask to sign in on startup.",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "Lua.codeLens.enable": {
+      "default": false,
+      "markdownDescription": "%config.codeLens.enable%",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "Lua.completion.autoRequire": {
       "default": true,
       "markdownDescription": "%config.completion.autoRequire%",
@@ -180,6 +192,7 @@
           "missing-return-value",
           "need-check-nil",
           "need-paren",
+          "nesting-long-mark",
           "newfield-call",
           "newline-call",
           "no-unknown",
@@ -2202,7 +2215,7 @@
     },
     "Lua.format.defaultConfig": {
       "additionalProperties": false,
-      "default": {},
+      "default": [],
       "markdownDescription": "%config.format.defaultConfig%",
       "patternProperties": {
         ".*": {
@@ -2627,7 +2640,7 @@
     },
     "Lua.runtime.special": {
       "additionalProperties": false,
-      "default": {},
+      "default": [],
       "markdownDescription": "%config.runtime.special%",
       "patternProperties": {
         ".*": {
@@ -2717,18 +2730,6 @@
       "markdownDescription": "%config.spell.dict%",
       "scope": "resource",
       "type": "array"
-    },
-    "Lua.telemetry.enable": {
-      "default": null,
-      "markdownDescription": "%config.telemetry.enable%",
-      "scope": "resource",
-      "tags": [
-        "telemetry"
-      ],
-      "type": [
-        "boolean",
-        "null"
-      ]
     },
     "Lua.type.castNumberToInteger": {
       "default": true,
