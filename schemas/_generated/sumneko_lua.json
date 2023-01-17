@@ -2,12 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of sumneko_lua",
   "properties": {
-    "Lua.addonManager.authentication.noAsk": {
-      "default": false,
-      "markdownDescription": "Don't ask to sign in on startup.",
-      "scope": "resource",
-      "type": "boolean"
-    },
     "Lua.codeLens.enable": {
       "default": false,
       "markdownDescription": "%config.codeLens.enable%",
