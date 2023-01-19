@@ -21,7 +21,8 @@
           "addFinalModifier",
           "instanceofPatternMatch",
           "lambdaExpression",
-          "switchExpression"
+          "switchExpression",
+          "tryWithResource"
         ],
         "type": "string"
       },
