@@ -491,6 +491,12 @@
       "scope": "window",
       "type": "boolean"
     },
+    "java.import.maven.disableTestClasspathFlag": {
+      "default": false,
+      "description": "Enable/disable test classpath segregation. When enabled, this permits the usage of test resources within a Maven project as dependencies within the compile scope of other projects.",
+      "scope": "window",
+      "type": "boolean"
+    },
     "java.import.maven.enabled": {
       "default": true,
       "description": "Enable/disable the Maven importer.",
