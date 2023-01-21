@@ -190,6 +190,7 @@
 - [ ] turtle_ls
 - [ ] typeprof
 - [ ] unison
+- [ ] unocss
 - [ ] uvls
 - [ ] vala_ls
 - [ ] vdmj
