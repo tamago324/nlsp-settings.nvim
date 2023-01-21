@@ -105,6 +105,7 @@
 - [x] nickel_ls
 - [ ] nil_ls
 - [x] nimls
+- [ ] nomad_lsp
 - [ ] ntt
 - [ ] nxls
 - [ ] ocamlls
