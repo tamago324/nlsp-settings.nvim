@@ -200,6 +200,7 @@
 - [ ] visualforce_ls
 - [ ] vls
 - [x] volar
+- [ ] vtsls
 - [x] vuels
 - [ ] wgsl_analyzer
 - [x] yamlls
