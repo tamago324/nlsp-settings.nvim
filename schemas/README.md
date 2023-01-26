@@ -196,6 +196,7 @@
 - [ ] vdmj
 - [ ] verible
 - [ ] veridian
+- [ ] veryl_ls
 - [ ] vimls
 - [ ] visualforce_ls
 - [ ] vls
