@@ -215,6 +215,15 @@
       "scope": "window",
       "type": "array"
     },
+    "luau-lsp.types.documentationFiles": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "A list of paths to documentation files which provide documentation support to the definition files provided",
+      "scope": "window",
+      "type": "array"
+    },
     "luau-lsp.types.roblox": {
       "default": true,
       "markdownDescription": "Load in and automatically update Roblox type definitions for the type checker",
