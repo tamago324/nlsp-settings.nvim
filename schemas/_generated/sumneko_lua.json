@@ -2823,19 +2823,6 @@
       "scope": "resource",
       "type": "integer"
     },
-    "Lua.workspace.supportScheme": {
-      "default": [
-        "file",
-        "untitled",
-        "git"
-      ],
-      "items": {
-        "type": "string"
-      },
-      "markdownDescription": "%config.workspace.supportScheme%",
-      "scope": "resource",
-      "type": "array"
-    },
     "Lua.workspace.useGitIgnore": {
       "default": true,
       "markdownDescription": "%config.workspace.useGitIgnore%",
