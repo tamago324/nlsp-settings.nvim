@@ -25,11 +25,6 @@
       "description": "[references] code lens.",
       "type": "boolean"
     },
-    "volar.codeLens.scriptSetupTools": {
-      "default": false,
-      "description": "[ref sugar ☐] code lens.",
-      "type": "boolean"
-    },
     "volar.completion.normalizeComponentImportName": {
       "default": true,
       "description": "Normalize import name for auto import. (\"myCompVue\" -> \"MyComp\")",
