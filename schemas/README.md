@@ -17,6 +17,7 @@
 - [ ] bright_script
 - [ ] bsl_ls
 - [ ] bufls
+- [ ] cadence
 - [ ] ccls
 - [x] clangd
 - [ ] clarity_lsp
