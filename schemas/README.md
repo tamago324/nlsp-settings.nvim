@@ -51,6 +51,7 @@
 - [ ] esbonio
 - [x] eslint
 - [ ] fennel-ls
+- [ ] fennel_language_server
 - [x] flow
 - [ ] flux_lsp
 - [ ] foam_ls
