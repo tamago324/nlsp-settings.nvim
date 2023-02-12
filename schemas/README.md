@@ -93,7 +93,7 @@
 - [ ] lelwel_ls
 - [ ] lemminx
 - [x] ltex
-- [ ] lua_ls
+- [x] lua_ls
 - [x] luau_lsp
 - [ ] m68k
 - [ ] marksman
