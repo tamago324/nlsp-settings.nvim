@@ -160,11 +160,6 @@
       "description": "Default port for component preview server.",
       "type": "number"
     },
-    "volar.preview.root": {
-      "default": ".",
-      "description": "Component preview root directory. (For Nuxt, it should be \"./src\" by default.)",
-      "type": "string"
-    },
     "volar.preview.script.nuxi": {
       "default": "node {NUXI_BIN} dev --port {PORT}",
       "type": "string"
