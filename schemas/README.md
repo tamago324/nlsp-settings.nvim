@@ -50,8 +50,8 @@
 - [ ] erlangls
 - [ ] esbonio
 - [x] eslint
-- [ ] fennel-ls
 - [ ] fennel_language_server
+- [ ] fennel_ls
 - [x] flow
 - [ ] flux_lsp
 - [ ] foam_ls
@@ -93,6 +93,7 @@
 - [ ] lelwel_ls
 - [ ] lemminx
 - [x] ltex
+- [ ] lua_ls
 - [x] luau_lsp
 - [ ] m68k
 - [ ] marksman
@@ -170,10 +171,9 @@
 - [x] spectral
 - [ ] sqlls
 - [ ] sqls
-- [ ] starlark-rust
+- [ ] starlark_rust
 - [ ] steep
 - [x] stylelint_lsp
-- [x] sumneko_lua
 - [x] svelte
 - [x] svlangserver
 - [ ] svls
