@@ -36,6 +36,7 @@
 - [x] denols
 - [ ] dhall_lsp_server
 - [ ] diagnosticls
+- [ ] docker_compose_language_service
 - [ ] dockerls
 - [ ] dolmenls
 - [ ] dotls
