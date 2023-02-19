@@ -186,6 +186,7 @@
 - [ ] terraform_lsp
 - [x] terraformls
 - [ ] texlab
+- [ ] textlsp
 - [ ] tflint
 - [ ] theme_check
 - [ ] tilt_ls
