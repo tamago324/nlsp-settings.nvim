@@ -209,5 +209,6 @@
 - [x] vuels
 - [ ] wgsl_analyzer
 - [x] yamlls
+- [ ] yls
 - [ ] zk
 - [x] zls
