@@ -172,6 +172,7 @@
 - [x] spectral
 - [ ] sqlls
 - [ ] sqls
+- [ ] standardrb
 - [ ] starlark_rust
 - [ ] steep
 - [x] stylelint_lsp
