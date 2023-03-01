@@ -18,6 +18,7 @@
 - [ ] bsl_ls
 - [ ] bufls
 - [ ] cadence
+- [ ] cairo_ls
 - [ ] ccls
 - [x] clangd
 - [ ] clarity_lsp
