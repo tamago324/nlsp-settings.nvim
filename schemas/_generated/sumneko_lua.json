@@ -3,7 +3,7 @@
   "description": "Setting of sumneko_lua",
   "properties": {
     "Lua.addonManager.enable": {
-      "default": false,
+      "default": true,
       "markdownDescription": "%config.addonManager.enable%",
       "scope": "resource",
       "type": "boolean"
