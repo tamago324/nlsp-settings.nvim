@@ -3,7 +3,7 @@
   "description": "Setting of lua_ls",
   "properties": {
     "Lua.addonManager.enable": {
-      "default": true,
+      "default": false,
       "markdownDescription": "%config.addonManager.enable%",
       "scope": "resource",
       "type": "boolean"
