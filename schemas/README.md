@@ -10,6 +10,7 @@
 - [ ] asm_lsp
 - [x] astro
 - [ ] awk_ls
+- [ ] azure_pipelines_ls
 - [x] bashls
 - [ ] beancount
 - [ ] bicep
