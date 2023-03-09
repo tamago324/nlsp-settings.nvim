@@ -44,6 +44,7 @@
 - [ ] dotls
 - [ ] drools_lsp
 - [ ] ds_pinyin_lsp
+- [ ] ecsact
 - [ ] efm
 - [x] elixirls
 - [x] elmls
