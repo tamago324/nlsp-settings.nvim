@@ -39,7 +39,7 @@ Plug 'rcarriga/nvim-notify'
 ### Step1. Install jsonls with mason.nvim
 
 ```
-:MasonInstall jsonls
+:MasonInstall json-lsp
 ```
 
 ### Step2. Setup LSP servers
