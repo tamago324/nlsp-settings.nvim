@@ -205,6 +205,7 @@
 - [ ] verible
 - [ ] veridian
 - [ ] veryl_ls
+- [ ] vhdl_ls
 - [ ] vimls
 - [ ] visualforce_ls
 - [ ] vls
