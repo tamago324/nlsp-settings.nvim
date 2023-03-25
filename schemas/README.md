@@ -197,6 +197,7 @@
 - [x] tsserver
 - [ ] turtle_ls
 - [ ] typeprof
+- [ ] typst_lsp
 - [ ] unison
 - [ ] unocss
 - [ ] uvls
