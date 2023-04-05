@@ -948,17 +948,6 @@
       "scope": "machine",
       "type": "array"
     },
-    "typescript.tsserver.trace": {
-      "default": "off",
-      "description": "%typescript.tsserver.trace%",
-      "enum": [
-        "off",
-        "messages",
-        "verbose"
-      ],
-      "scope": "window",
-      "type": "string"
-    },
     "typescript.tsserver.useSeparateSyntaxServer": {
       "default": true,
       "description": "%configuration.tsserver.useSeparateSyntaxServer%",
