@@ -192,6 +192,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "javascript.preferGoToSourceDefinition": {
+      "default": false,
+      "description": "%configuration.preferGoToSourceDefinition%",
+      "scope": "window",
+      "type": "boolean"
+    },
     "javascript.preferences.autoImportFileExcludePatterns": {
       "items": {
         "type": "string"
@@ -686,6 +692,12 @@
       "markdownDescription": "%typescript.npm%",
       "scope": "machine",
       "type": "string"
+    },
+    "typescript.preferGoToSourceDefinition": {
+      "default": false,
+      "description": "%configuration.preferGoToSourceDefinition%",
+      "scope": "window",
+      "type": "boolean"
     },
     "typescript.preferences.autoImportFileExcludePatterns": {
       "items": {
