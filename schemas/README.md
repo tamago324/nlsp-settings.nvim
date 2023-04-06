@@ -120,6 +120,7 @@
 - [ ] ols
 - [x] omnisharp
 - [ ] opencl_ls
+- [ ] openedge_ls
 - [ ] openscad_ls
 - [ ] openscad_lsp
 - [ ] pasls
