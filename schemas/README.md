@@ -138,6 +138,7 @@
 - [x] puppet
 - [x] purescriptls
 - [x] pylsp
+- [ ] pylyzer
 - [ ] pyre
 - [x] pyright
 - [ ] qml_lsp
