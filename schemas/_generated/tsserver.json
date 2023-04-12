@@ -274,6 +274,12 @@
       "scope": "language-overridable",
       "type": "string"
     },
+    "javascript.preferences.renameMatchingJsxTags": {
+      "default": true,
+      "description": "%typescript.preferences.renameMatchingJsxTags%",
+      "scope": "language-overridable",
+      "type": "boolean"
+    },
     "javascript.preferences.renameShorthandProperties": {
       "default": true,
       "deprecationMessage": "%typescript.preferences.renameShorthandProperties.deprecationMessage%",
@@ -790,6 +796,12 @@
       ],
       "scope": "language-overridable",
       "type": "string"
+    },
+    "typescript.preferences.renameMatchingJsxTags": {
+      "default": true,
+      "description": "%typescript.preferences.renameMatchingJsxTags%",
+      "scope": "language-overridable",
+      "type": "boolean"
     },
     "typescript.preferences.renameShorthandProperties": {
       "default": true,
