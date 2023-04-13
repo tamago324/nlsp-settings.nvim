@@ -77,6 +77,7 @@
 - [ ] groovyls
 - [x] haxe_language_server
 - [ ] hdl_checker
+- [ ] helm_ls
 - [x] hhvm
 - [x] hie
 - [ ] hls
