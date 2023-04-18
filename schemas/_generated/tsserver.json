@@ -499,6 +499,12 @@
       "scope": "window",
       "type": "boolean"
     },
+    "typescript.format.indentSwitchCase": {
+      "default": true,
+      "description": "%format.indentSwitchCase%",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "typescript.format.insertSpaceAfterCommaDelimiter": {
       "default": true,
       "description": "%format.insertSpaceAfterCommaDelimiter%",
