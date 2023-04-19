@@ -233,6 +233,12 @@
         "index",
         "js"
       ],
+      "enumItemLabels": [
+        null,
+        null,
+        null,
+        "%typescript.preferences.importModuleSpecifierEnding.label.js%"
+      ],
       "markdownEnumDescriptions": [
         "%typescript.preferences.importModuleSpecifierEnding.auto%",
         "%typescript.preferences.importModuleSpecifierEnding.minimal%",
@@ -745,6 +751,12 @@
         "minimal",
         "index",
         "js"
+      ],
+      "enumItemLabels": [
+        "%typescript.preferences.importModuleSpecifierEnding.label.auto%",
+        "%typescript.preferences.importModuleSpecifierEnding.label.minimal%",
+        "%typescript.preferences.importModuleSpecifierEnding.label.index%",
+        "%typescript.preferences.importModuleSpecifierEnding.label.js%"
       ],
       "markdownEnumDescriptions": [
         "%typescript.preferences.importModuleSpecifierEnding.auto%",
