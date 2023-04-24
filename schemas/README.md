@@ -32,6 +32,7 @@
 - [x] cssls
 - [ ] cssmodules_ls
 - [ ] cucumber_language_server
+- [ ] custom_elements_ls
 - [ ] dafny
 - [ ] dagger
 - [x] dartls
