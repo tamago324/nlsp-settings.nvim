@@ -142,7 +142,9 @@
           "err-nonstandard-symbol",
           "err-then-as-do",
           "exp-in-action",
+          "global-element",
           "global-in-nil-env",
+          "incomplete-signature-doc",
           "index-in-func-name",
           "invisible",
           "jump-local-scope",
@@ -187,6 +189,7 @@
           "miss-sep-in-table",
           "miss-space-between",
           "miss-symbol",
+          "missing-global-doc",
           "missing-parameter",
           "missing-return",
           "missing-return-value",
@@ -294,6 +297,17 @@
         "codestyle": {
           "default": "Fallback",
           "description": "%config.diagnostics.codestyle%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Fallback"
+          ],
+          "type": "string"
+        },
+        "conventions": {
+          "default": "Fallback",
+          "description": "%config.diagnostics.conventions%",
           "enum": [
             "Any",
             "Opened",
@@ -437,6 +451,18 @@
         "codestyle": {
           "default": "Fallback",
           "description": "%config.diagnostics.codestyle%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Fallback"
+          ],
+          "type": "string"
+        },
+        "conventions": {
+          "default": "Fallback",
+          "description": "%config.diagnostics.conventions%",
           "enum": [
             "Error",
             "Warning",
@@ -855,9 +881,35 @@
           ],
           "type": "string"
         },
+        "global-element": {
+          "default": "None",
+          "description": "%config.diagnostics.global-element%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Any!",
+            "Opened!",
+            "None!"
+          ],
+          "type": "string"
+        },
         "global-in-nil-env": {
           "default": "Any",
           "description": "%config.diagnostics.global-in-nil-env%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Any!",
+            "Opened!",
+            "None!"
+          ],
+          "type": "string"
+        },
+        "incomplete-signature-doc": {
+          "default": "None",
+          "description": "%config.diagnostics.incomplete-signature-doc%",
           "enum": [
             "Any",
             "Opened",
@@ -884,6 +936,19 @@
         "lowercase-global": {
           "default": "Any",
           "description": "%config.diagnostics.lowercase-global%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Any!",
+            "Opened!",
+            "None!"
+          ],
+          "type": "string"
+        },
+        "missing-global-doc": {
+          "default": "None",
+          "description": "%config.diagnostics.missing-global-doc%",
           "enum": [
             "Any",
             "Opened",
@@ -1619,9 +1684,39 @@
           ],
           "type": "string"
         },
+        "global-element": {
+          "default": "Warning",
+          "description": "%config.diagnostics.global-element%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Error!",
+            "Warning!",
+            "Information!",
+            "Hint!"
+          ],
+          "type": "string"
+        },
         "global-in-nil-env": {
           "default": "Warning",
           "description": "%config.diagnostics.global-in-nil-env%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Error!",
+            "Warning!",
+            "Information!",
+            "Hint!"
+          ],
+          "type": "string"
+        },
+        "incomplete-signature-doc": {
+          "default": "Warning",
+          "description": "%config.diagnostics.incomplete-signature-doc%",
           "enum": [
             "Error",
             "Warning",
@@ -1652,6 +1747,21 @@
         "lowercase-global": {
           "default": "Information",
           "description": "%config.diagnostics.lowercase-global%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Error!",
+            "Warning!",
+            "Information!",
+            "Hint!"
+          ],
+          "type": "string"
+        },
+        "missing-global-doc": {
+          "default": "Warning",
+          "description": "%config.diagnostics.missing-global-doc%",
           "enum": [
             "Error",
             "Warning",
