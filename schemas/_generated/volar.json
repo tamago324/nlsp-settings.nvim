@@ -76,11 +76,6 @@
       "description": "Show split editor icon in title area of editor.",
       "type": "boolean"
     },
-    "volar.nameCasing.status": {
-      "default": true,
-      "description": "Show name casing in status bar.",
-      "type": "boolean"
-    },
     "volar.splitEditors.layout.left": {
       "default": [
         "script",
@@ -100,66 +95,6 @@
       "default": "Vue.volar",
       "description": "The extension that take over language support for *.ts.",
       "type": "string"
-    },
-    "volar.vueserver.additionalExtensions": {
-      "default": [],
-      "description": "List any additional file extensions that should be processed as Vue files (requires restart).",
-      "items": {
-        "type": "string"
-      },
-      "type": "array"
-    },
-    "volar.vueserver.configFilePath": {
-      "default": "./volar.config.js",
-      "description": "Path to volar.config.js.",
-      "type": "string"
-    },
-    "volar.vueserver.diagnosticModel": {
-      "default": "push",
-      "description": "Diagnostic update model.",
-      "enum": [
-        "push",
-        "pull"
-      ],
-      "enumDescriptions": [
-        "Diagnostic push by language server.",
-        "Diagnostic pull by language client."
-      ],
-      "type": "string"
-    },
-    "volar.vueserver.fullCompletionList": {
-      "default": false,
-      "description": "Enable this option if you want to get complete CompletionList in language client. (Disable for better performance)",
-      "type": "boolean"
-    },
-    "volar.vueserver.json.customBlockSchemaUrls": {
-      "type": "object"
-    },
-    "volar.vueserver.maxFileSize": {
-      "default": 20971520,
-      "description": "Maximum file size for Vue Server to load. (default: 20MB)",
-      "type": "number"
-    },
-    "volar.vueserver.maxOldSpaceSize": {
-      "default": null,
-      "description": "Set --max-old-space-size option on server process. If you have problem on frequently \"Request textDocument/** failed.\" error, try setting higher memory(MB) on it.",
-      "type": [
-        "number",
-        "null"
-      ]
-    },
-    "volar.vueserver.petiteVue.processHtmlFile": {
-      "default": false,
-      "type": "boolean"
-    },
-    "volar.vueserver.reverseConfigFilePriority": {
-      "default": false,
-      "description": "Reverse priority for tsconfig pickup.",
-      "type": "boolean"
-    },
-    "volar.vueserver.vitePress.processMdFile": {
-      "default": false,
-      "type": "boolean"
     },
     "vue-semantic-server.trace.server": {
       "default": "off",
@@ -213,12 +148,7 @@
       "description": "Enabled code lens.",
       "type": "boolean"
     },
-    "vue.features.complete.normalizeComponentImportName": {
-      "default": true,
-      "description": "Normalize import name for auto import. (\"myCompVue\" -> \"MyComp\")",
-      "type": "boolean"
-    },
-    "vue.features.complete.propNameCasing": {
+    "vue.features.complete.casing.props": {
       "default": "autoKebab",
       "description": "Preferred attr name case.",
       "enum": [
@@ -235,7 +165,12 @@
       ],
       "type": "string"
     },
-    "vue.features.complete.tagNameCasing": {
+    "vue.features.complete.casing.status": {
+      "default": true,
+      "description": "Show name casing in status bar.",
+      "type": "boolean"
+    },
+    "vue.features.complete.casing.tags": {
       "default": "autoPascal",
       "description": "Preferred tag name case.",
       "enum": [
@@ -252,6 +187,11 @@
       ],
       "type": "string"
     },
+    "vue.features.complete.normalizeComponentImportName": {
+      "default": true,
+      "description": "Normalize import name for auto import. (\"myCompVue\" -> \"MyComp\")",
+      "type": "boolean"
+    },
     "vue.features.inlayHints.inlineHandlerLeading": {
       "default": false,
       "description": "Show inlay hints for event argument in inline handlers.",
@@ -265,6 +205,66 @@
     "vue.features.updateImportsOnFileMove.enable": {
       "default": false,
       "description": "Enabled update imports on file move.",
+      "type": "boolean"
+    },
+    "vue.server.additionalExtensions": {
+      "default": [],
+      "description": "List any additional file extensions that should be processed as Vue files (requires restart).",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "vue.server.configFilePath": {
+      "default": "./volar.config.js",
+      "description": "Path to volar.config.js.",
+      "type": "string"
+    },
+    "vue.server.diagnosticModel": {
+      "default": "push",
+      "description": "Diagnostic update model.",
+      "enum": [
+        "push",
+        "pull"
+      ],
+      "enumDescriptions": [
+        "Diagnostic push by language server.",
+        "Diagnostic pull by language client."
+      ],
+      "type": "string"
+    },
+    "vue.server.fullCompletionList": {
+      "default": false,
+      "description": "Enable this option if you want to get complete CompletionList in language client. (Disable for better performance)",
+      "type": "boolean"
+    },
+    "vue.server.json.customBlockSchemaUrls": {
+      "type": "object"
+    },
+    "vue.server.maxFileSize": {
+      "default": 20971520,
+      "description": "Maximum file size for Vue Server to load. (default: 20MB)",
+      "type": "number"
+    },
+    "vue.server.maxOldSpaceSize": {
+      "default": null,
+      "description": "Set --max-old-space-size option on server process. If you have problem on frequently \"Request textDocument/** failed.\" error, try setting higher memory(MB) on it.",
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "vue.server.petiteVue.processHtmlFile": {
+      "default": false,
+      "type": "boolean"
+    },
+    "vue.server.reverseConfigFilePriority": {
+      "default": false,
+      "description": "Reverse priority for tsconfig pickup.",
+      "type": "boolean"
+    },
+    "vue.server.vitePress.processMdFile": {
+      "default": false,
       "type": "boolean"
     }
   }
