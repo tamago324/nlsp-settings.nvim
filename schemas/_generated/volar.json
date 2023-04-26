@@ -182,6 +182,11 @@
       "description": "Show inlay hints for missing required props.",
       "type": "boolean"
     },
+    "vue.inlayHints.optionsWrapper": {
+      "default": true,
+      "description": "Show inlay hints for component options wrapper for type support.",
+      "type": "boolean"
+    },
     "vue.server.additionalExtensions": {
       "default": [],
       "description": "List any additional file extensions that should be processed as Vue files (requires restart).",
