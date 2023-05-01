@@ -126,6 +126,7 @@
 - [ ] openedge_ls
 - [ ] openscad_ls
 - [ ] openscad_lsp
+- [ ] pact_ls
 - [ ] pasls
 - [x] perlls
 - [x] perlnavigator
