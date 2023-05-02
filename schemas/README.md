@@ -114,6 +114,7 @@
 - [ ] neocmake
 - [x] nickel_ls
 - [ ] nil_ls
+- [ ] nim_langserver
 - [x] nimls
 - [ ] nomad_lsp
 - [ ] ntt
