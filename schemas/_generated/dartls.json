@@ -71,6 +71,12 @@
         "number"
       ]
     },
+    "dart.includeDependenciesInWorkspaceSymbols": {
+      "default": true,
+      "markdownDescription": "Whether to include symbols from the SDK and package dependencies in the \"Go to Symbol in Workspace\" (`cmd/ctrl`+`T`) list. This can only be disabled when using Dart 3.0 / Flutter 3.10 or later.",
+      "scope": "window",
+      "type": "boolean"
+    },
     "dart.notifyAnalyzerErrors": {
       "default": true,
       "description": "Whether to show a notification the first few times an Analysis Server exception occurs.",
