@@ -26,15 +26,59 @@
       "scope": "resource",
       "type": "string"
     },
+    "ada.documentationStyle": {
+      "default": "gnat",
+      "description": "Controls primary documentation style of entities.",
+      "enum": [
+        "gnat",
+        "leading"
+      ],
+      "enumDescriptions": [
+        "Default style, based on GNAT coding standard with some enhancements.",
+        "Documentation for the entities extracted from the comments before the entity declaration."
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
     "ada.enableDiagnostics": {
       "default": true,
       "description": "The emission of diagnostics.",
       "scope": "resource",
       "type": "boolean"
     },
+    "ada.enableIndexing": {
+      "default": true,
+      "description": "Controls indexing the source files after loading a project.",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "ada.foldComments": {
+      "default": true,
+      "description": "Controls the inclusion of comments in folding blocks.",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "ada.followSymlinks": {
+      "default": true,
+      "description": "Controls the file names normalization sent by a client.",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "ada.namedNotationThreshold": {
+      "default": 3,
+      "description": "Defines the number of parameters/components at which point named notation is used for completion snippets.",
+      "scope": "resource",
+      "type": "integer"
+    },
     "ada.projectFile": {
       "default": "",
       "description": "Project file (*.gpr) for given workspace.",
+      "scope": "resource",
+      "type": "string"
+    },
+    "ada.relocateBuildTree": {
+      "default": "",
+      "description": "The folder for out-of-tree build.",
       "scope": "resource",
       "type": "string"
     },
@@ -43,6 +87,12 @@
       "description": "Enable editing Ada comments while executing `textDocument/rename` reques.",
       "scope": "resource",
       "type": "boolean"
+    },
+    "ada.rootDir": {
+      "default": "",
+      "description": "The root directory for artifacts for proper relocation. Used with relocateBuildTree.",
+      "scope": "resource",
+      "type": "string"
     },
     "ada.scenarioVariables": {
       "default": {},
