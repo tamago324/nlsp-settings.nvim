@@ -177,6 +177,7 @@
 - [ ] solc
 - [ ] solidity
 - [x] solidity_ls
+- [ ] solidity_ls_nomicfoundation
 - [x] sorbet
 - [x] sourcekit
 - [ ] sourcery
