@@ -26,6 +26,7 @@
 - [ ] clarity_lsp
 - [ ] clojure_lsp
 - [ ] cmake
+- [ ] cobol_ls
 - [x] codeqlls
 - [ ] coffeesense
 - [ ] crystalline
