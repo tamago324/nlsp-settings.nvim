@@ -134,6 +134,7 @@
 - [x] perlls
 - [x] perlnavigator
 - [x] perlpls
+- [ ] pest_ls
 - [ ] phan
 - [ ] phpactor
 - [ ] please
