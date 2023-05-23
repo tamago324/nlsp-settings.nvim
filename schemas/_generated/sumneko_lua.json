@@ -190,9 +190,11 @@
           "miss-space-between",
           "miss-symbol",
           "missing-global-doc",
+          "missing-local-export-doc",
           "missing-parameter",
           "missing-return",
           "missing-return-value",
+          "name-style-check",
           "need-check-nil",
           "need-paren",
           "nesting-long-mark",
@@ -959,6 +961,19 @@
           ],
           "type": "string"
         },
+        "missing-local-export-doc": {
+          "default": "None",
+          "description": "%config.diagnostics.missing-local-export-doc%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Any!",
+            "Opened!",
+            "None!"
+          ],
+          "type": "string"
+        },
         "missing-parameter": {
           "default": "Any",
           "description": "%config.diagnostics.missing-parameter%",
@@ -988,6 +1003,19 @@
         "missing-return-value": {
           "default": "Any",
           "description": "%config.diagnostics.missing-return-value%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Any!",
+            "Opened!",
+            "None!"
+          ],
+          "type": "string"
+        },
+        "name-style-check": {
+          "default": "None",
+          "description": "%config.diagnostics.name-style-check%",
           "enum": [
             "Any",
             "Opened",
@@ -1774,6 +1802,21 @@
           ],
           "type": "string"
         },
+        "missing-local-export-doc": {
+          "default": "Warning",
+          "description": "%config.diagnostics.missing-local-export-doc%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Error!",
+            "Warning!",
+            "Information!",
+            "Hint!"
+          ],
+          "type": "string"
+        },
         "missing-parameter": {
           "default": "Warning",
           "description": "%config.diagnostics.missing-parameter%",
@@ -1807,6 +1850,21 @@
         "missing-return-value": {
           "default": "Warning",
           "description": "%config.diagnostics.missing-return-value%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Error!",
+            "Warning!",
+            "Information!",
+            "Hint!"
+          ],
+          "type": "string"
+        },
+        "name-style-check": {
+          "default": "Warning",
+          "description": "%config.diagnostics.name-style-check%",
           "enum": [
             "Error",
             "Warning",
@@ -2472,6 +2530,22 @@
       "scope": "resource",
       "type": "array"
     },
+    "Lua.nameStyle.config": {
+      "additionalProperties": false,
+      "default": {},
+      "markdownDescription": "%config.nameStyle.config%",
+      "patternProperties": {
+        ".*": {
+          "type": [
+            "string",
+            "array"
+          ]
+        }
+      },
+      "scope": "resource",
+      "title": "config",
+      "type": "object"
+    },
     "Lua.runtime.builtin": {
       "additionalProperties": false,
       "markdownDescription": "%config.runtime.builtin%",
@@ -2559,6 +2633,26 @@
         "jit": {
           "default": "default",
           "description": "%config.runtime.builtin.jit%",
+          "enum": [
+            "default",
+            "enable",
+            "disable"
+          ],
+          "type": "string"
+        },
+        "jit.profile": {
+          "default": "default",
+          "description": "%config.runtime.builtin.jit.profile%",
+          "enum": [
+            "default",
+            "enable",
+            "disable"
+          ],
+          "type": "string"
+        },
+        "jit.util": {
+          "default": "default",
+          "description": "%config.runtime.builtin.jit.util%",
           "enum": [
             "default",
             "enable",
