@@ -490,6 +490,12 @@
       "scope": "window",
       "type": "boolean"
     },
+    "typescript.experimental.aiQuickFix": {
+      "default": false,
+      "description": "%typescript.experimental.aiQuickFix%",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "typescript.format.enable": {
       "default": true,
       "description": "%typescript.format.enable%",
