@@ -18,6 +18,7 @@
 - [ ] bright_script
 - [ ] bsl_ls
 - [ ] buck2
+- [ ] buddy_ls
 - [ ] bufls
 - [ ] cadence
 - [ ] cairo_ls
