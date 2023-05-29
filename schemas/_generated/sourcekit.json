@@ -5,14 +5,14 @@
     "swift.autoGenerateLaunchConfigurations": {
       "default": true,
       "markdownDescription": "When loading a `Package.swift`, auto-generate `launch.json` configurations for running any executables.",
-      "order": 4,
+      "order": 5,
       "scope": "machine-overridable",
       "type": "boolean"
     },
     "swift.backgroundCompilation": {
       "default": false,
       "markdownDescription": "**Experimental**: Run `swift build` in the background whenever a file is saved.",
-      "order": 7,
+      "order": 8,
       "type": "boolean"
     },
     "swift.buildArguments": {
@@ -27,13 +27,13 @@
     "swift.buildPath": {
       "default": "",
       "markdownDescription": "Path to the build directory passed to all swift package manager commands.",
-      "order": 8,
+      "order": 9,
       "type": "string"
     },
     "swift.disableAutoResolve": {
       "default": false,
       "markdownDescription": "Disable automatic running of `swift package resolve`.",
-      "order": 9,
+      "order": 10,
       "scope": "machine-overridable",
       "type": "boolean"
     },
@@ -46,7 +46,7 @@
       "items": {
         "type": "string"
       },
-      "order": 6,
+      "order": 7,
       "type": "array"
     },
     "swift.path": {
@@ -58,8 +58,20 @@
     "swift.problemMatchCompileErrors": {
       "default": true,
       "description": "List compile errors in the Problems View.",
-      "order": 5,
+      "order": 6,
       "type": "boolean"
+    },
+    "swift.sanitizer": {
+      "default": "off",
+      "description": "Runtime sanitizer instrumentation. Requires a re-compilation.",
+      "enum": [
+        "off",
+        "thread",
+        "address"
+      ],
+      "order": 4,
+      "scope": "machine-overridable",
+      "type": "string"
     },
     "swift.testEnvironmentVariables": {
       "default": {},
