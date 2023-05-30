@@ -86,6 +86,11 @@
       "markdownDescription": "Use `RUSTC_WRAPPER=rust-analyzer` when running build scripts to\navoid checking unnecessary things.",
       "type": "boolean"
     },
+    "rust-analyzer.cargo.cfgs": {
+      "default": {},
+      "markdownDescription": "List of cfg options to enable with the given values.",
+      "type": "object"
+    },
     "rust-analyzer.cargo.extraArgs": {
       "default": [],
       "items": {
@@ -156,7 +161,7 @@
       "items": {
         "type": "string"
       },
-      "markdownDescription": "Unsets `#[cfg(test)]` for the specified crates.",
+      "markdownDescription": "Unsets the implicit `#[cfg(test)]` for the specified crates.",
       "type": "array"
     },
     "rust-analyzer.cargoRunner": {
