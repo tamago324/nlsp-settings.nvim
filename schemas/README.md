@@ -120,6 +120,7 @@
 - [ ] nil_ls
 - [ ] nim_langserver
 - [x] nimls
+- [ ] nixd
 - [ ] nomad_lsp
 - [ ] ntt
 - [ ] nxls
