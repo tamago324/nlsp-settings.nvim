@@ -107,6 +107,7 @@
 - [x] luau_lsp
 - [ ] m68k
 - [ ] marksman
+- [ ] matlab_ls
 - [ ] metals
 - [ ] millet
 - [ ] mint
