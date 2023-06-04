@@ -191,6 +191,7 @@
 - [ ] sqls
 - [ ] standardrb
 - [ ] starlark_rust
+- [ ] statix
 - [ ] steep
 - [x] stylelint_lsp
 - [x] svelte
