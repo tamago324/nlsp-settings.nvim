@@ -217,6 +217,7 @@
 - [ ] unocss
 - [ ] uvls
 - [ ] vala_ls
+- [ ] vale_ls
 - [ ] vdmj
 - [ ] verible
 - [ ] veridian
