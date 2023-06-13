@@ -7,66 +7,6 @@
       "description": "Enable/disable default C# formatter (requires restart).",
       "type": "boolean"
     },
-    "csharp.inlayHints.parameters.enabled": {
-      "default": false,
-      "description": "Display inline parameter name hints",
-      "type": "boolean"
-    },
-    "csharp.inlayHints.parameters.forIndexerParameters": {
-      "default": false,
-      "description": "Show hints for indexers",
-      "type": "boolean"
-    },
-    "csharp.inlayHints.parameters.forLiteralParameters": {
-      "default": false,
-      "description": "Show hints for literals",
-      "type": "boolean"
-    },
-    "csharp.inlayHints.parameters.forObjectCreationParameters": {
-      "default": false,
-      "description": "Show hints for 'new' expressions",
-      "type": "boolean"
-    },
-    "csharp.inlayHints.parameters.forOtherParameters": {
-      "default": false,
-      "description": "Show hints for everything else",
-      "type": "boolean"
-    },
-    "csharp.inlayHints.parameters.suppressForParametersThatDifferOnlyBySuffix": {
-      "default": false,
-      "description": "Suppress hints when parameter names differ only by suffix",
-      "type": "boolean"
-    },
-    "csharp.inlayHints.parameters.suppressForParametersThatMatchArgumentName": {
-      "default": false,
-      "description": "Suppress hints when argument matches parameter name",
-      "type": "boolean"
-    },
-    "csharp.inlayHints.parameters.suppressForParametersThatMatchMethodIntent": {
-      "default": false,
-      "description": "Suppress hints when parameter name matches the method's intent",
-      "type": "boolean"
-    },
-    "csharp.inlayHints.types.enabled": {
-      "default": false,
-      "description": "Display inline type hints",
-      "type": "boolean"
-    },
-    "csharp.inlayHints.types.forImplicitObjectCreation": {
-      "default": false,
-      "description": "Show hints for implicit object creation",
-      "type": "boolean"
-    },
-    "csharp.inlayHints.types.forImplicitVariableTypes": {
-      "default": false,
-      "description": "Show hints for variables with inferred types",
-      "type": "boolean"
-    },
-    "csharp.inlayHints.types.forLambdaParameterTypes": {
-      "default": false,
-      "description": "Show hints for lambda parameter types",
-      "type": "boolean"
-    },
     "csharp.maxProjectFileCountForDiagnosticAnalysis": {
       "default": 1000,
       "description": "Specifies the maximum number of files for which diagnostics are reported for the whole workspace. If this limit is exceeded, diagnostics will be shown for currently opened files only. Specify 0 or less to disable the limit completely.",
@@ -142,56 +82,56 @@
         },
         "enableStepFiltering": {
           "default": true,
-          "description": "Optional flag to enable stepping over Properties and Operators.",
+          "markdownDescription": "Flag to enable stepping over Properties and Operators. This option defaults to `true`.",
           "type": "boolean"
         },
         "justMyCode": {
           "default": true,
-          "description": "Optional flag to only show user code.",
+          "markdownDescription": "Flag to only show user code. This option defaults to `true`.",
           "type": "boolean"
         },
         "logging": {
           "default": {},
-          "description": "Optional flags to determine what types of messages should be logged to the output window.",
+          "description": "Flags to determine what types of messages should be logged to the output window.",
           "properties": {
             "browserStdOut": {
               "default": true,
-              "description": "Optional flag to determine if stdout text from the launching the web browser should be logged to the output window.",
+              "markdownDescription": "Flag to determine if stdout text from the launching the web browser should be logged to the output window. This option defaults to `true`.",
               "type": "boolean"
             },
             "elapsedTiming": {
               "default": false,
-              "description": "If true, engine logging will include `adapterElapsedTime` and `engineElapsedTime` properties to indicate the amount of time, in microseconds, that a request took.",
+              "markdownDescription": "If true, engine logging will include `adapterElapsedTime` and `engineElapsedTime` properties to indicate the amount of time, in microseconds, that a request took. This option defaults to `false`.",
               "type": "boolean"
             },
             "engineLogging": {
               "default": false,
-              "description": "Optional flag to determine whether diagnostic engine logs should be logged to the output window.",
+              "markdownDescription": "Flag to determine whether diagnostic engine logs should be logged to the output window. This option defaults to `false`.",
               "type": "boolean"
             },
             "exceptions": {
               "default": true,
-              "description": "Optional flag to determine whether exception messages should be logged to the output window.",
+              "markdownDescription": "Flag to determine whether exception messages should be logged to the output window. This option defaults to `true`.",
               "type": "boolean"
             },
             "moduleLoad": {
               "default": true,
-              "description": "Optional flag to determine whether module load events should be logged to the output window.",
+              "markdownDescription": "Flag to determine whether module load events should be logged to the output window. This option defaults to `true`.",
               "type": "boolean"
             },
             "processExit": {
               "default": true,
-              "description": "Controls if a message is logged when the target process exits, or debugging is stopped. Default: `true`.",
+              "markdownDescription": "Controls if a message is logged when the target process exits, or debugging is stopped. This option defaults to `true`.",
               "type": "boolean"
             },
             "programOutput": {
               "default": true,
-              "description": "Optional flag to determine whether program output should be logged to the output window when not using an external console.",
+              "markdownDescription": "Flag to determine whether program output should be logged to the output window when not using an external console. This option defaults to `true`.",
               "type": "boolean"
             },
             "threadExit": {
               "default": false,
-              "description": "Controls if a message is logged when a thread in the target process exits. Default: `false`.",
+              "markdownDescription": "Controls if a message is logged when a thread in the target process exits. This option defaults to `false`.",
               "type": "boolean"
             }
           },
@@ -200,17 +140,14 @@
         },
         "requireExactSource": {
           "default": true,
-          "description": "Optional flag to require current source code to match the pdb.",
+          "markdownDescription": "Flag to require current source code to match the pdb. This option defaults to `true`.",
           "type": "boolean"
         },
         "sourceFileMap": {
           "additionalProperties": {
             "type": "string"
           },
-          "default": {
-            "<insert-source-path-here>": "<insert-target-path-here>"
-          },
-          "description": "Optional source file mappings passed to the debug engine. Example: '{ \"C:\\foo\":\"/home/user/foo\" }'",
+          "markdownDescription": "Maps build-time paths to local source locations. All instances of build-time path will be replaced with the local source path.\n\nExample:\n\n`{\"<build-path>\":\"<local-source-path>\"}`",
           "type": "object"
         },
         "sourceLinkOptions": {
@@ -218,7 +155,7 @@
             "properties": {
               "enabled": {
                 "default": "true",
-                "description": "Is Source Link enabled for this URL?  If unspecified, this option defaults to 'true'.",
+                "markdownDescription": "Is Source Link enabled for this URL? If unspecified, this option defaults to `true`.",
                 "title": "boolean"
               }
             },
@@ -229,12 +166,12 @@
               "enabled": true
             }
           },
-          "description": "Options to control how Source Link connects to web servers. For more information: https://aka.ms/VSCode-CS-LaunchJson#source-link-options",
+          "markdownDescription": "Options to control how Source Link connects to web servers. [More information](https://aka.ms/VSCode-CS-LaunchJson#source-link-options)",
           "type": "object"
         },
         "suppressJITOptimizations": {
           "default": false,
-          "description": "If true, when an optimized module (.dll compiled in the Release configuration) loads in the target process, the debugger will ask the Just-In-Time compiler to generate code with optimizations disabled. For more information: https://aka.ms/VSCode-CS-LaunchJson#suppress-jit-optimizations",
+          "markdownDescription": "If true, when an optimized module (.dll compiled in the Release configuration) loads in the target process, the debugger will ask the Just-In-Time compiler to generate code with optimizations disabled. [More information](https://aka.ms/VSCode-CS-LaunchJson#suppress-jit-optimizations)",
           "type": "boolean"
         },
         "symbolOptions": {
@@ -246,7 +183,7 @@
           "description": "Options to control how symbols (.pdb files) are found and loaded.",
           "properties": {
             "cachePath": {
-              "default": "~/.dotnet/symbolcache",
+              "default": "",
               "description": "Directory where symbols downloaded from symbol servers should be cached. If unspecified, on Windows the debugger will default to %TEMP%\\SymbolCache, and on Linux and macOS the debugger will default to ~/.dotnet/symbolcache.",
               "type": "string"
             },
@@ -271,9 +208,7 @@
                   "type": "boolean"
                 },
                 "includedModules": {
-                  "default": [
-                    "MyExampleModule.dll"
-                  ],
+                  "default": [],
                   "description": "Array of modules that the debugger should load symbols for. Wildcards (example: MyCompany.*.dll) are supported.\n\nThis property is ignored unless 'mode' is set to 'loadOnlyIncluded'.",
                   "items": {
                     "type": "string"
@@ -321,11 +256,11 @@
           "type": "object"
         },
         "targetArchitecture": {
-          "description": "The architecture of the debuggee. This will automatically be detected unless this parameter is set. Allowed values are x86_64 or arm64. This value is ignored on Linux.",
           "enum": [
             "x86_64",
             "arm64"
           ],
+          "markdownDescription": "[Only supported in local macOS debugging]\n\nThe architecture of the debuggee. This will automatically be detected unless this parameter is set. Allowed values are `x86_64` or `arm64`.",
           "type": "string"
         },
         "type": {
@@ -340,6 +275,12 @@
       },
       "type": "object"
     },
+    "dotnet.server.useOmnisharp": {
+      "default": false,
+      "description": "Switches to use the Omnisharp server for language features when enabled (requires restart). This option will not work with C# Dev Kit.",
+      "order": 0,
+      "type": "boolean"
+    },
     "omnisharp.analyzeOpenDocumentsOnly": {
       "default": false,
       "description": "Only run analyzers against open files when 'enableRoslynAnalyzers' is true",
@@ -349,10 +290,6 @@
       "default": true,
       "description": "Specifies whether the OmniSharp server will be automatically started or not. If false, OmniSharp can be started with the 'Restart OmniSharp' command",
       "type": "boolean"
-    },
-    "omnisharp.defaultLaunchSolution": {
-      "description": "The name of the default solution used at start up if the repo has multiple solutions. e.g.'MyAwesomeSolution.sln'. Default value is `null` which will cause the first in alphabetical order to be chosen.",
-      "type": "string"
     },
     "omnisharp.disableMSBuildDiagnosticWarning": {
       "default": false,
@@ -366,11 +303,6 @@
       },
       "type": "array",
       "uniqueItems": true
-    },
-    "omnisharp.dotnetPath": {
-      "description": "Specified the path to a dotnet installation to use when \"useModernNet\" is set to true, instead of the default system one. This only influences the dotnet installation to use for hosting Omnisharp itself. Example: \"/home/username/mycustomdotnetdirectory\".",
-      "scope": "window",
-      "type": "string"
     },
     "omnisharp.enableAsyncCompletion": {
       "default": false,
@@ -388,9 +320,9 @@
       "description": "Enables support for reading code style, naming convention and analyzer settings from .editorconfig.",
       "type": "boolean"
     },
-    "omnisharp.enableImportCompletion": {
+    "omnisharp.enableLspDriver": {
       "default": false,
-      "description": "Enables support for showing unimported types and unimported extension methods in completion lists. When committed, the appropriate using directive will be added at the top of the current file. This option can have a negative impact on initial completion responsiveness, particularly for the first few completion sessions after opening a solution.",
+      "description": "Enables support for the experimental language protocol based engine (requires reload to setup bindings correctly)",
       "type": "boolean"
     },
     "omnisharp.enableMsBuildLoadProjectsOnDemand": {
@@ -441,11 +373,6 @@
       "description": "Specifies whether 'using' directives should be grouped and sorted during document formatting.",
       "type": "boolean"
     },
-    "omnisharp.path": {
-      "description": "Specifies the path to OmniSharp. When left empty the OmniSharp version pinned to the C# Extension is used. This can be the absolute path to an OmniSharp executable, a specific version number, or \"latest\". If a version number or \"latest\" is specified, the appropriate version of OmniSharp will be downloaded on your behalf. Setting \"latest\" is an opt-in into latest beta releases of OmniSharp.",
-      "scope": "machine",
-      "type": "string"
-    },
     "omnisharp.projectFilesExcludePattern": {
       "default": "**/node_modules/**,**/.git/**,**/bower_components/**",
       "description": "The exclude pattern used by OmniSharp to find all project files.",
@@ -488,19 +415,9 @@
       "title": "Use .NET 6 build of OmniSharp",
       "type": "boolean"
     },
-    "omnisharp.waitForDebugger": {
-      "default": false,
-      "description": "Pass the --debug flag when launching the OmniSharp server to allow a debugger to be attached.",
-      "type": "boolean"
-    },
     "razor.devmode": {
       "default": false,
       "description": "Forces the omnisharp-vscode extension to run in a mode that enables local Razor.VSCode deving.",
-      "type": "boolean"
-    },
-    "razor.disabled": {
-      "default": false,
-      "description": "Specifies whether to disable Razor language features.",
       "type": "boolean"
     },
     "razor.format.enable": {
@@ -509,34 +426,9 @@
       "scope": "window",
       "type": "boolean"
     },
-    "razor.languageServer.debug": {
-      "default": false,
-      "description": "Specifies whether to wait for debug attach when launching the language server.",
-      "type": "boolean"
-    },
-    "razor.languageServer.directory": {
-      "description": "Overrides the path to the Razor Language Server directory.",
-      "scope": "machine",
-      "type": "string"
-    },
     "razor.plugin.path": {
       "description": "Overrides the path to the Razor plugin dll.",
       "scope": "machine",
-      "type": "string"
-    },
-    "razor.trace": {
-      "default": "Off",
-      "description": "Specifies whether to output all messages [Verbose], some messages [Messages] or not at all [Off].",
-      "enum": [
-        "Off",
-        "Messages",
-        "Verbose"
-      ],
-      "enumDescriptions": [
-        "Does not log messages from the Razor extension",
-        "Logs only some messages from the Razor extension",
-        "Logs all messages from the Razor extension"
-      ],
       "type": "string"
     }
   }
