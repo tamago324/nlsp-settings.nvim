@@ -115,6 +115,7 @@
 - [ ] mlir_pdll_lsp_server
 - [ ] mm0_ls
 - [ ] move_analyzer
+- [ ] nelua_lsp
 - [ ] neocmake
 - [x] nickel_ls
 - [ ] nil_ls
