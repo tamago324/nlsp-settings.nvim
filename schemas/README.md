@@ -198,6 +198,7 @@
 - [x] svelte
 - [x] svlangserver
 - [ ] svls
+- [ ] swift_mesonls
 - [ ] syntax_tree
 - [x] tailwindcss
 - [ ] taplo
