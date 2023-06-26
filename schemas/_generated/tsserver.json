@@ -491,7 +491,7 @@
       "type": "boolean"
     },
     "typescript.experimental.aiQuickFix": {
-      "default": false,
+      "default": true,
       "description": "%typescript.experimental.aiQuickFix%",
       "scope": "resource",
       "type": "boolean"
