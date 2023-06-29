@@ -1029,7 +1029,23 @@
       "markdownDescription": "Whether to restart the server automatically when certain settings that require a restart are changed.",
       "type": "boolean"
     },
-    "rust-analyzer.runnableEnv": {
+    "rust-analyzer.runnables.command": {
+      "default": null,
+      "markdownDescription": "Command to be executed instead of 'cargo' for runnables.",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "rust-analyzer.runnables.extraArgs": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "Additional arguments to be passed to cargo for runnables such as\ntests or binaries. For example, it may be `--release`.",
+      "type": "array"
+    },
+    "rust-analyzer.runnables.extraEnv": {
       "anyOf": [
         {
           "type": "null"
@@ -1057,22 +1073,6 @@
       ],
       "default": null,
       "markdownDescription": "Environment variables passed to the runnable launched using `Test` or `Debug` lens or `rust-analyzer.run` command."
-    },
-    "rust-analyzer.runnables.command": {
-      "default": null,
-      "markdownDescription": "Command to be executed instead of 'cargo' for runnables.",
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "rust-analyzer.runnables.extraArgs": {
-      "default": [],
-      "items": {
-        "type": "string"
-      },
-      "markdownDescription": "Additional arguments to be passed to cargo for runnables such as\ntests or binaries. For example, it may be `--release`.",
-      "type": "array"
     },
     "rust-analyzer.rustc.source": {
       "default": null,
