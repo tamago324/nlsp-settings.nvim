@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of ast_grep",
+  "properties": {
+    "ruleDirs": {
+      "description": "A list of string instructing where to discover ast-grep's YAML rules.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Rule directories",
+      "type": "array"
+    },
+    "testConfigs": {
+      "description": "A list of object to configure ast-grep's test cases. Each object can have two fields.",
+      "items": {
+        "$ref": "#/definitions/TestConfig"
+      },
+      "title": "Test configurations",
+      "type": "array"
+    },
+    "utilDirs": {
+      "description": "A list of string instructing where to discover ast-grep's global utility rules.",
+      "items": {
+        "type": "string"
+      },
+      "title": "Utility directories",
+      "type": "array"
+    }
+  }
+}

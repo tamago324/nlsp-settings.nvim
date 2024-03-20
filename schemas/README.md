@@ -8,8 +8,8 @@
 - [ ] antlersls
 - [ ] apex_ls
 - [ ] arduino_language_server
-- [ ] asm_lsp
-- [ ] ast_grep
+- [x] asm_lsp
+- [x] ast_grep
 - [x] astro
 - [ ] autotools_ls
 - [ ] awk_ls

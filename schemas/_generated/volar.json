@@ -44,11 +44,6 @@
       ],
       "type": "string"
     },
-    "vue.complete.casing.status": {
-      "default": true,
-      "description": "Show name casing in status bar.",
-      "type": "boolean"
-    },
     "vue.complete.casing.tags": {
       "default": "autoPascal",
       "description": "Preferred tag name case.",
@@ -124,6 +119,11 @@
       ],
       "type": "string"
     },
+    "vue.server.hybridMode": {
+      "default": false,
+      "description": "Vue language server only handles CSS and HTML language support, and tsserver takes over TS language support via TS plugin.",
+      "type": "boolean"
+    },
     "vue.server.maxFileSize": {
       "default": 20971520,
       "description": "Maximum file size for Vue Language Server to load. (default: 20MB)",
@@ -137,26 +137,9 @@
         "null"
       ]
     },
-    "vue.server.path": {
-      "default": null,
-      "description": "Path to node_modules/vue-language-server/bin/vue-language-server.js.",
-      "type": [
-        "string",
-        "null"
-      ]
-    },
     "vue.server.petiteVue.supportHtmlFile": {
       "default": false,
       "type": "boolean"
-    },
-    "vue.server.runtime": {
-      "default": "node",
-      "description": "Vue Language Server runtime.",
-      "enum": [
-        "node",
-        "bun"
-      ],
-      "type": "string"
     },
     "vue.server.vitePress.supportMdFile": {
       "default": false,
