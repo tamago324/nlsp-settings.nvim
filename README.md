@@ -27,7 +27,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'tamago324/nlsp-settings.nvim'
 
 " Recommend
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 
 " Optional
 Plug 'rcarriga/nvim-notify'
@@ -35,10 +36,10 @@ Plug 'rcarriga/nvim-notify'
 
 ## Getting Started
 
-### Step1. Install jsonls with nvim-lsp-installer
+### Step1. Install jsonls with mason.nvim
 
 ```
-:LspInstall jsonls
+:MasonInstall json-lsp
 ```
 
 ### Step2. Setup LSP servers
@@ -46,7 +47,8 @@ Plug 'rcarriga/nvim-notify'
 Example: Completion using omnifunc
 
 ```lua
-local lsp_installer = require('nvim-lsp-installer')
+local mason = require("mason")
+local mason_lspconfig = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 local nlspsettings = require("nlspsettings")
 
@@ -70,11 +72,15 @@ lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_c
   capabilities = global_capabilities,
 })
 
-lsp_installer.on_server_ready(function(server)
-  server:setup({
-    on_attach = on_attach
-  })
-end)
+mason.setup()
+mason_lspconfig.setup()
+mason_lspconfig.setup_handlers({
+  function (server_name)
+    lspconfig[server_name].setup({
+      on_attach = on_attach
+    })
+  end
+})
 ```
 
 TODO: その他の設定は doc を参照
@@ -117,6 +123,10 @@ However, if you have the same key, the value in the JSON file will take preceden
 Example) Write sumneko_lua settings in Lua
 
 ```lua
+local mason = require("mason")
+local mason_lspconfig = require("mason-lspconfig")
+local lspconfig = require("lspconfig")
+
 local server_opts = {}
 
 -- lua
@@ -140,13 +150,17 @@ local common_setup_opts = {
   -- )
 }
 
-lsp_installer.on_server_ready(function(server)
-  local opts = vim.deepcopy(common_setup_opts)
-  if server_opts[server.name] then
-      opts = vim.tbl_deep_extend('force', opts, server_opts[server.name])
+mason.setup()
+mason_lspconfig.setup()
+mason_lspconfig.setup_handlers({
+  function (server_name)
+    local opts = vim.deepcopy(common_setup_opts)
+    if server_opts[server_name] then
+      opts = vim.tbl_deep_extend('force', opts, server_opts[server_name])
+    end
+    lspconfig[server_name].setup(opts)
   end
-  server:setup(opts)
-end)
+})
 ```
 
 
