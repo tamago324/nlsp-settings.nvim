@@ -8,12 +8,19 @@ local write_tmpfile = function(data)
   return tmpname
 end
 
+-- 0: ok
+-- 1: error
 local gen_schema = function(url, server_name)
+  local status_code = vim.fn.system('curl -o /dev/null -w "%{http_code}" ' .. url)
+  if status_code == '404' then
+    print('  not found url.')
+    return 1
+  end
   local json = vim.json.decode(vim.fn.system(string.format('curl -Ls %s', url)))
   local properties
 
   if json == nil then
-    return nil
+    return 1
   end
 
   if server_name == 'pylsp' then
@@ -22,7 +29,7 @@ local gen_schema = function(url, server_name)
     properties = json.properties
   else
     if json.contributes == nil then
-      return nil
+      return 0
     end
 
     if vim.tbl_islist(json.contributes.configuration) then
@@ -46,11 +53,16 @@ local gen_schema = function(url, server_name)
 end
 
 local gen_schemas = function()
-  local gist_url = "https://gist.githubusercontent.com/williamboman/a01c3ce1884d4b57cc93422e7eae7702/raw/lsp-packages.json"
+  local gist_url = "https://gist.githubusercontent.com/tamago324/6c065d5914388ddddd9518bd8fb75c8c/raw/lsp-packages.json"
   local gist_res = vim.json.decode(vim.fn.system(string.format('curl -Ls "%s"', gist_url)))
   for server_name, url in pairs(gist_res) do
     print(server_name)
-    local res = gen_schema(url, server_name)
+    local err = gen_schema(url, server_name)
+
+    -- エラーがある場合、終了ステータスを1にして終了する
+    if err then
+      vim.cmd('cquit 1')
+    end
   end
 end
 
