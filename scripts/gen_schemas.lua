@@ -11,7 +11,7 @@ end
 -- 0: ok
 -- 1: error
 local gen_schema = function(url, server_name)
-  local status_code = vim.fn.system('curl -o /dev/null -w "%{http_code}" ' .. url)
+  local status_code = vim.fn.system('curl -Ss -o /dev/null -w "%{http_code}" ' .. url)
   if status_code == '404' then
     print('  not found url.')
     return 1
@@ -27,6 +27,9 @@ local gen_schema = function(url, server_name)
     -- NOTE: that the pylsp, vtsls entry points to an actual JSON schema file,
     -- not a package.json containing a JSON schema at .contributes.configuration.
     properties = json.properties
+  elseif server_name == 'ast_grep' then
+    vim.print(json.definitions.Project.properties)
+    properties = json.definitions.Project.properties
   else
     if json.contributes == nil then
       return 0
