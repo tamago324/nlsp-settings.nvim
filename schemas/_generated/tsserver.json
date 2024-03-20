@@ -490,10 +490,13 @@
       "scope": "window",
       "type": "boolean"
     },
-    "typescript.experimental.aiQuickFix": {
-      "default": true,
-      "description": "%typescript.experimental.aiQuickFix%",
-      "scope": "resource",
+    "typescript.experimental.tsserver.web.typeAcquisition.enabled": {
+      "default": false,
+      "description": "%configuration.experimental.tsserver.web.typeAcquisition.enabled%",
+      "scope": "window",
+      "tags": [
+        "experimental"
+      ],
       "type": "boolean"
     },
     "typescript.format.enable": {
@@ -626,6 +629,12 @@
       "scope": "window",
       "type": "boolean"
     },
+    "typescript.implementationsCodeLens.showOnInterfaceMethods": {
+      "default": false,
+      "description": "%typescript.implementationsCodeLens.showOnInterfaceMethods%",
+      "scope": "window",
+      "type": "boolean"
+    },
     "typescript.inlayHints.enumMemberValues.enabled": {
       "default": false,
       "markdownDescription": "%configuration.inlayHints.enumMemberValues.enabled%",
@@ -698,6 +707,19 @@
         "ru",
         "zh-CN",
         "zh-TW"
+      ],
+      "enumDescriptions": [
+        "%typescript.locale.auto%",
+        "Deutsch",
+        "español",
+        "English",
+        "français",
+        "italiano",
+        "日本語",
+        "한국어",
+        "русский",
+        "中文(简体)",
+        "中文(繁體)"
       ],
       "markdownDescription": "%typescript.locale%",
       "scope": "window",
@@ -795,6 +817,12 @@
       ],
       "scope": "language-overridable",
       "type": "string"
+    },
+    "typescript.preferences.preferTypeOnlyAutoImports": {
+      "default": false,
+      "markdownDescription": "%typescript.preferences.preferTypeOnlyAutoImports%",
+      "scope": "resource",
+      "type": "boolean"
     },
     "typescript.preferences.quoteStyle": {
       "default": "auto",
@@ -973,9 +1001,14 @@
     },
     "typescript.tsserver.maxTsServerMemory": {
       "default": 3072,
-      "description": "%configuration.tsserver.maxTsServerMemory%",
+      "markdownDescription": "%configuration.tsserver.maxTsServerMemory%",
       "scope": "window",
       "type": "number"
+    },
+    "typescript.tsserver.nodePath": {
+      "description": "%configuration.tsserver.nodePath%",
+      "scope": "window",
+      "type": "string"
     },
     "typescript.tsserver.pluginPaths": {
       "default": [],
@@ -1104,6 +1137,12 @@
     "typescript.validate.enable": {
       "default": true,
       "description": "%typescript.validate.enable%",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "typescript.workspaceSymbols.excludeLibrarySymbols": {
+      "default": true,
+      "markdownDescription": "%typescript.workspaceSymbols.excludeLibrarySymbols%",
       "scope": "window",
       "type": "boolean"
     },

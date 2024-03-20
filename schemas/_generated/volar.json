@@ -2,97 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of volar",
   "properties": {
-    "typescript.tsdk": {
-      "type": "string"
-    },
-    "volar.format.initialIndent": {
-      "default": {
-        "html": true
-      },
-      "description": "Whether to have initial indent.",
-      "properties": {
-        "css": {
-          "default": false,
-          "type": "boolean"
-        },
-        "html": {
-          "default": true,
-          "type": "boolean"
-        },
-        "jade": {
-          "default": false,
-          "type": "boolean"
-        },
-        "javascript": {
-          "default": false,
-          "type": "boolean"
-        },
-        "javascriptreact": {
-          "default": false,
-          "type": "boolean"
-        },
-        "json": {
-          "default": false,
-          "type": "boolean"
-        },
-        "json5": {
-          "default": false,
-          "type": "boolean"
-        },
-        "jsonc": {
-          "default": false,
-          "type": "boolean"
-        },
-        "less": {
-          "default": false,
-          "type": "boolean"
-        },
-        "sass": {
-          "default": false,
-          "type": "boolean"
-        },
-        "scss": {
-          "default": false,
-          "type": "boolean"
-        },
-        "typescript": {
-          "default": false,
-          "type": "boolean"
-        },
-        "typescriptreact": {
-          "default": false,
-          "type": "boolean"
-        }
-      },
-      "type": "object"
-    },
-    "volar.takeOverMode.extension": {
-      "default": "Vue.volar",
-      "description": "The extension that take over language support for *.ts.",
-      "type": "string"
-    },
-    "vue-semantic-server.trace.server": {
-      "default": "off",
-      "description": "Traces the communication between VS Code and the language server.",
-      "enum": [
-        "off",
-        "messages",
-        "verbose"
-      ],
-      "scope": "window",
-      "type": "string"
-    },
-    "vue-syntactic-server.trace.server": {
-      "default": "off",
-      "description": "Traces the communication between VS Code and the language server.",
-      "enum": [
-        "off",
-        "messages",
-        "verbose"
-      ],
-      "scope": "window",
-      "type": "string"
-    },
     "vue.autoInsert.bracketSpacing": {
       "default": true,
       "description": "Auto add space between double curly brackets: {{|}} -> {{ | }}",
@@ -112,11 +21,6 @@
       "default": true,
       "description": "Enabled code actions.",
       "type": "boolean"
-    },
-    "vue.codeActions.savingTimeLimit": {
-      "default": 1000,
-      "description": "Time limit for code actions on save (ms).",
-      "type": "number"
     },
     "vue.codeLens.enabled": {
       "default": true,
@@ -162,14 +66,21 @@
       ],
       "type": "string"
     },
-    "vue.complete.normalizeComponentImportName": {
-      "default": true,
-      "description": "Normalize import name for auto import. (\"myCompVue\" -> \"MyComp\")",
-      "type": "boolean"
-    },
     "vue.doctor.status": {
       "default": true,
       "description": "Show known problems in status bar.",
+      "type": "boolean"
+    },
+    "vue.format.script.initialIndent": {
+      "default": false,
+      "type": "boolean"
+    },
+    "vue.format.style.initialIndent": {
+      "default": false,
+      "type": "boolean"
+    },
+    "vue.format.template.initialIndent": {
+      "default": true,
       "type": "boolean"
     },
     "vue.inlayHints.inlineHandlerLeading": {
@@ -187,6 +98,11 @@
       "description": "Show inlay hints for component options wrapper for type support.",
       "type": "boolean"
     },
+    "vue.inlayHints.vBindShorthand": {
+      "default": false,
+      "description": "Show inlay hints for v-bind shorthand.",
+      "type": "boolean"
+    },
     "vue.server.additionalExtensions": {
       "default": [],
       "description": "List any additional file extensions that should be processed as Vue files (requires restart).",
@@ -194,11 +110,6 @@
         "type": "string"
       },
       "type": "array"
-    },
-    "vue.server.configFilePath": {
-      "default": "./volar.config.js",
-      "description": "Path to volar.config.js.",
-      "type": "string"
     },
     "vue.server.diagnosticModel": {
       "default": "push",
@@ -213,17 +124,9 @@
       ],
       "type": "string"
     },
-    "vue.server.fullCompletionList": {
-      "default": false,
-      "description": "Enable this option if you want to get complete CompletionList in language client. (Disable for better performance)",
-      "type": "boolean"
-    },
-    "vue.server.json.customBlockSchemaUrls": {
-      "type": "object"
-    },
     "vue.server.maxFileSize": {
       "default": 20971520,
-      "description": "Maximum file size for Vue Server to load. (default: 20MB)",
+      "description": "Maximum file size for Vue Language Server to load. (default: 20MB)",
       "type": "number"
     },
     "vue.server.maxOldSpaceSize": {
@@ -234,14 +137,26 @@
         "null"
       ]
     },
+    "vue.server.path": {
+      "default": null,
+      "description": "Path to node_modules/vue-language-server/bin/vue-language-server.js.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "vue.server.petiteVue.supportHtmlFile": {
       "default": false,
       "type": "boolean"
     },
-    "vue.server.reverseConfigFilePriority": {
-      "default": false,
-      "description": "Reverse priority for tsconfig pickup.",
-      "type": "boolean"
+    "vue.server.runtime": {
+      "default": "node",
+      "description": "Vue Language Server runtime.",
+      "enum": [
+        "node",
+        "bun"
+      ],
+      "type": "string"
     },
     "vue.server.vitePress.supportMdFile": {
       "default": false,
@@ -266,6 +181,17 @@
         "customBlocks"
       ],
       "type": "array"
+    },
+    "vue.trace.server": {
+      "default": "off",
+      "description": "Traces the communication between VS Code and the language server.",
+      "enum": [
+        "off",
+        "messages",
+        "verbose"
+      ],
+      "scope": "window",
+      "type": "string"
     },
     "vue.updateImportsOnFileMove.enabled": {
       "default": false,

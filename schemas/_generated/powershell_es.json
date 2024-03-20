@@ -160,7 +160,7 @@
     },
     "powershell.cwd": {
       "default": "",
-      "markdownDescription": "An explicit start path where the Extension Terminal will be launched. Both the PowerShell process's and the shell's location will be set to this directory. **Path must be fully resolved: variables are not supported!**",
+      "markdownDescription": "A path where the Extension Terminal will be launched. Both the PowerShell process's and the shell's location will be set to this directory. Does not support variables, but does support the use of '~' and paths relative to a single workspace. **For multi-root workspaces, use the name of the folder you wish to have as the cwd.**",
       "type": "string"
     },
     "powershell.debugging.createTemporaryIntegratedConsole": {
@@ -206,6 +206,11 @@
       },
       "markdownDescription": "An array of strings that enable experimental features in the PowerShell extension. **No flags are currently available!**",
       "type": "array"
+    },
+    "powershell.developer.setExecutionPolicy": {
+      "default": true,
+      "markdownDescription": "On Windows we launch the PowerShell executable with `-ExecutionPolicy Bypass` so that the LSP server (PowerShell Editor Services module) will launch without issue. Some anti-virus programs disallow this command-line argument and this flag can be used to remove it. **Using this setting may require trusting the script manually in order for it to launch!**",
+      "type": "boolean"
     },
     "powershell.developer.waitForSessionFileTimeoutSeconds": {
       "default": 240,
@@ -365,7 +370,7 @@
       "type": "array"
     },
     "powershell.sideBar.CommandExplorerVisibility": {
-      "default": true,
+      "default": false,
       "markdownDescription": "Specifies the visibility of the Command Explorer in the side bar.",
       "type": "boolean"
     },
@@ -383,6 +388,21 @@
       "default": true,
       "markdownDescription": "Starts the PowerShell extension automatically when a PowerShell file is opened. If `false`, to start the extension use the [Restart Session command](command:PowerShell.RestartSession). **IntelliSense, code navigation, the Extension Terminal, code formatting, and other features are not enabled until the extension starts.**",
       "type": "boolean"
+    },
+    "powershell.suppressAdditionalExeNotFoundWarning": {
+      "default": false,
+      "markdownDescription": "Suppresses the warning message when any of `#powershell.powerShellAdditionalExePaths#` is not found.",
+      "type": "boolean"
+    },
+    "powershell.trace.server": {
+      "default": "off",
+      "description": "Traces the communication between VS Code and the PowerShell Editor Services language server. **This setting is only meant for extension developers!**",
+      "enum": [
+        "off",
+        "messages",
+        "verbose"
+      ],
+      "type": "string"
     },
     "powershell.useX86Host": {
       "default": false,

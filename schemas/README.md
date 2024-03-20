@@ -1,5 +1,6 @@
 # Schemas
 
+- [ ] aiken
 - [x] als
 - [ ] anakin_language_server
 - [ ] angularls
@@ -8,21 +9,29 @@
 - [ ] apex_ls
 - [ ] arduino_language_server
 - [ ] asm_lsp
+- [ ] ast_grep
 - [x] astro
+- [ ] autotools_ls
 - [ ] awk_ls
 - [ ] azure_pipelines_ls
+- [ ] basedpyright
 - [x] bashls
 - [ ] beancount
 - [ ] bicep
+- [ ] biome
 - [ ] blueprint_ls
+- [ ] bqnlsp
 - [ ] bright_script
 - [ ] bsl_ls
 - [ ] buck2
 - [ ] buddy_ls
 - [ ] bufls
+- [ ] bzl
 - [ ] cadence
 - [ ] cairo_ls
 - [ ] ccls
+- [ ] cds_lsp
+- [ ] circom-lsp
 - [x] clangd
 - [ ] clarity_lsp
 - [ ] clojure_lsp
@@ -30,15 +39,21 @@
 - [ ] cobol_ls
 - [x] codeqlls
 - [ ] coffeesense
+- [ ] contextive
+- [ ] coq_lsp
 - [ ] crystalline
 - [ ] csharp_ls
+- [ ] css_variables
 - [x] cssls
 - [ ] cssmodules_ls
 - [ ] cucumber_language_server
 - [ ] custom_elements_ls
+- [ ] cypher_ls
 - [ ] dafny
 - [ ] dagger
 - [x] dartls
+- [ ] dcmls
+- [ ] delphi_ls
 - [x] denols
 - [ ] dhall_lsp_server
 - [ ] diagnosticls
@@ -47,18 +62,22 @@
 - [ ] dockerls
 - [ ] dolmenls
 - [ ] dotls
+- [ ] dprint
 - [ ] drools_lsp
 - [ ] ds_pinyin_lsp
 - [ ] ecsact
 - [ ] efm
 - [x] elixirls
 - [x] elmls
+- [ ] elp
 - [ ] ember
+- [ ] emmet_language_server
 - [ ] emmet_ls
 - [ ] erg_language_server
 - [ ] erlangls
 - [ ] esbonio
 - [x] eslint
+- [ ] facility_language_server
 - [ ] fennel_language_server
 - [ ] fennel_ls
 - [x] flow
@@ -70,9 +89,11 @@
 - [ ] fstar
 - [ ] futhark_lsp
 - [ ] gdscript
+- [ ] gdshader_lsp
 - [ ] ghcide
 - [ ] ghdl_ls
 - [ ] gleam
+- [ ] glsl_analyzer
 - [ ] glslls
 - [ ] golangci_lint_ls
 - [x] gopls
@@ -80,6 +101,8 @@
 - [x] grammarly
 - [ ] graphql
 - [ ] groovyls
+- [ ] guile_ls
+- [ ] harper_ls
 - [x] haxe_language_server
 - [ ] hdl_checker
 - [ ] helm_ls
@@ -88,35 +111,47 @@
 - [ ] hls
 - [ ] hoon_ls
 - [x] html
+- [ ] htmx
+- [ ] hydra_lsp
 - [ ] idris2_lsp
 - [x] intelephense
 - [x] java_language_server
 - [x] jdtls
 - [ ] jedi_language_server
+- [ ] jinja_lsp
 - [ ] jqls
 - [x] jsonls
 - [ ] jsonnet_ls
 - [x] julials
+- [ ] koka
 - [x] kotlin_language_server
 - [ ] lean3ls
 - [x] leanls
 - [ ] lelwel_ls
 - [ ] lemminx
+- [ ] lexical
 - [x] ltex
 - [x] lua_ls
 - [x] luau_lsp
+- [ ] lwc_ls
 - [ ] m68k
+- [ ] markdown_oxide
 - [ ] marksman
 - [ ] matlab_ls
+- [ ] mdx_analyzer
+- [ ] mesonlsp
 - [ ] metals
 - [ ] millet
 - [ ] mint
 - [ ] mlir_lsp_server
 - [ ] mlir_pdll_lsp_server
 - [ ] mm0_ls
+- [ ] mojo
 - [ ] move_analyzer
+- [ ] mutt_ls
 - [ ] nelua_lsp
 - [ ] neocmake
+- [ ] nginx_language_server
 - [x] nickel_ls
 - [ ] nil_ls
 - [ ] nim_langserver
@@ -124,6 +159,7 @@
 - [ ] nixd
 - [ ] nomad_lsp
 - [ ] ntt
+- [ ] nushell
 - [ ] nxls
 - [ ] ocamlls
 - [ ] ocamllsp
@@ -141,7 +177,10 @@
 - [ ] pest_ls
 - [ ] phan
 - [ ] phpactor
+- [ ] pico8_ls
+- [ ] pkgbuild_language_server
 - [ ] please
+- [ ] postgres_lsp
 - [x] powershell_es
 - [ ] prismals
 - [ ] prolog_ls
@@ -160,6 +199,8 @@
 - [ ] racket_langserver
 - [ ] raku_navigator
 - [ ] reason_ls
+- [ ] regal
+- [ ] regols
 - [ ] relay_lsp
 - [ ] remark_ls
 - [x] rescriptls
@@ -167,57 +208,74 @@
 - [ ] rnix
 - [ ] robotframework_ls
 - [x] rome
+- [ ] rubocop
 - [ ] ruby_ls
 - [ ] ruff_lsp
+- [ ] rune_languageserver
 - [x] rust_analyzer
 - [ ] salt_ls
 - [ ] scheme_langserver
 - [ ] scry
 - [ ] serve_d
 - [ ] sixtyfps
+- [ ] slangd
 - [ ] slint_lsp
 - [ ] smarty_ls
 - [ ] smithy_ls
+- [ ] snyk_ls
 - [ ] solang
 - [x] solargraph
 - [ ] solc
 - [ ] solidity
 - [x] solidity_ls
 - [ ] solidity_ls_nomicfoundation
+- [ ] somesass_ls
 - [x] sorbet
 - [x] sourcekit
 - [ ] sourcery
 - [x] spectral
+- [ ] spyglassmc_language_server
 - [ ] sqlls
 - [ ] sqls
 - [ ] standardrb
 - [ ] starlark_rust
 - [ ] statix
 - [ ] steep
+- [ ] stimulus_ls
 - [x] stylelint_lsp
 - [x] svelte
 - [x] svlangserver
 - [ ] svls
 - [ ] swift_mesonls
 - [ ] syntax_tree
+- [ ] tabby_ml
 - [x] tailwindcss
 - [ ] taplo
 - [ ] tblgen_lsp_server
 - [ ] teal_ls
+- [ ] templ
 - [ ] terraform_lsp
 - [x] terraformls
 - [ ] texlab
 - [ ] textlsp
 - [ ] tflint
 - [ ] theme_check
+- [ ] thriftls
 - [ ] tilt_ls
+- [ ] tinymist
 - [x] tsserver
+- [ ] ttags
 - [ ] turtle_ls
+- [ ] twiggy_language_server
 - [ ] typeprof
+- [ ] typos_lsp
 - [ ] typst_lsp
+- [ ] uiua
 - [ ] unison
 - [ ] unocss
 - [ ] uvls
+- [ ] v_analyzer
+- [ ] vacuum
 - [ ] vala_ls
 - [ ] vale_ls
 - [ ] vdmj
@@ -229,10 +287,11 @@
 - [ ] visualforce_ls
 - [ ] vls
 - [x] volar
-- [ ] vtsls
+- [x] vtsls
 - [x] vuels
 - [ ] wgsl_analyzer
 - [x] yamlls
+- [ ] yang_lsp
 - [ ] yls
 - [ ] zk
 - [x] zls

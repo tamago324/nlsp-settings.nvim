@@ -16,7 +16,6 @@
     },
     "html.completion.attributeDefaultValue": {
       "default": "doublequotes",
-      "description": "%html.completion.attributeDefaultValue%",
       "enum": [
         "doublequotes",
         "singlequotes",
@@ -27,6 +26,7 @@
         "%html.completion.attributeDefaultValue.singlequotes%",
         "%html.completion.attributeDefaultValue.empty%"
       ],
+      "markdownDescription": "%html.completion.attributeDefaultValue%",
       "scope": "resource",
       "type": "string"
     },

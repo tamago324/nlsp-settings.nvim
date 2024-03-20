@@ -98,6 +98,12 @@
       "scope": "window",
       "type": "boolean"
     },
+    "dart.showExtensionRecommendations": {
+      "default": true,
+      "description": "Whether to show recommendations for other VS Code extensions based on the packages you're using.",
+      "scope": "window",
+      "type": "boolean"
+    },
     "dart.showTodos": {
       "default": true,
       "description": "Whether to show TODOs in the Problems list. Can be a boolean to enable all TODO comments (TODO, FIXME, HACK, UNDONE) or an array of which types to enable. Older Dart SDKs may not support some TODO kinds.",

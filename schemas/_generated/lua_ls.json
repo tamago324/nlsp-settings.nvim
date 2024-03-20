@@ -146,6 +146,7 @@
           "global-in-nil-env",
           "incomplete-signature-doc",
           "index-in-func-name",
+          "inject-field",
           "invisible",
           "jump-local-scope",
           "keyword",
@@ -189,6 +190,7 @@
           "miss-sep-in-table",
           "miss-space-between",
           "miss-symbol",
+          "missing-fields",
           "missing-global-doc",
           "missing-local-export-doc",
           "missing-parameter",
@@ -922,6 +924,19 @@
           ],
           "type": "string"
         },
+        "inject-field": {
+          "default": "Opened",
+          "description": "%config.diagnostics.inject-field%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Any!",
+            "Opened!",
+            "None!"
+          ],
+          "type": "string"
+        },
         "invisible": {
           "default": "Any",
           "description": "%config.diagnostics.invisible%",
@@ -938,6 +953,19 @@
         "lowercase-global": {
           "default": "Any",
           "description": "%config.diagnostics.lowercase-global%",
+          "enum": [
+            "Any",
+            "Opened",
+            "None",
+            "Any!",
+            "Opened!",
+            "None!"
+          ],
+          "type": "string"
+        },
+        "missing-fields": {
+          "default": "Any",
+          "description": "%config.diagnostics.missing-fields%",
           "enum": [
             "Any",
             "Opened",
@@ -1757,6 +1785,21 @@
           ],
           "type": "string"
         },
+        "inject-field": {
+          "default": "Warning",
+          "description": "%config.diagnostics.inject-field%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Error!",
+            "Warning!",
+            "Information!",
+            "Hint!"
+          ],
+          "type": "string"
+        },
         "invisible": {
           "default": "Warning",
           "description": "%config.diagnostics.invisible%",
@@ -1775,6 +1818,21 @@
         "lowercase-global": {
           "default": "Information",
           "description": "%config.diagnostics.lowercase-global%",
+          "enum": [
+            "Error",
+            "Warning",
+            "Information",
+            "Hint",
+            "Error!",
+            "Warning!",
+            "Information!",
+            "Hint!"
+          ],
+          "type": "string"
+        },
+        "missing-fields": {
+          "default": "Warning",
+          "description": "%config.diagnostics.missing-fields%",
           "enum": [
             "Error",
             "Warning",
@@ -2991,10 +3049,12 @@
       "type": "boolean"
     },
     "Lua.workspace.checkThirdParty": {
-      "default": true,
       "markdownDescription": "%config.workspace.checkThirdParty%",
       "scope": "resource",
-      "type": "boolean"
+      "type": [
+        "string",
+        "boolean"
+      ]
     },
     "Lua.workspace.ignoreDir": {
       "default": [

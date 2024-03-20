@@ -2,17 +2,32 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of sourcekit",
   "properties": {
+    "swift.actionAfterBuildError": {
+      "default": "Focus Terminal",
+      "enum": [
+        "Focus Problems",
+        "Focus Terminal",
+        "Do Nothing"
+      ],
+      "enumDescriptions": [
+        "Focus on Problems View",
+        "Focus on Build Task Terminal"
+      ],
+      "markdownDescription": "Action after a Build task generates errors.",
+      "order": 11,
+      "type": "string"
+    },
     "swift.autoGenerateLaunchConfigurations": {
       "default": true,
       "markdownDescription": "When loading a `Package.swift`, auto-generate `launch.json` configurations for running any executables.",
-      "order": 5,
+      "order": 6,
       "scope": "machine-overridable",
       "type": "boolean"
     },
     "swift.backgroundCompilation": {
       "default": false,
       "markdownDescription": "**Experimental**: Run `swift build` in the background whenever a file is saved.",
-      "order": 8,
+      "order": 10,
       "type": "boolean"
     },
     "swift.buildArguments": {
@@ -27,14 +42,20 @@
     "swift.buildPath": {
       "default": "",
       "markdownDescription": "Path to the build directory passed to all swift package manager commands.",
-      "order": 9,
+      "order": 12,
       "type": "string"
     },
     "swift.disableAutoResolve": {
       "default": false,
-      "markdownDescription": "Disable automatic running of `swift package resolve`.",
-      "order": 10,
+      "markdownDescription": "Disable automatic running of `swift package resolve`. This will also disable searching for command plugins and the initial test discovery process as both of these can kick of a resolve.",
+      "order": 7,
       "scope": "machine-overridable",
+      "type": "boolean"
+    },
+    "swift.disableSwiftPackageManagerIntegration": {
+      "default": false,
+      "markdownDescription": "Disables automated Build Tasks, Package Dependency view, Launch configuration generation and TestExplorer.",
+      "order": 13,
       "type": "boolean"
     },
     "swift.excludePathsFromPackageDependencies": {
@@ -46,24 +67,24 @@
       "items": {
         "type": "string"
       },
-      "order": 7,
+      "order": 9,
       "type": "array"
     },
     "swift.path": {
       "default": "",
-      "markdownDescription": "The path of the folder containing the Swift executables. The default is to look in **$PATH**.",
+      "markdownDescription": "The path of the folder containing the Swift executables. The default is to look in the PATH environment variable.",
       "order": 1,
       "type": "string"
     },
     "swift.problemMatchCompileErrors": {
       "default": true,
       "description": "List compile errors in the Problems View.",
-      "order": 6,
+      "order": 8,
       "type": "boolean"
     },
     "swift.sanitizer": {
       "default": "off",
-      "description": "Runtime sanitizer instrumentation. Requires a re-compilation.",
+      "description": "Runtime sanitizer instrumentation.",
       "enum": [
         "off",
         "thread",
@@ -72,6 +93,13 @@
       "order": 4,
       "scope": "machine-overridable",
       "type": "string"
+    },
+    "swift.searchSubfoldersForPackages": {
+      "default": false,
+      "markdownDescription": "Search sub-folders of workspace folder for Swift Packages at start up.",
+      "order": 5,
+      "scope": "machine-overridable",
+      "type": "boolean"
     },
     "swift.testEnvironmentVariables": {
       "default": {},
