@@ -9,18 +9,14 @@ local write_tmpfile = function(data)
 end
 
 local converters = {}
-
-converters.pylsp = function(json)
+function convert_properties(json)
   return json.properties
 end
 
-converters.vtsls = function(json)
-  return json.properties
-end
-
-converters.asm_lsp = function(json)
-  return json.properties
-end
+converters.pylsp = convert_properties
+converters.vtsls = convert_properties
+converters.asm_lsp = convert_properties
+converters.bright_script = convert_properties
 
 converters.ast_grep = function(json)
   return json.definitions.Project.properties
