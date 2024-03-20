@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of beancount",
+  "properties": {
+    "beancountLangServer.journalFile": {
+      "default": "",
+      "description": "Path to the beancount journal",
+      "scope": "resource",
+      "type": "string"
+    },
+    "beancountLangServer.trace.server": {
+      "default": "off",
+      "description": "Traces the communication between VS Code and the language server.",
+      "enum": [
+        "off",
+        "messages",
+        "verbose"
+      ],
+      "scope": "window",
+      "type": "string"
+    }
+  }
+}

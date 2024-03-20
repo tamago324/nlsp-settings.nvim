@@ -16,12 +16,12 @@
 - [ ] azure_pipelines_ls
 - [ ] basedpyright
 - [x] bashls
-- [ ] beancount
-- [ ] bicep
+- [x] beancount
+- [x] bicep
 - [ ] biome
 - [ ] blueprint_ls
 - [ ] bqnlsp
-- [ ] bright_script
+- [x] bright_script
 - [ ] bsl_ls
 - [ ] buck2
 - [ ] buddy_ls

@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of bicep",
+  "properties": {
+    "bicep.completions.getAllAccessibleAzureContainerRegistries": {
+      "default": false,
+      "description": "When completing 'br:' module references, query Azure for all container registries accessible to the user (may be slow). If this option is off, only registries configured under moduleAliases in bicepconfig.json will be listed.",
+      "type": "boolean"
+    },
+    "bicep.decompileOnPaste": {
+      "default": true,
+      "description": "Automatically convert pasted JSON values, JSON ARM templates or resources from a JSON ARM template into Bicep (use Undo to revert)",
+      "type": "boolean"
+    },
+    "bicep.enableOutputTimestamps": {
+      "$comment": "This is interpreted by vscode-azuretools package and the name has to be in the following format: <extensionConfigurationPrefix>.enableOutputTimestamps",
+      "default": true,
+      "description": "Prepend each line displayed in the Bicep Operations output channel with a timestamp.",
+      "type": "boolean"
+    },
+    "bicep.enableSurveys": {
+      "default": true,
+      "description": "Enable occasional surveys to collect feedback that helps us improve the Bicep extension.",
+      "type": "boolean"
+    },
+    "bicep.experimental.disableDeploymentPane": {
+      "default": false,
+      "description": "Disable the experimental Bicep Deployment Pane.",
+      "type": "boolean"
+    },
+    "bicep.suppressedWarnings": {
+      "default": [],
+      "description": "Warnings that are being suppressed because a 'Don't show again' button was pressed. Remove items to reset.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "bicep.trace.server": {
+      "default": "Off",
+      "description": "Configure tracing of messages sent to the Bicep language server.",
+      "enum": [
+        "Off",
+        "Messages",
+        "Verbose"
+      ],
+      "scope": "window",
+      "type": "string"
+    }
+  }
+}

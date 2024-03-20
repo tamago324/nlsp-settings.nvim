@@ -1,0 +1,290 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Setting of bright_script",
+  "properties": {
+    "allowBrighterScriptInBrightScript": {
+      "default": false,
+      "description": "Allow brighterscript features (classes, interfaces, etc...) to be included in BrightScript (`.brs`) files, and force those files to be transpiled.",
+      "type": "boolean"
+    },
+    "autoImportComponentScript": {
+      "default": false,
+      "description": "When enabled, every xml component will search for a .bs or .brs file with the same name in the same folder, and add it as a script import if found. Disabled by default",
+      "type": "boolean"
+    },
+    "copyToStaging": {
+      "description": "If true, the files are copied to staging. This setting is ignored when deploy is enabled or if createPackage is enabled",
+      "type": "boolean"
+    },
+    "createPackage": {
+      "description": "Creates a zip package. Defaults to true. This setting is ignored when deploy is enabled.",
+      "type": "boolean"
+    },
+    "cwd": {
+      "description": "A path that will be used to override the current working directory",
+      "type": "string"
+    },
+    "deploy": {
+      "description": "If true, after a successful buld, the project will be deployed to the roku specified in host",
+      "type": "boolean"
+    },
+    "diagnosticFilters": {
+      "description": "A collection of filters used to hide diagnostics for certain files",
+      "items": {
+        "anyOf": [
+          {
+            "description": "The code of a diagnostic that should be filtered from all files",
+            "type": "number"
+          },
+          {
+            "description": "A file path relative to rootDir, an absolute path, or a file glob pointing to file(s) you wish to filter diagnostics from.",
+            "type": "string"
+          },
+          {
+            "description": "A file path relative to rootDir, an absolute path, or a file glob pointing to file(s) you wish to filter diagnostics from.",
+            "properties": {
+              "codes": {
+                "description": "A list of codes of diagnostics that should be filtered out from the files matched in 'src'`. If omitted, all error codes are used",
+                "items": {
+                  "anyOf": [
+                    {
+                      "description": "A code of diagnostics that should be filtered out from the files matched in 'src'",
+                      "type": [
+                        "number",
+                        "string"
+                      ]
+                    }
+                  ]
+                },
+                "type": "array"
+              },
+              "src": {
+                "description": "A file path relative to rootDir, an absolute path, or a file glob pointing to file(s) you wish to filter diagnostics from.",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "diagnosticLevel": {
+      "default": "log",
+      "description": "Specify what diagnostic levels are printed to the console. This has no effect on what diagnostics are reported in the LanguageServer. Defaults to 'warn'",
+      "enum": [
+        "hint",
+        "info",
+        "warn",
+        "error"
+      ],
+      "type": "string"
+    },
+    "diagnosticSeverityOverrides": {
+      "description": "A map of error codes with their severity level override (error|warn|info)",
+      "patternProperties": {
+        ".{1,}": {
+          "enum": [
+            "error",
+            "warn",
+            "info",
+            "hint"
+          ],
+          "type": [
+            "number",
+            "string"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "emitDefinitions": {
+      "default": false,
+      "description": "Emit type definition files (`d.bs`) during transpile",
+      "type": "boolean"
+    },
+    "emitFullPaths": {
+      "default": false,
+      "description": "Emit full paths to files when printing diagnostics to the console.",
+      "type": "boolean"
+    },
+    "extends": {
+      "description": "Relative or absolute path to another bsconfig.json file that this file should use as a base and then override. Prefix with a question mark (?) to prevent throwing an exception if the file does not exist.",
+      "type": "string"
+    },
+    "files": {
+      "default": [
+        "manifest",
+        "source/**/*.*",
+        "components/**/*.*",
+        "images/**/*.*"
+      ],
+      "description": "The list of files that should be used in this project. Supports globs. Optionally, you can specify an object with `src` and `dest` properties to move files from one location into a different destination location",
+      "items": {
+        "anyOf": [
+          {
+            "description": "A file path or file glob",
+            "type": "string"
+          },
+          {
+            "properties": {
+              "dest": {
+                "description": "The destination for the file(s) found in 'src'",
+                "type": "string"
+              },
+              "src": {
+                "anyOf": [
+                  {
+                    "description": "A file path or glob pattern of source file(s)",
+                    "type": "string"
+                  },
+                  {
+                    "description": "An array of file path or globs",
+                    "items": {
+                      "description": "A file path or glob pattern of source file(s)",
+                      "type": "string"
+                    },
+                    "type": "array"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "src",
+              "dest"
+            ],
+            "type": "object"
+          }
+        ]
+      }
+    },
+    "host": {
+      "description": "The host of the Roku that the package will be deploy to",
+      "type": "string"
+    },
+    "ignoreErrorCodes": {
+      "deprecated": true,
+      "deprecationMessage": "Deprecated. Use `diagnosticFilters` instead.",
+      "description": "A list of error codes the compiler should NOT emit, even if encountered.",
+      "items": {
+        "anyOf": [
+          {
+            "description": "A BrighterScript error code that will be ignored during compile",
+            "type": "number"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "logLevel": {
+      "default": "log",
+      "description": "The amount of detail that should be printed to the console",
+      "enum": [
+        "error",
+        "warn",
+        "log",
+        "info",
+        "debug",
+        "trace"
+      ],
+      "type": "string"
+    },
+    "manifest": {
+      "description": "A entry to modify manifest values",
+      "properties": {
+        "bs_const": {
+          "description": "A dictionary of bs_consts to change or add to the manifest. Each entry ",
+          "patternProperties": {
+            "^.+$": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "outFile": {
+      "description": "The path where the output zip or package should be placed. This includes the filename. Defaults to \"./out/package\"",
+      "type": "string"
+    },
+    "password": {
+      "description": " The password to use when deploying to a Roku device",
+      "type": "string"
+    },
+    "plugins": {
+      "description": "A list of node scripts or npm modules to add extra diagnostics or transform the AST.",
+      "items": {
+        "anyOf": [
+          {
+            "description": "a path to a node script or an npm module to load dynamically",
+            "type": "string"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "removeParameterTypes": {
+      "default": false,
+      "description": "Removes the explicit type to function's parameters and return (i.e. the `as type` syntax) ",
+      "type": "boolean"
+    },
+    "require": {
+      "description": "A list of scripts or modules to pass to node's `require()` on startup. This is useful for doing things like ts-node registration",
+      "items": {
+        "anyOf": [
+          {
+            "description": "a path to a node script or an npm module to load dynamically at startup.",
+            "type": "string"
+          }
+        ]
+      },
+      "type": "array"
+    },
+    "retainStagingDir": {
+      "default": false,
+      "description": "Prevent the staging folder from being deleted after the deployment package is created.  This is helpful for troubleshooting why your package isn't being created the way you expected.",
+      "type": "boolean"
+    },
+    "retainStagingFolder": {
+      "default": false,
+      "deprecated": true,
+      "description": "Prevent the staging folder from being deleted after the deployment package is created.  This is helpful for troubleshooting why your package isn't being created the way you expected.",
+      "type": "boolean"
+    },
+    "rootDir": {
+      "description": "The root directory of your Roku project. Defaults to the current working directory (or cwd property)",
+      "type": "string"
+    },
+    "sourceMap": {
+      "default": false,
+      "description": "Enables generating sourcemap files, which allow debugging tools to show the original source code while running the emitted files.",
+      "type": "boolean"
+    },
+    "sourceRoot": {
+      "description": "Override the root directory path where debugger should locate the source files. The location will be embedded in the source map to help debuggers locate the original source files. This only applies to files found within rootDir. This is useful when you want to preprocess files before passing them to BrighterScript, and want a debugger to open the original files. This option also affects the `SOURCE_FILE_PATH` and `SOURCE_LOCATION` source literals.",
+      "type": "string"
+    },
+    "stagingDir": {
+      "description": "The path to the staging folder (where all files are copied before creating the zip package)",
+      "type": "string"
+    },
+    "stagingFolderPath": {
+      "deprecated": true,
+      "description": "The path to the staging folder (where all files are copied before creating the zip package)",
+      "type": "string"
+    },
+    "username": {
+      "description": "The username to use when deploying to a Roku device",
+      "type": "string"
+    },
+    "watch": {
+      "default": false,
+      "description": "If true, the server will keep running and will watch and recompile on every file change",
+      "type": "boolean"
+    }
+  }
+}
