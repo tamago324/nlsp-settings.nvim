@@ -8,6 +8,25 @@ local write_tmpfile = function(data)
   return tmpname
 end
 
+local converters = {}
+
+converters.pylsp = function(json)
+  return json.properties
+end
+
+converters.vtsls = function(json)
+  return json.properties
+end
+
+converters.asm_lsp = function(json)
+  return json.properties
+end
+
+converters.ast_grep = function(json)
+  return json.definitions.Project.properties
+end
+
+
 -- 0: ok
 -- 1: error
 local gen_schema = function(url, server_name)
@@ -23,13 +42,9 @@ local gen_schema = function(url, server_name)
     return 1
   end
 
-  if server_name == 'pylsp' or server_name == 'vtsls' or server_name == 'asm_lsp' then
-    -- NOTE: that the pylsp, vtsls entry points to an actual JSON schema file,
-    -- not a package.json containing a JSON schema at .contributes.configuration.
-    properties = json.properties
-  elseif server_name == 'ast_grep' then
-    vim.print(json.definitions.Project.properties)
-    properties = json.definitions.Project.properties
+  local converter = converters[server_name]
+  if converter then
+    properties = converter(json)
   else
     if json.contributes == nil then
       return 0
