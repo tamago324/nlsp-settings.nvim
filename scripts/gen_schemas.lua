@@ -23,7 +23,7 @@ local gen_schema = function(url, server_name)
     return 1
   end
 
-  if server_name == 'pylsp' or server_name == 'vtsls' or serve_name == 'asm_lsp' then
+  if server_name == 'pylsp' or server_name == 'vtsls' or server_name == 'asm_lsp' then
     -- NOTE: that the pylsp, vtsls entry points to an actual JSON schema file,
     -- not a package.json containing a JSON schema at .contributes.configuration.
     properties = json.properties
