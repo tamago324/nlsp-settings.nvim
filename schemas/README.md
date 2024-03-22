@@ -210,6 +210,7 @@
 - [x] rome
 - [ ] rubocop
 - [ ] ruby_ls
+- [ ] ruff
 - [ ] ruff_lsp
 - [ ] rune_languageserver
 - [x] rust_analyzer
