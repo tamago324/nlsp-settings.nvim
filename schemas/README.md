@@ -92,6 +92,7 @@
 - [ ] gdshader_lsp
 - [ ] ghcide
 - [ ] ghdl_ls
+- [ ] ginko_ls
 - [ ] gleam
 - [ ] glsl_analyzer
 - [ ] glslls
