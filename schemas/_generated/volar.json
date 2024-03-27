@@ -177,7 +177,7 @@
       "type": "string"
     },
     "vue.updateImportsOnFileMove.enabled": {
-      "default": false,
+      "default": true,
       "description": "Enabled update imports on file move.",
       "type": "boolean"
     }
