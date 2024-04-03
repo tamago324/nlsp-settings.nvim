@@ -265,6 +265,7 @@
 - [ ] thriftls
 - [ ] tilt_ls
 - [ ] tinymist
+- [ ] tsp_server
 - [x] tsserver
 - [ ] ttags
 - [ ] turtle_ls
