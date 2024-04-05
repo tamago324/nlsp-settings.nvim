@@ -93,6 +93,7 @@
 - [ ] ghcide
 - [ ] ghdl_ls
 - [ ] ginko_ls
+- [ ] gitlab_ci_ls
 - [ ] gleam
 - [ ] glsl_analyzer
 - [ ] glslls
