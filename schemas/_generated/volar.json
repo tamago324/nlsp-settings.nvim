@@ -78,6 +78,19 @@
       "default": true,
       "type": "boolean"
     },
+    "vue.format.wrapAttributes": {
+      "default": "auto",
+      "enum": [
+        "auto",
+        "force",
+        "force-aligned",
+        "force-expand-multiline",
+        "aligned-multiple",
+        "preserve",
+        "preserve-aligned"
+      ],
+      "type": "string"
+    },
     "vue.inlayHints.inlineHandlerLeading": {
       "default": false,
       "description": "Show inlay hints for event argument in inline handlers.",
@@ -124,8 +137,15 @@
       "description": "Vue language server only handles CSS and HTML language support, and tsserver takes over TS language support via TS plugin.",
       "enum": [
         "auto",
+        "typeScriptPluginOnly",
         true,
         false
+      ],
+      "enumDescriptions": [
+        "Automatically detect and enable TypeScript Plugin/Hybrid Mode in a safe environment.",
+        "Only enable Vue TypeScript Plugin but disable Hybrid Mode.",
+        "Enable TypeScript Plugin/Hybrid Mode.",
+        "Disable TypeScript Plugin/Hybrid Mode."
       ],
       "type": "boolean"
     },
