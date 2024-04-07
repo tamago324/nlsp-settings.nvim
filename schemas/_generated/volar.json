@@ -17,6 +17,11 @@
       "description": "Auto-wrap `()` to As Expression in interpolations for fix issue #520.",
       "type": "boolean"
     },
+    "vue.codeActions.askNewComponentName": {
+      "default": true,
+      "description": "Ask for new component name when extract component.",
+      "type": "boolean"
+    },
     "vue.codeActions.enabled": {
       "default": true,
       "description": "Enabled code actions.",
