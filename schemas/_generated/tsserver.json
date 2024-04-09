@@ -987,6 +987,14 @@
       ],
       "type": "boolean"
     },
+    "typescript.tsserver.experimental.useVsCodeWatcher": {
+      "default": false,
+      "description": "%configuration.tsserver.useVsCodeWatcher%",
+      "tags": [
+        "experimental"
+      ],
+      "type": "boolean"
+    },
     "typescript.tsserver.log": {
       "default": "off",
       "description": "%typescript.tsserver.log%",
