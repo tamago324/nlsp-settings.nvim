@@ -110,6 +110,7 @@
 - [ ] helm_ls
 - [x] hhvm
 - [x] hie
+- [ ] hlasm
 - [ ] hls
 - [ ] hoon_ls
 - [x] html
