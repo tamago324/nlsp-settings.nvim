@@ -1,5 +1,6 @@
 # Schemas
 
+- [ ] agda_ls
 - [ ] aiken
 - [x] als
 - [ ] anakin_language_server
@@ -243,6 +244,7 @@
 - [ ] sqls
 - [ ] standardrb
 - [ ] starlark_rust
+- [ ] starpls
 - [ ] statix
 - [ ] steep
 - [ ] stimulus_ls
