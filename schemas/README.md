@@ -213,7 +213,7 @@
 - [ ] robotframework_ls
 - [x] rome
 - [ ] rubocop
-- [ ] ruby_ls
+- [ ] ruby_lsp
 - [ ] ruff
 - [ ] ruff_lsp
 - [ ] rune_languageserver
