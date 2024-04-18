@@ -66,6 +66,7 @@
 - [ ] dprint
 - [ ] drools_lsp
 - [ ] ds_pinyin_lsp
+- [ ] earthlyls
 - [ ] ecsact
 - [ ] efm
 - [x] elixirls
