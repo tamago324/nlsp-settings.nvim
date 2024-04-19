@@ -97,7 +97,10 @@
       "type": "boolean"
     },
     "rust-analyzer.cargo.cfgs": {
-      "default": {},
+      "default": {
+        "debug_assertions": null,
+        "miri": null
+      },
       "markdownDescription": "List of cfg options to enable with the given values.",
       "type": "object"
     },
