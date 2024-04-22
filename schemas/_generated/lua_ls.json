@@ -2886,19 +2886,20 @@
       "type": "boolean"
     },
     "Lua.runtime.plugin": {
-      "default": "",
       "markdownDescription": "%config.runtime.plugin%",
       "scope": "resource",
-      "type": "string"
+      "type": [
+        "string",
+        "array"
+      ]
     },
     "Lua.runtime.pluginArgs": {
-      "default": [],
-      "items": {
-        "type": "string"
-      },
       "markdownDescription": "%config.runtime.pluginArgs%",
       "scope": "resource",
-      "type": "array"
+      "type": [
+        "array",
+        "object"
+      ]
     },
     "Lua.runtime.special": {
       "additionalProperties": false,
@@ -2997,6 +2998,12 @@
     "Lua.type.castNumberToInteger": {
       "default": true,
       "markdownDescription": "%config.type.castNumberToInteger%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "Lua.type.inferParamType": {
+      "default": false,
+      "markdownDescription": "%config.type.inferParamType%",
       "scope": "resource",
       "type": "boolean"
     },
