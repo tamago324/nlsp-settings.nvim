@@ -54,6 +54,7 @@
 - [ ] dagger
 - [x] dartls
 - [ ] dcmls
+- [ ] debputy
 - [ ] delphi_ls
 - [x] denols
 - [ ] dhall_lsp_server
