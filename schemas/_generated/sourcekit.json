@@ -70,6 +70,24 @@
       "order": 9,
       "type": "array"
     },
+    "swift.openAfterCreateNewProject": {
+      "default": "prompt",
+      "description": "Controls whether to open a swift project automatically after creating it.",
+      "enum": [
+        "always",
+        "alwaysNewWindow",
+        "whenNoFolderOpen",
+        "prompt"
+      ],
+      "enumDescriptions": [
+        "Always open in current window.",
+        "Always open in a new window.",
+        "Only open in current window when no folder is opened.",
+        "Always prompt for action."
+      ],
+      "order": 14,
+      "type": "string"
+    },
     "swift.path": {
       "default": "",
       "markdownDescription": "The path of the folder containing the Swift executables. The default is to look in the PATH environment variable.",
