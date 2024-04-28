@@ -116,27 +116,6 @@
       "description": "Show inlay hints for v-bind shorthand.",
       "type": "boolean"
     },
-    "vue.server.additionalExtensions": {
-      "default": [],
-      "description": "List any additional file extensions that should be processed as Vue files (requires restart).",
-      "items": {
-        "type": "string"
-      },
-      "type": "array"
-    },
-    "vue.server.diagnosticModel": {
-      "default": "push",
-      "description": "Diagnostic update model.",
-      "enum": [
-        "push",
-        "pull"
-      ],
-      "enumDescriptions": [
-        "Diagnostic push by language server.",
-        "Diagnostic pull by language client."
-      ],
-      "type": "string"
-    },
     "vue.server.hybridMode": {
       "default": "auto",
       "description": "Vue language server only handles CSS and HTML language support, and tsserver takes over TS language support via TS plugin.",
@@ -154,6 +133,15 @@
       ],
       "type": "boolean"
     },
+    "vue.server.includeLanguages": {
+      "default": [
+        "vue"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
     "vue.server.maxFileSize": {
       "default": 20971520,
       "description": "Maximum file size for Vue Language Server to load. (default: 20MB)",
@@ -167,14 +155,6 @@
         "null"
       ]
     },
-    "vue.server.petiteVue.supportHtmlFile": {
-      "default": false,
-      "type": "boolean"
-    },
-    "vue.server.vitePress.supportMdFile": {
-      "default": false,
-      "type": "boolean"
-    },
     "vue.splitEditors.icon": {
       "default": false,
       "description": "Show split editor icon in title area of editor.",
@@ -186,6 +166,9 @@
         "scriptSetup",
         "styles"
       ],
+      "items": {
+        "type": "string"
+      },
       "type": "array"
     },
     "vue.splitEditors.layout.right": {
@@ -193,6 +176,9 @@
         "template",
         "customBlocks"
       ],
+      "items": {
+        "type": "string"
+      },
       "type": "array"
     },
     "vue.trace.server": {
