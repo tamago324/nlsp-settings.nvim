@@ -119,6 +119,7 @@
 - [x] html
 - [ ] htmx
 - [ ] hydra_lsp
+- [ ] hyprls
 - [ ] idris2_lsp
 - [x] intelephense
 - [x] java_language_server
