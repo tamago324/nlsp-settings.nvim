@@ -154,6 +154,7 @@
 - [ ] mlir_pdll_lsp_server
 - [ ] mm0_ls
 - [ ] mojo
+- [ ] motoko_lsp
 - [ ] move_analyzer
 - [ ] mutt_ls
 - [ ] nelua_lsp
