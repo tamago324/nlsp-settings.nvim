@@ -215,6 +215,7 @@
 - [x] rls
 - [ ] rnix
 - [ ] robotframework_ls
+- [ ] roc_ls
 - [x] rome
 - [ ] rubocop
 - [ ] ruby_lsp
