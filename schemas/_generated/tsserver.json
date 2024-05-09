@@ -490,15 +490,6 @@
       "scope": "window",
       "type": "boolean"
     },
-    "typescript.experimental.tsserver.web.typeAcquisition.enabled": {
-      "default": false,
-      "description": "%configuration.experimental.tsserver.web.typeAcquisition.enabled%",
-      "scope": "window",
-      "tags": [
-        "experimental"
-      ],
-      "type": "boolean"
-    },
     "typescript.format.enable": {
       "default": true,
       "description": "%typescript.format.enable%",
@@ -1121,8 +1112,14 @@
       "type": "boolean"
     },
     "typescript.tsserver.web.projectWideIntellisense.suppressSemanticErrors": {
-      "default": true,
+      "default": false,
       "description": "%configuration.tsserver.web.projectWideIntellisense.suppressSemanticErrors%",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "typescript.tsserver.web.typeAcquisition.enabled": {
+      "default": true,
+      "description": "%configuration.tsserver.web.typeAcquisition.enabled%",
       "scope": "window",
       "type": "boolean"
     },
