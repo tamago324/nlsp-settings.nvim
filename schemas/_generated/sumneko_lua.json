@@ -272,6 +272,15 @@
       "scope": "resource",
       "type": "array"
     },
+    "Lua.diagnostics.globalsRegex": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%config.diagnostics.globalsRegex%",
+      "scope": "resource",
+      "type": "array"
+    },
     "Lua.diagnostics.groupFileStatus": {
       "additionalProperties": false,
       "markdownDescription": "%config.diagnostics.groupFileStatus%",
