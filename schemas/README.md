@@ -227,6 +227,7 @@
 - [ ] scheme_langserver
 - [ ] scry
 - [ ] serve_d
+- [ ] shopify_theme_ls
 - [ ] sixtyfps
 - [ ] slangd
 - [ ] slint_lsp
