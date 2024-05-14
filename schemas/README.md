@@ -179,6 +179,7 @@
 - [ ] openscad_lsp
 - [ ] pact_ls
 - [ ] pasls
+- [ ] pbls
 - [x] perlls
 - [x] perlnavigator
 - [x] perlpls
