@@ -20,6 +20,7 @@
 - [x] beancount
 - [x] bicep
 - [ ] biome
+- [ ] bitbake_language_server
 - [ ] blueprint_ls
 - [ ] bqnlsp
 - [x] bright_script
