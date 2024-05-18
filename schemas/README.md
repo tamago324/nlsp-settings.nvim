@@ -15,6 +15,7 @@
 - [ ] autotools_ls
 - [ ] awk_ls
 - [ ] azure_pipelines_ls
+- [ ] bacon_ls
 - [ ] basedpyright
 - [x] bashls
 - [x] beancount
@@ -160,6 +161,7 @@
 - [ ] mutt_ls
 - [ ] nelua_lsp
 - [ ] neocmake
+- [ ] nextls
 - [ ] nginx_language_server
 - [x] nickel_ls
 - [ ] nil_ls
