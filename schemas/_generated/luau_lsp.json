@@ -259,6 +259,16 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "luau-lsp.platform.type": {
+      "default": "roblox",
+      "enum": [
+        "standard",
+        "roblox"
+      ],
+      "markdownDescription": "Platform-specific support features",
+      "scope": "window",
+      "type": "string"
+    },
     "luau-lsp.plugin.enabled": {
       "default": false,
       "markdownDescription": "Use Roblox Studio Plugin to provide DataModel information",
@@ -358,6 +368,8 @@
     },
     "luau-lsp.types.roblox": {
       "default": true,
+      "deprecationMessage": "Deprecated: Please use luau-lsp.platform.type instead.",
+      "markdownDeprecationMessage": "**Deprecated**: Please use `#luau-lsp.platform.type#` instead.",
       "markdownDescription": "Load in and automatically update Roblox type definitions for the type checker",
       "scope": "window",
       "tags": [
