@@ -229,6 +229,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "luau-lsp.inlayHints.makeInsertable": {
+      "default": true,
+      "markdownDescription": "Whether type annotation inlay hints can be made insertable by clicking",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "luau-lsp.inlayHints.parameterNames": {
       "default": "none",
       "enum": [
