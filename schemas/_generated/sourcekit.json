@@ -119,6 +119,24 @@
       "scope": "machine-overridable",
       "type": "boolean"
     },
+    "swift.showBuildStatus": {
+      "default": "swiftStatus",
+      "description": "Controls where to show the Swift build progress when running a `swift` build task.",
+      "enum": [
+        "never",
+        "swiftStatus",
+        "progress",
+        "notification"
+      ],
+      "enumDescriptions": [
+        "Never show the Swift build status.",
+        "Show the Swift build status in a status bar item provided by the Swift extension.",
+        "Show the Swift build status in the \"Progress Message\" status bar item provided by VSCode.",
+        "Show the Swift build status as a progress notification."
+      ],
+      "order": 15,
+      "type": "string"
+    },
     "swift.testEnvironmentVariables": {
       "default": {},
       "markdownDescription": "Environment variables to set when running tests. To set environment variables when debugging an application you should edit the relevant `launch.json` configuration",
