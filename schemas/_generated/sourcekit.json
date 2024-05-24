@@ -85,7 +85,7 @@
         "Only open in current window when no folder is opened.",
         "Always prompt for action."
       ],
-      "order": 14,
+      "order": 15,
       "type": "string"
     },
     "swift.path": {
@@ -134,8 +134,14 @@
         "Show the Swift build status in the \"Progress Message\" status bar item provided by VSCode.",
         "Show the Swift build status as a progress notification."
       ],
-      "order": 15,
+      "order": 16,
       "type": "string"
+    },
+    "swift.showCreateSwiftProjectInWelcomePage": {
+      "default": true,
+      "description": "Controls whether or not the create new swift project button appears in the welcome page.",
+      "order": 14,
+      "type": "boolean"
     },
     "swift.testEnvironmentVariables": {
       "default": {},
