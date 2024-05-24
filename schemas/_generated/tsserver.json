@@ -8,6 +8,15 @@
       "scope": "language-overridable",
       "type": "boolean"
     },
+    "javascript.experimental.updateImportsOnPaste": {
+      "default": false,
+      "description": "%configuration.updateImportsOnPaste%",
+      "scope": "resource",
+      "tags": [
+        "experimental"
+      ],
+      "type": "boolean"
+    },
     "javascript.format.enable": {
       "default": true,
       "description": "%javascript.format.enable%",
@@ -488,6 +497,15 @@
       "default": false,
       "description": "%typescript.enablePromptUseWorkspaceTsdk%",
       "scope": "window",
+      "type": "boolean"
+    },
+    "typescript.experimental.updateImportsOnPaste": {
+      "default": false,
+      "description": "%configuration.updateImportsOnPaste%",
+      "scope": "resource",
+      "tags": [
+        "experimental"
+      ],
       "type": "boolean"
     },
     "typescript.format.enable": {
@@ -1112,13 +1130,13 @@
       "type": "boolean"
     },
     "typescript.tsserver.web.projectWideIntellisense.suppressSemanticErrors": {
-      "default": false,
+      "default": true,
       "description": "%configuration.tsserver.web.projectWideIntellisense.suppressSemanticErrors%",
       "scope": "window",
       "type": "boolean"
     },
     "typescript.tsserver.web.typeAcquisition.enabled": {
-      "default": true,
+      "default": false,
       "description": "%configuration.tsserver.web.typeAcquisition.enabled%",
       "scope": "window",
       "type": "boolean"
