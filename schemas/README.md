@@ -158,6 +158,7 @@
 - [ ] mojo
 - [ ] motoko_lsp
 - [ ] move_analyzer
+- [ ] msbuild_project_tools_server
 - [ ] mutt_ls
 - [ ] nelua_lsp
 - [ ] neocmake
