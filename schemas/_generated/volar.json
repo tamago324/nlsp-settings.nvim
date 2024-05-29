@@ -12,11 +12,6 @@
       "description": "Auto-complete Ref value with `.value`.",
       "type": "boolean"
     },
-    "vue.autoInsert.parentheses": {
-      "default": true,
-      "description": "Auto-wrap `()` to As Expression in interpolations for fix issue #520.",
-      "type": "boolean"
-    },
     "vue.codeActions.askNewComponentName": {
       "default": true,
       "description": "Ask for new component name when extract component.",
@@ -141,11 +136,6 @@
         "type": "string"
       },
       "type": "array"
-    },
-    "vue.server.maxFileSize": {
-      "default": 20971520,
-      "description": "Maximum file size for Vue Language Server to load. (default: 20MB)",
-      "type": "number"
     },
     "vue.server.maxOldSpaceSize": {
       "default": null,
