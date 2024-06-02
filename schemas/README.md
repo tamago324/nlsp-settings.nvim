@@ -85,6 +85,7 @@
 - [ ] facility_language_server
 - [ ] fennel_language_server
 - [ ] fennel_ls
+- [ ] fish_lsp
 - [x] flow
 - [ ] flux_lsp
 - [ ] foam_ls
