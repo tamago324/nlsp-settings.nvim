@@ -14,7 +14,7 @@
         "Focus on Build Task Terminal"
       ],
       "markdownDescription": "Action after a Build task generates errors.",
-      "order": 11,
+      "order": 12,
       "type": "string"
     },
     "swift.autoGenerateLaunchConfigurations": {
@@ -27,7 +27,7 @@
     "swift.backgroundCompilation": {
       "default": false,
       "markdownDescription": "**Experimental**: Run `swift build` in the background whenever a file is saved.",
-      "order": 10,
+      "order": 11,
       "type": "boolean"
     },
     "swift.buildArguments": {
@@ -42,7 +42,43 @@
     "swift.buildPath": {
       "default": "",
       "markdownDescription": "Path to the build directory passed to all swift package manager commands.",
-      "order": 12,
+      "order": 13,
+      "type": "string"
+    },
+    "swift.diagnosticsCollection": {
+      "default": "keepSourceKit",
+      "description": "Controls how diagnostics from the various providers are merged into the `swift` diagnostics collection.",
+      "enum": [
+        "onlySwiftc",
+        "onlySourceKit",
+        "keepSwiftc",
+        "keepSourceKit",
+        "keepAll"
+      ],
+      "enumDescriptions": [
+        "Only provide diagnostics from `swiftc`.",
+        "Only provide diagnostics from `SourceKit`.",
+        "When merging diagnostics, give precedence to diagnostics from `swiftc`.",
+        "When merging diagnostics, give precedence to diagnostics from `SourceKit`.",
+        "Keep diagnostics from all providers."
+      ],
+      "order": 8,
+      "type": "string"
+    },
+    "swift.diagnosticsStyle": {
+      "default": "llvm",
+      "description": "Controls which -diagnostic-style option to pass to `swiftc` when running `swift` tasks.",
+      "enum": [
+        "default",
+        "llvm",
+        "swift"
+      ],
+      "enumDescriptions": [
+        "Use whichever diagnostics style `swiftc` produces by default.",
+        "Use the \"llvm\" diagnostic style. This allows the parsing of \"notes\".",
+        "Use the \"swift\" diagnostic style. This means that \"notes\" will not be parsed. This option will not work for Swift versions prior to 5.10."
+      ],
+      "order": 9,
       "type": "string"
     },
     "swift.disableAutoResolve": {
@@ -55,7 +91,7 @@
     "swift.disableSwiftPackageManagerIntegration": {
       "default": false,
       "markdownDescription": "Disables automated Build Tasks, Package Dependency view, Launch configuration generation and TestExplorer.",
-      "order": 13,
+      "order": 14,
       "type": "boolean"
     },
     "swift.excludePathsFromPackageDependencies": {
@@ -67,7 +103,7 @@
       "items": {
         "type": "string"
       },
-      "order": 9,
+      "order": 10,
       "type": "array"
     },
     "swift.openAfterCreateNewProject": {
@@ -85,7 +121,7 @@
         "Only open in current window when no folder is opened.",
         "Always prompt for action."
       ],
-      "order": 15,
+      "order": 16,
       "type": "string"
     },
     "swift.path": {
@@ -93,12 +129,6 @@
       "markdownDescription": "The path of the folder containing the Swift executables. The default is to look in the PATH environment variable.",
       "order": 1,
       "type": "string"
-    },
-    "swift.problemMatchCompileErrors": {
-      "default": true,
-      "description": "List compile errors in the Problems View.",
-      "order": 8,
-      "type": "boolean"
     },
     "swift.sanitizer": {
       "default": "off",
@@ -134,13 +164,13 @@
         "Show the Swift build status in the \"Progress Message\" status bar item provided by VSCode.",
         "Show the Swift build status as a progress notification."
       ],
-      "order": 16,
+      "order": 17,
       "type": "string"
     },
     "swift.showCreateSwiftProjectInWelcomePage": {
       "default": true,
       "description": "Controls whether or not the create new swift project button appears in the welcome page.",
-      "order": 14,
+      "order": 15,
       "type": "boolean"
     },
     "swift.testEnvironmentVariables": {
