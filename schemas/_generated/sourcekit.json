@@ -161,7 +161,7 @@
       "enumDescriptions": [
         "Never show the Swift build status.",
         "Show the Swift build status in a status bar item provided by the Swift extension.",
-        "Show the Swift build status in the \"Progress Message\" status bar item provided by VSCode.",
+        "Show the Swift build status in the \"Progress Message\" status bar item provided by VS Code.",
         "Show the Swift build status as a progress notification."
       ],
       "order": 17,
