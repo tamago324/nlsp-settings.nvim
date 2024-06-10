@@ -22,6 +22,7 @@
 - [x] bicep
 - [ ] biome
 - [ ] bitbake_language_server
+- [ ] bitbake_ls
 - [ ] blueprint_ls
 - [ ] bqnlsp
 - [x] bright_script
