@@ -2,15 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of dartls",
   "properties": {
-    "dart.additionalAnalyzerFileExtensions": {
-      "default": [],
-      "description": "Additional file extensions that should be analyzed (usually used in combination with analyzer plugins).",
-      "items": {
-        "type": "string"
-      },
-      "scope": "window",
-      "type": "array"
-    },
     "dart.analysisExcludedFolders": {
       "default": [],
       "description": "An array of paths to be excluded from Dart analysis. This option should usually be set at the Workspace level. Excluded folders will also be ignored when detecting project types.",
@@ -19,12 +10,6 @@
       },
       "scope": "resource",
       "type": "array"
-    },
-    "dart.analyzeAngularTemplates": {
-      "default": true,
-      "markdownDescription": "Whether to enable analysis for AngularDart templates (requires the Angular analyzer plugin to be enabled in `analysis_options.yaml`).",
-      "scope": "window",
-      "type": "boolean"
     },
     "dart.analyzerAdditionalArgs": {
       "default": [],
@@ -115,12 +100,6 @@
         "boolean",
         "array"
       ]
-    },
-    "dart.useLegacyAnalyzerProtocol": {
-      "default": false,
-      "markdownDescription": "Whether to use the Dart Analyzer's original protocol instead of LSP. Some features are not supported when using the legacy protocol and support for it will eventually be removed. Please file issues on GitHub in the Dart Code repo if you find yourself needing to enable this setting.",
-      "scope": "window",
-      "type": "boolean"
     }
   }
 }
