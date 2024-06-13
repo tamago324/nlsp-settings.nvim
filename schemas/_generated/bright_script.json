@@ -156,7 +156,8 @@
             "type": "object"
           }
         ]
-      }
+      },
+      "type": "array"
     },
     "host": {
       "description": "The host of the Roku that the package will be deploy to",
@@ -274,6 +275,7 @@
     },
     "stagingFolderPath": {
       "deprecated": true,
+      "deprecationMessage": "Deprecated. Use `stagingDir` instead.",
       "description": "The path to the staging folder (where all files are copied before creating the zip package)",
       "type": "string"
     },
