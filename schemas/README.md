@@ -63,6 +63,7 @@
 - [ ] dhall_lsp_server
 - [ ] diagnosticls
 - [ ] digestif
+- [ ] djlsp
 - [ ] docker_compose_language_service
 - [ ] dockerls
 - [ ] dolmenls
