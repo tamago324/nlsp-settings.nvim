@@ -184,6 +184,13 @@
       },
       "scope": "machine-overridable",
       "type": "object"
+    },
+    "swift.warnAboutSymlinkCreation": {
+      "default": true,
+      "description": "Controls whether or not the extension will warn about being unable to create symlinks. (Windows only)",
+      "order": 18,
+      "scope": "application",
+      "type": "boolean"
     }
   }
 }
