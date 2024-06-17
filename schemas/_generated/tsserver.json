@@ -11,7 +11,7 @@
     "javascript.experimental.updateImportsOnPaste": {
       "default": false,
       "description": "%configuration.updateImportsOnPaste%",
-      "scope": "resource",
+      "scope": "window",
       "tags": [
         "experimental"
       ],
@@ -502,7 +502,7 @@
     "typescript.experimental.updateImportsOnPaste": {
       "default": false,
       "description": "%configuration.updateImportsOnPaste%",
-      "scope": "resource",
+      "scope": "window",
       "tags": [
         "experimental"
       ],
