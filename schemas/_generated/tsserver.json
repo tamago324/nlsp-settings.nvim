@@ -981,6 +981,12 @@
       "scope": "window",
       "type": "string"
     },
+    "typescript.tsserver.enableRegionDiagnostics": {
+      "default": true,
+      "description": "%typescript.tsserver.enableRegionDiagnostics%",
+      "scope": "window",
+      "type": "boolean"
+    },
     "typescript.tsserver.enableTracing": {
       "default": false,
       "description": "%typescript.tsserver.enableTracing%",
