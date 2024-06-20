@@ -14,7 +14,7 @@
         "Focus on Build Task Terminal"
       ],
       "markdownDescription": "Action after a Build task generates errors.",
-      "order": 12,
+      "order": 11,
       "type": "string"
     },
     "swift.autoGenerateLaunchConfigurations": {
@@ -27,7 +27,7 @@
     "swift.backgroundCompilation": {
       "default": false,
       "markdownDescription": "**Experimental**: Run `swift build` in the background whenever a file is saved.",
-      "order": 11,
+      "order": 10,
       "type": "boolean"
     },
     "swift.buildArguments": {
@@ -42,7 +42,7 @@
     "swift.buildPath": {
       "default": "",
       "markdownDescription": "Path to the build directory passed to all swift package manager commands.",
-      "order": 13,
+      "order": 12,
       "type": "string"
     },
     "swift.diagnosticsCollection": {
@@ -91,38 +91,8 @@
     "swift.disableSwiftPackageManagerIntegration": {
       "default": false,
       "markdownDescription": "Disables automated Build Tasks, Package Dependency view, Launch configuration generation and TestExplorer.",
-      "order": 14,
+      "order": 13,
       "type": "boolean"
-    },
-    "swift.excludePathsFromPackageDependencies": {
-      "default": [
-        ".git",
-        ".github"
-      ],
-      "description": "A list of paths to exclude from the Package Dependencies view.",
-      "items": {
-        "type": "string"
-      },
-      "order": 10,
-      "type": "array"
-    },
-    "swift.openAfterCreateNewProject": {
-      "default": "prompt",
-      "description": "Controls whether to open a swift project automatically after creating it.",
-      "enum": [
-        "always",
-        "alwaysNewWindow",
-        "whenNoFolderOpen",
-        "prompt"
-      ],
-      "enumDescriptions": [
-        "Always open in current window.",
-        "Always open in a new window.",
-        "Only open in current window when no folder is opened.",
-        "Always prompt for action."
-      ],
-      "order": 16,
-      "type": "string"
     },
     "swift.path": {
       "default": "",
@@ -149,30 +119,6 @@
       "scope": "machine-overridable",
       "type": "boolean"
     },
-    "swift.showBuildStatus": {
-      "default": "swiftStatus",
-      "description": "Controls where to show the Swift build progress when running a `swift` build task.",
-      "enum": [
-        "never",
-        "swiftStatus",
-        "progress",
-        "notification"
-      ],
-      "enumDescriptions": [
-        "Never show the Swift build status.",
-        "Show the Swift build status in a status bar item provided by the Swift extension.",
-        "Show the Swift build status in the \"Progress Message\" status bar item provided by VS Code.",
-        "Show the Swift build status as a progress notification."
-      ],
-      "order": 17,
-      "type": "string"
-    },
-    "swift.showCreateSwiftProjectInWelcomePage": {
-      "default": true,
-      "description": "Controls whether or not the create new swift project button appears in the welcome page.",
-      "order": 15,
-      "type": "boolean"
-    },
     "swift.testEnvironmentVariables": {
       "default": {},
       "markdownDescription": "Environment variables to set when running tests. To set environment variables when debugging an application you should edit the relevant `launch.json` configuration",
@@ -188,7 +134,7 @@
     "swift.warnAboutSymlinkCreation": {
       "default": true,
       "description": "Controls whether or not the extension will warn about being unable to create symlinks. (Windows only)",
-      "order": 18,
+      "order": 14,
       "scope": "application",
       "type": "boolean"
     }
