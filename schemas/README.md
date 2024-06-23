@@ -201,6 +201,7 @@
 - [ ] prismals
 - [ ] prolog_ls
 - [ ] prosemd_lsp
+- [ ] protols
 - [x] psalm
 - [x] puppet
 - [x] purescriptls
