@@ -203,6 +203,7 @@
 - [ ] prosemd_lsp
 - [ ] protols
 - [x] psalm
+- [ ] pug
 - [x] puppet
 - [x] purescriptls
 - [x] pylsp
