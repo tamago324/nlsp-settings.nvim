@@ -86,6 +86,18 @@
       "scope": "window",
       "type": "boolean"
     },
+    "intelephense.diagnostics.noMixedTypeCheck": {
+      "default": true,
+      "description": "This setting turns off type checking for the `mixed` type. This is useful for projects that may have incomplete or innacurate typings. Set to `false` to make type checking more thorough by not allowing `mixed` to satisy any type constraint. This setting has no effect when `relaxedTypeCheck` is `true`.",
+      "scope": "window",
+      "type": "boolean"
+    },
+    "intelephense.diagnostics.relaxedTypeCheck": {
+      "default": true,
+      "description": "This setting makes type checking less thorough by allowing contravariant (wider) types to also satisfy a type constraint. This is useful for projects that may have incomplete or innacurate typings. Set to `false` for more thorough type checks. When this setting is `true`, the `noMixedTypeCheck` setting is ignored.",
+      "scope": "window",
+      "type": "boolean"
+    },
     "intelephense.diagnostics.run": {
       "default": "onType",
       "description": "Controls when diagnostics are run.",
