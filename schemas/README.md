@@ -18,6 +18,7 @@
 - [ ] bacon_ls
 - [ ] basedpyright
 - [x] bashls
+- [ ] bazelrc-lsp
 - [x] beancount
 - [x] bicep
 - [ ] biome
