@@ -94,6 +94,12 @@
       "order": 13,
       "type": "boolean"
     },
+    "swift.enableTerminalEnvironment": {
+      "default": true,
+      "description": "Controls whether or not the extension will contribute Swift environment variables to the integrated terminal.",
+      "order": 15,
+      "type": "boolean"
+    },
     "swift.path": {
       "default": "",
       "markdownDescription": "The path of the folder containing the Swift executables. The default is to look in the PATH environment variable.",
