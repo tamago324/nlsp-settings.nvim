@@ -2,14 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of rust_analyzer",
   "properties": {
-    "rust-analyzer.cargoRunner": {
-      "default": null,
-      "description": "Custom cargo runner extension ID.",
-      "type": [
-        "null",
-        "string"
-      ]
-    },
     "rust-analyzer.discoverProjectRunner": {
       "default": null,
       "markdownDescription": "Sets the extension responsible for determining which extension the rust-analyzer extension uses to generate `rust-project.json` files. This should should only be used\n if a build system like Buck or Bazel is also in use.",
