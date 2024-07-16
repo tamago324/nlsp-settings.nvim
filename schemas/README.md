@@ -128,6 +128,7 @@
 - [ ] hyprls
 - [ ] idris2_lsp
 - [x] intelephense
+- [ ] janet_lsp
 - [x] java_language_server
 - [x] jdtls
 - [ ] jedi_language_server
