@@ -103,6 +103,7 @@
 - [ ] ghdl_ls
 - [ ] ginko_ls
 - [ ] gitlab_ci_ls
+- [ ] glasgow
 - [ ] gleam
 - [ ] glsl_analyzer
 - [ ] glslls
