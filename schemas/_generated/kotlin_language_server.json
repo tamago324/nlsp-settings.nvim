@@ -128,6 +128,18 @@
       ],
       "type": "string"
     },
+    "kotlin.languageServer.watchFiles": {
+      "default": [
+        "**/*.kt",
+        "**/*.kts",
+        "**/*.java",
+        "**/pom.xml",
+        "**/build.gradle",
+        "**/settings.gradle"
+      ],
+      "description": "Specifies glob patterns of files, which would be watched by LSP client. The LSP client doesn't support watching files outside a workspace folder.",
+      "type": "array"
+    },
     "kotlin.linting.debounceTime": {
       "default": 250,
       "deprecationMessage": "The option has been renamed to `kotlin.diagnostics.debounceTime`",
