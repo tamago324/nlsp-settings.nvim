@@ -2,6 +2,11 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of kotlin_language_server",
   "properties": {
+    "kotlin.codegen.enabled": {
+      "default": false,
+      "description": "Whether to enable code generation to a temporary build output directory for Java interoperability (via the non-standard kotlin/buildOutputLocation LSP method). Experimental.",
+      "type": "boolean"
+    },
     "kotlin.compiler.jvm.target": {
       "default": "default",
       "description": "Specifies the JVM target, e.g. \"1.6\" or \"1.8\"",
