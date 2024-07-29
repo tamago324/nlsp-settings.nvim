@@ -16,6 +16,7 @@
 - [ ] awk_ls
 - [ ] azure_pipelines_ls
 - [ ] bacon_ls
+- [ ] ballerina
 - [ ] basedpyright
 - [x] bashls
 - [ ] bazelrc-lsp
