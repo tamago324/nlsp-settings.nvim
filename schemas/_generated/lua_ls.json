@@ -2448,6 +2448,20 @@
       "scope": "resource",
       "type": "array"
     },
+    "Lua.doc.regengine": {
+      "default": "glob",
+      "enum": [
+        "glob",
+        "lua"
+      ],
+      "markdownDescription": "%config.doc.regengine%",
+      "markdownEnumDescriptions": [
+        "%config.doc.regengine.glob%",
+        "%config.doc.regengine.lua%"
+      ],
+      "scope": "resource",
+      "type": "string"
+    },
     "Lua.format.defaultConfig": {
       "additionalProperties": false,
       "default": {},
