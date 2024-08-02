@@ -269,6 +269,7 @@
 - [ ] steep
 - [ ] stimulus_ls
 - [x] stylelint_lsp
+- [ ] superhtml
 - [x] svelte
 - [x] svlangserver
 - [ ] svls
