@@ -294,6 +294,7 @@
 - [x] tsserver
 - [ ] ttags
 - [ ] turtle_ls
+- [ ] tvm_ffi_navigator
 - [ ] twiggy_language_server
 - [ ] typeprof
 - [ ] typos_lsp
