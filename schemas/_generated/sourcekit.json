@@ -76,7 +76,7 @@
       "markdownEnumDescriptions": [
         "Use whichever diagnostics style `swiftc` produces by default.",
         "Use the `llvm` diagnostic style. This allows the parsing of \"notes\".",
-        "Use the `swift` diagnostic style. This means that \"notes\" will not be parsed. This option will not work for Swift versions prior to 5.10."
+        "Use the `swift` diagnostic style. This means that \"notes\" will not be parsed. This option has no effect in Swift versions prior to 5.10."
       ],
       "order": 9,
       "type": "string"
