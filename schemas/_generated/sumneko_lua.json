@@ -3024,6 +3024,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "Lua.type.checkTableShape": {
+      "default": false,
+      "markdownDescription": "%config.type.checkTableShape%",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "Lua.type.inferParamType": {
       "default": false,
       "markdownDescription": "%config.type.inferParamType%",
