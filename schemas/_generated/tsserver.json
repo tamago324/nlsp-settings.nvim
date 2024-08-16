@@ -273,6 +273,87 @@
       "scope": "language-overridable",
       "type": "string"
     },
+    "javascript.preferences.organizeImports": {
+      "markdownDescription": "%typescript.preferences.organizeImports%",
+      "properties": {
+        "accentCollation": {
+          "markdownDescription": "%typescript.preferences.organizeImports.accentCollation%",
+          "type": "boolean"
+        },
+        "caseFirst": {
+          "default": "default",
+          "enum": [
+            "default",
+            "upper",
+            "lower"
+          ],
+          "markdownDescription": "%typescript.preferences.organizeImports.caseFirst%",
+          "type": "string"
+        },
+        "caseSensitivity": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "caseInsensitive",
+            "caseSensitive"
+          ],
+          "markdownEnumDescriptions": [
+            "%typescript.preferences.organizeImports.caseSensitivity.auto%",
+            "%typescript.preferences.organizeImports.caseSensitivity.insensitive",
+            "%typescript.preferences.organizeImports.caseSensitivity.sensitive%"
+          ],
+          "type": "string"
+        },
+        "locale": {
+          "markdownDescription": "%typescript.preferences.organizeImports.locale%",
+          "type": "string"
+        },
+        "numericCollation": {
+          "markdownDescription": "%typescript.preferences.organizeImports.numericCollation%",
+          "type": "boolean"
+        },
+        "presets": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "eslint sort-imports",
+            "eslint plugin-simple-import-sort",
+            "dprint"
+          ],
+          "markdownDescription": "%typescript.preferences.organizeImports.presets%",
+          "markdownEnumDescriptions": [
+            "%typescript.preferences.organizeImports.presets.auto%",
+            "%typescript.preferences.organizeImports.presets.eslintSortImports%",
+            "%typescript.preferences.organizeImports.presets.eslintPluginSimpleImportSort%",
+            "%typescript.preferences.organizeImports.presets.dprint%"
+          ],
+          "type": "string"
+        },
+        "typeOrder": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "last",
+            "inline",
+            "first"
+          ],
+          "type": "string"
+        },
+        "unicodeCollation": {
+          "default": "ordinal",
+          "enum": [
+            "ordinal",
+            "unicode"
+          ],
+          "markdownEnumDescriptions": [
+            "%typescript.preferences.organizeImports.unicodeCollation.ordinal%",
+            "%typescript.preferences.organizeImports.unicodeCollation.unicode%"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
     "javascript.preferences.quoteStyle": {
       "default": "auto",
       "enum": [
@@ -826,6 +907,87 @@
       ],
       "scope": "language-overridable",
       "type": "string"
+    },
+    "typescript.preferences.organizeImports": {
+      "markdownDescription": "%typescript.preferences.organizeImports%",
+      "properties": {
+        "accentCollation": {
+          "markdownDescription": "%typescript.preferences.organizeImports.accentCollation%",
+          "type": "boolean"
+        },
+        "caseFirst": {
+          "default": "default",
+          "enum": [
+            "default",
+            "upper",
+            "lower"
+          ],
+          "markdownDescription": "%typescript.preferences.organizeImports.caseFirst%",
+          "type": "string"
+        },
+        "caseSensitivity": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "caseInsensitive",
+            "caseSensitive"
+          ],
+          "markdownEnumDescriptions": [
+            "%typescript.preferences.organizeImports.caseSensitivity.auto%",
+            "%typescript.preferences.organizeImports.caseSensitivity.insensitive",
+            "%typescript.preferences.organizeImports.caseSensitivity.sensitive%"
+          ],
+          "type": "string"
+        },
+        "locale": {
+          "markdownDescription": "%typescript.preferences.organizeImports.locale%",
+          "type": "string"
+        },
+        "numericCollation": {
+          "markdownDescription": "%typescript.preferences.organizeImports.numericCollation%",
+          "type": "boolean"
+        },
+        "presets": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "eslint sort-imports",
+            "eslint plugin-simple-import-sort",
+            "dprint"
+          ],
+          "markdownDescription": "%typescript.preferences.organizeImports.presets%",
+          "markdownEnumDescriptions": [
+            "%typescript.preferences.organizeImports.presets.auto%",
+            "%typescript.preferences.organizeImports.presets.eslintSortImports%",
+            "%typescript.preferences.organizeImports.presets.eslintPluginSimpleImportSort%",
+            "%typescript.preferences.organizeImports.presets.dprint%"
+          ],
+          "type": "string"
+        },
+        "typeOrder": {
+          "default": "auto",
+          "enum": [
+            "auto",
+            "last",
+            "inline",
+            "first"
+          ],
+          "type": "string"
+        },
+        "unicodeCollation": {
+          "default": "ordinal",
+          "enum": [
+            "ordinal",
+            "unicode"
+          ],
+          "markdownEnumDescriptions": [
+            "%typescript.preferences.organizeImports.unicodeCollation.ordinal%",
+            "%typescript.preferences.organizeImports.unicodeCollation.unicode%"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
     },
     "typescript.preferences.preferTypeOnlyAutoImports": {
       "default": false,
