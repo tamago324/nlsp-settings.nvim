@@ -28,6 +28,10 @@
     "instruction_sets": {
       "description": "Options to manage instruction set-dependent features.",
       "properties": {
+        "arm": {
+          "description": "Flag to turn features related to the arm instruction set on/off.",
+          "type": "boolean"
+        },
         "x86": {
           "description": "Flag to turn features related to the x86 instruction set on/off.",
           "type": "boolean"
@@ -44,7 +48,8 @@
       "required": [
         "x86",
         "x86_64",
-        "z80"
+        "z80",
+        "arm"
       ],
       "type": "object"
     },
