@@ -215,6 +215,14 @@
       "scope": "resource",
       "type": "array"
     },
+    "javascript.preferences.autoImportSpecifierExcludeRegexes": {
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%typescript.preferences.autoImportSpecifierExcludeRegexes%",
+      "scope": "resource",
+      "type": "array"
+    },
     "javascript.preferences.importModuleSpecifier": {
       "default": "shortest",
       "description": "%typescript.preferences.importModuleSpecifier%",
@@ -817,6 +825,14 @@
       "scope": "resource",
       "type": "array"
     },
+    "typescript.preferences.autoImportSpecifierExcludeRegexes": {
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "%typescript.preferences.autoImportSpecifierExcludeRegexes%",
+      "scope": "resource",
+      "type": "array"
+    },
     "typescript.preferences.importModuleSpecifier": {
       "default": "shortest",
       "description": "%typescript.preferences.importModuleSpecifier%",
@@ -1261,13 +1277,13 @@
       "type": "boolean"
     },
     "typescript.tsserver.web.projectWideIntellisense.suppressSemanticErrors": {
-      "default": true,
+      "default": false,
       "description": "%configuration.tsserver.web.projectWideIntellisense.suppressSemanticErrors%",
       "scope": "window",
       "type": "boolean"
     },
     "typescript.tsserver.web.typeAcquisition.enabled": {
-      "default": false,
+      "default": true,
       "description": "%configuration.tsserver.web.typeAcquisition.enabled%",
       "scope": "window",
       "type": "boolean"
