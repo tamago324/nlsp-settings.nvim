@@ -245,6 +245,11 @@
       },
       "type": "array"
     },
+    "resolveSourceRoot": {
+      "default": false,
+      "description": "Should the `sourceRoot` property be resolve to an absolute path (relative to the bsconfig it's defined in)",
+      "type": "boolean"
+    },
     "retainStagingDir": {
       "default": false,
       "description": "Prevent the staging folder from being deleted after the deployment package is created.  This is helpful for troubleshooting why your package isn't being created the way you expected.",
