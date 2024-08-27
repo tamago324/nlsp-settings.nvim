@@ -13,6 +13,14 @@
           "description": "Flag to turn features related to the Go Assembler on/off.",
           "type": "boolean"
         },
+        "masm": {
+          "description": "Flag to turn features related to the MASM Assembler on/off.",
+          "type": "boolean"
+        },
+        "nasm": {
+          "description": "Flag to turn features related to the NASM Assembler on/off.",
+          "type": "boolean"
+        },
         "z80": {
           "description": "Flag to turn features related to the z80 Assembler on/off.",
           "type": "boolean"
@@ -21,7 +29,9 @@
       "required": [
         "gas",
         "go",
-        "z80"
+        "z80",
+        "masm",
+        "nasm"
       ],
       "type": "object"
     },
