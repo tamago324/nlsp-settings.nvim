@@ -279,7 +279,6 @@
 - [x] tailwindcss
 - [ ] taplo
 - [ ] tblgen_lsp_server
-- [ ] tea_leaves
 - [ ] teal_ls
 - [ ] templ
 - [ ] terraform_lsp
