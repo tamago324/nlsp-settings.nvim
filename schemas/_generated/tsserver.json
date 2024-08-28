@@ -328,6 +328,12 @@
             "inline",
             "first"
           ],
+          "markdownEnumDescriptions": [
+            "%typescript.preferences.organizeImports.typeOrder.auto%",
+            "%typescript.preferences.organizeImports.typeOrder.last%",
+            "%typescript.preferences.organizeImports.typeOrder.inline%",
+            "%typescript.preferences.organizeImports.typeOrder.first%"
+          ],
           "type": "string"
         },
         "unicodeCollation": {
@@ -953,6 +959,12 @@
             "last",
             "inline",
             "first"
+          ],
+          "markdownEnumDescriptions": [
+            "%typescript.preferences.organizeImports.typeOrder.auto%",
+            "%typescript.preferences.organizeImports.typeOrder.last%",
+            "%typescript.preferences.organizeImports.typeOrder.inline%",
+            "%typescript.preferences.organizeImports.typeOrder.first%"
           ],
           "type": "string"
         },
