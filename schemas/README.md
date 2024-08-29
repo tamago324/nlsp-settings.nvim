@@ -247,6 +247,7 @@
 - [ ] slint_lsp
 - [ ] smarty_ls
 - [ ] smithy_ls
+- [ ] snakeskin_ls
 - [ ] snyk_ls
 - [ ] solang
 - [x] solargraph
