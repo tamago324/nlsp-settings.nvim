@@ -26,13 +26,7 @@
           "type": "boolean"
         }
       },
-      "required": [
-        "gas",
-        "go",
-        "z80",
-        "masm",
-        "nasm"
-      ],
+      "required": [],
       "type": "object"
     },
     "instruction_sets": {
@@ -40,6 +34,10 @@
       "properties": {
         "arm": {
           "description": "Flag to turn features related to the arm instruction set on/off.",
+          "type": "boolean"
+        },
+        "riscv": {
+          "description": "Flag to turn features related to the riscv instruction set on/off.",
           "type": "boolean"
         },
         "x86": {
@@ -55,12 +53,7 @@
           "type": "boolean"
         }
       },
-      "required": [
-        "x86",
-        "x86_64",
-        "z80",
-        "arm"
-      ],
+      "required": [],
       "type": "object"
     },
     "version": {
