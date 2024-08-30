@@ -19,7 +19,7 @@
 - [ ] ballerina
 - [ ] basedpyright
 - [x] bashls
-- [ ] bazelrc-lsp
+- [ ] bazelrc_lsp
 - [x] beancount
 - [x] bicep
 - [ ] biome
