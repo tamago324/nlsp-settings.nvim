@@ -291,8 +291,8 @@
 - [ ] thriftls
 - [ ] tilt_ls
 - [ ] tinymist
+- [ ] ts_ls
 - [ ] tsp_server
-- [x] tsserver
 - [ ] ttags
 - [ ] turtle_ls
 - [ ] tvm_ffi_navigator
