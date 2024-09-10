@@ -139,6 +139,7 @@
 - [x] jsonls
 - [ ] jsonnet_ls
 - [x] julials
+- [ ] kcl
 - [ ] koka
 - [x] kotlin_language_server
 - [ ] lean3ls
