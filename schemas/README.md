@@ -324,5 +324,7 @@
 - [x] yamlls
 - [ ] yang_lsp
 - [ ] yls
+- [ ] ziggy
+- [ ] ziggy_schema
 - [ ] zk
 - [x] zls
