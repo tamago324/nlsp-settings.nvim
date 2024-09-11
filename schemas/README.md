@@ -55,6 +55,7 @@
 - [ ] cucumber_language_server
 - [ ] custom_elements_ls
 - [ ] cypher_ls
+- [ ] daedalus_ls
 - [ ] dafny
 - [ ] dagger
 - [x] dartls
