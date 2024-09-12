@@ -33,6 +33,7 @@
 - [ ] buddy_ls
 - [ ] bufls
 - [ ] bzl
+- [ ] c3_lsp
 - [ ] cadence
 - [ ] cairo_ls
 - [ ] ccls
