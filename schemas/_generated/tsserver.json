@@ -1171,6 +1171,7 @@
     },
     "typescript.tsserver.experimental.useVsCodeWatcher": {
       "default": true,
+      "deprecationMessage": "%configuration.tsserver.useVsCodeWatcher.deprecation%",
       "description": "%configuration.tsserver.useVsCodeWatcher%",
       "type": "boolean"
     },
@@ -1231,67 +1232,77 @@
       "type": "string"
     },
     "typescript.tsserver.watchOptions": {
+      "default": "vscode",
       "description": "%configuration.tsserver.watchOptions%",
-      "properties": {
-        "fallbackPolling": {
-          "description": "%configuration.tsserver.watchOptions.fallbackPolling%",
-          "enum": [
-            "fixedPollingInterval",
-            "priorityPollingInterval",
-            "dynamicPriorityPolling"
-          ],
-          "enumDescriptions": [
-            "configuration.tsserver.watchOptions.fallbackPolling.fixedPollingInterval",
-            "configuration.tsserver.watchOptions.fallbackPolling.priorityPollingInterval",
-            "configuration.tsserver.watchOptions.fallbackPolling.dynamicPriorityPolling"
-          ],
+      "oneOf": [
+        {
+          "const": "vscode",
+          "description": "%configuration.tsserver.watchOptions.vscode%",
           "type": "string"
         },
-        "synchronousWatchDirectory": {
-          "description": "%configuration.tsserver.watchOptions.synchronousWatchDirectory%",
-          "type": "boolean"
-        },
-        "watchDirectory": {
-          "default": "useFsEvents",
-          "description": "%configuration.tsserver.watchOptions.watchDirectory%",
-          "enum": [
-            "fixedChunkSizePolling",
-            "fixedPollingInterval",
-            "dynamicPriorityPolling",
-            "useFsEvents"
-          ],
-          "enumDescriptions": [
-            "%configuration.tsserver.watchOptions.watchDirectory.fixedChunkSizePolling%",
-            "%configuration.tsserver.watchOptions.watchDirectory.fixedPollingInterval%",
-            "%configuration.tsserver.watchOptions.watchDirectory.dynamicPriorityPolling%",
-            "%configuration.tsserver.watchOptions.watchDirectory.useFsEvents%"
-          ],
-          "type": "string"
-        },
-        "watchFile": {
-          "default": "useFsEvents",
-          "description": "%configuration.tsserver.watchOptions.watchFile%",
-          "enum": [
-            "fixedChunkSizePolling",
-            "fixedPollingInterval",
-            "priorityPollingInterval",
-            "dynamicPriorityPolling",
-            "useFsEvents",
-            "useFsEventsOnParentDirectory"
-          ],
-          "enumDescriptions": [
-            "%configuration.tsserver.watchOptions.watchFile.fixedChunkSizePolling%",
-            "%configuration.tsserver.watchOptions.watchFile.fixedPollingInterval%",
-            "%configuration.tsserver.watchOptions.watchFile.priorityPollingInterval%",
-            "%configuration.tsserver.watchOptions.watchFile.dynamicPriorityPolling%",
-            "%configuration.tsserver.watchOptions.watchFile.useFsEvents%",
-            "%configuration.tsserver.watchOptions.watchFile.useFsEventsOnParentDirectory%"
-          ],
-          "type": "string"
+        {
+          "properties": {
+            "fallbackPolling": {
+              "description": "%configuration.tsserver.watchOptions.fallbackPolling%",
+              "enum": [
+                "fixedPollingInterval",
+                "priorityPollingInterval",
+                "dynamicPriorityPolling"
+              ],
+              "enumDescriptions": [
+                "configuration.tsserver.watchOptions.fallbackPolling.fixedPollingInterval",
+                "configuration.tsserver.watchOptions.fallbackPolling.priorityPollingInterval",
+                "configuration.tsserver.watchOptions.fallbackPolling.dynamicPriorityPolling"
+              ],
+              "type": "string"
+            },
+            "synchronousWatchDirectory": {
+              "description": "%configuration.tsserver.watchOptions.synchronousWatchDirectory%",
+              "type": "boolean"
+            },
+            "watchDirectory": {
+              "default": "useFsEvents",
+              "description": "%configuration.tsserver.watchOptions.watchDirectory%",
+              "enum": [
+                "fixedChunkSizePolling",
+                "fixedPollingInterval",
+                "dynamicPriorityPolling",
+                "useFsEvents"
+              ],
+              "enumDescriptions": [
+                "%configuration.tsserver.watchOptions.watchDirectory.fixedChunkSizePolling%",
+                "%configuration.tsserver.watchOptions.watchDirectory.fixedPollingInterval%",
+                "%configuration.tsserver.watchOptions.watchDirectory.dynamicPriorityPolling%",
+                "%configuration.tsserver.watchOptions.watchDirectory.useFsEvents%"
+              ],
+              "type": "string"
+            },
+            "watchFile": {
+              "default": "useFsEvents",
+              "description": "%configuration.tsserver.watchOptions.watchFile%",
+              "enum": [
+                "fixedChunkSizePolling",
+                "fixedPollingInterval",
+                "priorityPollingInterval",
+                "dynamicPriorityPolling",
+                "useFsEvents",
+                "useFsEventsOnParentDirectory"
+              ],
+              "enumDescriptions": [
+                "%configuration.tsserver.watchOptions.watchFile.fixedChunkSizePolling%",
+                "%configuration.tsserver.watchOptions.watchFile.fixedPollingInterval%",
+                "%configuration.tsserver.watchOptions.watchFile.priorityPollingInterval%",
+                "%configuration.tsserver.watchOptions.watchFile.dynamicPriorityPolling%",
+                "%configuration.tsserver.watchOptions.watchFile.useFsEvents%",
+                "%configuration.tsserver.watchOptions.watchFile.useFsEventsOnParentDirectory%"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
         }
-      },
-      "scope": "window",
-      "type": "object"
+      ],
+      "scope": "window"
     },
     "typescript.tsserver.web.projectWideIntellisense.enabled": {
       "default": true,
