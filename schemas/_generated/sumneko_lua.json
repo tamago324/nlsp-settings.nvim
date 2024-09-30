@@ -2602,6 +2602,18 @@
       "scope": "resource",
       "type": "integer"
     },
+    "Lua.language.completeAnnotation": {
+      "default": true,
+      "markdownDescription": "%config.language.completeAnnotation%",
+      "scope": "resource",
+      "type": "boolean"
+    },
+    "Lua.language.fixIndent": {
+      "default": true,
+      "markdownDescription": "%config.language.fixIndent%",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "Lua.misc.executablePath": {
       "default": "",
       "markdownDescription": "%config.misc.executablePath%",
