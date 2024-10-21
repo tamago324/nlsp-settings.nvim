@@ -2,6 +2,11 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of rust_analyzer",
   "properties": {
+    "rust-analyzer.initializeStopped": {
+      "default": false,
+      "markdownDescription": "Do not start rust-analyzer server when the extension is activated.",
+      "type": "boolean"
+    },
     "rust-analyzer.restartServerOnConfigChange": {
       "default": false,
       "markdownDescription": "Whether to restart the server automatically when certain settings that require a restart are changed.",
