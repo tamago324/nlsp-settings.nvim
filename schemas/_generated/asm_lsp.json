@@ -36,6 +36,10 @@
           "description": "Flag to turn features related to the arm instruction set on/off.",
           "type": "boolean"
         },
+        "arm64": {
+          "description": "Flag to turn features related to the arm64 instruction set on/off.",
+          "type": "boolean"
+        },
         "riscv": {
           "description": "Flag to turn features related to the riscv instruction set on/off.",
           "type": "boolean"
