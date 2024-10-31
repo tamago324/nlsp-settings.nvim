@@ -296,6 +296,11 @@
             "lower"
           ],
           "markdownDescription": "%typescript.preferences.organizeImports.caseFirst%",
+          "markdownEnumDescriptions": [
+            "%typescript.preferences.organizeImports.caseFirst.default%",
+            "%typescript.preferences.organizeImports.caseFirst.upper%",
+            "%typescript.preferences.organizeImports.caseFirst.lower%"
+          ],
           "type": "string"
         },
         "caseSensitivity": {
@@ -305,6 +310,7 @@
             "caseInsensitive",
             "caseSensitive"
           ],
+          "markdownDescription": "%typescript.preferences.organizeImports.caseSensitivity%",
           "markdownEnumDescriptions": [
             "%typescript.preferences.organizeImports.caseSensitivity.auto%",
             "%typescript.preferences.organizeImports.caseSensitivity.insensitive",
@@ -328,6 +334,7 @@
             "inline",
             "first"
           ],
+          "markdownDescription": "%typescript.preferences.organizeImports.typeOrder%",
           "markdownEnumDescriptions": [
             "%typescript.preferences.organizeImports.typeOrder.auto%",
             "%typescript.preferences.organizeImports.typeOrder.last%",
@@ -342,6 +349,7 @@
             "ordinal",
             "unicode"
           ],
+          "markdownDescription": "%typescript.preferences.organizeImports.unicodeCollation%",
           "markdownEnumDescriptions": [
             "%typescript.preferences.organizeImports.unicodeCollation.ordinal%",
             "%typescript.preferences.organizeImports.unicodeCollation.unicode%"
@@ -939,6 +947,11 @@
             "lower"
           ],
           "markdownDescription": "%typescript.preferences.organizeImports.caseFirst%",
+          "markdownEnumDescriptions": [
+            "%typescript.preferences.organizeImports.caseFirst.default%",
+            "%typescript.preferences.organizeImports.caseFirst.upper%",
+            "%typescript.preferences.organizeImports.caseFirst.lower%"
+          ],
           "type": "string"
         },
         "caseSensitivity": {
@@ -948,6 +961,7 @@
             "caseInsensitive",
             "caseSensitive"
           ],
+          "markdownDescription": "%typescript.preferences.organizeImports.caseSensitivity%",
           "markdownEnumDescriptions": [
             "%typescript.preferences.organizeImports.caseSensitivity.auto%",
             "%typescript.preferences.organizeImports.caseSensitivity.insensitive",
@@ -971,6 +985,7 @@
             "inline",
             "first"
           ],
+          "markdownDescription": "%typescript.preferences.organizeImports.typeOrder%",
           "markdownEnumDescriptions": [
             "%typescript.preferences.organizeImports.typeOrder.auto%",
             "%typescript.preferences.organizeImports.typeOrder.last%",
@@ -985,6 +1000,7 @@
             "ordinal",
             "unicode"
           ],
+          "markdownDescription": "%typescript.preferences.organizeImports.unicodeCollation%",
           "markdownEnumDescriptions": [
             "%typescript.preferences.organizeImports.unicodeCollation.ordinal%",
             "%typescript.preferences.organizeImports.unicodeCollation.unicode%"
