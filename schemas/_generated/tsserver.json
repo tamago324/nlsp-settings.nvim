@@ -8,15 +8,6 @@
       "scope": "language-overridable",
       "type": "boolean"
     },
-    "javascript.experimental.updateImportsOnPaste": {
-      "default": false,
-      "description": "%configuration.updateImportsOnPaste%",
-      "scope": "window",
-      "tags": [
-        "experimental"
-      ],
-      "type": "boolean"
-    },
     "javascript.format.enable": {
       "default": true,
       "description": "%javascript.format.enable%",
@@ -488,6 +479,12 @@
       "scope": "resource",
       "type": "string"
     },
+    "javascript.updateImportsOnPaste.enabled": {
+      "default": true,
+      "markdownDescription": "%configuration.updateImportsOnPaste%",
+      "scope": "window",
+      "type": "boolean"
+    },
     "javascript.validate.enable": {
       "default": true,
       "description": "%javascript.validate.enable%",
@@ -590,15 +587,6 @@
     "typescript.experimental.expandableHover": {
       "default": false,
       "description": "%configuration.expandableHover%",
-      "scope": "window",
-      "tags": [
-        "experimental"
-      ],
-      "type": "boolean"
-    },
-    "typescript.experimental.updateImportsOnPaste": {
-      "default": false,
-      "description": "%configuration.updateImportsOnPaste%",
       "scope": "window",
       "tags": [
         "experimental"
@@ -1353,6 +1341,12 @@
       ],
       "scope": "resource",
       "type": "string"
+    },
+    "typescript.updateImportsOnPaste.enabled": {
+      "default": true,
+      "markdownDescription": "%configuration.updateImportsOnPaste%",
+      "scope": "window",
+      "type": "boolean"
     },
     "typescript.validate.enable": {
       "default": true,
