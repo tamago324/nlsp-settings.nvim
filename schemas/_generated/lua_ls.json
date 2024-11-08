@@ -8,6 +8,18 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "Lua.addonManager.repositoryBranch": {
+      "default": "",
+      "markdownDescription": "%config.addonManager.repositoryBranch%",
+      "scope": "resource",
+      "type": "string"
+    },
+    "Lua.addonManager.repositoryPath": {
+      "default": "",
+      "markdownDescription": "%config.addonManager.repositoryPath%",
+      "scope": "resource",
+      "type": "string"
+    },
     "Lua.codeLens.enable": {
       "default": false,
       "markdownDescription": "%config.codeLens.enable%",
