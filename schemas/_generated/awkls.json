@@ -2,6 +2,12 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of awkls",
   "properties": {
+    "awk-ide-vscode.indexing": {
+      "default": true,
+      "description": "Turns on/off source files indexing. Requires restart.",
+      "scope": "window",
+      "type": "boolean"
+    },
     "awk-ide-vscode.trace.server": {
       "default": "off",
       "description": "Traces the communication between VS Code and the language server.",
