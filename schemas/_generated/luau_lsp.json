@@ -163,6 +163,12 @@
       "scope": "window",
       "type": "boolean"
     },
+    "luau-lsp.fflags.enableNewSolver": {
+      "default": false,
+      "markdownDescription": "Enables the flags required for Luau's new type solver. These flags can be overriden by `#luau-lsp.fflags.override#`",
+      "scope": "window",
+      "type": "boolean"
+    },
     "luau-lsp.fflags.override": {
       "additionalProperties": {
         "type": "string"
