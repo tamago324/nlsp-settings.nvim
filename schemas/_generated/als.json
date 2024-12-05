@@ -3,39 +3,39 @@
   "description": "Setting of als",
   "properties": {
     "ada.defaultCharset": {
-      "default": "iso-8859-1",
+      "default": null,
       "description": "The character set that the Ada Language Server should use when reading files from disk.",
       "scope": "window",
       "type": "string"
     },
     "ada.projectDiagnostics": {
-      "default": true,
+      "default": null,
       "description": "Controls whether or not the Ada Language Server should emit project diagnostics into the VS Code Problems view.\n\nNote: this setting is ignored if `ada.enableDiagnostics` is disabled and a workspace reload is necessary to refresh the diagnostics after modifying this setting.",
       "scope": "window",
       "type": "boolean"
     },
     "ada.projectFile": {
-      "default": "",
+      "default": null,
       "description": "GPR project file (*.gpr) for this workspace.\n\nIt is recommended to set this to a relative path starting at the root of the workspace.",
       "order": 0,
       "scope": "window",
       "type": "string"
     },
     "ada.relocateBuildTree": {
-      "default": "",
+      "default": null,
       "description": "The folder for out-of-tree build.",
       "markdownDescription": "The path to a directory used for out-of-tree builds. This feature is related to the [--relocate-build-tree GPRbuild command line switch](https://docs.adacore.com/gprbuild-docs/html/gprbuild_ug/building_with_gprbuild.html#switches).",
       "scope": "window",
       "type": "string"
     },
     "ada.rootDir": {
-      "default": "",
+      "default": null,
       "markdownDescription": "This setting must be used in conjunction with the `relocateBuildTree` setting.\n\nIt specifies the root directory for artifact relocation. It corresponds to the [--root-dir GPRbuild command line switch](https://docs.adacore.com/gprbuild-docs/html/gprbuild_ug/building_with_gprbuild.html#switches).",
       "scope": "window",
       "type": "string"
     },
     "ada.scenarioVariables": {
-      "default": {},
+      "default": null,
       "description": "Scenario variables to apply to the GPR project file.\n\nThis value should be provided as an object where the property names are GPR scenario variables and the values are strings.",
       "order": 1,
       "patternProperties": {
