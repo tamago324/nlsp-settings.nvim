@@ -2591,7 +2591,7 @@
       "type": "boolean"
     },
     "Lua.hover.previewFields": {
-      "default": 50,
+      "default": 10,
       "markdownDescription": "%config.hover.previewFields%",
       "scope": "resource",
       "type": "integer"
@@ -3065,6 +3065,12 @@
       "markdownDescription": "%config.type.inferParamType%",
       "scope": "resource",
       "type": "boolean"
+    },
+    "Lua.type.inferTableSize": {
+      "default": 10,
+      "markdownDescription": "%config.type.inferTableSize%",
+      "scope": "resource",
+      "type": "integer"
     },
     "Lua.type.weakNilCheck": {
       "default": false,
