@@ -8,6 +8,13 @@
       "scope": "window",
       "type": "string"
     },
+    "ada.gprConfigurationFile": {
+      "default": null,
+      "description": "GPR configuration file (*.cgpr) for this workspace.\n\nIt is recommended to set this to a relative path starting at the root of the workspace.",
+      "order": 0,
+      "scope": "window",
+      "type": "string"
+    },
     "ada.projectDiagnostics": {
       "default": null,
       "description": "Controls whether or not the Ada Language Server should emit project diagnostics into the VS Code Problems view.\n\nNote: this setting is ignored if `ada.enableDiagnostics` is disabled and a workspace reload is necessary to refresh the diagnostics after modifying this setting.",
