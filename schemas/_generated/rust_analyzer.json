@@ -22,6 +22,11 @@
       "markdownDescription": "Whether to show error notifications for failing requests.",
       "type": "boolean"
     },
+    "rust-analyzer.showSyntaxTree": {
+      "default": true,
+      "markdownDescription": "Whether to show the syntax tree view.",
+      "type": "boolean"
+    },
     "rust-analyzer.showUnlinkedFileNotification": {
       "default": true,
       "markdownDescription": "Whether to show a notification for unlinked files asking the user to add the corresponding Cargo.toml to the linked projects setting.",
