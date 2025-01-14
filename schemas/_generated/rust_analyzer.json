@@ -23,7 +23,7 @@
       "type": "boolean"
     },
     "rust-analyzer.showSyntaxTree": {
-      "default": true,
+      "default": false,
       "markdownDescription": "Whether to show the syntax tree view.",
       "type": "boolean"
     },
