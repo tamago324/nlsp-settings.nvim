@@ -47,7 +47,7 @@
       "items": {
         "type": "string"
       },
-      "markdownDescription": "Additional arguments to pass to `swift` commands such as `swift build`, `swift package`, `swift test`, etc... Keys and values should be provided as individual entries in the list. If you have created a copy of the build task in `tasks.json` then these build arguments will not be propagated to that task.",
+      "markdownDescription": "Additional arguments to pass to `swift build` and `swift test`. Keys and values should be provided as individual entries in the list. If you have created a copy of the build task in `tasks.json` then these build arguments will not be propagated to that task.",
       "type": "array"
     },
     "swift.buildPath": {
@@ -104,6 +104,14 @@
       "default": true,
       "markdownDescription": "Controls whether or not the extension will contribute environment variables defined in `Swift: Environment Variables` to the integrated terminal. If this is set to `true` and a custom `Swift: Path` is also set then the swift path is appended to the terminal's `PATH`.",
       "type": "boolean"
+    },
+    "swift.packageArguments": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "Additional arguments to pass to swift commands that do package resolution, such as `swift package resolve`, `swift package update`, `swift build` and `swift test`. Keys and values should be provided as individual entries in the list.",
+      "type": "array"
     },
     "swift.path": {
       "default": "",
