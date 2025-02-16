@@ -124,8 +124,8 @@ local get_settings = function(root_dir, server_name)
   local local_settings, err = load(
     string.format('%s/%s/%s.%s', root_dir, conf.local_settings_dir, server_name, loader.file_ext)
   )
-  local global_settings = servers[server_name].global_settings or {}
-  local conf_settings = servers[server_name].conf_settings or {}
+  local global_settings = (servers[server_name] and servers[server_name].global_settings) or {}
+  local conf_settings = (servers[server_name] and servers[server_name].conf_settings) or {}
 
   -- Priority:
   --   1. local settings
