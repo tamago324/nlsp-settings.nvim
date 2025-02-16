@@ -39,6 +39,18 @@ local extend = function(t1, t2)
   return t1
 end
 
+
+--- Get active clients.
+local get_clients = function()
+  if vim.version().major == 0 and vim.version().minor <= 9 then
+    -- DEPRECATED IN 0.10
+    return vim.lsp.get_active_clients()
+  else
+    return vim.lsp.get_clients()
+  end
+end
+
 return {
   extend = extend,
+  get_clients = get_clients
 }
