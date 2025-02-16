@@ -177,7 +177,7 @@ M.update_settings = function(server_name)
     server_name = { server_name, 's' },
   }
 
-  if #vim.lsp.get_active_clients() == 0 then
+  if #utils.get_clients() == 0 then
     -- on_new_config() が呼ばれたときに読むから、設定ファイルを読む必要はない
     return false
   end
@@ -193,7 +193,7 @@ M.update_settings = function(server_name)
   local errors = false
 
   -- server_name のすべてのクライアントの設定を更新する
-  for _, client in ipairs(vim.lsp.get_active_clients()) do
+  for _, client in ipairs(utils.get_clients()) do
     if client.name == server_name then
       -- 設定ファイルの設定と setup() の設定をマージする
       -- 各クライアントの設定を読み込みたいため、ループの中で読み込む
