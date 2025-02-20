@@ -2,12 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of als",
   "properties": {
-    "ada.alireDiagnostics": {
-      "default": null,
-      "description": "Controls whether or not the Ada Language Server should emit diagnostics related to alire into the VS Code Problems view.",
-      "scope": "window",
-      "type": "boolean"
-    },
     "ada.defaultCharset": {
       "default": null,
       "description": "The character set that the Ada Language Server should use when reading files from disk.",
@@ -20,12 +14,6 @@
       "order": 0,
       "scope": "window",
       "type": "string"
-    },
-    "ada.projectDiagnostics": {
-      "default": null,
-      "description": "Controls whether or not the Ada Language Server should emit project diagnostics into the VS Code Problems view.",
-      "scope": "window",
-      "type": "boolean"
     },
     "ada.projectFile": {
       "default": null,
