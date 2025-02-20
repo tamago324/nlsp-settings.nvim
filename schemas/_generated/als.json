@@ -2,6 +2,12 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of als",
   "properties": {
+    "ada.alireDiagnostics": {
+      "default": null,
+      "description": "Controls whether or not the Ada Language Server should emit diagnostics related to alire into the VS Code Problems view.",
+      "scope": "window",
+      "type": "boolean"
+    },
     "ada.defaultCharset": {
       "default": null,
       "description": "The character set that the Ada Language Server should use when reading files from disk.",
@@ -17,7 +23,7 @@
     },
     "ada.projectDiagnostics": {
       "default": null,
-      "description": "Controls whether or not the Ada Language Server should emit project diagnostics into the VS Code Problems view.\n\nNote: this setting is ignored if `ada.enableDiagnostics` is disabled and a workspace reload is necessary to refresh the diagnostics after modifying this setting.",
+      "description": "Controls whether or not the Ada Language Server should emit project diagnostics into the VS Code Problems view.",
       "scope": "window",
       "type": "boolean"
     },
