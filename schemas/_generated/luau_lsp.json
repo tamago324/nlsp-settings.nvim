@@ -66,6 +66,9 @@
       "default": false,
       "markdownDescription": "Enables the experimental fragment autocomplete system for performance improvements",
       "scope": "resource",
+      "tags": [
+        "preview"
+      ],
       "type": "boolean"
     },
     "luau-lsp.completion.enabled": {
@@ -185,6 +188,9 @@
       "default": false,
       "markdownDescription": "Enables the flags required for Luau's new type solver. These flags can be overriden by `#luau-lsp.fflags.override#`",
       "scope": "window",
+      "tags": [
+        "preview"
+      ],
       "type": "boolean"
     },
     "luau-lsp.fflags.override": {
