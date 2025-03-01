@@ -424,6 +424,15 @@
       "scope": "window",
       "type": "array"
     },
+    "luau-lsp.types.disabledGlobals": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "A list of globals to remove from the global scope. Accepts full libraries or particular functions (e.g., `table` or `table.clone`)",
+      "scope": "window",
+      "type": "array"
+    },
     "luau-lsp.types.documentationFiles": {
       "default": [],
       "items": {
