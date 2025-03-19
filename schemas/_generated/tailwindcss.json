@@ -29,6 +29,12 @@
       "scope": "language-overridable",
       "type": "boolean"
     },
+    "tailwindCSS.codeLens": {
+      "default": true,
+      "markdownDescription": "Enable code lens.",
+      "scope": "language-overridable",
+      "type": "boolean"
+    },
     "tailwindCSS.colorDecorators": {
       "default": true,
       "markdownDescription": "Controls whether the editor should render inline color decorators for Tailwind CSS classes and helper functions.",
