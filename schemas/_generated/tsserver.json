@@ -1114,12 +1114,6 @@
       "scope": "resource",
       "type": "boolean"
     },
-    "typescript.surveys.enabled": {
-      "default": true,
-      "description": "%configuration.surveys.enabled%",
-      "scope": "window",
-      "type": "boolean"
-    },
     "typescript.tsc.autoDetect": {
       "default": "on",
       "description": "%typescript.tsc.autoDetect%",
