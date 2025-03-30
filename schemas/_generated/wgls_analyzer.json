@@ -77,23 +77,6 @@
       },
       "markdownDescription": "Shader defines used in `#ifdef` directives in the flavor of [Bevy Engine](https://bevyengine.org)'s [shader preprocessor](https://bevyengine.org/news/bevy-0-6/#shader-imports).",
       "type": "array"
-    },
-    "wgsl-analyzer.server.path": {
-      "description": "Path to the wgsl-analyzer executable.",
-      "type": [
-        "null",
-        "string"
-      ]
-    },
-    "wgsl-analyzer.trace.extension": {
-      "default": false,
-      "description": "Log debug info in the WGSL Analyzer output pane.",
-      "type": "boolean"
-    },
-    "wgsl-analyzer.trace.server": {
-      "default": false,
-      "description": "Log messages between client and server in the WGSL Analyzer output pane.",
-      "type": "boolean"
     }
   }
 }
