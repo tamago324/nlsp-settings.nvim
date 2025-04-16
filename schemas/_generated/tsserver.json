@@ -92,66 +92,6 @@
       "scope": "window",
       "type": "boolean"
     },
-    "javascript.suggest.autoImports": {
-      "default": true,
-      "description": "%configuration.suggest.autoImports%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "javascript.suggest.classMemberSnippets.enabled": {
-      "default": true,
-      "description": "%configuration.suggest.classMemberSnippets.enabled%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "javascript.suggest.completeFunctionCalls": {
-      "default": false,
-      "description": "%configuration.suggest.completeFunctionCalls%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "javascript.suggest.completeJSDocs": {
-      "default": true,
-      "description": "%configuration.suggest.completeJSDocs%",
-      "scope": "language-overridable",
-      "type": "boolean"
-    },
-    "javascript.suggest.enabled": {
-      "default": true,
-      "description": "%typescript.suggest.enabled%",
-      "scope": "language-overridable",
-      "type": "boolean"
-    },
-    "javascript.suggest.includeAutomaticOptionalChainCompletions": {
-      "default": true,
-      "description": "%configuration.suggest.includeAutomaticOptionalChainCompletions%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "javascript.suggest.includeCompletionsForImportStatements": {
-      "default": true,
-      "description": "%configuration.suggest.includeCompletionsForImportStatements%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "javascript.suggest.jsdoc.generateReturns": {
-      "default": true,
-      "markdownDescription": "%configuration.suggest.jsdoc.generateReturns%",
-      "scope": "language-overridable",
-      "type": "boolean"
-    },
-    "javascript.suggest.names": {
-      "default": true,
-      "markdownDescription": "%configuration.suggest.names%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "javascript.suggest.paths": {
-      "default": true,
-      "description": "%configuration.suggest.paths%",
-      "scope": "resource",
-      "type": "boolean"
-    },
     "javascript.suggestionActions.enabled": {
       "default": true,
       "description": "%javascript.suggestionActions.enabled%",
@@ -397,66 +337,6 @@
       "default": true,
       "description": "%typescript.reportStyleChecksAsWarnings%",
       "scope": "window",
-      "type": "boolean"
-    },
-    "typescript.suggest.autoImports": {
-      "default": true,
-      "description": "%configuration.suggest.autoImports%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "typescript.suggest.classMemberSnippets.enabled": {
-      "default": true,
-      "description": "%configuration.suggest.classMemberSnippets.enabled%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "typescript.suggest.completeFunctionCalls": {
-      "default": false,
-      "description": "%configuration.suggest.completeFunctionCalls%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "typescript.suggest.completeJSDocs": {
-      "default": true,
-      "description": "%configuration.suggest.completeJSDocs%",
-      "scope": "language-overridable",
-      "type": "boolean"
-    },
-    "typescript.suggest.enabled": {
-      "default": true,
-      "description": "%typescript.suggest.enabled%",
-      "scope": "language-overridable",
-      "type": "boolean"
-    },
-    "typescript.suggest.includeAutomaticOptionalChainCompletions": {
-      "default": true,
-      "description": "%configuration.suggest.includeAutomaticOptionalChainCompletions%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "typescript.suggest.includeCompletionsForImportStatements": {
-      "default": true,
-      "description": "%configuration.suggest.includeCompletionsForImportStatements%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "typescript.suggest.jsdoc.generateReturns": {
-      "default": true,
-      "markdownDescription": "%configuration.suggest.jsdoc.generateReturns%",
-      "scope": "language-overridable",
-      "type": "boolean"
-    },
-    "typescript.suggest.objectLiteralMethodSnippets.enabled": {
-      "default": true,
-      "description": "%configuration.suggest.objectLiteralMethodSnippets.enabled%",
-      "scope": "resource",
-      "type": "boolean"
-    },
-    "typescript.suggest.paths": {
-      "default": true,
-      "description": "%configuration.suggest.paths%",
-      "scope": "resource",
       "type": "boolean"
     },
     "typescript.suggestionActions.enabled": {
