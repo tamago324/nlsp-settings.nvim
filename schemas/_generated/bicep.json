@@ -23,11 +23,6 @@
       "description": "Enable occasional surveys to collect feedback that helps us improve the Bicep extension.",
       "type": "boolean"
     },
-    "bicep.experimental.disableDeploymentPane": {
-      "default": false,
-      "description": "Disable the experimental Bicep Deployment Pane.",
-      "type": "boolean"
-    },
     "bicep.suppressedWarnings": {
       "default": [],
       "description": "Warnings that are being suppressed because a 'Don't show again' button was pressed. Remove items to reset.",
