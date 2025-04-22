@@ -213,6 +213,15 @@
       "scope": "window",
       "type": "boolean"
     },
+    "typescript.experimental.expandableHover": {
+      "default": false,
+      "description": "%configuration.expandableHover%",
+      "scope": "window",
+      "tags": [
+        "experimental"
+      ],
+      "type": "boolean"
+    },
     "typescript.implementationsCodeLens.enabled": {
       "default": false,
       "description": "%typescript.implementationsCodeLens.enabled%",
