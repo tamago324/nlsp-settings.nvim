@@ -214,7 +214,7 @@
       "type": "boolean"
     },
     "typescript.experimental.expandableHover": {
-      "default": false,
+      "default": true,
       "description": "%configuration.expandableHover%",
       "scope": "window",
       "tags": [
