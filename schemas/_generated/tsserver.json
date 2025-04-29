@@ -222,6 +222,15 @@
       ],
       "type": "boolean"
     },
+    "typescript.experimental.useTsgo": {
+      "default": false,
+      "markdownDescription": "%typescript.useTsgo%",
+      "scope": "window",
+      "tags": [
+        "experimental"
+      ],
+      "type": "boolean"
+    },
     "typescript.implementationsCodeLens.enabled": {
       "default": false,
       "description": "%typescript.implementationsCodeLens.enabled%",
