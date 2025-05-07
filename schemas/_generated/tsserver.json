@@ -8,20 +8,6 @@
       "scope": "language-overridable",
       "type": "boolean"
     },
-    "javascript.implicitProjectConfig.checkJs": {
-      "default": false,
-      "markdownDeprecationMessage": "%configuration.javascript.checkJs.checkJs.deprecation%",
-      "markdownDescription": "%configuration.implicitProjectConfig.checkJs%",
-      "scope": "window",
-      "type": "boolean"
-    },
-    "javascript.implicitProjectConfig.experimentalDecorators": {
-      "default": false,
-      "markdownDeprecationMessage": "%configuration.javascript.checkJs.experimentalDecorators.deprecation%",
-      "markdownDescription": "%configuration.implicitProjectConfig.experimentalDecorators%",
-      "scope": "window",
-      "type": "boolean"
-    },
     "javascript.preferGoToSourceDefinition": {
       "default": false,
       "description": "%configuration.preferGoToSourceDefinition%",
