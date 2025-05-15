@@ -60,6 +60,12 @@
       "scope": "window",
       "type": "boolean"
     },
+    "js/ts.hover.maximumLength": {
+      "default": 500,
+      "description": "%configuration.hover.maximumLength%",
+      "scope": "resource",
+      "type": "number"
+    },
     "js/ts.implicitProjectConfig.checkJs": {
       "default": false,
       "markdownDescription": "%configuration.implicitProjectConfig.checkJs%",
