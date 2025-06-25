@@ -75,7 +75,7 @@
       "type": "string"
     },
     "swift.diagnosticsStyle": {
-      "default": "llvm",
+      "default": "default",
       "enum": [
         "default",
         "llvm",
