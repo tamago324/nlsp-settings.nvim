@@ -20,6 +20,12 @@
       "scope": "resource",
       "type": "string"
     },
+    "Lua.addonRepositoryPath": {
+      "default": "",
+      "markdownDescription": "%config.addonRepositoryPath%",
+      "scope": "resource",
+      "type": "string"
+    },
     "Lua.codeLens.enable": {
       "default": false,
       "markdownDescription": "%config.codeLens.enable%",
@@ -3075,6 +3081,12 @@
     "Lua.type.inferTableSize": {
       "default": 10,
       "markdownDescription": "%config.type.inferTableSize%",
+      "scope": "resource",
+      "type": "integer"
+    },
+    "Lua.type.maxUnionVariants": {
+      "default": 0,
+      "markdownDescription": "%config.type.maxUnionVariants%",
       "scope": "resource",
       "type": "integer"
     },
