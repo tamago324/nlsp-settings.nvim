@@ -2924,7 +2924,8 @@
           "&&",
           "!",
           "!=",
-          "continue"
+          "continue",
+          "|lambda|"
         ],
         "type": "string"
       },
@@ -3008,6 +3009,7 @@
         "Lua 5.2",
         "Lua 5.3",
         "Lua 5.4",
+        "Lua 5.5",
         "LuaJIT"
       ],
       "markdownDescription": "%config.runtime.version%",
@@ -3016,6 +3018,7 @@
         "%config.runtime.version.Lua 5.2%",
         "%config.runtime.version.Lua 5.3%",
         "%config.runtime.version.Lua 5.4%",
+        "%config.runtime.version.Lua 5.5%",
         "%config.runtime.version.LuaJIT%"
       ],
       "scope": "resource",
