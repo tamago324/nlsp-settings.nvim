@@ -153,15 +153,6 @@
       "scope": "window",
       "type": "boolean"
     },
-    "typescript.experimental.expandableHover": {
-      "default": true,
-      "description": "%configuration.expandableHover%",
-      "scope": "window",
-      "tags": [
-        "experimental"
-      ],
-      "type": "boolean"
-    },
     "typescript.experimental.useTsgo": {
       "default": false,
       "markdownDescription": "%typescript.useTsgo%",
