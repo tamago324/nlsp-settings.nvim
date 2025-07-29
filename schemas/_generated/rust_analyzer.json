@@ -1,41 +1,4 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "Setting of rust_analyzer",
-  "properties": {
-    "rust-analyzer.initializeStopped": {
-      "default": false,
-      "markdownDescription": "Do not start rust-analyzer server when the extension is activated.",
-      "type": "boolean"
-    },
-    "rust-analyzer.restartServerOnConfigChange": {
-      "default": false,
-      "markdownDescription": "Whether to restart the server automatically when certain settings that require a restart are changed.",
-      "type": "boolean"
-    },
-    "rust-analyzer.showDependenciesExplorer": {
-      "default": true,
-      "markdownDescription": "Whether to show the dependencies view.",
-      "type": "boolean"
-    },
-    "rust-analyzer.showRequestFailedErrorNotification": {
-      "default": true,
-      "markdownDescription": "Whether to show error notifications for failing requests.",
-      "type": "boolean"
-    },
-    "rust-analyzer.showSyntaxTree": {
-      "default": false,
-      "markdownDescription": "Whether to show the syntax tree view.",
-      "type": "boolean"
-    },
-    "rust-analyzer.showUnlinkedFileNotification": {
-      "default": true,
-      "markdownDescription": "Whether to show a notification for unlinked files asking the user to add the corresponding Cargo.toml to the linked projects setting.",
-      "type": "boolean"
-    },
-    "rust-analyzer.testExplorer": {
-      "default": false,
-      "markdownDescription": "Whether to show the test explorer.",
-      "type": "boolean"
-    }
-  }
+  "description": "Setting of rust_analyzer"
 }
