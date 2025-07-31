@@ -113,6 +113,18 @@
       "scope": "application",
       "type": "boolean"
     },
+    "swift.outputChannelLogLevel": {
+      "default": "info",
+      "enum": [
+        "debug",
+        "info",
+        "warn",
+        "error"
+      ],
+      "markdownDescription": "The log level of the Swift output channel. This has no effect on the verbosity of messages written to the extension's log file.",
+      "scope": "machine-overridable",
+      "type": "string"
+    },
     "swift.packageArguments": {
       "default": [],
       "items": {
