@@ -10,7 +10,7 @@
     },
     "html.autoCreateQuotes": {
       "default": true,
-      "description": "%html.autoCreateQuotes%",
+      "markdownDescription": "%html.autoCreateQuotes%",
       "scope": "resource",
       "type": "boolean"
     },
