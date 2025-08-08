@@ -6,6 +6,10 @@
       "default": null,
       "markdownDescription": "Enable usage data and errors to be sent to Red Hat servers. Read our [privacy statement](https://developers.redhat.com/article/tool-data-collection).",
       "scope": "window",
+      "tags": [
+        "telemetry",
+        "usesOnlineServices"
+      ],
       "type": "boolean"
     },
     "yaml.completion": {
@@ -21,6 +25,16 @@
     "yaml.disableAdditionalProperties": {
       "default": false,
       "description": "Globally set additionalProperties to false for all objects. So if its true, no extra properties are allowed inside yaml.",
+      "type": "boolean"
+    },
+    "yaml.disableDefaultProperties": {
+      "default": false,
+      "description": "Disable adding not required properties with default values into completion text.",
+      "type": "boolean"
+    },
+    "yaml.extension.recommendations": {
+      "default": "true",
+      "description": "Suggest additional extensions based on YAML usage.",
       "type": "boolean"
     },
     "yaml.format.bracketSpacing": {
@@ -40,7 +54,7 @@
     },
     "yaml.format.proseWrap": {
       "default": "preserve",
-      "description": "Always: wrap prose if it exeeds the print width, Never: never wrap the prose, Preserve: wrap prose as-is",
+      "description": "Always: wrap prose if it exceeds the print width, Never: never wrap the prose, Preserve: wrap prose as-is",
       "enum": [
         "preserve",
         "never",
@@ -53,9 +67,19 @@
       "description": "Use single quotes instead of double quotes",
       "type": "boolean"
     },
+    "yaml.format.trailingComma": {
+      "default": true,
+      "description": "Specify if trailing commas should be used in JSON-like segments of the YAML",
+      "type": "boolean"
+    },
     "yaml.hover": {
       "default": true,
       "description": "Enable/disable hover feature",
+      "type": "boolean"
+    },
+    "yaml.keyOrdering": {
+      "default": false,
+      "description": "Enforces alphabetical ordering of keys in mappings when set to true",
       "type": "boolean"
     },
     "yaml.maxItemsComputed": {
@@ -78,6 +102,29 @@
       "description": "Associate schemas to YAML files in the current workspace",
       "type": "object"
     },
+    "yaml.style.flowMapping": {
+      "default": "allow",
+      "description": "Forbid flow style mappings",
+      "enum": [
+        "allow",
+        "forbid"
+      ],
+      "type": "string"
+    },
+    "yaml.style.flowSequence": {
+      "default": "allow",
+      "description": "Forbid flow style sequences",
+      "enum": [
+        "allow",
+        "forbid"
+      ],
+      "type": "string"
+    },
+    "yaml.suggest.parentSkeletonSelectedFirst": {
+      "default": false,
+      "description": "If true, the user must select some parent skeleton first before autocompletion starts to suggest the rest of the properties. When yaml object is not empty, autocompletion ignores this setting and returns all properties and skeletons",
+      "type": "boolean"
+    },
     "yaml.trace.server": {
       "default": "off",
       "description": "Traces the communication between VSCode and the YAML language service.",
@@ -92,6 +139,15 @@
       "default": true,
       "description": "Enable/disable validation feature",
       "type": "boolean"
+    },
+    "yaml.yamlVersion": {
+      "default": "1.2",
+      "enum": [
+        "1.1",
+        "1.2"
+      ],
+      "markdownDescription": "Default YAML spec version",
+      "type": "string"
     }
   }
 }
