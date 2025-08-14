@@ -98,6 +98,12 @@
       "scope": "window",
       "type": "string"
     },
+    "js/ts.implicitProjectConfig.strict": {
+      "default": true,
+      "markdownDescription": "%configuration.implicitProjectConfig.strict%",
+      "scope": "window",
+      "type": "boolean"
+    },
     "js/ts.implicitProjectConfig.strictFunctionTypes": {
       "default": true,
       "markdownDescription": "%configuration.implicitProjectConfig.strictFunctionTypes%",
