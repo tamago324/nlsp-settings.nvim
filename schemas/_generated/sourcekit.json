@@ -17,15 +17,6 @@
       "scope": "application",
       "type": "string"
     },
-    "swift.additionalTestArguments": {
-      "default": [],
-      "items": {
-        "type": "string"
-      },
-      "markdownDescription": "Additional arguments to pass to the `swift test` or `swift build` commands used when building and running tests from within VS Code.",
-      "scope": "machine-overridable",
-      "type": "array"
-    },
     "swift.attachmentsPath": {
       "default": ".build/attachments",
       "markdownDescription": "The path to a directory that will be used to store attachments produced during a test run.\n\nA relative path resolves relative to the root directory of the workspace running the test(s)",
@@ -256,17 +247,6 @@
       "markdownDescription": "Search sub-folders of workspace folder for Swift Packages at start up.",
       "scope": "machine-overridable",
       "type": "boolean"
-    },
-    "swift.testEnvironmentVariables": {
-      "default": {},
-      "markdownDescription": "Environment variables to set when running tests. To set environment variables when debugging an application you should edit the `env` field in the relevant `launch.json` configuration.",
-      "patternProperties": {
-        ".*": {
-          "type": "string"
-        }
-      },
-      "scope": "machine-overridable",
-      "type": "object"
     },
     "swift.warnAboutSymlinkCreation": {
       "default": true,
