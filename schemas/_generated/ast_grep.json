@@ -2,6 +2,30 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of ast_grep",
   "properties": {
+    "customLanguages": {
+      "additionalProperties": {
+        "$ref": "#/definitions/CustomLanguage"
+      },
+      "description": "A dictionary of custom languages in the project.",
+      "type": "object"
+    },
+    "languageGlobs": {
+      "additionalProperties": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "description": "A mapping to associate a language to files that have non-standard extensions or syntaxes.",
+      "type": "object"
+    },
+    "languageInjections": {
+      "description": "A list of language injections to support embedded languages in the project like JS/CSS in HTML. This is an experimental feature.",
+      "items": {
+        "$ref": "#/definitions/LanguageInjection"
+      },
+      "type": "array"
+    },
     "ruleDirs": {
       "description": "A list of string instructing where to discover ast-grep's YAML rules.",
       "items": {
