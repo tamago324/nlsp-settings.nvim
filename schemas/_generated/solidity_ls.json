@@ -126,6 +126,11 @@
       "description": "Windows Remappings to resolve contracts to local Windows files / directories (Note this overrides the generic remapping settings if the OS is Windows) , i.e: [\"@openzeppelin/=C:/lib/openzeppelin-contracts\",\"ds-test/=C:/lib/ds-test/src/\"]",
       "type": "array"
     },
+    "solidity.solhintPackageDirectory": {
+      "default": "",
+      "description": "The package directory to find the solhint linter",
+      "type": "string"
+    },
     "solidity.solhintRules": {
       "default": null,
       "description": "Solhint linting validation rules",
