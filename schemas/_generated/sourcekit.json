@@ -123,6 +123,22 @@
       "scope": "application",
       "type": "boolean"
     },
+    "swift.ignoreSearchingForPackagesInSubfolders": {
+      "default": [
+        ".",
+        ".build",
+        "Packages",
+        "out",
+        "bazel-out",
+        "bazel-bin"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "markdownDescription": "A list of folders to ignore when searching sub-folders for Swift Packages. The `swift.searchSubfoldersForPackages` must be `true` for this setting to have an effect. Always use forward-slashes in glob expressions regardless of platform. This is combined with VS Code's `files.exclude` setting.",
+      "scope": "machine-overridable",
+      "type": "array"
+    },
     "swift.outputChannelLogLevel": {
       "default": "info",
       "enum": [
