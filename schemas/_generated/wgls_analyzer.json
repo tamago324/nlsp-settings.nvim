@@ -2,65 +2,35 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of wgls_analyzer",
   "properties": {
-    "wgsl-analyzer.diagnostics.nagaParsingErrors": {
+    "wgsl-analyzer.initializeStopped": {
       "default": false,
-      "description": "Controls whether to show naga's parsing errors.",
+      "markdownDescription": "Do not start wgsl-analyzer server when the extension is activated.",
       "type": "boolean"
     },
-    "wgsl-analyzer.diagnostics.nagaValidationErrors": {
-      "default": true,
-      "description": "Controls whether to show naga's validation errors.",
-      "type": "boolean"
-    },
-    "wgsl-analyzer.diagnostics.nagaVersion": {
-      "default": "0.22",
-      "description": "Which version of naga to use for its diagnostics",
-      "enum": [
-        "0.14",
-        "0.19",
-        "0.22",
-        "main"
-      ],
-      "type": "string"
-    },
-    "wgsl-analyzer.diagnostics.typeErrors": {
-      "default": true,
-      "description": "Controls whether to show type errors.",
-      "type": "boolean"
-    },
-    "wgsl-analyzer.inlayHints.enabled": {
-      "default": true,
-      "description": "Whether to show inlay hints",
-      "type": "boolean"
-    },
-    "wgsl-analyzer.inlayHints.parameterHints": {
-      "default": true,
-      "description": "Whether to show inlay hints for the names of function parameters",
-      "type": "boolean"
-    },
-    "wgsl-analyzer.inlayHints.structLayoutHints": {
+    "wgsl-analyzer.restartServerOnConfigChange": {
       "default": false,
-      "description": "Whether to show inlay hints for the layout of struct fields",
+      "markdownDescription": "Whether to restart the server automatically when certain settings that require a restart are changed.",
       "type": "boolean"
     },
-    "wgsl-analyzer.inlayHints.typeHints": {
+    "wgsl-analyzer.showDependenciesExplorer": {
       "default": true,
-      "description": "Whether to show inlay hints for types of variable declarations",
+      "markdownDescription": "Whether to show the dependencies view.",
       "type": "boolean"
     },
-    "wgsl-analyzer.inlayHints.typeVerbosity": {
-      "default": "compact",
-      "enum": [
-        "full",
-        "compact",
-        "inner"
-      ],
-      "enumDescriptions": [
-        "e.g. ref<uniform, f32, read_write>",
-        "e.g. ref<f32>",
-        "e.g. f32"
-      ],
-      "type": "string"
+    "wgsl-analyzer.showRequestFailedErrorNotification": {
+      "default": true,
+      "markdownDescription": "Whether to show error notifications for failing requests.",
+      "type": "boolean"
+    },
+    "wgsl-analyzer.showSyntaxTree": {
+      "default": false,
+      "markdownDescription": "Whether to show the syntax tree view.",
+      "type": "boolean"
+    },
+    "wgsl-analyzer.showUnlinkedFileNotification": {
+      "default": true,
+      "markdownDescription": "Whether to show a notification for unlinked files asking the user to add the corresponding `wesl.toml` to the linked projects setting.",
+      "type": "boolean"
     }
   }
 }
