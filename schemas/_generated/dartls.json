@@ -77,12 +77,6 @@
       "scope": "window",
       "type": "boolean"
     },
-    "dart.onlyAnalyzeProjectsWithOpenFiles": {
-      "default": false,
-      "description": "Whether to ignore workspace folders and perform analysis based on the open files, as if no workspace was open at all. This allows opening very large folders without causing them to be fully analyzed but will result a lot of re-analysis as files are opened/closed. This is **not** recommended for small or medium sized workspaces, only very large workspaces where you are working in only a small part.",
-      "scope": "window",
-      "type": "boolean"
-    },
     "dart.showExtensionRecommendations": {
       "default": true,
       "description": "Whether to show recommendations for other VS Code extensions based on the packages you're using.",
