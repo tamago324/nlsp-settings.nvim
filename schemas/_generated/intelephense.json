@@ -34,13 +34,7 @@
     },
     "intelephense.compatibility.correctForArrayAccessArrayAndTraversableArrayUnionTypes": {
       "default": true,
-      "markdownDescription": "Resolves `ArrayAccess` and `Traversable` implementations that are unioned with a typed array to generic syntax. eg `ArrayAccessOrTraversable|ElementType[]` => `ArrayAccessOrTraversable<mixed, ElementType>`.",
-      "scope": "window",
-      "type": "boolean"
-    },
-    "intelephense.compatibility.correctForBaseClassStaticUnionTypes": {
-      "default": true,
-      "markdownDescription": "Resolves `BaseClass|static` union types to `static` instead of `BaseClass`.",
+      "markdownDescription": "Resolves `ArrayAccess` and `Traversable` implementations that are unioned with a typed array to generic syntax.\n\nFor example: `ArrayAccessAndTraversable|Element[]` => `ArrayAccessAndTraversable&ArrayAccess<int, Element>&Traversable<int, Element>`.",
       "scope": "window",
       "type": "boolean"
     },
