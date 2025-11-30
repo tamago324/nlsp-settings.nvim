@@ -406,6 +406,11 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "luau-lsp.server.baseLuaurc": {
+      "markdownDescription": "Path to a `.luaurc` file which acts as the default baseline Luau configuration",
+      "scope": "window",
+      "type": "string"
+    },
     "luau-lsp.server.communicationChannel": {
       "default": "stdio",
       "enum": [
