@@ -158,6 +158,12 @@
       "scope": "resource",
       "type": "boolean"
     },
+    "luau-lsp.completion.showKeywords": {
+      "default": true,
+      "markdownDescription": "Whether to show keywords (`if` / `then` / `and` / etc.) during autocomplete",
+      "scope": "resource",
+      "type": "boolean"
+    },
     "luau-lsp.completion.showPropertiesOnMethodCall": {
       "default": false,
       "markdownDescription": "Whether to show non-function properties when performing a method call with a colon (e.g., `foo:bar`)",
