@@ -2,9 +2,42 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of beancount",
   "properties": {
+    "beancountLangServer.formatting": {
+      "additionalProperties": true,
+      "default": {},
+      "description": "formatting config",
+      "properties": {
+        "account_amount_spacing": {
+          "type": "number"
+        },
+        "currency_column": {
+          "type": "number"
+        },
+        "indent_width": {
+          "type": "number"
+        },
+        "num_width": {
+          "type": "number"
+        },
+        "number_currency_spacing": {
+          "type": "number"
+        },
+        "prefix_width": {
+          "type": "number"
+        }
+      },
+      "scope": "resource",
+      "type": "object"
+    },
     "beancountLangServer.journalFile": {
       "default": "",
       "description": "Path to the beancount journal",
+      "scope": "resource",
+      "type": "string"
+    },
+    "beancountLangServer.serverPath": {
+      "default": "",
+      "description": "Path to the beancount-language-server executable",
       "scope": "resource",
       "type": "string"
     },
