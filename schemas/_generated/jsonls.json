@@ -34,6 +34,22 @@
       ],
       "type": "boolean"
     },
+    "json.schemaDownload.trustedDomains": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "default": {
+        "https://json-schema.org/": true,
+        "https://raw.githubusercontent.com/": true,
+        "https://schemastore.azurewebsites.net/": true,
+        "https://www.schemastore.org/": true
+      },
+      "description": "%json.schemaDownload.trustedDomains.desc%",
+      "tags": [
+        "usesOnlineServices"
+      ],
+      "type": "object"
+    },
     "json.schemas": {
       "description": "%json.schemas.desc%",
       "items": {
