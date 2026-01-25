@@ -2,6 +2,33 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of beancount",
   "properties": {
+    "beancountLangServer.beanCheck": {
+      "additionalProperties": true,
+      "default": {},
+      "description": "Bean-check execution options",
+      "properties": {
+        "bean_check_cmd": {
+          "description": "Path to bean-check executable when using the system method.",
+          "type": "string"
+        },
+        "method": {
+          "default": "python-system",
+          "description": "Execution method for bean-check (system, python-system, python-embedded).",
+          "enum": [
+            "system",
+            "python-system",
+            "python-embedded"
+          ],
+          "type": "string"
+        },
+        "python_cmd": {
+          "description": "Python executable to use for the python methods.",
+          "type": "string"
+        }
+      },
+      "scope": "resource",
+      "type": "object"
+    },
     "beancountLangServer.formatting": {
       "additionalProperties": true,
       "default": {},
