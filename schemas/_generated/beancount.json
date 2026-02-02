@@ -62,21 +62,28 @@
       "scope": "resource",
       "type": "string"
     },
+    "beancountLangServer.logLevel": {
+      "default": null,
+      "description": "Log level for the language server.",
+      "enum": [
+        "trace",
+        "debug",
+        "info",
+        "warn",
+        "error",
+        "off",
+        null
+      ],
+      "scope": "window",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "beancountLangServer.serverPath": {
       "default": "",
       "description": "Path to the beancount-language-server executable",
       "scope": "resource",
-      "type": "string"
-    },
-    "beancountLangServer.trace.server": {
-      "default": "off",
-      "description": "Traces the communication between VS Code and the language server.",
-      "enum": [
-        "off",
-        "messages",
-        "verbose"
-      ],
-      "scope": "window",
       "type": "string"
     }
   }
