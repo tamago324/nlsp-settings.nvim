@@ -31,6 +31,7 @@
     "javascript.suggestionActions.enabled": {
       "default": true,
       "description": "%javascript.suggestionActions.enabled%",
+      "markdownDeprecationMessage": "%configuration.suggestionActions.enabled.unifiedDeprecationMessage%",
       "scope": "resource",
       "type": "boolean"
     },
@@ -187,6 +188,16 @@
       ],
       "type": "boolean"
     },
+    "js/ts.suggestionActions.enabled": {
+      "default": true,
+      "description": "%configuration.suggestionActions.enabled%",
+      "scope": "language-overridable",
+      "tags": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "type": "boolean"
+    },
     "typescript.autoClosingTags": {
       "default": true,
       "description": "%typescript.autoClosingTags%",
@@ -299,6 +310,7 @@
     "typescript.suggestionActions.enabled": {
       "default": true,
       "description": "%typescript.suggestionActions.enabled%",
+      "markdownDeprecationMessage": "%configuration.suggestionActions.enabled.unifiedDeprecationMessage%",
       "scope": "resource",
       "type": "boolean"
     },
