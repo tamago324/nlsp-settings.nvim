@@ -5,12 +5,14 @@
     "javascript.autoClosingTags": {
       "default": true,
       "description": "%typescript.autoClosingTags%",
+      "markdownDeprecationMessage": "%configuration.autoClosingTags.enabled.unifiedDeprecationMessage%",
       "scope": "language-overridable",
       "type": "boolean"
     },
     "javascript.preferGoToSourceDefinition": {
       "default": false,
       "description": "%configuration.preferGoToSourceDefinition%",
+      "markdownDeprecationMessage": "%configuration.preferGoToSourceDefinition.unifiedDeprecationMessage%",
       "scope": "window",
       "type": "boolean"
     },
@@ -43,6 +45,7 @@
         "always",
         "never"
       ],
+      "markdownDeprecationMessage": "%configuration.updateImportsOnFileMove.enabled.unifiedDeprecationMessage%",
       "markdownEnumDescriptions": [
         "%typescript.updateImportsOnFileMove.enabled.prompt%",
         "%typescript.updateImportsOnFileMove.enabled.always%",
@@ -53,6 +56,7 @@
     },
     "javascript.updateImportsOnPaste.enabled": {
       "default": true,
+      "markdownDeprecationMessage": "%configuration.updateImportsOnPaste.enabled.unifiedDeprecationMessage%",
       "markdownDescription": "%configuration.updateImportsOnPaste%",
       "scope": "window",
       "type": "boolean"
@@ -61,6 +65,16 @@
       "default": true,
       "description": "%javascript.validate.enable%",
       "scope": "window",
+      "type": "boolean"
+    },
+    "js/ts.autoClosingTags.enabled": {
+      "default": true,
+      "description": "%typescript.autoClosingTags%",
+      "scope": "language-overridable",
+      "tags": [
+        "JavaScript",
+        "TypeScript"
+      ],
       "type": "boolean"
     },
     "js/ts.hover.maximumLength": {
@@ -168,6 +182,16 @@
       "scope": "window",
       "type": "string"
     },
+    "js/ts.preferGoToSourceDefinition": {
+      "default": false,
+      "description": "%configuration.preferGoToSourceDefinition%",
+      "scope": "window",
+      "tags": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "type": "boolean"
+    },
     "js/ts.referencesCodeLens.enabled": {
       "default": false,
       "description": "%configuration.referencesCodeLens.enabled%",
@@ -198,9 +222,66 @@
       ],
       "type": "boolean"
     },
+    "js/ts.updateImportsOnFileMove.enabled": {
+      "default": "prompt",
+      "description": "%typescript.updateImportsOnFileMove.enabled%",
+      "enum": [
+        "prompt",
+        "always",
+        "never"
+      ],
+      "markdownEnumDescriptions": [
+        "%typescript.updateImportsOnFileMove.enabled.prompt%",
+        "%typescript.updateImportsOnFileMove.enabled.always%",
+        "%typescript.updateImportsOnFileMove.enabled.never%"
+      ],
+      "scope": "resource",
+      "tags": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "type": "string"
+    },
+    "js/ts.updateImportsOnPaste.enabled": {
+      "default": true,
+      "markdownDescription": "%configuration.updateImportsOnPaste%",
+      "scope": "window",
+      "tags": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "type": "boolean"
+    },
+    "js/ts.workspaceSymbols.excludeLibrarySymbols": {
+      "default": true,
+      "markdownDescription": "%typescript.workspaceSymbols.excludeLibrarySymbols%",
+      "scope": "window",
+      "tags": [
+        "TypeScript"
+      ],
+      "type": "boolean"
+    },
+    "js/ts.workspaceSymbols.scope": {
+      "default": "allOpenProjects",
+      "enum": [
+        "allOpenProjects",
+        "currentProject"
+      ],
+      "enumDescriptions": [
+        "%typescript.workspaceSymbols.scope.allOpenProjects%",
+        "%typescript.workspaceSymbols.scope.currentProject%"
+      ],
+      "markdownDescription": "%typescript.workspaceSymbols.scope%",
+      "scope": "window",
+      "tags": [
+        "TypeScript"
+      ],
+      "type": "string"
+    },
     "typescript.autoClosingTags": {
       "default": true,
       "description": "%typescript.autoClosingTags%",
+      "markdownDeprecationMessage": "%configuration.autoClosingTags.enabled.unifiedDeprecationMessage%",
       "scope": "language-overridable",
       "type": "boolean"
     },
@@ -284,6 +365,7 @@
     "typescript.preferGoToSourceDefinition": {
       "default": false,
       "description": "%configuration.preferGoToSourceDefinition%",
+      "markdownDeprecationMessage": "%configuration.preferGoToSourceDefinition.unifiedDeprecationMessage%",
       "scope": "window",
       "type": "boolean"
     },
@@ -345,6 +427,7 @@
         "always",
         "never"
       ],
+      "markdownDeprecationMessage": "%configuration.updateImportsOnFileMove.enabled.unifiedDeprecationMessage%",
       "markdownEnumDescriptions": [
         "%typescript.updateImportsOnFileMove.enabled.prompt%",
         "%typescript.updateImportsOnFileMove.enabled.always%",
@@ -355,6 +438,7 @@
     },
     "typescript.updateImportsOnPaste.enabled": {
       "default": true,
+      "markdownDeprecationMessage": "%configuration.updateImportsOnPaste.enabled.unifiedDeprecationMessage%",
       "markdownDescription": "%configuration.updateImportsOnPaste%",
       "scope": "window",
       "type": "boolean"
@@ -367,6 +451,7 @@
     },
     "typescript.workspaceSymbols.excludeLibrarySymbols": {
       "default": true,
+      "markdownDeprecationMessage": "%configuration.workspaceSymbols.excludeLibrarySymbols.unifiedDeprecationMessage%",
       "markdownDescription": "%typescript.workspaceSymbols.excludeLibrarySymbols%",
       "scope": "window",
       "type": "boolean"
@@ -381,6 +466,7 @@
         "%typescript.workspaceSymbols.scope.allOpenProjects%",
         "%typescript.workspaceSymbols.scope.currentProject%"
       ],
+      "markdownDeprecationMessage": "%configuration.workspaceSymbols.scope.unifiedDeprecationMessage%",
       "markdownDescription": "%typescript.workspaceSymbols.scope%",
       "scope": "window",
       "type": "string"
