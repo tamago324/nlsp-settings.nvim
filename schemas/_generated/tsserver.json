@@ -2,14 +2,93 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Setting of tsserver",
   "properties": {
-    "typescript.experimental.useTsgo": {
+    "js/ts.experimental.useTsgo": {
       "default": false,
+      "keywords": [
+        "TypeScript",
+        "experimental"
+      ],
       "markdownDescription": "%typescript.useTsgo%",
       "order": 2,
       "scope": "window",
-      "tags": [
+      "type": "boolean"
+    },
+    "js/ts.locale": {
+      "default": "auto",
+      "enum": [
+        "auto",
+        "de",
+        "es",
+        "en",
+        "fr",
+        "it",
+        "ja",
+        "ko",
+        "ru",
+        "zh-CN",
+        "zh-TW"
+      ],
+      "enumDescriptions": [
+        "%typescript.locale.auto%",
+        "Deutsch",
+        "español",
+        "English",
+        "français",
+        "italiano",
+        "日本語",
+        "한국어",
+        "русский",
+        "中文(简体)",
+        "中文(繁體)"
+      ],
+      "keywords": [
+        "TypeScript"
+      ],
+      "markdownDescription": "%typescript.locale%",
+      "order": 3,
+      "scope": "window",
+      "type": "string"
+    },
+    "js/ts.tsc.autoDetect": {
+      "default": "on",
+      "description": "%typescript.tsc.autoDetect%",
+      "enum": [
+        "on",
+        "off",
+        "build",
+        "watch"
+      ],
+      "keywords": [
+        "TypeScript"
+      ],
+      "markdownEnumDescriptions": [
+        "%typescript.tsc.autoDetect.on%",
+        "%typescript.tsc.autoDetect.off%",
+        "%typescript.tsc.autoDetect.build%",
+        "%typescript.tsc.autoDetect.watch%"
+      ],
+      "order": 4,
+      "scope": "window",
+      "type": "string"
+    },
+    "js/ts.tsdk.path": {
+      "keywords": [
+        "TypeScript"
+      ],
+      "markdownDescription": "%typescript.tsdk.desc%",
+      "order": 1,
+      "scope": "window",
+      "type": "string"
+    },
+    "typescript.experimental.useTsgo": {
+      "default": false,
+      "keywords": [
         "experimental"
       ],
+      "markdownDeprecationMessage": "%typescript.useTsgo.unifiedDeprecationMessage%",
+      "markdownDescription": "%typescript.useTsgo%",
+      "order": 2,
+      "scope": "window",
       "type": "boolean"
     },
     "typescript.locale": {
@@ -40,6 +119,7 @@
         "中文(简体)",
         "中文(繁體)"
       ],
+      "markdownDeprecationMessage": "%typescript.locale.unifiedDeprecationMessage%",
       "markdownDescription": "%typescript.locale%",
       "order": 3,
       "scope": "window",
@@ -54,6 +134,7 @@
         "build",
         "watch"
       ],
+      "markdownDeprecationMessage": "%typescript.tsc.autoDetect.unifiedDeprecationMessage%",
       "markdownEnumDescriptions": [
         "%typescript.tsc.autoDetect.on%",
         "%typescript.tsc.autoDetect.off%",
@@ -65,6 +146,7 @@
       "type": "string"
     },
     "typescript.tsdk": {
+      "markdownDeprecationMessage": "%typescript.tsdk.unifiedDeprecationMessage%",
       "markdownDescription": "%typescript.tsdk.desc%",
       "order": 1,
       "scope": "window",
