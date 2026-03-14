@@ -273,10 +273,10 @@
     },
     "css.lint.validProperties": {
       "default": [],
-      "description": "%css.lint.validProperties.desc%",
       "items": {
         "type": "string"
       },
+      "markdownDescription": "%css.lint.validProperties.desc%",
       "scope": "resource",
       "type": "array",
       "uniqueItems": true

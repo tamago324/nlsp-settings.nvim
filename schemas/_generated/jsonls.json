@@ -47,7 +47,7 @@
         "https://schemastore.azurewebsites.net/": true,
         "https://www.schemastore.org/": true
       },
-      "description": "%json.schemaDownload.trustedDomains.desc%",
+      "markdownDescription": "%json.schemaDownload.trustedDomains.desc%",
       "tags": [
         "usesOnlineServices"
       ],
@@ -64,12 +64,12 @@
         },
         "properties": {
           "fileMatch": {
-            "description": "%json.schemas.fileMatch.desc%",
             "items": {
               "default": "MyFile.json",
-              "description": "%json.schemas.fileMatch.item.desc%",
+              "markdownDescription": "%json.schemas.fileMatch.item.desc%",
               "type": "string"
             },
+            "markdownDescription": "%json.schemas.fileMatch.desc%",
             "minItems": 1,
             "type": "array"
           },
@@ -79,7 +79,7 @@
           },
           "url": {
             "default": "/user.schema.json",
-            "description": "%json.schemas.url.desc%",
+            "markdownDescription": "%json.schemas.url.desc%",
             "type": "string"
           }
         },
