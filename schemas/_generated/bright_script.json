@@ -208,6 +208,14 @@
       },
       "type": "object"
     },
+    "minFirmwareVersion": {
+      "description": "The minimum Roku firmware version required to run this project. When set, BrightScript (.brs) files will be validated to ensure they only use language features available in that firmware version or earlier. BrighterScript (.bs) files are always allowed to use all features since they are transpiled. Should be a semver-compatible string (e.g. \"11.0.0\").",
+      "examples": [
+        "11.0.0",
+        "12.0.0"
+      ],
+      "type": "string"
+    },
     "outFile": {
       "description": "The path where the output zip or package should be placed. This includes the filename. Defaults to \"./out/package\"",
       "type": "string"
@@ -227,6 +235,11 @@
         ]
       },
       "type": "array"
+    },
+    "relativeSourceMaps": {
+      "default": false,
+      "description": "If true, source file paths in generated sourcemaps will be relative to the map file location instead of absolute. This makes sourcemaps portable across different machines and environments.",
+      "type": "boolean"
     },
     "removeParameterTypes": {
       "default": false,
