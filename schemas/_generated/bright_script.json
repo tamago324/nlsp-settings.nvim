@@ -80,6 +80,21 @@
       ],
       "type": "string"
     },
+    "diagnosticReporters": {
+      "default": "detailed",
+      "description": "Specify how diagnostics are reported to the console. Accepts a single value or an array; each diagnostic is rendered once per entry. Each value is either a preset name ('detailed', 'github-actions'), a custom template string containing at least one known placeholder ({file}, {line}, {col}, {endLine}, {endCol}, {severity}, {severityCode}, {code}, {message}, {source}), or an object with explicit `type`. Defaults to 'detailed'.",
+      "oneOf": [
+        {
+          "$ref": "#/definitions/diagnosticReporterValue"
+        },
+        {
+          "items": {
+            "$ref": "#/definitions/diagnosticReporterValue"
+          },
+          "type": "array"
+        }
+      ]
+    },
     "diagnosticSeverityOverrides": {
       "description": "A map of error codes with their severity level override (error|warn|info)",
       "patternProperties": {
